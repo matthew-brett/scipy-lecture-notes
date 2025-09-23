@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.506083Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:04.323653Z",
+      "mimetype": null,
+      "name": "help.ipynb",
+      "path": "intro/help/help.ipynb",
+      "size": 4357,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-23T08:41:10.505928Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-23T08:41:10.505928Z",
+  "mimetype": null,
+  "name": "help",
+  "path": "intro/help",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

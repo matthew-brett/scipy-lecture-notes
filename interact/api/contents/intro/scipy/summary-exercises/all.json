@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.517595Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:06.073052Z",
+      "mimetype": null,
+      "name": "stats-interpolate_examples.ipynb",
+      "path": "intro/scipy/summary-exercises/stats-interpolate_examples.ipynb",
+      "size": 11834,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.516775Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:05.970863Z",
+      "mimetype": null,
+      "name": "optimize-fit.ipynb",
+      "path": "intro/scipy/summary-exercises/optimize-fit.ipynb",
+      "size": 9942,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.517188Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:06.000455Z",
+      "mimetype": null,
+      "name": "stats-interpolate.ipynb",
+      "path": "intro/scipy/summary-exercises/stats-interpolate.ipynb",
+      "size": 9162,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.516373Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:05.928931Z",
+      "mimetype": null,
+      "name": "answers_image_processing.ipynb",
+      "path": "intro/scipy/summary-exercises/answers_image_processing.ipynb",
+      "size": 5540,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-23T08:41:10.517426Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-23T08:41:10.517426Z",
+  "mimetype": null,
+  "name": "summary-exercises",
+  "path": "intro/scipy/summary-exercises",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

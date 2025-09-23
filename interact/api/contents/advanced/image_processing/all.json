@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.485546Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:03.293351Z",
+      "mimetype": null,
+      "name": "index.ipynb",
+      "path": "advanced/image_processing/index.ipynb",
+      "size": 44989,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-23T08:41:10.485356Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-23T08:41:10.485356Z",
+  "mimetype": null,
+  "name": "image_processing",
+  "path": "advanced/image_processing",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

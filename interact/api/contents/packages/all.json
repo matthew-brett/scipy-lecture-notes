@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.520276Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:10.520276Z",
+      "mimetype": null,
+      "name": "statistics",
+      "path": "packages/statistics",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.520873Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:06.122099Z",
+      "mimetype": null,
+      "name": "sympy.ipynb",
+      "path": "packages/sympy.ipynb",
+      "size": 22373,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.517979Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:10.517979Z",
+      "mimetype": null,
+      "name": "scikit-image",
+      "path": "packages/scikit-image",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.519161Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:10.519161Z",
+      "mimetype": null,
+      "name": "scikit-learn",
+      "path": "packages/scikit-learn",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-23T08:41:10.520715Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-23T08:41:10.520715Z",
+  "mimetype": null,
+  "name": "packages",
+  "path": "packages",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

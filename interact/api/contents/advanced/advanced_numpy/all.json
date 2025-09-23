@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.483595Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:02.756240Z",
+      "mimetype": null,
+      "name": "index.ipynb",
+      "path": "advanced/advanced_numpy/index.ipynb",
+      "size": 64295,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-23T08:41:10.483347Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-23T08:41:10.483347Z",
+  "mimetype": null,
+  "name": "advanced_numpy",
+  "path": "advanced/advanced_numpy",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-23T08:41:10.484967Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-23T08:41:03.046938Z",
+      "mimetype": null,
+      "name": "index.ipynb",
+      "path": "advanced/debugging/index.ipynb",
+      "size": 27900,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-23T08:41:10.484793Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-23T08:41:10.484793Z",
+  "mimetype": null,
+  "name": "debugging",
+  "path": "advanced/debugging",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

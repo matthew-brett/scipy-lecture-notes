@@ -1,0 +1,1175 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Standard Library &#8212; Scientific Python Lectures</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro/language/standard_library';</script>
+    <link rel="canonical" href="https://lectures.scientific-python.org/intro/language/standard_library.html" />
+    <link rel="icon" href="../../_static/sp_lectures.png"/>
+    <link rel="author" title="About these documents" href="../../about.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exception handling in Python" href="exceptions.html" />
+    <link rel="prev" title="Input and Output" href="io.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/sp_lectures.png" class="logo__image only-light" alt="Scientific Python Lectures - Home"/>
+    <script>document.write(`<img src="../../_static/sp_lectures.png" class="logo__image only-dark" alt="Scientific Python Lectures - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Getting started with Python for science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../intro.html">Python scientific computing ecosystem</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="python_language.html">The Python language</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="first_steps.html">First steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="basic_types.html">Basic types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="control_flow.html">Control Flow</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html">Defining functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reusing_code.html">Reusing code: scripts and modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html">Input and Output</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Standard Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exception handling in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="oop.html">Object-oriented programming (OOP)</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../numpy/index.html">NumPy: creating and manipulating numerical data</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/array_object.html">The NumPy array object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/operations.html">Numerical operations on arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/elaborate_arrays.html">More elaborate arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/advanced_operations.html">Advanced operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../numpy/exercises.html">Some exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../matplotlib/index.html">Matplotlib: plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../scipy/index.html">SciPy : high-level scientific computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../help/help.html">Getting help and finding documentation</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/advanced_python/index.html">Advanced Python Constructs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/advanced_numpy/index.html">Advanced NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/debugging/index.html">Debugging code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/optimizing/index.html">Optimizing code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../advanced/scipy_sparse/introduction.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/scipy_sparse/storage_schemes.html">Storage Schemes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/scipy_sparse/solvers.html">Linear System Solvers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../advanced/scipy_sparse/other_packages.html">Other Interesting Packages</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/image_processing/index.html">Image manipulation and processing using NumPy and SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/mathematical_optimization/index.html">Mathematical optimization: finding minima of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/interfacing_with_c/interfacing_with_c.html">Interfacing with C</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Packages and applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/statistics/index.html">Statistics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html">Sympy : Symbolic Mathematics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-learn/index.html">scikit-learn: machine learning in Python</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About the Scientific Python Lectures</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about.html">About the Scientific Python Lecture notes</a></li>
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="interact/lab/index.html?path=intro/language/standard_library.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch via JupyterLite"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
+  </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/language/standard_library.Rmd" target="_blank"
+   class="btn btn-sm btn-source-edit-button dropdown-item"
+   title="Suggest edit"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-pencil-alt"></i>
+  </span>
+<span class="btn__text-container">Suggest edit</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fintro/language/standard_library.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/intro/language/standard_library.Rmd" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.Rmd</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Standard Library</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-module-operating-system-functionality"><code class="docutils literal notranslate"><span class="pre">os</span></code> module: operating system functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-and-file-manipulation">Directory and file manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-path-path-manipulations"><code class="docutils literal notranslate"><span class="pre">os.path</span></code>: path manipulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-an-external-command">Running an external command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-a-directory">Walking a directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment variables:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shutil-high-level-file-operations"><code class="docutils literal notranslate"><span class="pre">shutil</span></code>: high-level file operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glob-pattern-matching-on-files"><code class="docutils literal notranslate"><span class="pre">glob</span></code>: Pattern matching on files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-module-system-specific-information"><code class="docutils literal notranslate"><span class="pre">sys</span></code> module: system-specific information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pickle-easy-persistence"><code class="docutils literal notranslate"><span class="pre">pickle</span></code>: easy persistence</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="standard-library">
+<h1>Standard Library<a class="headerlink" href="#standard-library" title="Link to this heading">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reference document for this section:</p>
+<ul class="simple">
+<li><p>The Python Standard Library documentation:
+<a class="reference external" href="https://docs.python.org/3/library/index.html">https://docs.python.org/3/library/index.html</a></p></li>
+<li><p>Python Essential Reference, David Beazley, Addison-Wesley Professional</p></li>
+</ul>
+</div>
+<section id="os-module-operating-system-functionality">
+<h2><code class="docutils literal notranslate"><span class="pre">os</span></code> module: operating system functionality<a class="headerlink" href="#os-module-operating-system-functionality" title="Link to this heading">#</a></h2>
+<p><em>“A portable way of using operating system dependent functionality.”</em></p>
+<section id="directory-and-file-manipulation">
+<h3>Directory and file manipulation<a class="headerlink" href="#directory-and-file-manipulation" title="Link to this heading">#</a></h3>
+<p>Current directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/mb312/dev_trees/scientific-python-lectures/intro/language&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>List a directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;standard_library.Rmd&#39;,
+ &#39;functions.Rmd&#39;,
+ &#39;reusing_code.Rmd&#39;,
+ &#39;junk.txt&#39;,
+ &#39;io.Rmd&#39;,
+ &#39;python-logo.png&#39;,
+ &#39;demo2.py&#39;,
+ &#39;basic_types.Rmd&#39;,
+ &#39;workfile&#39;,
+ &#39;control_flow.Rmd&#39;,
+ &#39;__pycache__&#39;,
+ &#39;test.py&#39;,
+ &#39;test.pkl&#39;,
+ &#39;oop.Rmd&#39;,
+ &#39;first_steps.Rmd&#39;,
+ &#39;my_file.py&#39;,
+ &#39;exceptions.Rmd&#39;,
+ &#39;demo.py&#39;,
+ &#39;python_language.md&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Make a directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s1">&#39;junkdir&#39;</span><span class="p">)</span>
+<span class="s1">&#39;junkdir&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Rename the directory:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s1">&#39;junkdir&#39;</span><span class="p">,</span> <span class="s1">&#39;foodir&#39;</span><span class="p">)</span>
+<span class="s1">&#39;junkdir&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;foodir&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">rmdir</span><span class="p">(</span><span class="s1">&#39;foodir&#39;</span><span class="p">)</span>
+<span class="s1">&#39;foodir&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Delete a file:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="s1">&#39;junk.txt&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">)</span>
+<span class="s1">&#39;junk.txt&#39;</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="os-path-path-manipulations">
+<h3><code class="docutils literal notranslate"><span class="pre">os.path</span></code>: path manipulations<a class="headerlink" href="#os-path-path-manipulations" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">os.path</span></code> provides common operations on pathnames.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fp</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span>
+<span class="n">fp</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/mb312/dev_trees/scientific-python-lectures/intro/language/junk.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;/Users/mb312/dev_trees/scientific-python-lectures/intro/language&#39;,
+ &#39;junk.txt&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/mb312/dev_trees/scientific-python-lectures/intro/language&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;junk.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(&#39;junk&#39;, &#39;.txt&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="s1">&#39;junk.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~/local&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/mb312/local&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">),</span> <span class="s1">&#39;local&#39;</span><span class="p">,</span> <span class="s1">&#39;bin&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/mb312/local/bin&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="running-an-external-command">
+<h3>Running an external command<a class="headerlink" href="#running-an-external-command" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">(</span><span class="s1">&#39;ls&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Blue">__pycache__</span>
+basic_types.Rmd
+control_flow.Rmd
+demo.py
+demo2.py
+exceptions.Rmd
+first_steps.Rmd
+functions.Rmd
+io.Rmd
+junk.txt
+my_file.py
+oop.Rmd
+python_language.md
+python-logo.png
+reusing_code.Rmd
+standard_library.Rmd
+test.pkl
+test.py
+workfile
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Alternative to <code class="docutils literal notranslate"><span class="pre">os.system</span></code></p>
+<p>A noteworthy alternative to <code class="docutils literal notranslate"><span class="pre">os.system</span></code> is the <a class="reference external" href="https://amoffat.github.com/sh/">sh module</a>. Which provides much more convenient ways to
+obtain the output, error stream and exit code of the external command.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">sh</span>
+<span class="n">com</span> <span class="o">=</span> <span class="n">sh</span><span class="o">.</span><span class="n">ls</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">com</span><span class="p">)</span>
+<span class="n">basic_types</span><span class="o">.</span><span class="n">rst</span>   <span class="n">exceptions</span><span class="o">.</span><span class="n">rst</span>   <span class="n">oop</span><span class="o">.</span><span class="n">rst</span>              <span class="n">standard_library</span><span class="o">.</span><span class="n">rst</span>
+<span class="n">control_flow</span><span class="o">.</span><span class="n">rst</span>  <span class="n">first_steps</span><span class="o">.</span><span class="n">rst</span>  <span class="n">python_language</span><span class="o">.</span><span class="n">rst</span>
+<span class="n">demo2</span><span class="o">.</span><span class="n">py</span>          <span class="n">functions</span><span class="o">.</span><span class="n">rst</span>    <span class="n">python</span><span class="o">-</span><span class="n">logo</span><span class="o">.</span><span class="n">png</span>
+<span class="n">demo</span><span class="o">.</span><span class="n">py</span>           <span class="n">io</span><span class="o">.</span><span class="n">rst</span>           <span class="n">reusing_code</span><span class="o">.</span><span class="n">rst</span>
+
+<span class="nb">type</span><span class="p">(</span><span class="n">com</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">33</span><span class="p">]:</span> <span class="nb">str</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="walking-a-directory">
+<h3>Walking a directory<a class="headerlink" href="#walking-a-directory" title="Link to this heading">#</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">os.path.walk</span></code> generates a list of filenames in a directory tree.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">dirpath</span><span class="p">,</span> <span class="n">dirnames</span><span class="p">,</span> <span class="n">filenames</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">walk</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">curdir</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">fp</span> <span class="ow">in</span> <span class="n">filenames</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">fp</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mb312/dev_trees/scientific-python-lectures/intro/language/standard_library.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/functions.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/reusing_code.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/junk.txt
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/io.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/python-logo.png
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/demo2.py
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/basic_types.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/workfile
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/control_flow.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/test.py
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/test.pkl
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/oop.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/first_steps.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/my_file.py
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/exceptions.Rmd
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/demo.py
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/python_language.md
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/demo2.cpython-312.pyc
+/Users/mb312/dev_trees/scientific-python-lectures/intro/language/demo.cpython-312.pyc
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="environment-variables">
+<h3>Environment variables:<a class="headerlink" href="#environment-variables" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeysView(environ({&#39;VIRTUALENVWRAPPER_PROJECT_FILENAME&#39;: &#39;.project&#39;, &#39;VIRTUAL_ENV_PROMPT&#39;: &#39;test&#39;, &#39;_VIRTUALENVWRAPPER_API&#39;: &#39; mkvirtualenv rmvirtualenv lsvirtualenv showvirtualenv workon add2virtualenv cdsitepackages cdvirtualenv lssitepackages toggleglobalsitepackages cpvirtualenv setvirtualenvproject mkproject cdproject mktmpenv wipeenv allvirtualenv&#39;, &#39;SHELL&#39;: &#39;/opt/homebrew/bin/bash&#39;, &#39;_&#39;: &#39;/usr/bin/make&#39;, &#39;PY_USER_BIN&#39;: &#39;/Users/mb312/Library/Python/3.12/bin&#39;, &#39;POPY&#39;: &#39;/Library/Frameworks/Python.framework/Versions&#39;, &#39;__CFBundleIdentifier&#39;: &#39;com.apple.Terminal&#39;, &#39;PATH&#39;: &#39;/Users/mb312/.virtualenvs/test/bin:/Users/mb312/mamba/condabin:/opt/homebrew/opt/openjdk/bin:/Users/mb312/google-cloud-sdk/bin:/Users/mb312/.local/share/gem/ruby/3.4.0/bin:/usr/local/sbin:/usr/sbin:/sbin:/Users/mb312/usr/bin:/Users/mb312/usr/local/bin:/Users/mb312/usr/local/sbin:/Users/mb312/.pyenv/shims:/Users/mb312/.gem/ruby/3.1.0/bin:/opt/homebrew/opt/ruby/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Library/TeX/texbin:/Applications/VMware Fusion.app/Contents/Public:/opt/homebrew/bin:/Users/mb312/.local/bin&#39;, &#39;VIRTUAL_ENV&#39;: &#39;/Users/mb312/.virtualenvs/test&#39;, &#39;GUI_EDITOR&#39;: &#39;gvim&#39;, &#39;LaunchInstanceID&#39;: &#39;34266AAD-9A9C-4CB4-B023-C60096E66E62&#39;, &#39;PYENV_ROOT&#39;: &#39;/Users/mb312/.pyenv&#39;, &#39;VIRTUALENVWRAPPER_HOOK_DIR&#39;: &#39;/Users/mb312/.virtualenvs&#39;, &#39;SSH_AUTH_SOCK&#39;: &#39;/private/tmp/com.apple.launchd.ShzQYEdJ7S/Listeners&#39;, &#39;PWD&#39;: &#39;/Users/mb312/dev_trees/scientific-python-lectures&#39;, &#39;OSLogRateLimit&#39;: &#39;64&#39;, &#39;BSTINPUTS&#39;: &#39;.:/Users/mb312/texmf/bstinputs::&#39;, &#39;MANPATH&#39;: &#39;/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/share/man:/Library/Developer/CommandLineTools/usr/share/man:/Library/Developer/CommandLineTools/Toolchains/XcodeDefault.xctoolchain/usr/share/man:&#39;, &#39;PYENV_SHELL&#39;: &#39;bash&#39;, &#39;HOME&#39;: &#39;/Users/mb312&#39;, &#39;LOGNAME&#39;: &#39;mb312&#39;, &#39;TEXINPUTS&#39;: &#39;.:/Users/mb312/texmf/texinputs::&#39;, &#39;WORKON_HOME&#39;: &#39;/Users/mb312/.virtualenvs&#39;, &#39;XPC_FLAGS&#39;: &#39;0x0&#39;, &#39;COLORTERM&#39;: &#39;truecolor&#39;, &#39;SHLVL&#39;: &#39;1&#39;, &#39;USER&#39;: &#39;mb312&#39;, &#39;MAMBA_EXE&#39;: &#39;/opt/homebrew/opt/micromamba/bin/mamba&#39;, &#39;TERM_SESSION_ID&#39;: &#39;E5528B8C-E10D-4DD9-99DE-17C1C6D79552&#39;, &#39;LESS&#39;: &#39;-R&#39;, &#39;VMAIL_VIM&#39;: &#39;vim&#39;, &#39;CONDA_SHLVL&#39;: &#39;0&#39;, &#39;VE_OLD_PYTHONPATH&#39;: &#39;&#39;, &#39;OLDPWD&#39;: &#39;/Users/mb312/dev_trees/scientific-python-lectures/advanced&#39;, &#39;TERM_PROGRAM&#39;: &#39;Apple_Terminal&#39;, &#39;TMPDIR&#39;: &#39;/var/folders/vr/b3dbt6vd3pd73sjc_t9xj87r0000gn/T/&#39;, &#39;PYTHONPATH&#39;: &#39;&#39;, &#39;MAKEFLAGS&#39;: &#39;&#39;, &#39;MFLAGS&#39;: &#39;&#39;, &#39;TERM_PROGRAM_VERSION&#39;: &#39;464&#39;, &#39;XPC_SERVICE_NAME&#39;: &#39;0&#39;, &#39;HOMEBREW_PREFIX&#39;: &#39;/opt/homebrew&#39;, &#39;__CF_USER_TEXT_ENCODING&#39;: &#39;0x1F5:0:2&#39;, &#39;PYDEVD_DISABLE_FILE_VALIDATION&#39;: &#39;1&#39;, &#39;MAMBA_ROOT_PREFIX&#39;: &#39;/Users/mb312/mamba&#39;, &#39;VIRTUALENVWRAPPER_WORKON_CD&#39;: &#39;1&#39;, &#39;VIRTUALENVWRAPPER_SCRIPT&#39;: &#39;/Users/mb312/.local/bin/virtualenvwrapper.sh&#39;, &#39;PS1&#39;: &#39;(test) [\\u@\\h \\w$(__git_ps1 &quot; (%s)&quot;)]\\$ &#39;, &#39;EDITOR&#39;: &#39;mvim -v&#39;, &#39;PAGER&#39;: &#39;cat&#39;, &#39;MATLABPATH&#39;: &#39;/Users/mb312/matlab:/Users/mb312/matlab/m2html&#39;, &#39;SECURITYSESSIONID&#39;: &#39;186ae&#39;, &#39;BIBINPUTS&#39;: &#39;.:/Users/mb312/texmf/bibinputs::&#39;, &#39;GPG_TTY&#39;: &#39;/dev/ttys022&#39;, &#39;LANG&#39;: &#39;en_GB.UTF-8&#39;, &#39;TERM&#39;: &#39;xterm-color&#39;, &#39;MAKELEVEL&#39;: &#39;1&#39;, &#39;JPY_PARENT_PID&#39;: &#39;30737&#39;, &#39;PYDEVD_USE_FRAME_EVAL&#39;: &#39;NO&#39;, &#39;CLICOLOR&#39;: &#39;1&#39;, &#39;FORCE_COLOR&#39;: &#39;1&#39;, &#39;CLICOLOR_FORCE&#39;: &#39;1&#39;, &#39;GIT_PAGER&#39;: &#39;cat&#39;, &#39;MPLBACKEND&#39;: &#39;module://matplotlib_inline.backend_inline&#39;}))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SHELL&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/opt/homebrew/bin/bash&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="shutil-high-level-file-operations">
+<h2><code class="docutils literal notranslate"><span class="pre">shutil</span></code>: high-level file operations<a class="headerlink" href="#shutil-high-level-file-operations" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">shutil</span></code> provides useful file operations:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.rmtree</span></code>: Recursively delete a directory tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.move</span></code>: Recursively move a file or directory to another location.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shutil.copy</span></code>: Copy files or directories.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="glob-pattern-matching-on-files">
+<h2><code class="docutils literal notranslate"><span class="pre">glob</span></code>: Pattern matching on files<a class="headerlink" href="#glob-pattern-matching-on-files" title="Link to this heading">#</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">glob</span></code> module provides convenient file pattern matching.</p>
+<p>Find all files ending in <code class="docutils literal notranslate"><span class="pre">.txt</span></code>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">glob</span>
+<span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="s1">&#39;*.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;junk.txt&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="sys-module-system-specific-information">
+<h2><code class="docutils literal notranslate"><span class="pre">sys</span></code> module: system-specific information<a class="headerlink" href="#sys-module-system-specific-information" title="Link to this heading">#</a></h2>
+<p>System-specific information related to the Python interpreter.</p>
+<ul class="simple">
+<li><p>Which version of python are you running and where is it installed:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">platform</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;darwin&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">version</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.12.7 (main, Oct 23 2024, 01:35:04) [Clang 15.0.0 (clang-1500.0.40.1)]&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">prefix</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;/Users/mb312/.virtualenvs/test&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>List of command line arguments passed to a Python script:</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/mb312/.virtualenvs/test/lib/python3.12/site-packages/ipykernel_launcher.py&#39;,
+ &#39;-f&#39;,
+ &#39;/private/var/folders/vr/b3dbt6vd3pd73sjc_t9xj87r0000gn/T/tmpr4694uty.json&#39;,
+ &#39;--HistoryManager.hist_file=:memory:&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">sys.path</span></code> is a list of strings that specifies the search path for
+modules. Initialized from PYTHONPATH:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sys</span><span class="o">.</span><span class="n">path</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;/Users/mb312/.pyenv/versions/3.12.7/lib/python312.zip&#39;,
+ &#39;/Users/mb312/.pyenv/versions/3.12.7/lib/python3.12&#39;,
+ &#39;/Users/mb312/.pyenv/versions/3.12.7/lib/python3.12/lib-dynload&#39;,
+ &#39;&#39;,
+ &#39;/Users/mb312/.virtualenvs/test/lib/python3.12/site-packages&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pickle-easy-persistence">
+<h2><code class="docutils literal notranslate"><span class="pre">pickle</span></code>: easy persistence<a class="headerlink" href="#pickle-easy-persistence" title="Link to this heading">#</a></h2>
+<p>Useful to store arbitrary objects to a file. Not safe or fast!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pickle</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="s1">&#39;Stan&#39;</span><span class="p">]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">pickle</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">l</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test.pkl&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">out</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">out</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, None, &#39;Stan&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-exercise admonition">
+<p class="admonition-title">Exercise</p>
+<p>Write a program to search your <code class="docutils literal notranslate"><span class="pre">PYTHONPATH</span></code> for the module <code class="docutils literal notranslate"><span class="pre">site.py</span></code>.</p>
+</div>
+<p><a class="reference internal" href="../scipy/solutions.html#path-site"><span class="std std-ref">The PYTHONPATH Search Solution</span></a></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./intro/language"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="io.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Input and Output</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="exceptions.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exception handling in Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-module-operating-system-functionality"><code class="docutils literal notranslate"><span class="pre">os</span></code> module: operating system functionality</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#directory-and-file-manipulation">Directory and file manipulation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#os-path-path-manipulations"><code class="docutils literal notranslate"><span class="pre">os.path</span></code>: path manipulations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#running-an-external-command">Running an external command</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#walking-a-directory">Walking a directory</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#environment-variables">Environment variables:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#shutil-high-level-file-operations"><code class="docutils literal notranslate"><span class="pre">shutil</span></code>: high-level file operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#glob-pattern-matching-on-files"><code class="docutils literal notranslate"><span class="pre">glob</span></code>: Pattern matching on files</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sys-module-system-specific-information"><code class="docutils literal notranslate"><span class="pre">sys</span></code> module: system-specific information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pickle-easy-persistence"><code class="docutils literal notranslate"><span class="pre">pickle</span></code>: easy persistence</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Scientific Python developers
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2025.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
