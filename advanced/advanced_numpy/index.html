@@ -281,37 +281,6 @@
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="interact/lab/index.html?path=advanced/advanced_numpy/index.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch via JupyterLite"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
-  </span>
-<span class="btn__text-container">JupyterLite</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -640,7 +609,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x10bd30580&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x113ba53c0&gt;
 </pre></div>
 </div>
 </div>
@@ -665,7 +634,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>47451996624
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553132548720
 </pre></div>
 </div>
 </div>
@@ -678,7 +647,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (47451996624, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553132548720, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i4&#39;)],
  &#39;typestr&#39;: &#39;&lt;i4&#39;,
@@ -722,7 +691,7 @@ array of ints:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x10d95ee00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x113ba5600&gt;
 </pre></div>
 </div>
 </div>
@@ -2252,7 +2221,7 @@ from.</p>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s2</span> <span class="o">=</span> <span class="o">...</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">assert</span> <span class="n">s</span> <span class="o">==</span> <span class="n">s2</span>
 
-<span class="nn">File ~/.virtualenvs/test/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py:101,</span> in <span class="ni">as_strided</span><span class="nt">(x, shape, strides, subok, writeable)</span>
+<span class="nn">File /Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py:101,</span> in <span class="ni">as_strided</span><span class="nt">(x, shape, strides, subok, writeable)</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">if</span> <span class="n">strides</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="n">interface</span><span class="p">[</span><span class="s1">&#39;strides&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">strides</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">101</span> <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">DummyArray</span><span class="p">(</span><span class="n">interface</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">x</span><span class="p">))</span>
@@ -2314,7 +2283,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>65 μs ± 17.7 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76 μs ± 132 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2326,7 +2295,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85.4 μs ± 90.4 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>143 μs ± 5.04 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2935,7 +2904,7 @@ the buffer interface:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (47452013536, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553130430880, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i8&#39;)],
  &#39;typestr&#39;: &#39;&lt;i8&#39;,
@@ -3264,9 +3233,9 @@ time, ignoring the invalid numbers.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10dc49550&gt;,
- &lt;matplotlib.lines.Line2D at 0x10dcd9580&gt;,
- &lt;matplotlib.lines.Line2D at 0x10dcd9670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113dff590&gt;,
+ &lt;matplotlib.lines.Line2D at 0x113dff650&gt;,
+ &lt;matplotlib.lines.Line2D at 0x113df4c80&gt;]
 </pre></div>
 </div>
 </div>
@@ -3403,7 +3372,7 @@ I&#39;m using NumPy 1.4.1, built from the official tarball, on Windows
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mb312/.virtualenvs/test/lib/python3.12/site-packages/numpy/__init__.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/numpy/__init__.py
 </pre></div>
 </div>
 </div>

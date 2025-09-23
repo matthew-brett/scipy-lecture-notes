@@ -281,37 +281,6 @@
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="interact/lab/index.html?path=intro/numpy/array_object.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch via JupyterLite"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
-  </span>
-<span class="btn__text-container">JupyterLite</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -481,8 +450,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-numpy-and-numpy-arrays">What are NumPy and NumPy arrays?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy arrays</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-reference-documentation">NumPy Reference documentation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-web">On the web</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-help">Interactive help:</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-for-something">Looking for something:</a></li>
 </ul>
 </li>
@@ -499,7 +466,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#much-more">Much more:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-visualization">Basic visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Basic visualization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-prime-number-sieve">Worked example: Prime number sieve</a></li>
 </ul>
@@ -583,7 +549,7 @@ operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>54.5 μs ± 580 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>74.4 μs ± 2.91 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -596,7 +562,7 @@ operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.09 μs ± 0.524 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>861 ns ± 8.17 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -624,12 +590,9 @@ efficiency vs. Python lists
 </section>
 <section id="numpy-reference-documentation">
 <h3>NumPy Reference documentation<a class="headerlink" href="#numpy-reference-documentation" title="Link to this heading">#</a></h3>
-<section id="on-the-web">
-<h4>On the web<a class="headerlink" href="#on-the-web" title="Link to this heading">#</a></h4>
+<p><strong>On the web</strong>:</p>
 <p><a class="reference external" href="https://numpy.org/doc/">https://numpy.org/doc/</a></p>
-</section>
-<section id="interactive-help">
-<h4>Interactive help:<a class="headerlink" href="#interactive-help" title="Link to this heading">#</a></h4>
+<p><strong>Interactive help:</strong></p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span>np.array<span class="o">?</span>
 <span class="go">String Form:&lt;built-in function array&gt;</span>
 <span class="go">Docstring:</span>
@@ -776,7 +739,6 @@ array(...)
 </div>
 </div>
 </div>
-</section>
 <section id="looking-for-something">
 <h4>Looking for something:<a class="headerlink" href="#looking-for-something" title="Link to this heading">#</a></h4>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [6]: </span>np.con*<span class="o">?</span>
@@ -1241,15 +1203,12 @@ from the input.</p>
 </ul>
 <!---
 .. XXX: mention: astype
---></section>
-<section id="basic-visualization">
-<h2>Basic visualization<a class="headerlink" href="#basic-visualization" title="Link to this heading">#</a></h2>
-<!---
+--><!---
 XXX: mention: astype
 -->
 </section>
-<section id="id1">
-<h2>Basic visualization<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<section id="basic-visualization">
+<h2>Basic visualization<a class="headerlink" href="#basic-visualization" title="Link to this heading">#</a></h2>
 <p>Now that we have our first data arrays, we are going to visualize them.</p>
 <p>Start by launching IPython:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ipython<span class="w"> </span><span class="c1"># or ipython3 depending on your install</span>
@@ -1294,7 +1253,7 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/66b171192dc3c7367a9753076b44ce82f3b88a7a370a32fdd82457edf26285dd.png" src="../../_images/66b171192dc3c7367a9753076b44ce82f3b88a7a370a32fdd82457edf26285dd.png" />
+<img alt="../../_images/3ff38fb5c9bf654d9c7b7d3e05a97e007ddfc23634eaa7dcce64d4d75604ea5b.png" src="../../_images/3ff38fb5c9bf654d9c7b7d3e05a97e007ddfc23634eaa7dcce64d4d75604ea5b.png" />
 </div>
 </div>
 <p>Or, if you have enabled interactive plots with <code class="docutils literal notranslate"><span class="pre">%matplotlib</span></code>:</p>
@@ -1305,10 +1264,10 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x109cd4770&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112e43890&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/66b171192dc3c7367a9753076b44ce82f3b88a7a370a32fdd82457edf26285dd.png" src="../../_images/66b171192dc3c7367a9753076b44ce82f3b88a7a370a32fdd82457edf26285dd.png" />
+<img alt="../../_images/3ff38fb5c9bf654d9c7b7d3e05a97e007ddfc23634eaa7dcce64d4d75604ea5b.png" src="../../_images/3ff38fb5c9bf654d9c7b7d3e05a97e007ddfc23634eaa7dcce64d4d75604ea5b.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1323,10 +1282,10 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x109da72f0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112ed0560&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/5407b3f7645d0b8b1a58d938ef22bfb0fe9fa9e11217c55872b043fe79313440.png" src="../../_images/5407b3f7645d0b8b1a58d938ef22bfb0fe9fa9e11217c55872b043fe79313440.png" />
+<img alt="../../_images/1c60337857bdc284dcd50c25c9059aab6b14af828b27e27127da4b76ebeb2ae3.png" src="../../_images/1c60337857bdc284dcd50c25c9059aab6b14af828b27e27127da4b76ebeb2ae3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1336,10 +1295,10 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x109da6d80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112f2a150&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/016ce28cef22c33ec1ab1e5f4804e260d8cf42256e3bdae9d324da45b510fb3a.png" src="../../_images/016ce28cef22c33ec1ab1e5f4804e260d8cf42256e3bdae9d324da45b510fb3a.png" />
+<img alt="../../_images/6033166849a7dbbbe4502ee55454218aadee7370c2d51732a819fa3f4e904768.png" src="../../_images/6033166849a7dbbbe4502ee55454218aadee7370c2d51732a819fa3f4e904768.png" />
 </div>
 </div>
 <ul class="simple">
@@ -1355,10 +1314,10 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x109cd7560&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x112e80530&gt;
 </pre></div>
 </div>
-<img alt="../../_images/cccbb77ef4c3e5d2a801b42af6f8aeba65274940dc43288f56d2a05e716c170c.png" src="../../_images/cccbb77ef4c3e5d2a801b42af6f8aeba65274940dc43288f56d2a05e716c170c.png" />
+<img alt="../../_images/58735ff0a255d03cbb61252e29487bc43303a2bfa5a81c53095dc45d98ca81ef.png" src="../../_images/58735ff0a255d03cbb61252e29487bc43303a2bfa5a81c53095dc45d98ca81ef.png" />
 </div>
 </div>
 <div class="admonition-see-also admonition">
@@ -2115,8 +2074,6 @@ the same time:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-are-numpy-and-numpy-arrays">What are NumPy and NumPy arrays?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-arrays">NumPy arrays</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy-reference-documentation">NumPy Reference documentation</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#on-the-web">On the web</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-help">Interactive help:</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#looking-for-something">Looking for something:</a></li>
 </ul>
 </li>
@@ -2133,7 +2090,6 @@ the same time:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#much-more">Much more:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-visualization">Basic visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Basic visualization</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-prime-number-sieve">Worked example: Prime number sieve</a></li>
 </ul>

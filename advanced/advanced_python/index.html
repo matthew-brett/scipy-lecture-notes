@@ -279,37 +279,6 @@
 
 
 
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="interact/lab/index.html?path=advanced/advanced_python/index.ipynb" target="_blank"
-   class="btn btn-sm dropdown-item"
-   title="Launch via JupyterLite"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  
-    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
-  </span>
-<span class="btn__text-container">JupyterLite</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -533,11 +502,10 @@ that their use is as simple as possible.</p>
 <h3>Iterators<a class="headerlink" href="#iterators" title="Link to this heading">#</a></h3>
 <aside class="sidebar">
 <p class="sidebar-title">Simplicity</p>
-<p>Duplication of effort is wasteful, and replacing the various
-home-grown approaches with a standard feature usually ends up
-making things more readable, and interoperable as well.</p>
 <blockquote>
-<div><p><em>Guido van Rossum</em> — <a class="reference external" href="https://www.artima.com/weblogs/viewpost.jsp?thread=86641">Adding Optional Static Typing to Python</a></p>
+<div><p>This duplication of effort is wasteful, and replacing the various home-grown
+approaches with a standard feature usually ends up making things more readable,
+and interoperable as well. — <em>Guido van Rossum</em> in <a class="reference external" href="https://www.artima.com/weblogs/viewpost.jsp?thread=86641">Adding Optional Static Typing to Python</a></p>
 </div></blockquote>
 </aside>
 <p>An iterator is an object adhering to the <a class="reference external" href="https://docs.python.org/dev/library/stdtypes.html#iterator-types">iterator protocol</a> — basically this
@@ -562,7 +530,7 @@ keystrokes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator at 0x10840fc70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator at 0x10acf3670&gt;
 </pre></div>
 </div>
 </div>
@@ -574,7 +542,7 @@ keystrokes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator at 0x10840dba0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_iterator at 0x10acf0d30&gt;
 </pre></div>
 </div>
 </div>
@@ -586,7 +554,7 @@ keystrokes.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x10840f490&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;list_reverseiterator at 0x10acbfdf0&gt;
 </pre></div>
 </div>
 </div>
@@ -681,7 +649,7 @@ the process is short-circuited and we get a <code class="docutils literal notran
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x108129a80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object &lt;genexpr&gt; at 0x10ad6df00&gt;
 </pre></div>
 </div>
 </div>
@@ -746,10 +714,10 @@ braces. A <code class="docutils literal notranslate"><span class="pre">dict</spa
 <h3>Generators<a class="headerlink" href="#generators" title="Link to this heading">#</a></h3>
 <aside class="sidebar">
 <p class="sidebar-title">Generators</p>
-<p>A generator is a function that produces a
-sequence of results instead of a single value.</p>
 <blockquote>
-<div><p><em>David Beazley</em> — <a class="reference external" href="https://www.dabeaz.com/coroutines/">A Curious Course on Coroutines and Concurrency</a></p>
+<div><p>A generator is a function that produces a sequence of results instead of
+a single value. — <em>David Beazley</em> in the slides for <a class="reference external" href="https://www.dabeaz.com/coroutines">A Curious Course on
+Coroutines and Concurrency</a></p>
 </div></blockquote>
 </aside>
 <p>A third way to create iterator objects is to call a generator function.
@@ -778,7 +746,7 @@ execution of this function is suspended.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object f at 0x108a047d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;generator object f at 0x10ad76ae0&gt;
 </pre></div>
 </div>
 </div>
@@ -1077,10 +1045,9 @@ from <code class="docutils literal notranslate"><span class="pre">some_other_gen
 <h2>Decorators<a class="headerlink" href="#decorators" title="Link to this heading">#</a></h2>
 <aside class="sidebar">
 <p class="sidebar-title">Summary</p>
-<p>This amazing feature appeared in the language almost apologetically
-and with concern that it might not be that useful.</p>
 <blockquote>
-<div><p><em>Bruce Eckel</em> — An Introduction to Python Decorators</p>
+<div><p>This amazing feature appeared in the language almost apologetically and with
+concern that it might not be that useful. — <em>Bruce Eckel</em> in <a class="reference external" href="https://www.artima.com/weblogs/viewpost.jsp?thread=240808">An Introduction to Python Decorators</a></p>
 </div></blockquote>
 </aside>
 <p>Since functions and classes are objects, they can be passed
@@ -1542,7 +1509,7 @@ which is automatically called on attribute access.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;property at 0x108a331f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;property at 0x10b389cb0&gt;
 </pre></div>
 </div>
 </div>
@@ -1620,7 +1587,7 @@ of the property object.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;property at 0x108a74900&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;property at 0x10b38a750&gt;
 </pre></div>
 </div>
 </div>

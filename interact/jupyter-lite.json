@@ -14,11 +14,6 @@
       },
       {
         "extension": "./extension",
-        "load": "static/remoteEntry.7d60fb60e15f0d8ca127.js",
-        "name": "jupyterlab-jupytext"
-      },
-      {
-        "extension": "./extension",
         "load": "static/remoteEntry.5cbb9d2323598fbda535.js",
         "name": "jupyterlab_pygments",
         "style": "./style"
