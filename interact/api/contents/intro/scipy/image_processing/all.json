@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-23T08:41:10.514553Z",
+      "created": "2025-09-23T08:46:39.135536Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-23T08:41:05.913154Z",
+      "last_modified": "2025-09-23T08:46:35.698744Z",
       "mimetype": null,
       "name": "image_processing.ipynb",
       "path": "intro/scipy/image_processing/image_processing.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-23T08:41:10.514316Z",
+  "created": "2025-09-23T08:46:39.135252Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-23T08:41:10.514316Z",
+  "last_modified": "2025-09-23T08:46:39.135252Z",
   "mimetype": null,
   "name": "image_processing",
   "path": "intro/scipy/image_processing",
