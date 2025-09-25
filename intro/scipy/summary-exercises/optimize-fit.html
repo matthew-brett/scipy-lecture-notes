@@ -59,7 +59,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro/scipy/summary-exercises/optimize-fit';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/intro/scipy/summary-exercises/optimize-fit.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/intro/scipy/summary-exercises/optimize-fit.html" />
     <link rel="icon" href="../../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/scipy/summary-exercises/optimize-fit.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/intro/scipy/summary-exercises/optimize-fit.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fintro/scipy/summary-exercises/optimize-fit.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fintro/scipy/summary-exercises/optimize-fit.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -490,7 +490,7 @@ peaks, each one containing information about one target.</p>
 <p>One state of the art method to extract information from these data is to
 decompose them in a sum of Gaussian functions where each function represents
 the contribution of a target hit by the laser beam.</p>
-<p>Therefore, we use the <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code> module to fit a waveform to one or
+<p>Therefore, we use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a> module to fit a waveform to one or
 a sum of Gaussian functions.</p>
 </section>
 <section id="loading-and-visualization">
@@ -601,7 +601,7 @@ difference between the data and the model):</p>
 </div>
 </div>
 </div>
-<p>So let’s get our solution by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code> with the
+<p>So let’s get our solution by calling <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html#scipy.optimize.leastsq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code></a> with the
 following arguments:</p>
 <ul class="simple">
 <li><p>the function to minimize</p></li>
@@ -643,7 +643,7 @@ following arguments:</p>
 <img alt="../../../_images/b64e0c73b1abdd89756e805323aa68686c2abc7f0d869ce4ff18099c7032b44c.png" src="../../../_images/b64e0c73b1abdd89756e805323aa68686c2abc7f0d869ce4ff18099c7032b44c.png" />
 </div>
 </div>
-<p><em>Remark:</em> in fact, you should rather use <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>
+<p><em>Remark:</em> in fact, you should rather use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></a>
 which takes the model and the data as arguments, so you don’t need to define
 the residuals any more.</p>
 </section>
@@ -742,8 +742,8 @@ add is the sign of our variables (which are all positive).</p>
 </div>
 </section>
 </div>
-<p>Further exercise: compare the result of <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code> and
-what you can get with <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code> when adding boundary
+<p>Further exercise: compare the result of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html#scipy.optimize.leastsq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code></a> and
+what you can get with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html#scipy.optimize.fmin_slsqp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code></a> when adding boundary
 constraints.</p>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">

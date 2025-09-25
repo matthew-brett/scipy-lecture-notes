@@ -57,7 +57,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/image_processing/index';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/advanced/image_processing/index.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/advanced/image_processing/index.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/advanced/image_processing/index.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/advanced/image_processing/index.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fadvanced/image_processing/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fadvanced/image_processing/index.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -511,12 +511,12 @@ document.write(`
 core scientific modules NumPy and SciPy. Some of the operations covered
 by this tutorial may be useful for other kinds of multidimensional array
 processing than image processing. In particular, the submodule
-<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code> provides functions operating on n-dimensional NumPy
+<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a> provides functions operating on n-dimensional NumPy
 arrays.</p>
 <div class="admonition-see-also admonition">
 <p class="admonition-title">See also</p>
 <p>For more advanced image processing and image-specific routines, see the
-tutorial <a class="reference internal" href="../../packages/scikit-image/index.html#scikit-image"><span class="std std-ref">scikit-image: image processing</span></a>, dedicated to the <code class="xref py py-mod docutils literal notranslate"><span class="pre">skimage</span></code> module.</p>
+tutorial <a class="reference internal" href="../../packages/scikit-image/index.html#scikit-image"><span class="std std-ref">scikit-image: image processing</span></a>, dedicated to the <a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.html#module-skimage" title="(in skimage v0.25.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skimage</span></code></a> module.</p>
 </div>
 <div class="admonition-image-2-d-numerical-array admonition">
 <p class="admonition-title">Image = 2-D numerical array</p>
@@ -563,7 +563,7 @@ tutorial <a class="reference internal" href="../../packages/scikit-image/index.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10ad7a1e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x108df3470&gt;
 </pre></div>
 </div>
 <img alt="../../_images/a51d6487a3897f09f98f16fe206a0a21fa19973161a5ceb948f229915c71a495.png" src="../../_images/a51d6487a3897f09f98f16fe206a0a21fa19973161a5ceb948f229915c71a495.png" />
@@ -658,7 +658,7 @@ bytes).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10b037ce0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10905ff50&gt;
 </pre></div>
 </div>
 <img alt="../../_images/92dd923c201c78f4214d9908f7405f98cf2800dbb24c035a96cfb31518605e1b.png" src="../../_images/92dd923c201c78f4214d9908f7405f98cf2800dbb24c035a96cfb31518605e1b.png" />
@@ -1028,7 +1028,7 @@ Laplacian:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/b9be739b5c271a3f18d39abb6da251c2db07b98e5dffa27f826fd2f2340fa8a9.png" src="../../_images/b9be739b5c271a3f18d39abb6da251c2db07b98e5dffa27f826fd2f2340fa8a9.png" />
+<img alt="../../_images/a19e44115ba162e140c68d9295e519ad4ca200baa8466edb5ca75174f77830e6.png" src="../../_images/a19e44115ba162e140c68d9295e519ad4ca200baa8466edb5ca75174f77830e6.png" />
 </div>
 </div>
 <p>Median filter: better result for straight boundaries (<strong>low curvature</strong>):</p>
@@ -1069,7 +1069,7 @@ Laplacian:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/b17c9c492a8bbdad127060571875b7f172daef13549a49d56628525ec73d8508.png" src="../../_images/b17c9c492a8bbdad127060571875b7f172daef13549a49d56628525ec73d8508.png" />
+<img alt="../../_images/c6e84b5b48c5265283880173ab40c798ad82d7cf57ca4b4fdc95073990972a18.png" src="../../_images/c6e84b5b48c5265283880173ab40c798ad82d7cf57ca4b4fdc95073990972a18.png" />
 </div>
 </div>
 <p>Other rank filter: <code class="docutils literal notranslate"><span class="pre">scipy.ndimage.maximum_filter</span></code>,
@@ -1978,7 +1978,7 @@ tricks (<a class="reference internal" href="../advanced_numpy/index.html#stride-
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11a67af60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x118b207a0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/42ed94c322e976ad737fd413c3bc7e677e74b942bf0453f485fd0936a39100c9.png" src="../../_images/42ed94c322e976ad737fd413c3bc7e677e74b942bf0453f485fd0936a39100c9.png" />
@@ -2010,7 +2010,7 @@ tricks (<a class="reference internal" href="../advanced_numpy/index.html#stride-
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a56bec0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x118ac95b0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/f8ad81c35e01d5cfccbdeea30582e2e98ef6088b4fae8680e2e79e68748456e3.png" src="../../_images/f8ad81c35e01d5cfccbdeea30582e2e98ef6088b4fae8680e2e79e68748456e3.png" />

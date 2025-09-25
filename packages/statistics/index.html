@@ -59,7 +59,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'packages/statistics/index';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/packages/statistics/index.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/packages/statistics/index.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/packages/statistics/index.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/packages/statistics/index.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fpackages/statistics/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fpackages/statistics/index.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -573,11 +573,11 @@ observations. For instance, the data contained in
 <h3>The pandas data-frame<a class="headerlink" href="#the-pandas-data-frame" title="Link to this heading">#</a></h3>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
-<p>We will store and manipulate this data in a <code class="xref py py-class docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, from
+<p>We will store and manipulate this data in a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.3.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>, from
 the <a class="reference external" href="https://pandas.pydata.org">pandas</a> module. It is the Python equivalent of
 the spreadsheet table. It is different from a 2D <code class="docutils literal notranslate"><span class="pre">numpy</span></code> array as it has named
 columns, can contain a mixture of different data types by column, and has
-elaborate selection and pivotal mechanisms. :::</p>
+elaborate selection and pivotal mechanisms.</p>
 </div>
 <section id="creating-dataframes-reading-data-files-or-converting-arrays">
 <h4>Creating dataframes: reading data files or converting arrays<a class="headerlink" href="#creating-dataframes-reading-data-files-or-converting-arrays" title="Link to this heading">#</a></h4>
@@ -1035,7 +1035,7 @@ data are a mixture of numerical and categorical values:</p>
 don’t specify the missing value (NA = not available) marker, we will
 not be able to do statistical analysis.</p>
 </div>
-<p><strong>Creating from arrays</strong>: A <code class="xref py py-class docutils literal notranslate"><span class="pre">pd.DataFrame</span></code> can also be seen
+<p><strong>Creating from arrays</strong>: A <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.3.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a> can also be seen
 as a dictionary of 1D ‘series’, eg arrays or lists. If we have 3
 <code class="docutils literal notranslate"><span class="pre">numpy</span></code> arrays:</p>
 <div class="cell docutils container">
@@ -1047,7 +1047,7 @@ as a dictionary of 1D ‘series’, eg arrays or lists. If we have 3
 </div>
 </div>
 </div>
-<p>We can expose them as a <code class="xref py py-class docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>:</p>
+<p>We can expose them as a <code class="docutils literal notranslate"><span class="pre">pd.DataFrame</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;t&#39;</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="s1">&#39;sin&#39;</span><span class="p">:</span> <span class="n">sin_t</span><span class="p">,</span> <span class="s1">&#39;cos&#39;</span><span class="p">:</span> <span class="n">cos_t</span><span class="p">})</span>
@@ -1208,7 +1208,7 @@ SQL, excel files, or other formats. See the <a class="reference external" href="
 </section>
 <section id="manipulating-data">
 <h4>Manipulating data<a class="headerlink" href="#manipulating-data" title="Link to this heading">#</a></h4>
-<p><code class="docutils literal notranslate"><span class="pre">data</span></code> is a <code class="xref py py-class docutils literal notranslate"><span class="pre">pd.DataFrame</span></code>, that resembles R’s dataframe:</p>
+<p><code class="docutils literal notranslate"><span class="pre">data</span></code> is a <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html#pandas.DataFrame" title="(in pandas v2.3.2)"><code class="xref py py-class docutils literal notranslate"><span class="pre">pandas.DataFrame</span></code></a>, that resembles R’s dataframe:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">shape</span>    <span class="c1"># 40 rows and 8 columns</span>
@@ -1301,7 +1301,7 @@ Name: Gender, dtype: object
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>For a quick view on a large dataframe, use its <code class="docutils literal notranslate"><span class="pre">describe</span></code>
-method: <code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.describe()</span></code>.</p>
+method: <a class="reference external" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.describe.html#pandas.DataFrame.describe" title="(in pandas v2.3.2)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pandas.DataFrame.describe()</span></code></a>.</p>
 </div>
 <p><strong>groupby</strong>: splitting a dataframe on values of categorical variables:</p>
 <div class="cell docutils container">
@@ -1473,7 +1473,7 @@ think that the 2 sub-populations correspond to gender?</p>
 <section id="hypothesis-testing-comparing-two-groups">
 <h2>Hypothesis testing: comparing two groups<a class="headerlink" href="#hypothesis-testing-comparing-two-groups" title="Link to this heading">#</a></h2>
 <p>For simple <a class="reference external" href="https://en.wikipedia.org/wiki/Statistical_hypothesis_testing">statistical tests</a>, we will
-use the <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code> sub-module of <a class="reference external" href="https://docs.scipy.org/doc/">SciPy</a>:</p>
+use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> sub-module of <a class="reference external" href="https://docs.scipy.org/doc/">SciPy</a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
@@ -1491,7 +1491,7 @@ the <a class="reference internal" href="../../intro/scipy/index.html#scipy"><spa
 <section id="one-sample-tests-testing-the-value-of-a-population-mean">
 <h4>One-sample tests: testing the value of a population mean<a class="headerlink" href="#one-sample-tests-testing-the-value-of-a-population-mean" title="Link to this heading">#</a></h4>
 <p><img alt="" src="../../_images/two_sided.png" /></p>
-<p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_1samp()</span></code> tests the null hypothesis that the mean
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_1samp.html#scipy.stats.ttest_1samp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_1samp()</span></code></a> tests the null hypothesis that the mean
 of the population underlying the data is equal to a given value. It returns
 the <a class="reference external" href="https://en.wikipedia.org/wiki/Student%27s_t-test">T statistic</a>,
 and the <a class="reference external" href="https://en.wikipedia.org/wiki/P-value">p-value</a> (see the
@@ -1539,7 +1539,7 @@ this assumption at the expense of test power:</p>
 <p>We have seen above that the mean VIQ in the male and female samples
 were different. To test whether this difference is significant (and
 suggests that there is a difference in population means), we perform
-a two-sample t-test using <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind()</span></code>:</p>
+a two-sample t-test using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.ttest_ind.html#scipy.stats.ttest_ind" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.ttest_ind()</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">female_viq</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Female&#39;</span><span class="p">][</span><span class="s1">&#39;VIQ&#39;</span><span class="p">]</span>
@@ -1556,7 +1556,7 @@ a two-sample t-test using <code class="xref py py-func docutils literal notransl
 </div>
 <p>The corresponding non-parametric test is the <a class="reference external" href="https://en.wikipedia.org/wiki/Mann%E2%80%93Whitney_U">Mann–Whitney U
 test</a>,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.mannwhitneyu()</span></code>.</p>
+<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mannwhitneyu.html#scipy.stats.mannwhitneyu" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.stats.mannwhitneyu()</span></code></a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">stats</span><span class="o">.</span><span class="n">mannwhitneyu</span><span class="p">(</span><span class="n">female_viq</span><span class="p">,</span> <span class="n">male_viq</span><span class="p">)</span>
@@ -1764,7 +1764,7 @@ squares</a> (OLS).</p></li>
   <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>1.72e-10</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:50:18</td>     <th>  Log-Likelihood:    </th> <td> -51.758</td>
+  <th>Time:</th>                 <td>12:34:10</td>     <th>  Log-Likelihood:    </th> <td> -51.758</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    20</td>      <th>  AIC:               </th> <td>   107.5</td>
@@ -1860,7 +1860,7 @@ model:</p>
   <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.445</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:50:18</td>     <th>  Log-Likelihood:    </th> <td> -182.42</td>
+  <th>Time:</th>                 <td>12:34:10</td>     <th>  Log-Likelihood:    </th> <td> -182.42</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    40</td>      <th>  AIC:               </th> <td>   368.8</td>
@@ -2044,7 +2044,7 @@ categorical variable:</p>
   <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.643</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:50:18</td>     <th>  Log-Likelihood:    </th> <td> -364.35</td>
+  <th>Time:</th>                 <td>12:34:10</td>     <th>  Log-Likelihood:    </th> <td> -364.35</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    80</td>      <th>  AIC:               </th> <td>   732.7</td>
@@ -2190,7 +2190,7 @@ width and the category of iris</p>
   <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>1.58e-20</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:50:19</td>     <th>  Log-Likelihood:    </th> <td> -38.185</td>
+  <th>Time:</th>                 <td>12:34:11</td>     <th>  Log-Likelihood:    </th> <td> -38.185</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   150</td>      <th>  AIC:               </th> <td>   84.37</td>
@@ -2529,7 +2529,7 @@ Addison-Wesley</a>).</p>
 <section id="pairplot-scatter-matrices">
 <h3>Pairplot: scatter matrices<a class="headerlink" href="#pairplot-scatter-matrices" title="Link to this heading">#</a></h3>
 <p>We can easily have an intuition on the interactions between continuous
-variables using <code class="xref py py-func docutils literal notranslate"><span class="pre">seaborn.pairplot()</span></code> to display a scatter matrix:</p>
+variables using <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.pairplot.html#seaborn.pairplot" title="(in seaborn v0.13.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">seaborn.pairplot()</span></code></a> to display a scatter matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seaborn</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="nb">vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;wage&#39;</span><span class="p">,</span> <span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="s1">&#39;education&#39;</span><span class="p">],</span> <span class="n">kind</span><span class="o">=</span><span class="s1">&#39;reg&#39;</span><span class="p">);</span>
@@ -2537,7 +2537,7 @@ variables using <code class="xref py py-func docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1e2e98524daf3517c9bbb376fa81789add6ec10787604161151cb9654bfbd460.png" src="../../_images/1e2e98524daf3517c9bbb376fa81789add6ec10787604161151cb9654bfbd460.png" />
+<img alt="../../_images/ccf8efa4e9f9b27a2ae16d3caf3f257f197c15314c7d20ae1b5bafadc90d7f8c.png" src="../../_images/ccf8efa4e9f9b27a2ae16d3caf3f257f197c15314c7d20ae1b5bafadc90d7f8c.png" />
 </div>
 </div>
 <p>Categorical variables can be plotted as the hue:</p>
@@ -2549,7 +2549,7 @@ variables using <code class="xref py py-func docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3197859c7210b4a864ebf7c533da53e933ec0b006634158bbb5a8cf2d8590197.png" src="../../_images/3197859c7210b4a864ebf7c533da53e933ec0b006634158bbb5a8cf2d8590197.png" />
+<img alt="../../_images/084f535d406fceb81fa76c7ad7c571380cd91180ca22193ba4976a781cc6298b.png" src="../../_images/084f535d406fceb81fa76c7ad7c571380cd91180ca22193ba4976a781cc6298b.png" />
 </div>
 </div>
 <aside class="topic">
@@ -2570,7 +2570,7 @@ seaborn, see the <a class="reference external" href="https://seaborn.pydata.org/
 <section id="lmplot-plotting-a-univariate-regression">
 <h3>lmplot: plotting a univariate regression<a class="headerlink" href="#lmplot-plotting-a-univariate-regression" title="Link to this heading">#</a></h3>
 <p>A regression capturing the relation between one variable and another, eg
-wage, and education, can be plotted using <code class="xref py py-func docutils literal notranslate"><span class="pre">seaborn.lmplot()</span></code>:</p>
+wage, and education, can be plotted using <a class="reference external" href="https://seaborn.pydata.org/generated/seaborn.lmplot.html#seaborn.lmplot" title="(in seaborn v0.13.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">seaborn.lmplot()</span></code></a>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">seaborn</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="s1">&#39;wage&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;education&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">);</span>
@@ -2578,7 +2578,7 @@ wage, and education, can be plotted using <code class="xref py py-func docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/349a2d42ead51ceb9559543a7d93c9841b97aafb70ec83d8560fbdd141867c27.png" src="../../_images/349a2d42ead51ceb9559543a7d93c9841b97aafb70ec83d8560fbdd141867c27.png" />
+<img alt="../../_images/0b3e49f5a61fbed75a9d98f3ba6867bbd0a632f5067191aead2664cecf4755de.png" src="../../_images/0b3e49f5a61fbed75a9d98f3ba6867bbd0a632f5067191aead2664cecf4755de.png" />
 </div>
 </div>
 <aside class="topic">
@@ -2594,7 +2594,7 @@ regression.</p>
 a <a class="reference external" href="https://en.wikipedia.org/wiki/Robust_statistics">robust model</a>. This is
 done in seaborn using <code class="docutils literal notranslate"><span class="pre">robust=True</span></code> in the plotting functions, or in
 statsmodels by replacing the use of the OLS by a “Robust Linear Model”,
-<code class="xref py py-func docutils literal notranslate"><span class="pre">statsmodels.formula.api.rlm()</span></code>. ::::</p>
+<a class="reference external" href="https://www.statsmodels.org/stable/generated/statsmodels.formula.api.rlm.html#statsmodels.formula.api.rlm" title="(in statsmodels 0.14.4 v0.14.4)"><code class="xref py py-func docutils literal notranslate"><span class="pre">statsmodels.formula.api.rlm()</span></code></a>. ::::</p>
 </aside>
 </section>
 </section>
@@ -2607,7 +2607,7 @@ statsmodels by replacing the use of the OLS by a “Robust Linear Model”,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/39c124304b6c7b8af262b13993f70e814b0ec75766971a27ea51e28f4c422447.png" src="../../_images/39c124304b6c7b8af262b13993f70e814b0ec75766971a27ea51e28f4c422447.png" />
+<img alt="../../_images/0c20037ca1b582f1d44423f62f61602addf945508e6ddea5329a835452feec17.png" src="../../_images/0c20037ca1b582f1d44423f62f61602addf945508e6ddea5329a835452feec17.png" />
 </div>
 </div>
 <p>We can first ask do <code class="docutils literal notranslate"><span class="pre">education</span></code> and <code class="docutils literal notranslate"><span class="pre">sex</span></code> separately contribute to <code class="docutils literal notranslate"><span class="pre">wage</span></code>:</p>
@@ -2634,7 +2634,7 @@ statsmodels by replacing the use of the OLS by a “Robust Linear Model”,
   <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>2.01e-25</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:50:25</td>     <th>  Log-Likelihood:    </th> <td>  86.654</td>
+  <th>Time:</th>                 <td>12:34:17</td>     <th>  Log-Likelihood:    </th> <td>  86.654</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   534</td>      <th>  AIC:               </th> <td>  -167.3</td>
@@ -2710,7 +2710,7 @@ populations. This is done via an <a class="reference external" href="https://www
   <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>2.94e-25</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>09:50:25</td>     <th>  Log-Likelihood:    </th> <td>  88.503</td>
+  <th>Time:</th>                 <td>12:34:17</td>     <th>  Log-Likelihood:    </th> <td>  88.503</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   534</td>      <th>  AIC:               </th> <td>  -169.0</td>

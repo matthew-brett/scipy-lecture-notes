@@ -57,7 +57,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro/scipy/scipy_examples';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/intro/scipy/scipy_examples.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/intro/scipy/scipy_examples.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/scipy/scipy_examples.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/intro/scipy/scipy_examples.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fintro/scipy/scipy_examples.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fintro/scipy/scipy_examples.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -676,7 +676,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3c037d4103a488004a5f03152470c1b72e8332b7b47cfea6612389441860999b.png" src="../../_images/3c037d4103a488004a5f03152470c1b72e8332b7b47cfea6612389441860999b.png" />
+<img alt="../../_images/6281b63e0d2174ad62be4d2dc4d0b1c755a1269032a5c6157e950f3393747984.png" src="../../_images/6281b63e0d2174ad62be4d2dc4d0b1c755a1269032a5c6157e950f3393747984.png" />
 </div>
 </div>
 </section>
@@ -881,8 +881,8 @@ Second root found [-2.47948183]
 <span id="scipy-fft-example"></span><h3>Plotting and manipulating FFTs for filtering<a class="headerlink" href="#plotting-and-manipulating-ffts-for-filtering" title="Link to this heading">#</a></h3>
 <p>Plot the power of the FFT of a signal and inverse FFT back to reconstruct
 a signal.</p>
-<p>This example demonstrates <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fft()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftfreq()</span></code> and
-<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.ifft()</span></code>. It implements a basic filter that is very suboptimal,
+<p>This example demonstrates <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fft.html#scipy.fft.fft" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fft()</span></code></a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftfreq.html#scipy.fft.fftfreq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftfreq()</span></code></a> and
+<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.ifft.html#scipy.fft.ifft" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.ifft()</span></code></a>. It implements a basic filter that is very suboptimal,
 and should not be used.</p>
 <section id="generate-the-signal">
 <h4>Generate the signal<a class="headerlink" href="#generate-the-signal" title="Link to this heading">#</a></h4>
@@ -1163,7 +1163,7 @@ cut-off in frequency space does not control distortion on the signal.</p>
 </section>
 <section id="simple-image-blur-by-convolution-with-a-gaussian-kernel">
 <span id="eg-image-blur"></span><h3>Simple image blur by convolution with a Gaussian kernel<a class="headerlink" href="#simple-image-blur-by-convolution-with-a-gaussian-kernel" title="Link to this heading">#</a></h3>
-<!--- plot_image_blur --><p>Blur an image (:download:<code class="docutils literal notranslate"><span class="pre">data/elephant.png</span></code>) using a
+<!--- plot_image_blur --><p>Blur an image (<a class="reference download internal" download="" href="../../_downloads/5e5f820328df6aafbaf0c667db5d3af0/elephant.png"><code class="xref download docutils literal notranslate"><span class="pre">data/elephant.png</span></code></a>) using a
 Gaussian kernel.</p>
 <p>Convolution is easy to perform with FFT: convolving two signals boils
 down to multiplying their FFTs (and performing an inverse FFT).</p>
@@ -1235,10 +1235,10 @@ down to multiplying their FFTs (and performing an inverse FFT).</p>
 image. This is because the padding is not done correctly, and does
 not take the kernel size into account (so the convolution “flows out
 of bounds of the image”).  Try to remove this artifact.</p>
-<p>A function to do it: <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve()</span></code></p>
+<p>A function to do it: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve()</span></code></a></p>
 <p>The above exercise was only for didactic reasons: there exists a
 function in Scipy that will do this for us, and probably do a better
-job: <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve()</span></code></p>
+job: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve()</span></code></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mode=&#39;same&#39; is there to enforce the same output shape as input arrays</span>
@@ -1254,14 +1254,14 @@ job: <code class="xref py py-func docutils literal notranslate"><span class="pre
 </div>
 </div>
 <p>Note that we still have a decay to zero at the border of the image.
-Using <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter()</span></code> would get rid of this
+Using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter()</span></code></a> would get rid of this
 artifact.</p>
 </section>
 <section id="crude-periodicity-finding">
 <span id="eg-periodicity-finder"></span><h3>Crude periodicity finding<a class="headerlink" href="#crude-periodicity-finding" title="Link to this heading">#</a></h3>
 <!--- plot_periodicity_finder -->
 <p>Discover the periods in evolution of animal populations
-(:download:<code class="docutils literal notranslate"><span class="pre">data/populations.txt</span></code>)</p>
+(<a class="reference download internal" download="" href="../../_downloads/087d8fe936fcb7a4762b9850b932cf9e/populations.txt"><code class="xref download docutils literal notranslate"><span class="pre">data/populations.txt</span></code></a>)</p>
 <p>Load the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1300,7 +1300,7 @@ artifact.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_11163/2995045604.py:4: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_44162/2995045604.py:4: RuntimeWarning: divide by zero encountered in divide
   periods = 1 / frequencies
 </pre></div>
 </div>

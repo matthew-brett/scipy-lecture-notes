@@ -57,7 +57,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro/scipy/image_processing/image_processing';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/intro/scipy/image_processing/image_processing.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/intro/scipy/image_processing/image_processing.html" />
     <link rel="icon" href="../../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../../about.html" />
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/intro/scipy/image_processing/image_processing.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/intro/scipy/image_processing/image_processing.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fintro/scipy/image_processing/image_processing.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fintro/scipy/image_processing/image_processing.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -462,7 +462,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="geometrical-transformations-on-images">
 <span id="scipy-image-processing"></span><h1>Geometrical transformations on images<a class="headerlink" href="#geometrical-transformations-on-images" title="Link to this heading">#</a></h1>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code> provides manipulation of n-dimensional arrays as
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a> provides manipulation of n-dimensional arrays as
 images.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -587,10 +587,10 @@ images.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 1200x350 with 0 Axes&gt;
 </pre></div>
 </div>
-<img alt="../../../_images/2137ca41780b46feb3ceb40772e1f1676543b83dc485799a8681042c6ac515ed.png" src="../../../_images/2137ca41780b46feb3ceb40772e1f1676543b83dc485799a8681042c6ac515ed.png" />
+<img alt="../../../_images/36a1aa79f5a47e985aa1961bf9f6d202e50c1331dc2662d10f19888e8410f8a1.png" src="../../../_images/36a1aa79f5a47e985aa1961bf9f6d202e50c1331dc2662d10f19888e8410f8a1.png" />
 </div>
 </div>
-<p>Other filters in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage.filters</span></code> and <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code>
+<p>Other filters in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage.filters</span></code> and <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></a>
 can be applied to images.</p>
 <div class="exercise dropdown admonition" id="compare-histograms">
 
@@ -645,7 +645,7 @@ in order to modify geometrical structures.</p>
 </div>
 </div>
 <ul class="simple">
-<li><p><strong>Erosion</strong> <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_erosion()</span></code></p></li>
+<li><p><strong>Erosion</strong> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.binary_erosion.html#scipy.ndimage.binary_erosion" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_erosion()</span></code></a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -705,7 +705,7 @@ in order to modify geometrical structures.</p>
 </div>
 </div>
 <ul class="simple">
-<li><p><strong>Dilation</strong> <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_dilation()</span></code></p></li>
+<li><p><strong>Dilation</strong> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.binary_dilation.html#scipy.ndimage.binary_dilation" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_dilation()</span></code></a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -742,7 +742,7 @@ in order to modify geometrical structures.</p>
 </div>
 </div>
 <ul class="simple">
-<li><p><strong>Opening</strong> <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_opening()</span></code></p></li>
+<li><p><strong>Opening</strong> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.binary_opening.html#scipy.ndimage.binary_opening" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_opening()</span></code></a></p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -798,7 +798,7 @@ in order to modify geometrical structures.</p>
 </div>
 </div>
 <ul class="simple">
-<li><p><strong>Closing:</strong> <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_closing()</span></code></p></li>
+<li><p><strong>Closing:</strong> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.binary_closing.html#scipy.ndimage.binary_closing" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.binary_closing()</span></code></a></p></li>
 </ul>
 <div class="exercise dropdown admonition" id="closing-exercise">
 
@@ -941,7 +941,7 @@ structuring element centered on the pixel of interest.</p>
 <img alt="../../../_images/2e23707c7d9f2c7161726e65618c8dd9f1d157e07d45476d6acf656f54f78b84.png" src="../../../_images/2e23707c7d9f2c7161726e65618c8dd9f1d157e07d45476d6acf656f54f78b84.png" />
 </div>
 </div>
-<p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.label()</span></code> assigns a different label to each connected
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.label.html#scipy.ndimage.label" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.label()</span></code></a> assigns a different label to each connected
 component:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">

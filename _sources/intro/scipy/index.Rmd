@@ -1133,7 +1133,7 @@ The code of this example and the figures above can be found in the [Scipy FFT
 example](scipy-fft-example).
 
 Setting the Fourier component above this frequency to zero and inverting the
-FFT with :func:`scipy.fft.ifft`, gives a filtered signal (see the
+FFT with {func}`scipy.fft.ifft`, gives a filtered signal (see the
 [example](scipy-fft-example) for detail).
 
 ::: {glue} fft_filter_fig
@@ -1191,7 +1191,7 @@ one should be preferred, as it uses more efficient underlying implementations.
 
 Implementing image denoising with FFT.
 
-Denoise an image (:download:`data/moonlanding.png`) by implementing a blur
+Denoise an image ({download}`data/moonlanding.png`) by implementing a blur
 with an FFT.
 
 Implements, via FFT, the following convolution:
@@ -1271,10 +1271,10 @@ plt.imshow(im_new, "gray")
 plt.title("Reconstructed Image");
 ```
 
-Easier and better: :func:`scipy.ndimage.gaussian_filter`
+Easier and better: {func}`scipy.ndimage.gaussian_filter`
 
 Implementing filtering directly with FFTs is tricky and time consuming.
-We can use the Gaussian filter from :mod:`scipy.ndimage`
+We can use the Gaussian filter from {mod}`scipy.ndimage`
 
 ```{python}
 im_blur = sp.ndimage.gaussian_filter(im, 4)

@@ -57,7 +57,7 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/interfacing_with_c/interfacing_with_c';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/advanced/interfacing_with_c/interfacing_with_c.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/advanced/interfacing_with_c/interfacing_with_c.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +304,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/advanced/interfacing_with_c/interfacing_with_c.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/advanced/interfacing_with_c/interfacing_with_c.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -321,7 +321,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fadvanced/interfacing_with_c/interfacing_with_c.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fadvanced/interfacing_with_c/interfacing_with_c.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -914,7 +914,7 @@ returns a resulting new array.</p>
 </pre></div>
 </div>
 <p>To compile this we can use <code class="docutils literal notranslate"><span class="pre">setuptools</span></code> again. However we need to be sure to
-include the NumPy headers by using <code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.get_include()</span></code>.</p>
+include the NumPy headers by using <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.get_include.html#numpy.get_include" title="(in NumPy v2.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.get_include()</span></code></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">setuptools</span><span class="w"> </span><span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">Extension</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span>
 
@@ -1089,7 +1089,7 @@ message is not quite as helpful, since it does not tell us what the type should 
 support for exporting certain attributes of a NumPy array as ctypes data-types
 and there are functions to convert from C arrays to NumPy arrays and back.</p>
 <!---
-XXX Should use :mod: and :class:
+XXX Should use {mod} and {class}
 -->
 <p>For more information, consult the corresponding section in the <a class="reference external" href="https://www.scipy.org/Cookbook/Ctypes">NumPy Cookbook</a> and the API documentation for
 <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.ctypes.html">numpy.ndarray.ctypes</a>
@@ -1170,7 +1170,7 @@ must use a combination of <code class="docutils literal notranslate"><span class
 <li><p>Note the inherent limitation of contiguous single dimensional NumPy arrays,
 since the C functions requires this kind of buffer.</p></li>
 <li><p>Also note that the output array must be preallocated, for example with
-<code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.zeros()</span></code> and the function will write into it’s buffer.</p></li>
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.zeros.html#numpy.zeros" title="(in NumPy v2.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.zeros()</span></code></a> and the function will write into it’s buffer.</p></li>
 <li><p>Although the original signature of the <code class="docutils literal notranslate"><span class="pre">cos_doubles</span></code> function is <code class="docutils literal notranslate"><span class="pre">ARRAY,</span> <span class="pre">ARRAY,</span> <span class="pre">int</span></code> the final <code class="docutils literal notranslate"><span class="pre">cos_doubles_func</span></code> takes only two NumPy arrays as
 arguments.</p></li>
 </ul>

@@ -59,7 +59,7 @@
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'advanced/advanced_numpy/index';</script>
-    <link rel="canonical" href="https://lectures.scientific-python.org/advanced/advanced_numpy/index.html" />
+    <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/advanced/advanced_numpy/index.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
     <link rel="author" title="About these documents" href="../../about.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes" target="_blank"
    class="btn btn-sm btn-source-repository-button dropdown-item"
    title="Source repository"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +306,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/edit/main/advanced/advanced_numpy/index.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/advanced/advanced_numpy/index.Rmd" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -323,7 +323,7 @@
       
       
       
-      <li><a href="https://github.com/scipy-lectures/scientific-python-lectures/issues/new?title=Issue%20on%20page%20%2Fadvanced/advanced_numpy/index.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/issues/new?title=Issue%20on%20page%20%2Fadvanced/advanced_numpy/index.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -494,9 +494,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-interface-protocol">Array interface protocol</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-siblings-chararray-maskedarray">Array siblings: <code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">maskedarray</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-siblings-chararray-maskedarray">Array siblings: <code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MaskedArray</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chararray-vectorized-string-operations"><code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>: vectorized string operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-array-missing-data"><code class="xref py py-class docutils literal notranslate"><span class="pre">masked_array</span></code> missing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maskedarray-missing-data"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaskedArray</span></code> missing data</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mask">The mask</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-aware-functions">Domain-aware functions</a></li>
 </ul>
@@ -614,7 +614,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1079dd3c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1109a93c0&gt;
 </pre></div>
 </div>
 </div>
@@ -639,7 +639,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553133308352
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553128327296
 </pre></div>
 </div>
 </div>
@@ -652,7 +652,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553133308352, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553128327296, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i4&#39;)],
  &#39;typestr&#39;: &#39;&lt;i4&#39;,
@@ -696,7 +696,7 @@ array of ints:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1079dd600&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1109a9600&gt;
 </pre></div>
 </div>
 </div>
@@ -1534,9 +1534,9 @@ shape of the resulting array?</p>
 <h5>C and Fortran order<a class="headerlink" href="#c-and-fortran-order" title="Link to this heading">#</a></h5>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Python built-in <code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code> returns bytes in C-order by default
+<p>The Python built-in <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> returns bytes in C-order by default
 which can cause confusion when trying to inspect memory layout. We use
-<code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.ndarray.tobytes()</span></code> with <code class="docutils literal notranslate"><span class="pre">order=A</span></code> instead, which preserves
+<a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tobytes.html#numpy.ndarray.tobytes" title="(in NumPy v2.3)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.ndarray.tobytes()</span></code></a> with <code class="docutils literal notranslate"><span class="pre">order=A</span></code> instead, which preserves
 the C or F ordering of the bytes in memory.</p>
 </div>
 <div class="cell docutils container">
@@ -2282,7 +2282,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>89.4 μs ± 9.78 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.6 μs ± 438 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2294,7 +2294,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181 μs ± 24.7 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>133 μs ± 7.05 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2901,7 +2901,7 @@ the buffer interface:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553135406176, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553126361824, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i8&#39;)],
  &#39;typestr&#39;: &#39;&lt;i8&#39;,
@@ -2966,9 +2966,9 @@ the buffer interface:</p>
 </section>
 </section>
 <section id="array-siblings-chararray-maskedarray">
-<span id="array-siblings"></span><h2>Array siblings: <code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">maskedarray</span></code><a class="headerlink" href="#array-siblings-chararray-maskedarray" title="Link to this heading">#</a></h2>
+<span id="array-siblings"></span><h2>Array siblings: <code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MaskedArray</span></code><a class="headerlink" href="#array-siblings-chararray-maskedarray" title="Link to this heading">#</a></h2>
 <section id="chararray-vectorized-string-operations">
-<h3><code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>: vectorized string operations<a class="headerlink" href="#chararray-vectorized-string-operations" title="Link to this heading">#</a></h3>
+<h3><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.char.chararray.html#numpy.char.chararray" title="(in NumPy v2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code></a>: vectorized string operations<a class="headerlink" href="#chararray-vectorized-string-operations" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">char</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;  bbb&#39;</span><span class="p">,</span> <span class="s1">&#39;  ccc&#39;</span><span class="p">])</span>
@@ -2995,8 +2995,8 @@ the buffer interface:</p>
 </div>
 </div>
 </section>
-<section id="masked-array-missing-data">
-<h3><code class="xref py py-class docutils literal notranslate"><span class="pre">masked_array</span></code> missing data<a class="headerlink" href="#masked-array-missing-data" title="Link to this heading">#</a></h3>
+<section id="maskedarray-missing-data">
+<h3><a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.baseclass.html#numpy.ma.MaskedArray" title="(in NumPy v2.3)"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaskedArray</span></code></a> missing data<a class="headerlink" href="#maskedarray-missing-data" title="Link to this heading">#</a></h3>
 <p>Masked arrays are arrays that may have missing or invalid entries.</p>
 <p>For example, suppose we have an array where the fourth entry is invalid:</p>
 <div class="cell docutils container">
@@ -3009,7 +3009,7 @@ the buffer interface:</p>
 <p>One way to describe this is to create a masked array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
 <span class="n">mx</span>
 </pre></div>
 </div>
@@ -3052,7 +3052,7 @@ the buffer interface:</p>
 <p>Not all NumPy functions respect masks, for instance
 <code class="docutils literal notranslate"><span class="pre">np.dot</span></code>, so check the return types.</p>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">masked_array</span></code> returns a <strong>view</strong> to the original array:</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">MaskedArray</span></code> returns a <strong>view</strong> to the original array:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
@@ -3176,7 +3176,7 @@ time, ignoring the invalid numbers.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;data/populations.txt&#39;</span><span class="p">)</span>
-<span class="n">populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:])</span>
+<span class="n">populations</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">MaskedArray</span><span class="p">(</span><span class="n">data</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:])</span>
 <span class="n">year</span> <span class="o">=</span> <span class="n">data</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -3230,9 +3230,9 @@ time, ignoring the invalid numbers.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x107c379e0&gt;,
- &lt;matplotlib.lines.Line2D at 0x105da4b90&gt;,
- &lt;matplotlib.lines.Line2D at 0x107c37b90&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x110c0f350&gt;,
+ &lt;matplotlib.lines.Line2D at 0x1107c5100&gt;,
+ &lt;matplotlib.lines.Line2D at 0x110c0f470&gt;]
 </pre></div>
 </div>
 </div>
@@ -3570,9 +3570,9 @@ N. N.
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-interface-protocol">Array interface protocol</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-siblings-chararray-maskedarray">Array siblings: <code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">maskedarray</span></code></a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-siblings-chararray-maskedarray">Array siblings: <code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">MaskedArray</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#chararray-vectorized-string-operations"><code class="xref py py-class docutils literal notranslate"><span class="pre">chararray</span></code>: vectorized string operations</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-array-missing-data"><code class="xref py py-class docutils literal notranslate"><span class="pre">masked_array</span></code> missing data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#maskedarray-missing-data"><code class="xref py py-class docutils literal notranslate"><span class="pre">MaskedArray</span></code> missing data</a><ul class="nav section-nav flex-column">
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-mask">The mask</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#domain-aware-functions">Domain-aware functions</a></li>
 </ul>
