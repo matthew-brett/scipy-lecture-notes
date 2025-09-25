@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-25T13:59:39.109590Z",
+      "created": "2025-09-25T17:54:31.820193Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-25T13:59:34.104220Z",
+      "last_modified": "2025-09-25T17:54:25.471146Z",
       "mimetype": null,
       "name": "index_examples.ipynb",
       "path": "packages/scikit-learn/index_examples.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2025-09-25T13:59:39.107121Z",
+      "created": "2025-09-25T17:54:31.819250Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-25T13:59:33.877761Z",
+      "last_modified": "2025-09-25T17:54:25.212670Z",
       "mimetype": null,
       "name": "index.ipynb",
       "path": "packages/scikit-learn/index.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-25T13:59:39.108375Z",
+  "created": "2025-09-25T17:54:31.819856Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-25T13:59:39.108375Z",
+  "last_modified": "2025-09-25T17:54:31.819856Z",
   "mimetype": null,
   "name": "scikit-learn",
   "path": "packages/scikit-learn",
