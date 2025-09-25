@@ -279,6 +279,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="interact/lab/index.html?path=intro/intro.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch via JupyterLite"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterLite logo" src="../_static/images/logo_jupyterlite.svg">
+  </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -448,14 +479,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scientist-s-needs">The scientist’s needs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-strengths">Python’s strengths</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-python-compare-to-other-solutions">How does Python compare to other solutions?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compiled-languages-c-c-fortran">Compiled languages: C, C++, Fortran…</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-scripting-language">Matlab scripting language</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#julia">Julia</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-scripting-languages-scilab-octave-r-idl-etc">Other scripting languages: Scilab, Octave, R, IDL, etc.</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-python-compare-to-other-solutions">How does Python compare to other solutions?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scientific-python-ecosystem">The scientific Python ecosystem</a></li>
 </ul>
 </li>
@@ -520,101 +544,115 @@ Learning Python avoids learning a new software for each new problem.</p></li>
 </section>
 <section id="how-does-python-compare-to-other-solutions">
 <h3>How does Python compare to other solutions?<a class="headerlink" href="#how-does-python-compare-to-other-solutions" title="Link to this heading">#</a></h3>
-<section id="compiled-languages-c-c-fortran">
-<h4>Compiled languages: C, C++, Fortran…<a class="headerlink" href="#compiled-languages-c-c-fortran" title="Link to this heading">#</a></h4>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Compiled languages (C, C++, Fortran …)</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Pros</p></td>
-<td class="text-left"><p>• Very fast. For heavy computations, it’s difficult to outperform these languages</p></td>
+<tr class="row-odd"><td><p>Pros</p></td>
+<td><p>Very fast. For heavy computations, it’s difficult to outperform these
+languages.</p></td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Cons</p></td>
-<td class="text-left"><p>• Painful usage: no interactivity during development, mandatory compilation steps, verbose syntax, manual memory management. These are <strong>difficult languages</strong> for non programmers.</p></td>
+<tr class="row-even"><td><p>Cons</p></td>
+<td><p>Painful usage: no interactivity during development, mandatory compilation
+steps, verbose syntax, manual memory management. These are <strong>difficult
+languages</strong> for non programmers.</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="matlab-scripting-language">
-<h4>Matlab scripting language<a class="headerlink" href="#matlab-scripting-language" title="Link to this heading">#</a></h4>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
+<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">Matlab scripting language</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Pros</p></td>
-<td class="text-left"><p>• Very rich collection of libraries with numerous algorithms, for many different domains. Fast execution because these libraries are often written in a compiled language.<br> • Pleasant development environment: comprehensive and help, integrated editor, etc.<br> • Commercial support is available.</p></td>
+<tr class="row-odd"><td><p>Pros</p></td>
+<td><ul class="simple">
+<li><p>Very rich collection of libraries with numerous algorithms, for many
+different domains. Fast execution because these libraries are often
+written in a compiled language.</p></li>
+<li><p>Pleasant development environment: comprehensive and help, integrated
+editor, etc.</p></li>
+<li><p>Commercial support is available.</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Cons</p></td>
-<td class="text-left"><p>• Base language is quite poor and can become restrictive for advanced users.<br> • Not free and not everything is open sourced.</p></td>
+<tr class="row-even"><td><p>Cons</p></td>
+<td><ul class="simple">
+<li><p>Base language is quite poor and can become restrictive for advanced
+users.</p></li>
+<li><p>Not free and not everything is open sourced.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="julia">
-<h4>Julia<a class="headerlink" href="#julia" title="Link to this heading">#</a></h4>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
+<div class="pst-scrollable-table-container"><table class="table" id="id4">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Julia</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Pros</p></td>
-<td class="text-left"><p>• Fast code, yet interactive and simple.<br> • Easily connects to Python or C.</p></td>
+<tr class="row-odd"><td><p>Pros</p></td>
+<td><ul class="simple">
+<li><p>Fast code, yet interactive and simple to read and write.</p></li>
+<li><p>Easily connects to Python or C.</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Cons</p></td>
-<td class="text-left"><p>• Ecosystem limited to numerical computing.<br> • Still young.</p></td>
+<tr class="row-even"><td><p>Cons</p></td>
+<td><ul class="simple">
+<li><p>Ecosystem limited to numerical computing.</p></li>
+<li><p>Still young.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="other-scripting-languages-scilab-octave-r-idl-etc">
-<h4>Other scripting languages: Scilab, Octave, R, IDL, etc.<a class="headerlink" href="#other-scripting-languages-scilab-octave-r-idl-etc" title="Link to this heading">#</a></h4>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
+<div class="pst-scrollable-table-container"><table class="table" id="id5">
+<caption><span class="caption-number">Table 4 </span><span class="caption-text">Other scripting languages: Scilab, Octave, R, IDL, etc.</span><a class="headerlink" href="#id5" title="Link to this table">#</a></caption>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Pros</p></td>
-<td class="text-left"><p>• Open-source, free, or at least cheaper than Matlab.<br> • Some features can be very advanced (statistics in R, etc.)</p></td>
+<tr class="row-odd"><td><p>Pros</p></td>
+<td><ul class="simple">
+<li><p>Open-source, free, or at least cheaper than Matlab.</p></li>
+<li><p>Some features can be very advanced (statistics in R, etc.)</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Cons</p></td>
-<td class="text-left"><p>• Fewer available algorithms than in Matlab, and the language is not more advanced.<br> • Some software are dedicated to one domain. Ex: Gnuplot to draw curves. These programs are very powerful, but they are restricted to a single type of usage, such as plotting.</p></td>
+<tr class="row-even"><td><p>Cons</p></td>
+<td><ul class="simple">
+<li><p>Fewer available algorithms than in Matlab, and the language is not more
+advanced.</p></li>
+<li><p>Some software are dedicated to one domain. Ex: Gnuplot to draw curves.
+These programs are very powerful, but they are restricted to a single
+type of usage, such as plotting.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
-<section id="python">
-<h4>Python<a class="headerlink" href="#python" title="Link to this heading">#</a></h4>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
+<div class="pst-scrollable-table-container"><table class="table" id="id6">
+<caption><span class="caption-number">Table 5 </span><span class="caption-text">Python</span><a class="headerlink" href="#id6" title="Link to this table">#</a></caption>
 <tbody>
-<tr class="row-even"><td class="text-left"><p>Pros</p></td>
-<td class="text-left"><p>• Very rich scientific computing libraries<br> • Well thought out language, allowing to write very readable and well structured code: we “code what we think”.<br> • Many libraries beyond scientific computing (web server, serial port access, etc.)<br> • Free and open-source software, widely spread, with a vibrant community.<br> • A variety of powerful environments to work in, such as IPython, Spyder, Jupyter notebooks, Pycharm, Visual Studio Code</p></td>
+<tr class="row-odd"><td><p>Pros</p></td>
+<td><ul class="simple">
+<li><p>Very rich scientific computing libraries</p></li>
+<li><p>Well thought out language, allowing to write very readable and well
+structured code: we “code what we think”.</p></li>
+<li><p>Many libraries beyond scientific computing (web server, serial port
+access, etc.)</p></li>
+<li><p>Free and open-source software, widely spread, with a vibrant community.</p></li>
+<li><p>A variety of powerful environments to work in, such as IPython, Spyder,
+Jupyter notebooks, Pycharm, Visual Studio Code |</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p>Cons</p></td>
-<td class="text-left"><p>• Not all the algorithms that can be found in more specialized software or toolboxes.</p></td>
+<tr class="row-even"><td><p>Cons</p></td>
+<td><ul class="simple">
+<li><p>Not all the algorithms that can be found in more specialized software or
+toolboxes.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
 </div>
-</section>
 </section>
 <section id="the-scientific-python-ecosystem">
 <h3>The scientific Python ecosystem<a class="headerlink" href="#the-scientific-python-ecosystem" title="Link to this heading">#</a></h3>
@@ -1012,14 +1050,7 @@ function.</p></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-python">Why Python?</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scientist-s-needs">The scientist’s needs</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#python-s-strengths">Python’s strengths</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-python-compare-to-other-solutions">How does Python compare to other solutions?</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#compiled-languages-c-c-fortran">Compiled languages: C, C++, Fortran…</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab-scripting-language">Matlab scripting language</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#julia">Julia</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#other-scripting-languages-scilab-octave-r-idl-etc">Other scripting languages: Scilab, Octave, R, IDL, etc.</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python">Python</a></li>
-</ul>
-</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-does-python-compare-to-other-solutions">How does Python compare to other solutions?</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-scientific-python-ecosystem">The scientific Python ecosystem</a></li>
 </ul>
 </li>

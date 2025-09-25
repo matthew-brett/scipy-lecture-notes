@@ -281,6 +281,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="interact/lab/index.html?path=intro/scipy/index.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch via JupyterLite"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
+  </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -1469,7 +1500,7 @@ variable <span class="math notranslate nohighlight">\(f(x) = x^2  + 10 \sin(x)\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11324a8a0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115c810a0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" src="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" />
@@ -1528,17 +1559,17 @@ we could use one of SciPy’s global minimizers, such as
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: -7.945823375615282
+                 fun: -7.94582337561375
                    x: [-1.306e+00]
-                 nit: 9
-                nfev: 158
-          population: [[-1.303e+00]
-                       [-1.399e+00]
+                 nit: 4
+                nfev: 81
+          population: [[-1.305e+00]
+                       [-1.166e+00]
                        ...
-                       [-1.313e+00]
-                       [-1.224e+00]]
- population_energies: [-7.946e+00 -7.896e+00 ... -7.946e+00 -7.906e+00]
-                 jac: [-1.776e-07]
+                       [-1.309e+00]
+                       [-1.326e+00]]
+ population_energies: [-7.946e+00 -7.832e+00 ... -7.946e+00 -7.944e+00]
+                 jac: [ 6.217e-06]
 </pre></div>
 </div>
 </div>
@@ -1714,7 +1745,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" src="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" />
+<img alt="../../_images/54b963ddbf5b0f4385a1836e7311d92ff2acdb6f0c5bc10db8fe51cf53719388.png" src="../../_images/54b963ddbf5b0f4385a1836e7311d92ff2acdb6f0c5bc10db8fe51cf53719388.png" />
 </div>
 </div>
 </section>
@@ -1744,10 +1775,10 @@ variable’s probability density function (PDF):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1141e3290&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1169d7cb0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/85265a62b0c270623616054c64c3b8c36e626ebc071d3dd235d09c72308d2e7f.png" src="../../_images/85265a62b0c270623616054c64c3b8c36e626ebc071d3dd235d09c72308d2e7f.png" />
+<img alt="../../_images/7a54f2155509fae5f40d20cf43fe60f3306d429153123391082206bc570773f2.png" src="../../_images/7a54f2155509fae5f40d20cf43fe60f3306d429153123391082206bc570773f2.png" />
 </div>
 </div>
 <aside class="sidebar">
@@ -1772,7 +1803,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0009480813951645189)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0022364965782248106)
 </pre></div>
 </div>
 </div>
@@ -1784,7 +1815,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9978584466171563)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9991234550273478)
 </pre></div>
 </div>
 </div>
@@ -1817,7 +1848,7 @@ the sample was drawn:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0009480813951645189)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0022364965782248106)
 </pre></div>
 </div>
 </div>
@@ -1834,7 +1865,7 @@ distributed over many orders of magnitude.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0006573759229047)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0015514235117167)
 </pre></div>
 </div>
 </div>
@@ -1851,7 +1882,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.028757966718227935)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.025149287534959)
 </pre></div>
 </div>
 </div>
@@ -1863,7 +1894,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9857239005099776)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.5989515051855925)
 </pre></div>
 </div>
 </div>
@@ -2351,7 +2382,7 @@ only applies to regularly sampled data.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/c141d20a4e404414ab05b3256c5262be2e8f2ca3482565dc6dc35bcb66366fd6.png" src="../../_images/c141d20a4e404414ab05b3256c5262be2e8f2ca3482565dc6dc35bcb66366fd6.png" />
+<img alt="../../_images/fff1028920975cf3c640b6b7c015422ebe8b5d142cd62f068f096f113babefef.png" src="../../_images/fff1028920975cf3c640b6b7c015422ebe8b5d142cd62f068f096f113babefef.png" />
 </div>
 </div>
 <p><strong>Filtering</strong>:</p>

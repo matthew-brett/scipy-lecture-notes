@@ -279,6 +279,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="interact/lab/index.html?path=packages/scikit-image/index.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch via JupyterLite"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
+  </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -551,7 +582,7 @@ Python installations, as well as in most Linux distributions. Other
 Python packages for image processing &amp; visualization that operate on
 NumPy arrays include:</p>
 <div class="pst-scrollable-table-container"><table class="table" id="id1">
-<caption><span class="caption-number">Table 1 </span><span class="caption-text">Other packages for working with images</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Table 7 </span><span class="caption-text">Other packages for working with images</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a></p></td>
 <td><p>For N-dimensional arrays. Basic filtering, mathematical morphology,
@@ -568,7 +599,7 @@ regions properties</p></td>
 </div>
 <p>Some powerful C++ image processing libraries also have Python bindings:</p>
 <div class="pst-scrollable-table-container"><table class="table" id="id2">
-<caption><span class="caption-number">Table 2 </span><span class="caption-text">C++ libraries with Python bindings</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Table 8 </span><span class="caption-text">C++ libraries with Python bindings</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV</a></p></td>
 <td><p>A highly optimized computer vision library with a focus on real-time
@@ -595,7 +626,7 @@ NumPy-friendly.</p>
 also utility functions to ease data handling and processing.
 It contains the following submodules:</p>
 <div class="pst-scrollable-table-container"><table class="table" id="id3">
-<caption><span class="caption-number">Table 3 </span><span class="caption-text">Scikit-image submodules</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Table 9 </span><span class="caption-text">Scikit-image submodules</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.color.html#module-skimage.color" title="(in skimage v0.25.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skimage.color</span></code></a></p></td>
 <td><p>Color space conversion.</p></td>
@@ -817,7 +848,12 @@ floats.</p>
 </div>
 </div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
@@ -831,6 +867,7 @@ floats.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../../_images/c935a637e7da5e3998a61b2f99be9ffc1c606e8c5b8ef873f05618b603f1329f.png" src="../../_images/c935a637e7da5e3998a61b2f99be9ffc1c606e8c5b8ef873f05618b603f1329f.png" />
 </div>
@@ -939,7 +976,12 @@ values of neighboring pixels. The function can be linear or non-linear.</p>
 -1  -2  -1
 </pre></div>
 </div>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
@@ -953,6 +995,7 @@ values of neighboring pixels. The function can be linear or non-linear.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../../_images/07cdac00b49551f3105a63ad072752cf84106fef077e37c9851c566348fd4597.png" src="../../_images/07cdac00b49551f3105a63ad072752cf84106fef077e37c9851c566348fd4597.png" />
 </div>
@@ -971,7 +1014,12 @@ transform the value of one pixel:</p>
 </div>
 </div>
 <p>Enhances contrast in large almost uniform regions.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 
@@ -985,6 +1033,7 @@ transform the value of one pixel:</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <img alt="../../_images/a4e86bd92b22843788addbf2bb317bd34e36a4e7945ce06ed39b8229a14ccf63.png" src="../../_images/a4e86bd92b22843788addbf2bb317bd34e36a4e7945ce06ed39b8229a14ccf63.png" />
 </div>
@@ -1350,7 +1399,7 @@ each one.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/a06e1a9504c1e87809041951d2245dffed728ba0ec68c221807c9ea3dd411fe3.png" src="../../_images/a06e1a9504c1e87809041951d2245dffed728ba0ec68c221807c9ea3dd411fe3.png" />
+<img alt="../../_images/b4e48bd427e7e69b9b760d1bdec3618857068542563e0056ec32e5140596a55a.png" src="../../_images/b4e48bd427e7e69b9b760d1bdec3618857068542563e0056ec32e5140596a55a.png" />
 </div>
 </div>
 <div class="admonition-see-also admonition">
@@ -1541,7 +1590,7 @@ pipeline.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1171979e0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10f0e1610&gt;
 </pre></div>
 </div>
 <img alt="../../_images/33011bec8aae292d03bd8a118eec6a57626da166cb718238dafd734f8b245949.png" src="../../_images/33011bec8aae292d03bd8a118eec6a57626da166cb718238dafd734f8b245949.png" />
@@ -1557,7 +1606,7 @@ pipeline.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x117223740&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x10f7bbc80&gt;
 </pre></div>
 </div>
 <img alt="../../_images/0af2ffdc22d2cbc5f128f7e882ffb9fa74cd751c5fdac0e5e5f886780363c076.png" src="../../_images/0af2ffdc22d2cbc5f128f7e882ffb9fa74cd751c5fdac0e5e5f886780363c076.png" />

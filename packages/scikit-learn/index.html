@@ -279,6 +279,37 @@
 
 
 
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="interact/lab/index.html?path=packages/scikit-learn/index.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch via JupyterLite"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterLite logo" src="../../_static/images/logo_jupyterlite.svg">
+  </span>
+<span class="btn__text-container">JupyterLite</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
 <div class="dropdown dropdown-source-buttons">
   <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
     <i class="fab fa-github"></i>
@@ -632,7 +663,7 @@ like a database system would do.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/1a8d526f38d0eaf447a9905ba7f3611de279cdb32f5a72a737c42fd3e2e4223c.png" src="../../_images/1a8d526f38d0eaf447a9905ba7f3611de279cdb32f5a72a737c42fd3e2e4223c.png" />
+<img alt="../../_images/e317235e1350f5e3df6e7e8376aeb6b65fee27ad7c16b6d253b8daf2db18709c.png" src="../../_images/e317235e1350f5e3df6e7e8376aeb6b65fee27ad7c16b6d253b8daf2db18709c.png" />
 </div>
 </div>
 <p>We’ll take a look at two very simple machine learning tasks here. The
@@ -681,7 +712,7 @@ it’s a blue or a red point.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/162834c0a600b94d980495f8045e9219f608024a76fb8e6b1c81fb24e6f88593.png" src="../../_images/162834c0a600b94d980495f8045e9219f608024a76fb8e6b1c81fb24e6f88593.png" />
+<img alt="../../_images/6f73e1fcda383388c484e8a0712a64fb5f2870b32d5f2adefc325115efd2cb91.png" src="../../_images/6f73e1fcda383388c484e8a0712a64fb5f2870b32d5f2adefc325115efd2cb91.png" />
 </div>
 </div>
 <p>The next simple task we’ll look at is a <strong>regression</strong> task: a simple
@@ -2415,7 +2446,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/5389a4d10eaa41fbf5c34bdd8b7a0739f242ad794af23553f475eb1c60ea9d5f.png" src="../../_images/5389a4d10eaa41fbf5c34bdd8b7a0739f242ad794af23553f475eb1c60ea9d5f.png" />
+<img alt="../../_images/09cd9a997aaae942cfcc987af670f61e30ddf3c72bbb56dd2b114bc90a65eebb.png" src="../../_images/09cd9a997aaae942cfcc987af670f61e30ddf3c72bbb56dd2b114bc90a65eebb.png" />
 </div>
 </div>
 </section>
@@ -2424,21 +2455,45 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 <p>Scikit-learn strives to have a uniform interface across all methods, and
 we’ll see examples of these below. Given a scikit-learn <em>estimator</em>
 object named <code class="docutils literal notranslate"><span class="pre">model</span></code>, the following methods are available:</p>
-<div class="pst-scrollable-table-container"><table class="table">
-<thead>
-<tr class="row-odd"><th class="head text-left"><p></p></th>
-<th class="head text-left"><p></p></th>
-</tr>
-</thead>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-number">Table 10 </span><span class="caption-text">Estimator interfaces</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <tbody>
-<tr class="row-even"><td class="text-left"><p><strong>All Estimators</strong></p></td>
-<td class="text-left"><p>• <code class="docutils literal notranslate"><span class="pre">model.fit()</span></code> : fit training data. For supervised learning applications, this accepts two arguments: the data <code class="docutils literal notranslate"><span class="pre">X</span></code> and the labels <code class="docutils literal notranslate"><span class="pre">y</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">model.fit(X,</span> <span class="pre">y)</span></code>). For unsupervised learning applications, this accepts only a single argument, the data <code class="docutils literal notranslate"><span class="pre">X</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">model.fit(X)</span></code>).</p></td>
+<tr class="row-odd"><td><p>All Estimators</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model.fit()</span></code> : fit training data. For supervised learning
+applications, this accepts two arguments: the data <code class="docutils literal notranslate"><span class="pre">X</span></code> and the labels
+<code class="docutils literal notranslate"><span class="pre">y</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">model.fit(X,</span> <span class="pre">y)</span></code>). For unsupervised learning
+applications, this accepts only a single argument, the data <code class="docutils literal notranslate"><span class="pre">X</span></code> (e.g.
+<code class="docutils literal notranslate"><span class="pre">model.fit(X)</span></code>).</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-odd"><td class="text-left"><p><strong>Supervised estimators</strong></p></td>
-<td class="text-left"><p>• <code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> : given a trained model, predict the label of a new set of data. This method accepts one argument, the new data <code class="docutils literal notranslate"><span class="pre">X_new</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">model.predict(X_new)</span></code>), and returns the learned label for each object in the array.<br> • <code class="docutils literal notranslate"><span class="pre">model.predict_proba()</span></code> : For classification problems, some estimators also provide this method, which returns the probability that a new observation has each categorical label. In this case, the label with the highest probability is returned by <code class="docutils literal notranslate"><span class="pre">model.predict()</span></code>.<br> • <code class="docutils literal notranslate"><span class="pre">model.score()</span></code> : for classification or regression problems, most (all?) estimators implement a score method. Scores are between 0 and 1, with a larger score indicating a better fit.</p></td>
+<tr class="row-even"><td><p>Supervised estimators</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model.predict()</span></code> : given a trained model, predict the label of a new
+set of data. This method accepts one argument, the new data <code class="docutils literal notranslate"><span class="pre">X_new</span></code>
+(e.g. <code class="docutils literal notranslate"><span class="pre">model.predict(X_new)</span></code>), and returns the learned label for each
+object in the array.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.predict_proba()</span></code> : For classification problems, some estimators
+also provide this method, which returns the probability that a new
+observation has each categorical label. In this case, the label with the
+highest probability is returned by <code class="docutils literal notranslate"><span class="pre">model.predict()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.score()</span></code> : for classification or regression problems, most
+(all?) estimators implement a score method. Scores are between 0 and 1,
+with a larger score indicating a better fit.</p></li>
+</ul>
+</td>
 </tr>
-<tr class="row-even"><td class="text-left"><p><strong>Unsupervised estimators</strong></p></td>
-<td class="text-left"><p>• <code class="docutils literal notranslate"><span class="pre">model.transform()</span></code> : given an unsupervised model, transform new data into the new basis. This also accepts one argument <code class="docutils literal notranslate"><span class="pre">X_new</span></code>, and returns the new representation of the data based on the unsupervised model.<br> • <code class="docutils literal notranslate"><span class="pre">model.fit_transform()</span></code> : some estimators implement this method, which more efficiently performs a fit and a transform on the same input data.</p></td>
+<tr class="row-odd"><td><p>Unsupervised estimators</p></td>
+<td><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">model.transform()</span></code> : given an unsupervised model, transform new data
+into the new basis. This also accepts one argument <code class="docutils literal notranslate"><span class="pre">X_new</span></code>, and
+returns the new representation of the data based on the unsupervised
+model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">model.fit_transform()</span></code> : some estimators implement this method, which
+more efficiently performs a fit and a transform on the same input data.</p></li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>
@@ -4013,7 +4068,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: 0.7312361889856394
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: 0.7382943447983934
 </pre></div>
 </div>
 </div>
@@ -4038,7 +4093,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/c800071718d60fe94dd98b5f4230ed9ce5342a698987b2cffe6b490e6c3c667e.png" src="../../_images/c800071718d60fe94dd98b5f4230ed9ce5342a698987b2cffe6b490e6c3c667e.png" />
+<img alt="../../_images/4fa46c09827788cb8c130a09c230e4482dba5d8c4a53c6029ca571a68f186754.png" src="../../_images/4fa46c09827788cb8c130a09c230e4482dba5d8c4a53c6029ca571a68f186754.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -4519,7 +4574,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ddbc006f8de74aab3a9644aca0e5f4a0fe90ba64a58f01db1ae16717f8e64de4.png" src="../../_images/ddbc006f8de74aab3a9644aca0e5f4a0fe90ba64a58f01db1ae16717f8e64de4.png" />
+<img alt="../../_images/32eed09a6593b88dfa6bcba508ee1ac1d781b61db5959ee9b164f349be73b78d.png" src="../../_images/32eed09a6593b88dfa6bcba508ee1ac1d781b61db5959ee9b164f349be73b78d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4530,7 +4585,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: np.float64(0.5414559374835712) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: np.float64(0.5309804755470734) 
 </pre></div>
 </div>
 </div>
@@ -5245,7 +5300,7 @@ parameters set when you instantiate the classifier: for example, the
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB: 0.8332741681010102
 KNeighborsClassifier: 0.9804562804949924
-LinearSVC: 0.9323874405177529
+LinearSVC: 0.9344514479109784
 </pre></div>
 </div>
 </div>
@@ -5302,10 +5357,10 @@ KNeighbors(n_neighbors=10): 0.9755550897728812
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;hinge&#39;): 0.9306373638006032
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;hinge&#39;): 0.9282999803434031
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;squared_hinge&#39;): 0.9323874405177529
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;squared_hinge&#39;): 0.9323387371152745
 -------------------
 KNeighbors(n_neighbors=1): 0.9913675218842191
 KNeighbors(n_neighbors=2): 0.9848442068835102
@@ -5360,7 +5415,7 @@ to automatically compute score on all these folds. Here we do
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.97777778, 0.97777778, 0.98888889, 0.98333333, 0.97777778])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.98888889, 0.98888889, 1.        , 0.98888889, 0.98333333])
 </pre></div>
 </div>
 </div>
@@ -6229,7 +6284,7 @@ generalize easily to higher-dimensional datasets. We’ll explore a simple
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117ecc3e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x123558c50&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/44a703184001475eb14a5ea369aefe5031f3838466c918dea78e425d00e637c6.png" src="../../_images/44a703184001475eb14a5ea369aefe5031f3838466c918dea78e425d00e637c6.png" />
@@ -6430,10 +6485,10 @@ capture independent noise:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x117df8440&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x1236e5520&gt;
 </pre></div>
 </div>
-<img alt="../../_images/16dc9c637157e810ae6f94e17e2e7c27ec1021d99ad1a42da6abe5428f53eb9d.png" src="../../_images/16dc9c637157e810ae6f94e17e2e7c27ec1021d99ad1a42da6abe5428f53eb9d.png" />
+<img alt="../../_images/35b276bdb5a132d1749538876a14a12def9582c40608eecdb41fe122027b2c54.png" src="../../_images/35b276bdb5a132d1749538876a14a12def9582c40608eecdb41fe122027b2c54.png" />
 </div>
 </div>
 <p><strong>Validation curve</strong> A validation curve consists in varying a model parameter
