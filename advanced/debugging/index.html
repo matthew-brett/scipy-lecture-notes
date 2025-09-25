@@ -537,12 +537,10 @@ mathematics names)</p></li>
 <li><p><a class="reference external" href="https://pypi.org/project/flake8">flake8</a></p></li>
 </ul>
 <p>Here we focus on <code class="docutils literal notranslate"><span class="pre">pyflakes</span></code>, which is the simplest tool.</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><strong>Fast, simple</strong></p></li>
 <li><p>Detects syntax errors, missing imports, typos on names.</p></li>
 </ul>
-</div></blockquote>
 <p>Another good recommendation is the <code class="docutils literal notranslate"><span class="pre">flake8</span></code> tool which is a combination of
 pyflakes and pep8. Thus, in addition to the types of errors that pyflakes
 catches, flake8 detects violations of the recommendation in <a class="reference external" href="https://peps.python.org/pep-0008/">PEP8</a> style guide.</p>
@@ -554,8 +552,7 @@ recommended, it <strong>does yield productivity gains</strong>.</p>
 <ul>
 <li><p><strong>In kate</strong>
 Menu: ‘settings -&gt; configure kate</p>
-<blockquote>
-<div><ul>
+<ul>
 <li><p>In plugins enable ‘external tools’</p></li>
 <li><p>In external Tools’, add <code class="docutils literal notranslate"><span class="pre">pyflakes</span></code>:</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>kdialog --title &quot;pyflakes %filename&quot; --msgbox &quot;$(pyflakes %filename)&quot;
@@ -563,7 +560,6 @@ Menu: ‘settings -&gt; configure kate</p>
 </div>
 </li>
 </ul>
-</div></blockquote>
 </li>
 <li><p><strong>In TextMate</strong></p>
 <p>Menu: TextMate -&gt; Preferences -&gt; Advanced -&gt; Shell variables, add a
@@ -619,9 +615,6 @@ In your <code class="docutils literal notranslate"><span class="pre">.emacs</spa
 <li><p>make sure your vimrc has <code class="docutils literal notranslate"><span class="pre">filetype</span> <span class="pre">plugin</span> <span class="pre">indent</span> <span class="pre">on</span></code></p></li>
 </ol>
 <p><img alt="" src="../../_images/vim_pyflakes.png" /></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
 </li>
 <li><p>Alternatively: use the <a class="reference external" href="https://github.com/vim-syntastic/syntastic">syntastic</a>
 plugin. This can be configured to use <code class="docutils literal notranslate"><span class="pre">flake8</span></code> too and also handles
@@ -647,12 +640,10 @@ opening a Python file, add the following line to your .emacs file:</p>
 <section id="debugging-workflow">
 <h2>Debugging workflow<a class="headerlink" href="#debugging-workflow" title="Link to this heading">#</a></h2>
 <p>If you do have a non trivial bug, this is when debugging strategies kick
-in. There is no silver bullet. Yet, strategies help:</p>
-<blockquote>
-<div><p><strong>For debugging a given problem, the favorable situation is when the
-problem is isolated in a small number of lines of code, outside
-framework or application code, with short modify-run-fail cycles</strong></p>
-</div></blockquote>
+in. There is no silver bullet. Yet, strategies help.</p>
+<p><strong>For debugging a given problem, the favorable situation is when the problem is
+isolated in a small number of lines of code, outside framework or application
+code, with short modify-run-fail cycles.</strong></p>
 <ol class="arabic">
 <li><p>Make it fail reliably. Find a test case that makes the code fail
 every time.</p></li>
@@ -681,15 +672,13 @@ the corresponding code to your test suite.</p>
 <p>The python debugger, <code class="docutils literal notranslate"><span class="pre">pdb</span></code>: <a class="reference external" href="https://docs.python.org/3/library/pdb.html">https://docs.python.org/3/library/pdb.html</a>,
 allows you to inspect your code interactively.</p>
 <p>Specifically it allows you to:</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>View the source code.</p></li>
 <li><p>Walk up and down the call stack.</p></li>
 <li><p>Inspect values of variables.</p></li>
 <li><p>Modify values of variables.</p></li>
 <li><p>Set breakpoints.</p></li>
 </ul>
-</div></blockquote>
 <div class="admonition-print admonition">
 <p class="admonition-title">print</p>
 <p>Yes, <code class="docutils literal notranslate"><span class="pre">print</span></code> statements do work as a debugging tool. However to
@@ -1125,8 +1114,10 @@ program memory.</p>
 the source of this file.</p>
 </div>
 <hr class="docutils" />
-<aside class="topic green">
-<p class="topic-title"><strong>Wrap up exercise</strong></p>
+<div class="exercise dropdown admonition" id="to-debug-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 50 </span></p>
+<section id="exercise-content">
 <p>The following script is well documented and hopefully legible. It
 seeks to answer a problem of actual interest for numerical computing,
 but it does not work… Can you debug it?</p>
@@ -1173,7 +1164,7 @@ but it does not work… Can you debug it?</p>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the number of function calls given an root-finding optimizer,</span>
 <span class="sd">    a function and upper and lower bounds.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="k">return</span> <span class="p">(</span><span class="n">optimizer</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">function_calls</span><span class="p">,)</span>
+    <span class="k">return</span> <span class="n">optimizer</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">function_calls</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">bench_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">):</span>
@@ -1190,7 +1181,7 @@ but it does not work… Can you debug it?</p>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">random_a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.3</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
     <span class="n">random_b</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-    <span class="n">param_grid</span> <span class="o">=</span> <span class="n">product</span><span class="p">(</span><span class="n">FUNCTIONS</span><span class="p">,</span> <span class="n">random_a</span><span class="p">,</span> <span class="n">random_b</span><span class="p">)</span>
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">FUNCTIONS</span><span class="p">,</span> <span class="n">random_a</span><span class="p">,</span> <span class="n">random_b</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benching 1D root-finder optimizers from scipy.optimize:&quot;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">optimizer</span> <span class="ow">in</span> <span class="n">OPTIMIZERS</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span>
@@ -1202,7 +1193,85 @@ but it does not work… Can you debug it?</p>
     <span class="n">compare_optimizers</span><span class="p">(</span><span class="n">OPTIMIZERS</span><span class="p">)</span>
 </pre></div>
 </div>
-</aside>
+</section>
+</div>
+<div class="solution dropdown admonition" id="advanced/debugging/index-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#to-debug-ex"> Exercise 50</a></p>
+<section id="solution-content">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">A script to compare different root-finding algorithms.</span>
+
+<span class="sd">This version of the script is buggy and does not execute. It is your task</span>
+<span class="sd">to find an fix these bugs.</span>
+
+<span class="sd">The output of the script should look like:</span>
+
+<span class="sd">    Benching 1D root-finder optimizers from scipy.optimize:</span>
+<span class="sd">                brenth:   604678 total function calls</span>
+<span class="sd">                brentq:   594454 total function calls</span>
+<span class="sd">                ridder:   778394 total function calls</span>
+<span class="sd">                bisect:  2148380 total function calls</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">itertools</span><span class="w"> </span><span class="kn">import</span> <span class="n">product</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">27446968</span><span class="p">)</span>
+
+<span class="n">FUNCTIONS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">tan</span><span class="p">,</span>  <span class="c1"># Dilating map</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">,</span>  <span class="c1"># Contracting map</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">1e-4</span> <span class="o">*</span> <span class="n">x</span><span class="p">,</span>  <span class="c1"># Almost null gradient at the root</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">x</span><span class="p">),</span>  <span class="c1"># Non monotonous function</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mf">1.1</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">x</span><span class="p">),</span>  <span class="c1"># Function with several local maxima</span>
+<span class="p">)</span>
+
+<span class="n">OPTIMIZERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">brenth</span><span class="p">,</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">brentq</span><span class="p">,</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">ridder</span><span class="p">,</span>
+    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">bisect</span><span class="p">,</span>
+<span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">apply_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Return the number of function calls given an root-finding optimizer,</span>
+<span class="sd">    a function and upper and lower bounds.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">optimizer</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">full_output</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">function_calls</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">bench_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Find roots for all the functions, and upper and lower bounds</span>
+<span class="sd">    given and return the total number of function calls.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">apply_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span> <span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="k">for</span> <span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="n">param_grid</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">compare_optimizers</span><span class="p">(</span><span class="n">optimizers</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compare all the optimizers given on a grid of a few different</span>
+<span class="sd">    functions all admitting a single root in zero and a upper and</span>
+<span class="sd">    lower bounds.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">random_a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.3</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">random_b</span> <span class="o">=</span> <span class="mf">0.3</span> <span class="o">+</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <span class="n">param_grid</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">product</span><span class="p">(</span><span class="n">FUNCTIONS</span><span class="p">,</span> <span class="n">random_a</span><span class="p">,</span> <span class="n">random_b</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Benching 1D root-finder optimizers from scipy.optimize:&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">optimizer</span> <span class="ow">in</span> <span class="n">OPTIMIZERS</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">optimizer</span><span class="o">.</span><span class="vm">__name__</span><span class="si">:</span><span class="s2">&gt;20s</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">bench_optimizer</span><span class="p">(</span><span class="n">optimizer</span><span class="p">,</span><span class="w"> </span><span class="n">param_grid</span><span class="p">)</span><span class="si">:</span><span class="s2">&gt;8d</span><span class="si">}</span><span class="s2"> total function calls&quot;</span>
+        <span class="p">)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">compare_optimizers</span><span class="p">(</span><span class="n">OPTIMIZERS</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</div>
 </section>
 </section>
 

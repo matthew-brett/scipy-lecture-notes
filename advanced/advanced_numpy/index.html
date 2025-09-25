@@ -567,15 +567,20 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 <h2>Life of ndarray<a class="headerlink" href="#life-of-ndarray" title="Link to this heading">#</a></h2>
 <section id="it-s">
 <h3>It’s…<a class="headerlink" href="#it-s" title="Link to this heading">#</a></h3>
-<p><strong>ndarray</strong> is:</p>
-<blockquote>
-<div><p>block of memory + indexing scheme + data type descriptor</p>
+<div class="admonition-what-is-an-ndarray admonition">
+<p class="admonition-title">What is an <strong>ndarray</strong></p>
+<p>An <strong>ndarray</strong> is:</p>
 <ul class="simple">
-<li><p>raw data</p></li>
-<li><p>how to locate an element</p></li>
-<li><p>how to interpret an element</p></li>
+<li><p>A block of memory and</p></li>
+<li><p>an indexing scheme and</p></li>
+<li><p>a data type descriptor.</p></li>
 </ul>
-</div></blockquote>
+</div>
+<p>Put another way, an ndarray has <strong>raw data</strong>, and algorithms to:</p>
+<ul class="simple">
+<li><p>locate an element</p></li>
+<li><p>interpret an element</p></li>
+</ul>
 <img alt="../../_images/threefundamental.png" src="../../_images/threefundamental.png" />
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span><span class="w"> </span><span class="k">struct</span><span class="w"> </span><span class="nc">PyArrayObject</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">PyObject_HEAD</span>
@@ -609,7 +614,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x113ba53c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1079dd3c0&gt;
 </pre></div>
 </div>
 </div>
@@ -634,7 +639,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553132548720
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553133308352
 </pre></div>
 </div>
 </div>
@@ -647,7 +652,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553132548720, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553133308352, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i4&#39;)],
  &#39;typestr&#39;: &#39;&lt;i4&#39;,
@@ -691,7 +696,7 @@ array of ints:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x113ba5600&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1079dd600&gt;
 </pre></div>
 </div>
 </div>
@@ -939,7 +944,7 @@ to the name <code class="docutils literal notranslate"><span class="pre">format<
 </ul>
 <div class="exercise dropdown admonition" id="sparse-dtype">
 
-<p class="admonition-title"><span class="caption-number">Exercise 28 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
 <section id="exercise-content">
 <p>Make a “sparse” dtype by using offsets, and only some of the fields:</p>
 <div class="cell tag_raises-exception docutils container">
@@ -1039,21 +1044,17 @@ etc. for loading sound data…</p>
 <section id="casting-and-re-interpretation-views">
 <h4>Casting and re-interpretation/views<a class="headerlink" href="#casting-and-re-interpretation-views" title="Link to this heading">#</a></h4>
 <p><strong>casting</strong></p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>on assignment</p></li>
 <li><p>on array construction</p></li>
 <li><p>on arithmetic</p></li>
 <li><p>etc.</p></li>
 <li><p>and manually: <code class="docutils literal notranslate"><span class="pre">.astype(dtype)</span></code></p></li>
 </ul>
-</div></blockquote>
 <p><strong>data re-interpretation</strong></p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p>manually: <code class="docutils literal notranslate"><span class="pre">.view(dtype)</span></code></p></li>
 </ul>
-</div></blockquote>
 <section id="casting">
 <h5>Casting<a class="headerlink" href="#casting" title="Link to this heading">#</a></h5>
 <ul class="simple">
@@ -1308,7 +1309,7 @@ etc. for loading sound data…</p>
 </div>
 <div class="exercise dropdown admonition" id="rgba-to-structured">
 
-<p class="admonition-title"><span class="caption-number">Exercise 29 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
 <section id="exercise-content">
 <p>You have RGBA data in an array:</p>
 <div class="cell docutils container">
@@ -1358,7 +1359,7 @@ etc. for loading sound data…</p>
 </div>
 <div class="solution dropdown admonition" id="advanced/advanced_numpy/index-solution-2">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#rgba-to-structured"> Exercise 29</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#rgba-to-structured"> Exercise 44</a></p>
 <section id="solution-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1487,12 +1488,10 @@ shape of the resulting array?</p>
 </div>
 </div>
 <p><strong>The answer</strong> (in NumPy)</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li><p><strong>strides</strong>: the number of bytes to jump to find the next element</p></li>
 <li><p>1 stride per dimension</p></li>
 </ul>
-</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">.</span><span class="n">strides</span>
@@ -1942,7 +1941,7 @@ block bounds…</p>
 </div>
 <div class="exercise dropdown admonition" id="harder-strides">
 
-<p class="admonition-title"><span class="caption-number">Exercise 30 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
 <section id="exercise-content">
 <p>Convert this:</p>
 <div class="cell docutils container">
@@ -1974,7 +1973,7 @@ block bounds…</p>
 </div>
 <div class="solution dropdown admonition" id="advanced/advanced_numpy/index-solution-4">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#harder-strides"> Exercise 30</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#harder-strides"> Exercise 45</a></p>
 <section id="solution-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2088,7 +2087,7 @@ of <code class="docutils literal notranslate"><span class="pre">[1,</span> <span
 </div>
 <div class="exercise dropdown admonition" id="stride-diagonals">
 
-<p class="admonition-title"><span class="caption-number">Exercise 31 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
 <section id="exercise-content">
 <p>Pick diagonal entries of the matrix: (assume C memory order):</p>
 <div class="cell docutils container">
@@ -2115,7 +2114,7 @@ from.</p>
 </div>
 <div class="solution dropdown admonition" id="advanced/advanced_numpy/index-solution-6">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#stride-diagonals"> Exercise 31</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#stride-diagonals"> Exercise 46</a></p>
 <section id="solution-content">
 <p>Pick diagonals:</p>
 <div class="cell docutils container">
@@ -2190,7 +2189,7 @@ from.</p>
 <p><strong>Challenge</strong></p>
 <div class="exercise dropdown admonition" id="tensor-trace">
 
-<p class="admonition-title"><span class="caption-number">Exercise 32 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 47 </span></p>
 <section id="exercise-content">
 <p>Compute the tensor trace:</p>
 <div class="cell docutils container">
@@ -2238,7 +2237,7 @@ from.</p>
 </div>
 <div class="solution dropdown admonition" id="advanced/advanced_numpy/index-solution-8">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#tensor-trace"> Exercise 32</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#tensor-trace"> Exercise 47</a></p>
 <section id="solution-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2283,7 +2282,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>76 μs ± 132 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>89.4 μs ± 9.78 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2295,7 +2294,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>143 μs ± 5.04 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>181 μs ± 24.7 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2453,7 +2452,7 @@ NumPy takes care of the rest.</p></li>
 <h3>Exercise: building an ufunc from scratch<a class="headerlink" href="#exercise-building-an-ufunc-from-scratch" title="Link to this heading">#</a></h3>
 <div class="exercise dropdown admonition" id="mandelbrot-ufunc">
 
-<p class="admonition-title"><span class="caption-number">Exercise 33 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 48 </span></p>
 <section id="exercise-content">
 <p>The Mandelbrot fractal is defined by the iteration</p>
 <div class="math notranslate nohighlight">
@@ -2517,7 +2516,7 @@ NPY_TIMEDELTA, NPY_OBJECT, NPY_STRING, NPY_UNICODE, NPY_VOID
 </div>
 <div class="solution dropdown admonition" id="advanced/advanced_numpy/index-solution-10">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#mandelbrot-ufunc"> Exercise 33</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#mandelbrot-ufunc"> Exercise 48</a></p>
 <section id="solution-content">
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># The elementwise function</span>
 <span class="c1"># ------------------------</span>
@@ -2682,10 +2681,8 @@ NPY_TIMEDELTA, NPY_OBJECT, NPY_STRING, NPY_UNICODE, NPY_VOID
 <section id="generalized-ufuncs">
 <h3>Generalized ufuncs<a class="headerlink" href="#generalized-ufuncs" title="Link to this heading">#</a></h3>
 <p><strong>ufunc</strong></p>
-<blockquote>
-<div><p><code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">elementwise_function(input)</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">elementwise_function(input)</span></code></p>
 <p>Both <code class="docutils literal notranslate"><span class="pre">output</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> can be a single array element only.</p>
-</div></blockquote>
 <p><strong>generalized ufunc</strong></p>
 <p><code class="docutils literal notranslate"><span class="pre">output</span></code> and <code class="docutils literal notranslate"><span class="pre">input</span></code> can be arrays with a fixed number of dimensions</p>
 <p>For example, matrix trace (sum of diag elements):</p>
@@ -2837,7 +2834,7 @@ Imaging Library):</p>
 </div>
 <div class="exercise dropdown admonition" id="pil-buffer">
 
-<p class="admonition-title"><span class="caption-number">Exercise 34 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 49 </span></p>
 <section id="exercise-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2904,7 +2901,7 @@ the buffer interface:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553130430880, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553135406176, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i8&#39;)],
  &#39;typestr&#39;: &#39;&lt;i8&#39;,
@@ -3233,9 +3230,9 @@ time, ignoring the invalid numbers.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113dff590&gt;,
- &lt;matplotlib.lines.Line2D at 0x113dff650&gt;,
- &lt;matplotlib.lines.Line2D at 0x113df4c80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x107c379e0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x105da4b90&gt;,
+ &lt;matplotlib.lines.Line2D at 0x107c37b90&gt;]
 </pre></div>
 </div>
 </div>
@@ -3284,9 +3281,7 @@ time, ignoring the invalid numbers.</p>
 </section>
 <section id="contributing-to-numpy-scipy">
 <h2>Contributing to NumPy/SciPy<a class="headerlink" href="#contributing-to-numpy-scipy" title="Link to this heading">#</a></h2>
-<blockquote>
-<div><p>Get this tutorial: <a class="reference external" href="https://www.euroscipy.org/talk/882">https://www.euroscipy.org/talk/882</a></p>
-</div></blockquote>
+<p>Get this tutorial: <a class="reference external" href="https://www.euroscipy.org/talk/882">https://www.euroscipy.org/talk/882</a></p>
 <section id="why">
 <h3>Why<a class="headerlink" href="#why" title="Link to this heading">#</a></h3>
 <ul class="simple">

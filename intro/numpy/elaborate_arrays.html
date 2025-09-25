@@ -570,12 +570,28 @@ document.write(`
 <section id="different-data-type-sizes">
 <h3>Different data type sizes<a class="headerlink" href="#different-data-type-sizes" title="Link to this heading">#</a></h3>
 <p>Integers (signed):</p>
-<p>=================== ==============================================================
-:class:<code class="docutils literal notranslate"><span class="pre">int8</span></code>        8 bits
-:class:<code class="docutils literal notranslate"><span class="pre">int16</span></code>       16 bits
-:class:<code class="docutils literal notranslate"><span class="pre">int32</span></code>       32 bits (same as :class:<code class="docutils literal notranslate"><span class="pre">int</span></code> on 32-bit platform)
-:class:<code class="docutils literal notranslate"><span class="pre">int64</span></code>       64 bits (same as :class:<code class="docutils literal notranslate"><span class="pre">int</span></code> on 64-bit platform)
-=================== ==============================================================</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Bits</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int8</span></code></p></td>
+<td><p>8 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int16</span></code></p></td>
+<td><p>16b its</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">int32</span></code></p></td>
+<td><p>32 bits (same as <code class="docutils literal notranslate"><span class="pre">int</span></code> on 32-bit platform)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">int64</span></code></p></td>
+<td><p>64 bits (same as <code class="docutils literal notranslate"><span class="pre">int</span></code> on 64-bit platform)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">],</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span><span class="o">.</span><span class="n">dtype</span>
@@ -601,12 +617,28 @@ document.write(`
 </div>
 </div>
 <p>Unsigned integers:</p>
-<p>=================== ==============================================================
-:class:<code class="docutils literal notranslate"><span class="pre">uint8</span></code>       8 bits
-:class:<code class="docutils literal notranslate"><span class="pre">uint16</span></code>      16 bits
-:class:<code class="docutils literal notranslate"><span class="pre">uint32</span></code>      32 bits
-:class:<code class="docutils literal notranslate"><span class="pre">uint64</span></code>      64 bits
-=================== ==============================================================</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Class</p></th>
+<th class="head"><p>Bits</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></td>
+<td><p>8 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">uint16</span></code></p></td>
+<td><p>16 bits</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">uint32</span></code></p></td>
+<td><p>32 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">uint64</span></code></p></td>
+<td><p>64 bits</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">iinfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">uint32</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">,</span> <span class="mi">2</span><span class="o">**</span><span class="mi">32</span> <span class="o">-</span> <span class="mi">1</span>
@@ -620,13 +652,31 @@ document.write(`
 </div>
 </div>
 <p>Floating-point numbers:</p>
-<p>=================== ==============================================================
-:class:<code class="docutils literal notranslate"><span class="pre">float16</span></code>     16 bits
-:class:<code class="docutils literal notranslate"><span class="pre">float32</span></code>     32 bits
-:class:<code class="docutils literal notranslate"><span class="pre">float64</span></code>     64 bits (same as :class:<code class="docutils literal notranslate"><span class="pre">float</span></code>)
-:class:<code class="docutils literal notranslate"><span class="pre">float96</span></code>     96 bits, platform-dependent (same as :class:<code class="docutils literal notranslate"><span class="pre">np.longdouble</span></code>)
-:class:<code class="docutils literal notranslate"><span class="pre">float128</span></code>    128 bits, platform-dependent (same as :class:<code class="docutils literal notranslate"><span class="pre">np.longdouble</span></code>)
-=================== ==============================================================</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Type</p></th>
+<th class="head"><p>Size (bits)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float16</span></code></p></td>
+<td><p>16 bits</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">float32</span></code></p></td>
+<td><p>32 bits</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float64</span></code></p></td>
+<td><p>64 bits (same as <code class="docutils literal notranslate"><span class="pre">float</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">float96</span></code></p></td>
+<td><p>96 bits, platform-dependent (same as <code class="docutils literal notranslate"><span class="pre">np.longdouble</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">float128</span></code></p></td>
+<td><p>128 bits, platform-dependent (same as <code class="docutils literal notranslate"><span class="pre">np.longdouble</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span>
@@ -676,12 +726,28 @@ document.write(`
 </div>
 </div>
 <p>Complex floating-point numbers:</p>
-<p>=================== ==============================================================
-:class:<code class="docutils literal notranslate"><span class="pre">complex64</span></code>   two 32-bit floats
-:class:<code class="docutils literal notranslate"><span class="pre">complex128</span></code>  two 64-bit floats
-:class:<code class="docutils literal notranslate"><span class="pre">complex192</span></code>  two 96-bit floats, platform-dependent
-:class:<code class="docutils literal notranslate"><span class="pre">complex256</span></code>  two 128-bit floats, platform-dependent
-=================== ==============================================================</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Type</p></th>
+<th class="head"><p>Size (bits)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">complex64</span></code></p></td>
+<td><p>two 32-bit floats</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">complex128</span></code></p></td>
+<td><p>two 64-bit floats</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">complex192</span></code></p></td>
+<td><p>two 96-bit floats, platform-dependent</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">complex256</span></code></p></td>
+<td><p>two 128-bit floats, platform-dependent</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="admonition-smaller-data-types admonition">
 <p class="admonition-title">Smaller data types</p>
 <p>If you don’t know you need special data types, then you probably don’t.</p>
@@ -709,11 +775,25 @@ document.write(`
 </section>
 <section id="structured-data-types">
 <h2>Structured data types<a class="headerlink" href="#structured-data-types" title="Link to this heading">#</a></h2>
-<p>=============== ====================
-<code class="docutils literal notranslate"><span class="pre">sensor_code</span></code>  (4-character string)
-<code class="docutils literal notranslate"><span class="pre">position</span></code>     (float)
-<code class="docutils literal notranslate"><span class="pre">value</span></code>        (float)
-=============== ====================</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Data Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sensor_code</span></code></p></td>
+<td><p>4-character string</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">position</span></code></p></td>
+<td><p>float</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">value</span></code></p></td>
+<td><p>float</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">samples</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="p">[(</span><span class="s1">&#39;sensor_code&#39;</span><span class="p">,</span> <span class="s1">&#39;S4&#39;</span><span class="p">),</span>

@@ -553,7 +553,6 @@ document.write(`
 <p><img alt="" src="../../_images/scikit-learn-logo.png" /></p>
 <div class="admonition-prerequisites admonition">
 <p class="admonition-title">Prerequisites</p>
-<p>.. rst-class:: horizontal</p>
 <ul class="simple">
 <li><p>:ref:<code class="docutils literal notranslate"><span class="pre">numpy</span> <span class="pre">&lt;numpy&gt;</span></code></p></li>
 <li><p>:ref:<code class="docutils literal notranslate"><span class="pre">scipy</span> <span class="pre">&lt;scipy&gt;</span></code></p></li>
@@ -561,12 +560,12 @@ document.write(`
 <li><p>:ref:<code class="docutils literal notranslate"><span class="pre">ipython</span> <span class="pre">(the</span> <span class="pre">enhancements</span> <span class="pre">come</span> <span class="pre">handy)</span> <span class="pre">&lt;interactive_work&gt;</span></code></p></li>
 </ul>
 </div>
-<div class="admonition-acknowledgements admonition">
-<p class="admonition-title"><strong>Acknowledgements</strong></p>
+<aside class="sidebar">
+<p class="sidebar-title">Acknowledgements</p>
 <p>This chapter is adapted from <a class="reference external" href="https://www.youtube.com/watch?v=r4bRUvvlaBw">a
 tutorial</a> given by Gaël
 Varoquaux, Jake Vanderplas, Olivier Grisel.</p>
-</div>
+</aside>
 <div class="admonition-see-also admonition">
 <p class="admonition-title">See also</p>
 <p><strong>Data science in Python</strong></p>
@@ -633,7 +632,7 @@ like a database system would do.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/4da28a4a4332972e4640bb444f4bfcbde5f5be9a4f8802f5f97795e592a71cf7.png" src="../../_images/4da28a4a4332972e4640bb444f4bfcbde5f5be9a4f8802f5f97795e592a71cf7.png" />
+<img alt="../../_images/e83375f553e9388e54f7afe3a77f5c74945b3a174b9991318f77c22084d7cce4.png" src="../../_images/e83375f553e9388e54f7afe3a77f5c74945b3a174b9991318f77c22084d7cce4.png" />
 </div>
 </div>
 <p>We’ll take a look at two very simple machine learning tasks here. The
@@ -682,7 +681,7 @@ it’s a blue or a red point.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/e89ad8833c41956e91cdc7883150b90d1995e86e8a08074649603c13506e61f5.png" src="../../_images/e89ad8833c41956e91cdc7883150b90d1995e86e8a08074649603c13506e61f5.png" />
+<img alt="../../_images/6d0fa1226131b1f719078f20b504c5045a94a48c9ede315a386c458833f42cb8.png" src="../../_images/6d0fa1226131b1f719078f20b504c5045a94a48c9ede315a386c458833f42cb8.png" />
 </div>
 </div>
 <p>The next simple task we’ll look at is a <strong>regression</strong> task: a simple
@@ -929,7 +928,7 @@ dimensions at a time using a scatter plot:</p>
 </div>
 <div class="exercise dropdown admonition" id="chose-two-features">
 
-<p class="admonition-title"><span class="caption-number">Exercise 43 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 71 </span></p>
 <section id="exercise-content">
 <p>Can you choose 2 features to find a plot where it is easier to
 separate the different classes of irises?</p>
@@ -2416,7 +2415,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ba7df2891ad66707214722a58922893f6e662df4e86c5bfb9a5d38a7664b5174.png" src="../../_images/ba7df2891ad66707214722a58922893f6e662df4e86c5bfb9a5d38a7664b5174.png" />
+<img alt="../../_images/dd4a521e696d23459d83d597716ed07b8cef9e0d6ea408349c235c948e195cdb.png" src="../../_images/dd4a521e696d23459d83d597716ed07b8cef9e0d6ea408349c235c948e195cdb.png" />
 </div>
 </div>
 </section>
@@ -2759,11 +2758,11 @@ more complex models. If not, we can use the results of the simple method
 to give us clues about our data.</p>
 <p>One good method to keep in mind is Gaussian Naive Bayes
 (<code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.naive_bayes.GaussianNB</span></code>).</p>
-<div class="admonition-old-scikit-learn-versions admonition">
-<p class="admonition-title">Old scikit-learn versions</p>
+<aside class="sidebar">
+<p class="sidebar-title">Old scikit-learn versions</p>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">train_test_split()</span></code> is imported from
 <code class="docutils literal notranslate"><span class="pre">sklearn.cross_validation</span></code></p>
-</div>
+</aside>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <p>Gaussian Naive Bayes fits a Gaussian distribution to each training label
@@ -4014,7 +4013,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: 0.7209599449517101
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: 0.7399336310866866
 </pre></div>
 </div>
 </div>
@@ -4039,7 +4038,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/016943eb9f4fb0d5197cbbf0b8a7ff5d5927eebdd49bf9b86813f56c0aa40c7d.png" src="../../_images/016943eb9f4fb0d5197cbbf0b8a7ff5d5927eebdd49bf9b86813f56c0aa40c7d.png" />
+<img alt="../../_images/d6ef4b2ea050340ebb093e5ff0ba943cdec476540e3dda3bcc08f03038469116.png" src="../../_images/d6ef4b2ea050340ebb093e5ff0ba943cdec476540e3dda3bcc08f03038469116.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -4052,7 +4051,7 @@ cover in a later section.</p>
 </div>
 <div class="exercise dropdown admonition" id="gradient-boost-tree-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 44 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 72 </span></p>
 <section id="exercise-content">
 <p>There are many other types of regressors available in scikit-learn:
 we’ll try a more powerful one here.</p>
@@ -4072,7 +4071,7 @@ we’ll try a more powerful one here.</p>
 </div>
 <div class="solution dropdown admonition" id="packages/scikit-learn/index-solution-2">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#gradient-boost-tree-ex"> Exercise 44</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#gradient-boost-tree-ex"> Exercise 72</a></p>
 <section id="solution-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4520,7 +4519,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cd6a5da51d573e459197a2fc57d30f56384687a29206515e2d9e89ddce882eee.png" src="../../_images/cd6a5da51d573e459197a2fc57d30f56384687a29206515e2d9e89ddce882eee.png" />
+<img alt="../../_images/bd0c142ff873c0e717e0884fe8e8dacc8300dfe4351c13548aa083378cf22fc4.png" src="../../_images/bd0c142ff873c0e717e0884fe8e8dacc8300dfe4351c13548aa083378cf22fc4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4531,7 +4530,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: np.float64(0.5135637841131913) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: np.float64(0.537762152285918) 
 </pre></div>
 </div>
 </div>
@@ -5246,14 +5245,16 @@ parameters set when you instantiate the classifier: for example, the
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB: 0.8332741681010102
 KNeighborsClassifier: 0.9804562804949924
-LinearSVC: 0.9323387371152745
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC: 0.9365582188220227
 </pre></div>
 </div>
 </div>
 </div>
 <div class="exercise dropdown admonition" id="which-hyper-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 45 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 73 </span></p>
 <section id="exercise-content">
 <p>For each classifier, which value for the hyperparameters gives the best
 results for the digits data? For <code class="xref py py-class docutils literal notranslate"><span class="pre">LinearSVC</span></code>, use
@@ -5280,7 +5281,7 @@ KNeighbors(n_neighbors=10): 0.9755550897728812
 </div>
 <div class="solution dropdown admonition" id="packages/scikit-learn/index-solution-4">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#which-hyper-ex"> Exercise 45</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#which-hyper-ex"> Exercise 73</a></p>
 <section id="solution-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -5303,12 +5304,18 @@ KNeighbors(n_neighbors=10): 0.9755550897728812
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;hinge&#39;): 0.9363031629653964
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;hinge&#39;): 0.9323655187693269
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;squared_hinge&#39;): 0.9323387371152745
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;squared_hinge&#39;): 0.9323874405177529
 -------------------
-KNeighbors(n_neighbors=1): 0.9913675218842191
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/sklearn/svm/_base.py:1249: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+  warnings.warn(
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighbors(n_neighbors=1): 0.9913675218842191
 KNeighbors(n_neighbors=2): 0.9848442068835102
 KNeighbors(n_neighbors=3): 0.9867753449543099
 KNeighbors(n_neighbors=4): 0.9803719053818863
@@ -5316,12 +5323,10 @@ KNeighbors(n_neighbors=5): 0.9804562804949924
 KNeighbors(n_neighbors=6): 0.9757924194139573
 KNeighbors(n_neighbors=7): 0.9780645792142071
 KNeighbors(n_neighbors=8): 0.9780645792142071
-KNeighbors(n_neighbors=9): 0.9780645792142071
-KNeighbors(n_neighbors=10): 0.9755550897728812
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/sklearn/svm/_base.py:1249: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
-  warnings.warn(
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighbors(n_neighbors=9): 0.9780645792142071
+KNeighbors(n_neighbors=10): 0.9755550897728812
 </pre></div>
 </div>
 </div>
@@ -5361,7 +5366,7 @@ to automatically compute score on all these folds. Here we do
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1.        , 0.99444444, 0.99444444, 0.98333333, 0.98333333])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.98333333, 0.96666667, 0.98333333, 0.98888889, 0.99444444])
 </pre></div>
 </div>
 </div>
@@ -5411,9 +5416,7 @@ of disease progression after one year:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ridge: 0.410174971340889
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Lasso: 0.3375593674654275
+Lasso: 0.3375593674654275
 </pre></div>
 </div>
 </div>
@@ -6154,7 +6157,7 @@ need to use its <code class="docutils literal notranslate"><span class="pre">fit
 of digits even though it had no access to the class information.</p>
 <div class="exercise dropdown admonition" id="digit-dims-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 46 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 74 </span></p>
 <section id="exercise-content">
 <p><code class="xref py py-mod docutils literal notranslate"><span class="pre">sklearn.manifold</span></code> has many other non-linear embeddings. Try
 them out on the digits dataset. Could you judge their quality without
@@ -6232,7 +6235,7 @@ generalize easily to higher-dimensional datasets. We’ll explore a simple
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11c37fd40&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11e84e750&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/44a703184001475eb14a5ea369aefe5031f3838466c918dea78e425d00e637c6.png" src="../../_images/44a703184001475eb14a5ea369aefe5031f3838466c918dea78e425d00e637c6.png" />
@@ -6433,10 +6436,10 @@ capture independent noise:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11c855880&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11eba7260&gt;
 </pre></div>
 </div>
-<img alt="../../_images/e6aa93699e3c762a8fa2e4521a4bcb9c6e8a25117ade847aa00df6516283bb2a.png" src="../../_images/e6aa93699e3c762a8fa2e4521a4bcb9c6e8a25117ade847aa00df6516283bb2a.png" />
+<img alt="../../_images/eea9d6512f42742d18b6d5285bc243b584ed7691deaf13949e7d74e218ba4f32.png" src="../../_images/eea9d6512f42742d18b6d5285bc243b584ed7691deaf13949e7d74e218ba4f32.png" />
 </div>
 </div>
 <p><strong>Validation curve</strong> A validation curve consists in varying a model parameter

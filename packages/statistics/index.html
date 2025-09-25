@@ -581,10 +581,10 @@ elaborate selection and pivotal mechanisms. :::</p>
 </div>
 <section id="creating-dataframes-reading-data-files-or-converting-arrays">
 <h4>Creating dataframes: reading data files or converting arrays<a class="headerlink" href="#creating-dataframes-reading-data-files-or-converting-arrays" title="Link to this heading">#</a></h4>
-<div class="admonition-separator admonition">
-<p class="admonition-title"><strong>Separator</strong></p>
+<aside class="sidebar">
+<p class="sidebar-title">Separator</p>
 <p>It is a CSV file, but the separator is “;”</p>
-</div>
+</aside>
 <p><strong>Reading from a CSV file:</strong> Using the above CSV file that gives
 observations of brain size and weight and IQ (Willerman et al. 1991), the
 data are a mixture of numerical and categorical values:</p>
@@ -1410,7 +1410,7 @@ applied.</p>
 </div>
 <div class="exercise dropdown admonition" id="stats-brain-basic">
 
-<p class="admonition-title"><span class="caption-number">Exercise 35 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 58 </span></p>
 <section id="exercise-content">
 <ul>
 <li><p>What is the mean value for VIQ for the full population?</p></li>
@@ -1445,10 +1445,10 @@ dataframes:</p>
 <img alt="../../_images/4065c34158c7b841415bef7482e2c9a337203b7e277934de185485def4fad65a.png" src="../../_images/4065c34158c7b841415bef7482e2c9a337203b7e277934de185485def4fad65a.png" />
 </div>
 </div>
-<div class="admonition-two-populations admonition">
-<p class="admonition-title"><strong>Two populations</strong></p>
+<aside class="sidebar">
+<p class="sidebar-title">Two populations</p>
 <p>The IQ metrics are bimodal, as if there are 2 sub-populations.</p>
-</div>
+</aside>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">plotting</span><span class="o">.</span><span class="n">scatter_matrix</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;PIQ&#39;</span><span class="p">,</span> <span class="s1">&#39;VIQ&#39;</span><span class="p">,</span> <span class="s1">&#39;FSIQ&#39;</span><span class="p">]]);</span>
@@ -1461,7 +1461,7 @@ dataframes:</p>
 </div>
 <div class="exercise dropdown admonition" id="stats-bimodel-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 36 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 59 </span></p>
 <section id="exercise-content">
 <p>Plot the scatter matrix for males only, and for females only. Do you
 think that the 2 sub-populations correspond to gender?</p>
@@ -1663,7 +1663,7 @@ observations:</p>
 </div>
 <div class="exercise dropdown admonition" id="stats-weights-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 37 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 60 </span></p>
 <section id="exercise-content">
 <ul class="simple">
 <li><p>Test the difference between weights in males and females.</p></li>
@@ -1674,7 +1674,7 @@ males and females.</p></li>
 </div>
 <div class="solution dropdown admonition" id="packages/statistics/index-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#stats-weights-ex"> Exercise 37</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#stats-weights-ex"> Exercise 60</a></p>
 <section id="solution-content">
 <p><strong>Conclusion</strong>: we find that the data does not support the hypothesis
 that males and females have different VIQ.</p>
@@ -1728,10 +1728,10 @@ squares</a> (OLS).</p></li>
 <img alt="../../_images/a4a9a79a93d5f488a6c6dac89fcad39ae736a5fc0dd52596d8f1a98342204c94.png" src="../../_images/a4a9a79a93d5f488a6c6dac89fcad39ae736a5fc0dd52596d8f1a98342204c94.png" />
 </div>
 </div>
-<div class="admonition-formulas-for-statistics-in-python admonition">
-<p class="admonition-title">“formulas” for statistics in Python</p>
+<aside class="sidebar">
+<p class="sidebar-title">“formulas” for statistics in Python</p>
 <p><a class="reference external" href="https://www.statsmodels.org/stable/example_formulas.html">See the statsmodels documentation</a></p>
-</div>
+</aside>
 <p>Then we specify an OLS model and fit it:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1761,10 +1761,10 @@ squares</a> (OLS).</p></li>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   164.5</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>1.72e-10</td>
+  <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>1.72e-10</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>23:49:00</td>     <th>  Log-Likelihood:    </th> <td> -51.758</td>
+  <th>Time:</th>                 <td>09:50:18</td>     <th>  Log-Likelihood:    </th> <td> -51.758</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    20</td>      <th>  AIC:               </th> <td>   107.5</td>
@@ -1818,7 +1818,7 @@ round these go by noticing that there is an <code class="docutils literal notran
 </div>
 <div class="exercise dropdown admonition" id="stats-estimated-params-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 38 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 61 </span></p>
 <section id="exercise-content">
 <p>Retrieve the estimated parameters from the model above.</p>
 <p><strong>Hint</strong>: use tab-completion to find the relevant attribute.</p>
@@ -1857,10 +1857,10 @@ model:</p>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>  0.5969</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Sep 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.445</td> 
+  <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.445</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>23:49:00</td>     <th>  Log-Likelihood:    </th> <td> -182.42</td>
+  <th>Time:</th>                 <td>09:50:18</td>     <th>  Log-Likelihood:    </th> <td> -182.42</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    40</td>      <th>  AIC:               </th> <td>   368.8</td>
@@ -2041,10 +2041,10 @@ categorical variable:</p>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>  0.2168</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Sep 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.643</td> 
+  <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th>  <td> 0.643</td> 
 </tr>
 <tr>
-  <th>Time:</th>                 <td>23:49:00</td>     <th>  Log-Likelihood:    </th> <td> -364.35</td>
+  <th>Time:</th>                 <td>09:50:18</td>     <th>  Log-Likelihood:    </th> <td> -364.35</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>    80</td>      <th>  AIC:               </th> <td>   732.7</td>
@@ -2187,10 +2187,10 @@ width and the category of iris</p>
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   44.63</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>1.58e-20</td>
+  <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>1.58e-20</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>23:49:01</td>     <th>  Log-Likelihood:    </th> <td> -38.185</td>
+  <th>Time:</th>                 <td>09:50:19</td>     <th>  Log-Likelihood:    </th> <td> -38.185</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   150</td>      <th>  AIC:               </th> <td>   84.37</td>
@@ -2262,7 +2262,7 @@ test <code class="docutils literal notranslate"><span class="pre">&quot;name[T.v
 <p>Is this difference significant?</p>
 <div class="exercise dropdown admonition" id="stats-male-female-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 62 </span></p>
 <section id="exercise-content">
 <p>Going back to the brain size + IQ data, test if the VIQ of male and
 female are different after removing the effect of brain size, height
@@ -2537,7 +2537,7 @@ variables using <code class="xref py py-func docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/36281ca102fbb921df075feead701a4c6113747fcc0a499b95b04ef1a093fa6a.png" src="../../_images/36281ca102fbb921df075feead701a4c6113747fcc0a499b95b04ef1a093fa6a.png" />
+<img alt="../../_images/1e2e98524daf3517c9bbb376fa81789add6ec10787604161151cb9654bfbd460.png" src="../../_images/1e2e98524daf3517c9bbb376fa81789add6ec10787604161151cb9654bfbd460.png" />
 </div>
 </div>
 <p>Categorical variables can be plotted as the hue:</p>
@@ -2549,7 +2549,7 @@ variables using <code class="xref py py-func docutils literal notranslate"><span
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bd2c2a6cdc2f0120b055634883a1008a4a7c2899ffca1c46780b856f45aaadb1.png" src="../../_images/bd2c2a6cdc2f0120b055634883a1008a4a7c2899ffca1c46780b856f45aaadb1.png" />
+<img alt="../../_images/3197859c7210b4a864ebf7c533da53e933ec0b006634158bbb5a8cf2d8590197.png" src="../../_images/3197859c7210b4a864ebf7c533da53e933ec0b006634158bbb5a8cf2d8590197.png" />
 </div>
 </div>
 <aside class="topic">
@@ -2578,7 +2578,7 @@ wage, and education, can be plotted using <code class="xref py py-func docutils 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/44f0e6c183a73a44455e9a4e323fb32da6ce2526d6f82a65b1ac14a56152bb5f.png" src="../../_images/44f0e6c183a73a44455e9a4e323fb32da6ce2526d6f82a65b1ac14a56152bb5f.png" />
+<img alt="../../_images/349a2d42ead51ceb9559543a7d93c9841b97aafb70ec83d8560fbdd141867c27.png" src="../../_images/349a2d42ead51ceb9559543a7d93c9841b97aafb70ec83d8560fbdd141867c27.png" />
 </div>
 </div>
 <aside class="topic">
@@ -2607,7 +2607,7 @@ statsmodels by replacing the use of the OLS by a “Robust Linear Model”,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/d94f37c5091c8b90a2d822e0284c94b740285b039c7a9c58fe8e75b693828995.png" src="../../_images/d94f37c5091c8b90a2d822e0284c94b740285b039c7a9c58fe8e75b693828995.png" />
+<img alt="../../_images/39c124304b6c7b8af262b13993f70e814b0ec75766971a27ea51e28f4c422447.png" src="../../_images/39c124304b6c7b8af262b13993f70e814b0ec75766971a27ea51e28f4c422447.png" />
 </div>
 </div>
 <p>We can first ask do <code class="docutils literal notranslate"><span class="pre">education</span></code> and <code class="docutils literal notranslate"><span class="pre">sex</span></code> separately contribute to <code class="docutils literal notranslate"><span class="pre">wage</span></code>:</p>
@@ -2631,10 +2631,10 @@ statsmodels by replacing the use of the OLS by a “Robust Linear Model”,
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   63.42</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>2.01e-25</td>
+  <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>2.01e-25</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>23:49:07</td>     <th>  Log-Likelihood:    </th> <td>  86.654</td>
+  <th>Time:</th>                 <td>09:50:25</td>     <th>  Log-Likelihood:    </th> <td>  86.654</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   534</td>      <th>  AIC:               </th> <td>  -167.3</td>
@@ -2707,10 +2707,10 @@ populations. This is done via an <a class="reference external" href="https://www
   <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   43.72</td>
 </tr>
 <tr>
-  <th>Date:</th>             <td>Tue, 23 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>2.94e-25</td>
+  <th>Date:</th>             <td>Thu, 25 Sep 2025</td> <th>  Prob (F-statistic):</th> <td>2.94e-25</td>
 </tr>
 <tr>
-  <th>Time:</th>                 <td>23:49:07</td>     <th>  Log-Likelihood:    </th> <td>  88.503</td>
+  <th>Time:</th>                 <td>09:50:25</td>     <th>  Log-Likelihood:    </th> <td>  88.503</td>
 </tr>
 <tr>
   <th>No. Observations:</th>      <td>   534</td>      <th>  AIC:               </th> <td>  -169.0</td>

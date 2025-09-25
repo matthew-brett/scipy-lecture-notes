@@ -461,7 +461,12 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-filters">Local filters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-local-filters">Non-local filters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-morphology">Mathematical morphology</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-filters-comparison-image-denoising">Example of filters comparison: image denoising</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-filters-comparison-image-denoising">Example of filters comparison: image denoising</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-segmentation">Image segmentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-segmentation-foreground-background">Binary segmentation: foreground + background</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-based-method-otsu-thresholding">Histogram-based method: <strong>Otsu thresholding</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-connected-components-of-a-discrete-image">Labeling connected components of a discrete image</a></li>
 </ul>
 </li>
@@ -475,7 +480,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-regions-properties">Measuring regions’ properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization-and-interaction">Data visualization and interaction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction-for-computer-vision">Feature extraction for computer vision</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-code-examples">Full code examples</a></li>
 </ul>
             </nav>
         </div>
@@ -516,69 +520,69 @@ masking and labeling are a prerequisite.</p>
 <section id="introduction-and-concepts">
 <h2>Introduction and concepts<a class="headerlink" href="#introduction-and-concepts" title="Link to this heading">#</a></h2>
 <p>Images are NumPy’s arrays <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p>
-<p>:pixels:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array values: ``a[2, 3]``
-</pre></div>
-</div>
-<p>:channels:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>array dimensions
-</pre></div>
-</div>
-<p>:image encoding:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>``dtype`` (``np.uint8``, ``np.uint16``, ``np.float``)
-</pre></div>
-</div>
-<p>:filters:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>functions (``numpy``, ``skimage``, ``scipy``)
-</pre></div>
-</div>
-<p>::</p>
+<dl class="simple glossary">
+<dt id="term-Pixels">Pixels<a class="headerlink" href="#term-Pixels" title="Link to this term">#</a></dt><dd><p>array values: <code class="docutils literal notranslate"><span class="pre">a[2,</span> <span class="pre">3]</span></code></p>
+</dd>
+<dt id="term-Channels">Channels<a class="headerlink" href="#term-Channels" title="Link to this term">#</a></dt><dd><p>array dimensions</p>
+</dd>
+<dt id="term-Image-encoding">Image encoding<a class="headerlink" href="#term-Image-encoding" title="Link to this term">#</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code> (<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">np.uint16</span></code>, <code class="docutils literal notranslate"><span class="pre">np.float</span></code>)</p>
+</dd>
+<dt id="term-Filters">Filters<a class="headerlink" href="#term-Filters" title="Link to this term">#</a></dt><dd><p>functions (<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">skimage</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>)</p>
+</dd>
+</dl>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This example show how to create a simple checkerboard.</span>
 <span class="n">check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">check</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">check</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">check</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">check</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s1">&#39;nearest&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x105ffc4a0&gt;
-</pre></div>
-</div>
 <img alt="../../_images/876c272424d6ab6657047e3e335a23711bd3fe5a605685785b046a8ff54bfc8b.png" src="../../_images/876c272424d6ab6657047e3e335a23711bd3fe5a605685785b046a8ff54bfc8b.png" />
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_check_001.png)
-# To fix parsing of Python block.
-:align: center
-:scale: 60
-:target: auto_examples/plot_check.html
--->
 <section id="scikit-image-and-the-scientific-python-ecosystem">
 <h3><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> and the scientific Python ecosystem<a class="headerlink" href="#scikit-image-and-the-scientific-python-ecosystem" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> is packaged in both <code class="docutils literal notranslate"><span class="pre">pip</span></code> and <code class="docutils literal notranslate"><span class="pre">conda</span></code>-based
 Python installations, as well as in most Linux distributions. Other
 Python packages for image processing &amp; visualization that operate on
 NumPy arrays include:</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></p>
-<p>: For N-dimensional arrays. Basic filtering,
-mathematical morphology, regions properties</p>
-<p><a class="reference external" href="https://mahotas.readthedocs.io">Mahotas</a></p>
-<p>: With a focus on high-speed implementations.</p>
-<p><a class="reference external" href="https://napari.org">Napari</a></p>
-<p>: A fast, interactive, multi-dimensional image viewer built in Qt.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Other packages for working with images</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></p></td>
+<td><p>For N-dimensional arrays. Basic filtering, mathematical morphology,
+regions properties</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://mahotas.readthedocs.io">Mahotas</a></p></td>
+<td><p>With a focus on high-speed implementations.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://napari.org">Napari</a></p></td>
+<td><p>A fast, interactive, multi-dimensional image viewer built in Qt.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Some powerful C++ image processing libraries also have Python bindings:</p>
-<p><a class="reference external" href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV</a></p>
-<p>: A highly optimized computer vision library with a focus on real-time
-applications.</p>
-<p><a class="reference external" href="https://www.itk.org">ITK</a></p>
-<p>: The Insight ToolKit, especially useful for registration and
-working with 3D images.</p>
-<p>To varying degrees, these tend to be less Pythonic and NumPy-friendly.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-number">Table 2 </span><span class="caption-text">C++ libraries with Python bindings</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference external" href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV</a></p></td>
+<td><p>A highly optimized computer vision library with a focus on real-time
+applications.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.itk.org">ITK</a></p></td>
+<td><p>The Insight ToolKit, especially useful for registration and working with
+3D images.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>To varying degrees, these C++-based libraries tend to be less Pythonic and
+NumPy-friendly.</p>
 </section>
 <section id="what-is-included-in-scikit-image">
 <h3>What is included in scikit-image<a class="headerlink" href="#what-is-included-in-scikit-image" title="Link to this heading">#</a></h3>
@@ -590,37 +594,57 @@ working with 3D images.</p>
 <p>The library contains predominantly image processing algorithms, but
 also utility functions to ease data handling and processing.
 It contains the following submodules:</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">color</span></code></p>
-<p>: Color space conversion.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code></p>
-<p>: Test images and example data.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">draw</span></code></p>
-<p>: Drawing primitives (lines, text, etc.) that operate on NumPy
-arrays.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">exposure</span></code></p>
-<p>: Image intensity adjustment, e.g., histogram equalization, etc.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">feature</span></code></p>
-<p>: Feature detection and extraction, e.g., texture analysis corners, etc.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">filters</span></code></p>
-<p>: Sharpening, edge finding, rank filters, thresholding, etc.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">graph</span></code></p>
-<p>: Graph-theoretic operations, e.g., shortest paths.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></p>
-<p>: Reading, saving, and displaying images and video.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">measure</span></code></p>
-<p>: Measurement of image properties, e.g., region properties and contours.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">metrics</span></code></p>
-<p>: Metrics corresponding to images, e.g. distance metrics, similarity, etc.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">morphology</span></code></p>
-<p>: Morphological operations, e.g., opening or skeletonization.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">restoration</span></code></p>
-<p>: Restoration algorithms, e.g., deconvolution algorithms, denoising, etc.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">segmentation</span></code></p>
-<p>: Partitioning an image into multiple regions.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">transform</span></code></p>
-<p>: Geometric and other transforms, e.g., rotation or the Radon transform.</p>
-<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code></p>
-<p>: Generic utilities.</p>
+<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<caption><span class="caption-number">Table 3 </span><span class="caption-text">Scikit-image submodules</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">color</span></code></p></td>
+<td><p>Color space conversion.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">data</span></code></p></td>
+<td><p>Test images and example data.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">draw</span></code></p></td>
+<td><p>Drawing primitives (lines, text, etc.) that operate on NumPy arrays.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">exposure</span></code></p></td>
+<td><p>Image intensity adjustment, e.g., histogram equalization, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">feature</span></code></p></td>
+<td><p>Feature detection and extraction, e.g., texture analysis corners, etc.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">filters</span></code></p></td>
+<td><p>Sharpening, edge finding, rank filters, thresholding, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">graph</span></code></p></td>
+<td><p>Graph-theoretic operations, e.g., shortest paths.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></p></td>
+<td><p>Reading, saving, and displaying images and video.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">measure</span></code></p></td>
+<td><p>Measurement of image properties, e.g., region properties and contours.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">metrics</span></code></p></td>
+<td><p>Metrics corresponding to images, e.g. distance metrics, similarity, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">morphology</span></code></p></td>
+<td><p>Morphological operations, e.g., opening or skeletonization.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">restoration</span></code></p></td>
+<td><p>Restoration algorithms, e.g., deconvolution algorithms, denoising, etc.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">segmentation</span></code></p></td>
+<td><p>Partitioning an image into multiple regions.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">transform</span></code></p></td>
+<td><p>Geometric and other transforms, e.g., rotation or the Radon transform.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">util</span></code></p></td>
+<td><p>Generic utilities.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <!---
 TODO Edit this section with a more refined discussion of the various
 package features.
@@ -880,7 +904,7 @@ Check the docstring to know if a function can be used on 3D images
 </div>
 <div class="exercise dropdown admonition" id="ski-grayscale-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 68 </span></p>
 <section id="exercise-content">
 <p>Open a color image on your disk as a NumPy array.</p>
 <p>Find a skimage function computing the histogram of an image and
@@ -900,11 +924,6 @@ values of neighboring pixels. The function can be linear or non-linear.</p>
 <p>Neighbourhood: square (choose size), disk, or more complicated
 <em>structuring element</em>.</p>
 <p><img alt="" src="../../_images/kernels.png" /></p>
-<!---
-# For parsing
-:align: center
-:width: 80%
--->
 <p>Example : horizontal Sobel filter</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -920,13 +939,24 @@ values of neighboring pixels. The function can be linear or non-linear.</p>
 -1  -2  -1
 </pre></div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_sobel_001.png)
-# For parsing
-:align: center
-:target: auto_examples/plot_sobel.html
-:width: 70%
--->
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">hsobel_text</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/07cdac00b49551f3105a63ad072752cf84106fef077e37c9851c566348fd4597.png" src="../../_images/07cdac00b49551f3105a63ad072752cf84106fef077e37c9851c566348fd4597.png" />
+</div>
+</div>
 </section>
 <section id="non-local-filters">
 <h3>Non-local filters<a class="headerlink" href="#non-local-filters" title="Link to this heading">#</a></h3>
@@ -941,13 +971,24 @@ transform the value of one pixel:</p>
 </div>
 </div>
 <p>Enhances contrast in large almost uniform regions.</p>
-<!---
-![](auto_examples/images/sphx_glr_plot_equalize_hist_001.png)
-# For parsing.
-:align: center
-:target: auto_examples/plot_equalize_hist.html
-:width: 70%
--->
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">camera_equalized</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/a4e86bd92b22843788addbf2bb317bd34e36a4e7945ce06ed39b8229a14ccf63.png" src="../../_images/a4e86bd92b22843788addbf2bb317bd34e36a4e7945ce06ed39b8229a14ccf63.png" />
+</div>
+</div>
 </section>
 <section id="mathematical-morphology">
 <h3>Mathematical morphology<a class="headerlink" href="#mathematical-morphology" title="Link to this heading">#</a></h3>
@@ -980,10 +1021,6 @@ image.</p>
 </div>
 </div>
 <p><img alt="" src="../../_images/diamond_kernel.png" /></p>
-<!---
-# For parsing.
-:align: center
--->
 <p><strong>Erosion</strong> = minimum filter. Replace the value of a pixel by the minimal value covered by the structuring element.:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1141,30 +1178,64 @@ works on arbitrary-dimensional arrays.</p>
 <span class="n">tv_coins</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">restoration</span><span class="o">.</span><span class="n">denoise_tv_chambolle</span><span class="p">(</span>
     <span class="n">coins_zoom</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span>
 <span class="p">)</span>
-<span class="n">gaussian_coins</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">gaussian_filter_coins</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">gaussian</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">med_filter_coins</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">filters</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)))</span>
+<span class="n">tv_filter_coins</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">restoration</span><span class="o">.</span><span class="n">denoise_tv_chambolle</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">weight</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_filter_coins_001.png)
-# For parsing.
-:target: auto_examples/plot_filter_coins.html
-:width: 99%
--->
-<div class="docutils">
-<h2 class="rubric" id="image-segmentation">Image segmentation</h2>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">141</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">coins</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">:</span><span class="mi">370</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Image&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">142</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gaussian_filter_coins</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">:</span><span class="mi">370</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Gaussian filter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">143</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">med_filter_coins</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">:</span><span class="mi">370</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Median filter&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">tv_filter_coins</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span> <span class="mi">300</span><span class="p">:</span><span class="mi">370</span><span class="p">],</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;TV filter&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;TV filter&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/183e18dfad16f7ed62aba5b8191d79e4265c884edde68cc237265d9cf17a1a70.png" src="../../_images/183e18dfad16f7ed62aba5b8191d79e4265c884edde68cc237265d9cf17a1a70.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="image-segmentation">
+<h2>Image segmentation<a class="headerlink" href="#image-segmentation" title="Link to this heading">#</a></h2>
 <p>Image segmentation is the attribution of different labels to different
 regions of the image, for example in order to extract the pixels of an
 object of interest.</p>
-<h3 class="rubric" id="binary-segmentation-foreground-background">Binary segmentation: foreground + background</h3>
-<h4 class="rubric" id="histogram-based-method-otsu-thresholding">Histogram-based method: <strong>Otsu thresholding</strong></h4>
+<section id="binary-segmentation-foreground-background">
+<h3>Binary segmentation: foreground + background<a class="headerlink" href="#binary-segmentation-foreground-background" title="Link to this heading">#</a></h3>
+<section id="histogram-based-method-otsu-thresholding">
+<h4>Histogram-based method: <strong>Otsu thresholding</strong><a class="headerlink" href="#histogram-based-method-otsu-thresholding" title="Link to this heading">#</a></h4>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <p>The <a class="reference external" href="https://en.wikipedia.org/wiki/Otsu%27s_method">Otsu method</a> is a
 simple heuristic to find a threshold to separate the foreground from
 the background.</p>
-</div>
 </div>
 <aside class="sidebar">
 <p class="sidebar-title">Earlier scikit-image versions</p>
@@ -1180,13 +1251,42 @@ versions of scikit-image</p>
 </div>
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_threshold_001.png)
-# For parsing.
-:align: center
-:target: auto_examples/plot_threshold.html
-:width: 70%
--->
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The histogram from which Otsu calculated the threshold.</span>
+<span class="n">hist</span><span class="p">,</span> <span class="n">bins_center</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">exposure</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">camera</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">camera</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">mask</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bins_center</span><span class="p">,</span> <span class="n">hist</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span><span class="o">=</span><span class="s2">&quot;--&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/be8b5a4e9c129d1932aff7468cc2da7961884122f19b718df3212ad3b197accb.png" src="../../_images/be8b5a4e9c129d1932aff7468cc2da7961884122f19b718df3212ad3b197accb.png" />
+</div>
+</div>
+</section>
 <section id="labeling-connected-components-of-a-discrete-image">
 <h4>Labeling connected components of a discrete image<a class="headerlink" href="#labeling-connected-components-of-a-discrete-image" title="Link to this heading">#</a></h4>
 <div class="dropdown admonition note">
@@ -1226,13 +1326,33 @@ each one.</p>
 </div>
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_labels_001.png)
-# For parsing.
-:align: center
-:target: auto_examples/plot_labels.html
-:width: 90%
--->
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">131</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blobs</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">132</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">all_labels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">133</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">blobs_labels</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/8cf5eecd8f16a078200bedb056447e173e7ce04c73fc043da8e045b9f6bf2c5d.png" src="../../_images/8cf5eecd8f16a078200bedb056447e173e7ce04c73fc043da8e045b9f6bf2c5d.png" />
+</div>
+</div>
 <div class="admonition-see-also admonition">
 <p class="admonition-title">See also</p>
 <p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.find_objects()</span></code> is useful to return slices on
@@ -1260,7 +1380,7 @@ approach that fills “basins” in the image</p>
 <span class="c1"># Now we want to separate the two objects in image</span>
 <span class="c1"># Generate the markers as local maxima of the distance</span>
 <span class="c1"># to the background</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
+<span class="c1"># Use scipy.ndimage.distance_transform_edt</span>
 <span class="n">distance</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">distance_transform_edt</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
 <span class="n">peak_idx</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">feature</span><span class="o">.</span><span class="n">peak_local_max</span><span class="p">(</span>
     <span class="n">distance</span><span class="p">,</span> <span class="n">footprint</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)),</span> <span class="n">labels</span><span class="o">=</span><span class="n">image</span>
@@ -1283,21 +1403,48 @@ is similar to the Watershed, but with a more “probabilistic” approach. It
 is based on the idea of the diffusion of labels in the image:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transform markers image so that 0-valued pixels are to</span>
-<span class="c1"># be labelled, and -1-valued pixels represent background</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Transform markers image so that 0-valued pixels are to</span>
+<span class="c1"># be labelled, and -1-valued pixels represent background</span>
 <span class="n">markers</span><span class="p">[</span><span class="o">~</span><span class="n">image</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 <span class="n">labels_rw</span> <span class="o">=</span> <span class="n">ski</span><span class="o">.</span><span class="n">segmentation</span><span class="o">.</span><span class="n">random_walker</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">markers</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_segmentations_001.png)
-# For parsing.
-:align: center
-:target: auto_examples/plot_segmentations.html
-:width: 90%
--->
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">141</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;image&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">142</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="o">-</span><span class="n">distance</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;distance map&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">143</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">labels_ws</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;watershed segmentation&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">144</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">labels_rw</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;nipy_spectral&quot;</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;random walker segmentation&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/469c482000b3b6c614ebe98e6aa37156b195988f64592fdc0c861a79bfcf653e.png" src="../../_images/469c482000b3b6c614ebe98e6aa37156b195988f64592fdc0c861a79bfcf653e.png" />
+</div>
+</div>
 <div class="admonition-postprocessing-label-images admonition">
 <p class="admonition-title">Postprocessing label images</p>
 <p><code class="docutils literal notranslate"><span class="pre">skimage</span></code> provides several utility functions that can be used on
@@ -1307,8 +1454,10 @@ different regions). Functions names are often self-explaining:
 <code class="xref py py-func docutils literal notranslate"><span class="pre">skimage.segmentation.relabel_from_one()</span></code>,
 <code class="xref py py-func docutils literal notranslate"><span class="pre">skimage.morphology.remove_small_objects()</span></code>, etc.</p>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise</p>
+<div class="exercise dropdown admonition" id="ski-coins-otsu-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 69 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Load the <code class="docutils literal notranslate"><span class="pre">coins</span></code> image from the <code class="docutils literal notranslate"><span class="pre">data</span></code> submodule.</p></li>
 <li><p>Separate the coins from the background by testing several
@@ -1317,6 +1466,7 @@ watershed or random walker segmentation.</p></li>
 <li><p>If necessary, use a postprocessing function to improve the coins /
 background segmentation.</p></li>
 </ul>
+</section>
 </div>
 </section>
 </section>
@@ -1357,7 +1507,7 @@ returned).</p>
 </div>
 <div class="exercise dropdown admonition" id="ski-coin-labels-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 70 </span></p>
 <section id="exercise-content">
 <ul class="simple">
 <li><p>Use the binary image of the coins and background from the previous
@@ -1386,26 +1536,12 @@ pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">clean_border</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">clean_border</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10d76abd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10eceade0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/33011bec8aae292d03bd8a118eec6a57626da166cb718238dafd734f8b245949.png" src="../../_images/33011bec8aae292d03bd8a118eec6a57626da166cb718238dafd734f8b245949.png" />
@@ -1415,42 +1551,16 @@ pipeline.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">clean_border</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x10f28ebd0&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">coins</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10d7adfd0&gt;
-</pre></div>
-</div>
-<img alt="../../_images/795e7f31ecec096cff5b9d544c206c85ab652f382eab12bdcd89b00e30f8dd35.png" src="../../_images/795e7f31ecec096cff5b9d544c206c85ab652f382eab12bdcd89b00e30f8dd35.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">clean_border</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x10dd44650&gt;
-</pre></div>
-</div>
-<img alt="../../_images/7f7268df32bc14a0c71d82e4ecc66538227762ce30229cd78c700982fb127c2a.png" src="../../_images/7f7268df32bc14a0c71d82e4ecc66538227762ce30229cd78c700982fb127c2a.png" />
+<img alt="../../_images/0af2ffdc22d2cbc5f128f7e882ffb9fa74cd751c5fdac0e5e5f886780363c076.png" src="../../_images/0af2ffdc22d2cbc5f128f7e882ffb9fa74cd751c5fdac0e5e5f886780363c076.png" />
 </div>
 </div>
 <p>Use <code class="docutils literal notranslate"><span class="pre">skimage</span></code> dedicated utility function:</p>
@@ -1463,13 +1573,30 @@ pipeline.</p>
 </div>
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_boundaries_001.png)
-# For parsing.
-:align: center
-:target: auto_examples/plot_boundaries.html
-:width: 90%
--->
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">121</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">clean_border</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">122</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">coins_edges</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="../../_images/ff61a2ff211488f7c01424ab2186b909d0edcd28d5278ec982f84168d98e114c.png" src="../../_images/ff61a2ff211488f7c01424ab2186b909d0edcd28d5278ec982f84168d98e114c.png" />
+</div>
+</div>
 </section>
 <section id="feature-extraction-for-computer-vision">
 <h2>Feature extraction for computer vision<a class="headerlink" href="#feature-extraction-for-computer-vision" title="Link to this heading">#</a></h2>
@@ -1502,27 +1629,37 @@ pipeline.</p>
 </div>
 </div>
 </div>
-<!---
-![](auto_examples/images/sphx_glr_plot_features_001.png)
-# For parsing.
-:align: center
-:target: auto_examples/plot_features.html
-:width: 90%
--->
+<div class="cell tag_hide-input docutils container">
+<details class="admonition hide above-input">
+<summary aria-label="Toggle hidden content">
+<p class="collapsed admonition-title">Show code cell source</p>
+<p class="expanded admonition-title">Hide code cell source</p>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">gray</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">,</span> <span class="n">interpolation</span><span class="o">=</span><span class="s2">&quot;nearest&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coords_subpix</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">coords_subpix</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;+r&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">mew</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">coords</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">coords</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="s2">&quot;.b&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(-23.504322001100714),
+ np.float64(349.5),
+ np.float64(349.5),
+ np.float64(-0.5))
+</pre></div>
+</div>
+<img alt="../../_images/4b6dd28dc503837c665784601e1a6ae3152855275e2c579083e2ede704557567.png" src="../../_images/4b6dd28dc503837c665784601e1a6ae3152855275e2c579083e2ede704557567.png" />
+</div>
+</div>
 <p>(this example is taken from the <a class="reference external" href="https://scikit-image.org/docs/stable/auto_examples/features_detection/plot_corner.html">plot_corner</a>
 example in scikit-image)</p>
 <p>Points of interest such as corners can then be used to match objects in
 different images, as described in the <a class="reference external" href="https://scikit-image.org/docs/stable/auto_examples/transform/plot_matching.html">plot_matching</a>
 example of scikit-image.</p>
-</section>
-<section id="full-code-examples">
-<h2>Full code examples<a class="headerlink" href="#full-code-examples" title="Link to this heading">#</a></h2>
-<!---
-include the gallery. Skip the first line to avoid the "orphan"
-declaration
--->
-<p>.. include:: auto_examples/index.rst
-:start-line: 1</p>
 </section>
 </section>
 
@@ -1606,7 +1743,12 @@ declaration
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#local-filters">Local filters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#non-local-filters">Non-local filters</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-morphology">Mathematical morphology</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-filters-comparison-image-denoising">Example of filters comparison: image denoising</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#example-of-filters-comparison-image-denoising">Example of filters comparison: image denoising</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#image-segmentation">Image segmentation</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#binary-segmentation-foreground-background">Binary segmentation: foreground + background</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#histogram-based-method-otsu-thresholding">Histogram-based method: <strong>Otsu thresholding</strong></a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#labeling-connected-components-of-a-discrete-image">Labeling connected components of a discrete image</a></li>
 </ul>
 </li>
@@ -1620,7 +1762,6 @@ declaration
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#measuring-regions-properties">Measuring regions’ properties</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-visualization-and-interaction">Data visualization and interaction</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#feature-extraction-for-computer-vision">Feature extraction for computer vision</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#full-code-examples">Full code examples</a></li>
 </ul>
   </nav></div>
 

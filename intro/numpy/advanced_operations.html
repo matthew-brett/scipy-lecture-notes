@@ -534,7 +534,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/146ead0e3010bef11c4df8a49ea4c7f7738878a005f40f33087ef1b58dabf9e9.png" src="../../_images/146ead0e3010bef11c4df8a49ea4c7f7738878a005f40f33087ef1b58dabf9e9.png" />
+<img alt="../../_images/b87fa100c9a6e5b52f8c8e5beb751fa781ea36debd7902af885498f83e1d3c64.png" src="../../_images/b87fa100c9a6e5b52f8c8e5beb751fa781ea36debd7902af885498f83e1d3c64.png" />
 </div>
 </div>
 <p>See <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.polynomials.poly1d.html">https://numpy.org/doc/stable/reference/routines.polynomials.poly1d.html</a>
@@ -601,10 +601,10 @@ range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10a9f7ce0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10f899370&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/eab7f5a8857e09483f5a6041d00712b6ece111104a85f28ae41470be38c735a2.png" src="../../_images/eab7f5a8857e09483f5a6041d00712b6ece111104a85f28ae41470be38c735a2.png" />
+<img alt="../../_images/199d8e0b7ef36f23e450a5915d91f48813c78c7b2cd11993a80cb0d28f875d5d.png" src="../../_images/199d8e0b7ef36f23e450a5915d91f48813c78c7b2cd11993a80cb0d28f875d5d.png" />
 </div>
 </div>
 <p>The Chebyshev polynomials have some advantages in interpolation.</p>
@@ -769,7 +769,7 @@ moonlanding.png       test.png
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10af26450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10f8dac30&gt;
 </pre></div>
 </div>
 <img alt="../../_images/9a7ea7bd2ddc2f3862b66d6f33143247c9fd193375dd2d72113094a5d3d7c63d.png" src="../../_images/9a7ea7bd2ddc2f3862b66d6f33143247c9fd193375dd2d72113094a5d3d7c63d.png" />
@@ -787,7 +787,7 @@ moonlanding.png       test.png
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10b0fbf50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10fe56000&gt;
 </pre></div>
 </div>
 <img alt="../../_images/74b851382146b1575d81a847692f69a520c64baf71e6351d13788fa913909840.png" src="../../_images/74b851382146b1575d81a847692f69a520c64baf71e6351d13788fa913909840.png" />
@@ -817,10 +817,28 @@ moonlanding.png       test.png
 <li><p>IDL: <code class="docutils literal notranslate"><span class="pre">scipy.io.readsav</span></code></p></li>
 </ul>
 <p>… if somebody uses it, there’s probably also a Python library for it.</p>
-<div class="green admonition">
-<p class="admonition-title">Exercise: Text data files</p>
-<p>Write a Python script that loads data from <a class="reference download internal" download="" href="../../_downloads/087d8fe936fcb7a4762b9850b932cf9e/populations.txt"><code class="xref download docutils literal notranslate"><span class="pre">populations.txt</span></code></a>:: and drop the last column and the first
-5 rows. Save the smaller dataset to <code class="docutils literal notranslate"><span class="pre">pop2.txt</span></code>.</p>
+<div class="exercise dropdown admonition" id="npa-load-proc-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 21 </span></p>
+<section id="exercise-content">
+<p>Write code that loads data from <a class="reference download internal" download="" href="../../_downloads/087d8fe936fcb7a4762b9850b932cf9e/populations.txt"><code class="xref download docutils literal notranslate"><span class="pre">populations.txt</span></code></a>: and drops the last column and the first 5 rows. Save
+the smaller dataset to <code class="docutils literal notranslate"><span class="pre">pop2.txt</span></code>.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="intro/numpy/advanced_operations-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#npa-load-proc-ex"> Exercise 21</a></p>
+<section id="solution-content">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;data/populations.txt&quot;</span><span class="p">)</span>
+<span class="n">reduced_data</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">5</span><span class="p">:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s2">&quot;pop2.txt&quot;</span><span class="p">,</span> <span class="n">reduced_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </div>
 <!---
 loadtxt, savez, load, fromfile, tofile

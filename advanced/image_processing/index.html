@@ -563,7 +563,7 @@ tutorial <a class="reference internal" href="../../packages/scikit-image/index.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10b9e6450&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10ad7a1e0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/a51d6487a3897f09f98f16fe206a0a21fa19973161a5ceb948f229915c71a495.png" src="../../_images/a51d6487a3897f09f98f16fe206a0a21fa19973161a5ceb948f229915c71a495.png" />
@@ -658,7 +658,7 @@ bytes).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10ba817c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10b037ce0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/92dd923c201c78f4214d9908f7405f98cf2800dbb24c035a96cfb31518605e1b.png" src="../../_images/92dd923c201c78f4214d9908f7405f98cf2800dbb24c035a96cfb31518605e1b.png" />
@@ -813,8 +813,10 @@ bytes).</p>
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">np.histogram</span></code></p>
-<div class="green admonition">
-<p class="admonition-title">Exercise</p>
+<div class="exercise dropdown admonition" id="img-proc-logo-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 51 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Open as an array the <code class="docutils literal notranslate"><span class="pre">scikit-image</span></code> logo
 (<a class="reference external" href="https://scikit-image.org/_static/img/logo.png">https://scikit-image.org/_static/img/logo.png</a>), or an
@@ -831,6 +833,7 @@ of the lightest pixels.</p></li>
 <li><p>Save the array to two different file formats (png, jpg, tiff)</p></li>
 </ul>
 <p><img alt="" src="../../_images/scikit_image_logo.png" /></p>
+</section>
 </div>
 </section>
 <section id="geometrical-transformations">
@@ -1025,7 +1028,7 @@ Laplacian:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/61431af5408ca691776c606e21eae259ffb546bb0cf54e0a5d37db66e017cc5b.png" src="../../_images/61431af5408ca691776c606e21eae259ffb546bb0cf54e0a5d37db66e017cc5b.png" />
+<img alt="../../_images/b9be739b5c271a3f18d39abb6da251c2db07b98e5dffa27f826fd2f2340fa8a9.png" src="../../_images/b9be739b5c271a3f18d39abb6da251c2db07b98e5dffa27f826fd2f2340fa8a9.png" />
 </div>
 </div>
 <p>Median filter: better result for straight boundaries (<strong>low curvature</strong>):</p>
@@ -1066,15 +1069,17 @@ Laplacian:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/52417988ed49ed524d312047acb58b2bd25252d4b4e773964440ad6c95397f7f.png" src="../../_images/52417988ed49ed524d312047acb58b2bd25252d4b4e773964440ad6c95397f7f.png" />
+<img alt="../../_images/b17c9c492a8bbdad127060571875b7f172daef13549a49d56628525ec73d8508.png" src="../../_images/b17c9c492a8bbdad127060571875b7f172daef13549a49d56628525ec73d8508.png" />
 </div>
 </div>
 <p>Other rank filter: <code class="docutils literal notranslate"><span class="pre">scipy.ndimage.maximum_filter</span></code>,
 <code class="docutils literal notranslate"><span class="pre">scipy.ndimage.percentile_filter</span></code></p>
 <p>Other local non-linear filters: Wiener (<code class="docutils literal notranslate"><span class="pre">scipy.signal.wiener</span></code>), etc.</p>
 <p><strong>Non-local filters</strong></p>
-<div class="green admonition">
-<p class="admonition-title">Exercise: denoising</p>
+<div class="exercise dropdown admonition" id="img-proc-denoise-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 52 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Create a binary image (of 0s and 1s) with several objects (circles,
 ellipses, squares, or random shapes).</p></li>
@@ -1085,6 +1090,7 @@ gaussian filtering and median filtering.</p></li>
 Which one is the closest to the histogram of the original (noise-free)
 image?</p></li>
 </ul>
+</section>
 </div>
 <div class="admonition-see-also admonition">
 <p class="admonition-title">See also</p>
@@ -1554,11 +1560,26 @@ etc.</p>
 <img alt="../../_images/5c4bb3cfd8ba159d7658d62f3e4a28d6152ea5a0e66a5aed9dbb3dacb0deedf6.png" src="../../_images/5c4bb3cfd8ba159d7658d62f3e4a28d6152ea5a0e66a5aed9dbb3dacb0deedf6.png" />
 </div>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise</p>
+<div class="exercise dropdown admonition" id="img-proc-erode-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
+<section id="exercise-content">
 <p>Check that reconstruction operations (erosion + propagation) produce a
-better result than opening/closing:</p>
+better result than opening/closing.  Start with:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eroded_img</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">binary_erosion</span><span class="p">(</span><span class="n">binary_img</span><span class="p">)</span>
+<span class="n">reconstruct_img</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">binary_propagation</span><span class="p">(</span><span class="n">eroded_img</span><span class="p">,</span> <span class="n">mask</span><span class="o">=</span><span class="n">binary_img</span><span class="p">)</span>
+</pre></div>
 </div>
+</div>
+</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="advanced/image_processing/index-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#img-proc-erode-ex"> Exercise 53</a></p>
+<section id="solution-content">
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eroded_img</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">binary_erosion</span><span class="p">(</span><span class="n">binary_img</span><span class="p">)</span>
@@ -1588,13 +1609,16 @@ better result than opening/closing:</p>
 </div>
 </div>
 </div>
-<div class="docutils">
-<div class="green admonition">
-<p class="admonition-title">Exercise</p>
-<p>Check how a first denoising step (e.g. with a median filter)
-modifies the histogram, and check that the resulting histogram-based
-segmentation is more accurate.</p>
+</section>
 </div>
+<div class="exercise dropdown admonition" id="img-proc-denoise-hist-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 54 </span></p>
+<section id="exercise-content">
+<p>Check how a first denoising step (e.g. with a median filter) modifies the
+histogram, and check that the resulting histogram-based segmentation is more
+accurate.</p>
+</section>
 </div>
 <div class="admonition-see-also admonition">
 <p class="admonition-title">See also</p>
@@ -1608,7 +1632,7 @@ segmentation is more accurate.</p>
 <p>Other Scientific Packages provide algorithms that can be useful for
 image processing. In this example, we use the spectral clustering
 function of the <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> in order to segment glued objects.</p>
-<div class="cell docutils container">
+<!-- #endregion --><div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.feature_extraction</span><span class="w"> </span><span class="kn">import</span> <span class="n">image</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">sklearn.cluster</span><span class="w"> </span><span class="kn">import</span> <span class="n">spectral_clustering</span>
@@ -1954,7 +1978,7 @@ tricks (<a class="reference internal" href="../advanced_numpy/index.html#stride-
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11b2387d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11a67af60&gt;
 </pre></div>
 </div>
 <img alt="../../_images/42ed94c322e976ad737fd413c3bc7e677e74b942bf0453f485fd0936a39100c9.png" src="../../_images/42ed94c322e976ad737fd413c3bc7e677e74b942bf0453f485fd0936a39100c9.png" />
@@ -1986,7 +2010,7 @@ tricks (<a class="reference internal" href="../advanced_numpy/index.html#stride-
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b2b7950&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11a56bec0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/f8ad81c35e01d5cfccbdeea30582e2e98ef6088b4fae8680e2e79e68748456e3.png" src="../../_images/f8ad81c35e01d5cfccbdeea30582e2e98ef6088b4fae8680e2e79e68748456e3.png" />

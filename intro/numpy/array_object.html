@@ -466,7 +466,8 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#much-more">Much more:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-visualization">Basic visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copies-and-views">Copies and views</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-prime-number-sieve">Worked example: Prime number sieve</a></li>
 </ul>
 </li>
@@ -549,7 +550,7 @@ operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>74.4 μs ± 2.91 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>75.4 μs ± 2.49 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -562,7 +563,7 @@ operations.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>861 ns ± 8.17 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>991 ns ± 73.5 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -900,8 +901,10 @@ array(...)
 </div>
 </div>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise: Simple arrays</p>
+<div class="exercise dropdown admonition" id="np-ao-first-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 7 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Create a simple two dimensional array. First, redo the examples
 from above. And then create your own: how about odd numbers
@@ -910,6 +913,7 @@ counting backwards on the first row, and even numbers on the second?</p></li>
 How do they relate to each other? And to the <code class="docutils literal notranslate"><span class="pre">ndim</span></code> attribute of
 the arrays?</p></li>
 </ul>
+</section>
 </div>
 </section>
 <section id="functions-for-creating-arrays">
@@ -1063,8 +1067,10 @@ the arrays?</p></li>
 </div>
 </div>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise: Creating arrays using functions</p>
+<div class="exercise dropdown admonition" id="np-ao-func1-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 8 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Experiment with <code class="docutils literal notranslate"><span class="pre">arange</span></code>, <code class="docutils literal notranslate"><span class="pre">linspace</span></code>, <code class="docutils literal notranslate"><span class="pre">ones</span></code>, <code class="docutils literal notranslate"><span class="pre">zeros</span></code>, <code class="docutils literal notranslate"><span class="pre">eye</span></code> and
 <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p></li>
@@ -1073,22 +1079,76 @@ the arrays?</p></li>
 <li><p>Look at the function <code class="docutils literal notranslate"><span class="pre">np.empty</span></code>. What does it do? When might this be
 useful?</p></li>
 </ul>
+</section>
 </div>
-<!---
-EXE: construct 1 2 3 4 5
--->
-<!---
-EXE: construct -5, -4, -3, -2, -1
--->
-<!---
-EXE: construct 2 4 6 8
--->
-<!---
-EXE: look what is in an empty() array
--->
-<!---
-EXE: construct 15 equispaced numbers in range [0, 10]
--->
+<div class="exercise dropdown admonition" id="np-ao-func2-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 9 </span></p>
+<section id="exercise-content">
+<ul class="simple">
+<li><p>construct an array containing: 1 2 3 4 5</p></li>
+<li><p>construct an array containing: -5, -4, -3, -2, -1</p></li>
+<li><p>Construct: 2 4 6 8</p></li>
+<li><p>Construct 15 equispaced numbers in range [0, 10]</p></li>
+</ul>
+</section>
+</div>
+<div class="solution dropdown admonition" id="intro/numpy/array_object-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#np-ao-func2-ex"> Exercise 9</a></p>
+<section id="solution-content">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 2, 3, 4, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-5, -4, -3, -2, -1])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2, 4, 6, 8])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 0.        ,  0.71428571,  1.42857143,  2.14285714,  2.85714286,
+        3.57142857,  4.28571429,  5.        ,  5.71428571,  6.42857143,
+        7.14285714,  7.85714286,  8.57142857,  9.28571429, 10.        ])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</div>
 </section>
 </section>
 <section id="basic-data-types">
@@ -1129,7 +1189,6 @@ but most of the time we simply work with floating point numbers.
 Note that, in the example above, NumPy auto-detects the data-type
 from the input.</p>
 </div>
-<hr class="docutils" />
 <p>You can explicitly specify which data-type you want:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1264,7 +1323,7 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112e43890&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11507a180&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/3ff38fb5c9bf654d9c7b7d3e05a97e007ddfc23634eaa7dcce64d4d75604ea5b.png" src="../../_images/3ff38fb5c9bf654d9c7b7d3e05a97e007ddfc23634eaa7dcce64d4d75604ea5b.png" />
@@ -1282,7 +1341,7 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112ed0560&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x115128b30&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/1c60337857bdc284dcd50c25c9059aab6b14af828b27e27127da4b76ebeb2ae3.png" src="../../_images/1c60337857bdc284dcd50c25c9059aab6b14af828b27e27127da4b76ebeb2ae3.png" />
@@ -1295,7 +1354,7 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x112f2a150&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1131720c0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/6033166849a7dbbbe4502ee55454218aadee7370c2d51732a819fa3f4e904768.png" src="../../_images/6033166849a7dbbbe4502ee55454218aadee7370c2d51732a819fa3f4e904768.png" />
@@ -1314,7 +1373,7 @@ XXX: mention: astype
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x112e80530&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1151e2a80&gt;
 </pre></div>
 </div>
 <img alt="../../_images/58735ff0a255d03cbb61252e29487bc43303a2bfa5a81c53095dc45d98ca81ef.png" src="../../_images/58735ff0a255d03cbb61252e29487bc43303a2bfa5a81c53095dc45d98ca81ef.png" />
@@ -1324,13 +1383,16 @@ XXX: mention: astype
 <p class="admonition-title">See also</p>
 <p>More in the: <a class="reference internal" href="../matplotlib/index.html#matplotlib"><span class="std std-ref">matplotlib chapter</span></a></p>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise: Simple visualizations</p>
+<div class="exercise dropdown admonition" id="np-ao-viz-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 10 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Plot some simple arrays: a cosine as a function of time and a 2D
 matrix.</p></li>
 <li><p>Try using the <code class="docutils literal notranslate"><span class="pre">gray</span></code> colormap on the 2D matrix.</p></li>
 </ul>
+</section>
 </div>
 </section>
 <section id="indexing-and-slicing">
@@ -1552,8 +1614,10 @@ taking all elements in the unspecified dimensions.</p></li>
 </div>
 </div>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise: Indexing and slicing</p>
+<div class="exercise dropdown admonition" id="np-ao-slicing-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 11 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Try the different flavours of slicing, using <code class="docutils literal notranslate"><span class="pre">start</span></code>, <code class="docutils literal notranslate"><span class="pre">end</span></code> and
 <code class="docutils literal notranslate"><span class="pre">step</span></code>: starting from a linspace, try to obtain odd numbers
@@ -1561,33 +1625,18 @@ counting backwards, and even numbers counting forwards.</p></li>
 <li><p>Reproduce the slices in the diagram above. You may
 use the following expression to create the array:</p></li>
 </ul>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">51</span><span class="p">,</span> <span class="mi">10</span><span class="p">)[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
 </pre></div>
 </div>
+</section>
 </div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  1,  2,  3,  4,  5],
-       [10, 11, 12, 13, 14, 15],
-       [20, 21, 22, 23, 24, 25],
-       [30, 31, 32, 33, 34, 35],
-       [40, 41, 42, 43, 44, 45],
-       [50, 51, 52, 53, 54, 55]])
-</pre></div>
-</div>
-</div>
-</div>
-<div class="docutils">
-<div class="green admonition">
-<p class="admonition-title">Exercise: Array creation</p>
+<div class="exercise dropdown admonition" id="np-ao-creation-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 12 </span></p>
+<section id="exercise-content">
+<p>An exercise on array creation.</p>
 <p>Create the following arrays (with correct data types):</p>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
@@ -1600,56 +1649,102 @@ use the following expression to create the array:</p></li>
  <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">]]</span>
 </pre></div>
 </div>
+<p>Par on course: 3 statements for each.</p>
+<p><em>Hint</em>: Individual array elements can be accessed similarly to a list,
+e.g. <code class="docutils literal notranslate"><span class="pre">a[1]</span></code> or <code class="docutils literal notranslate"><span class="pre">a[1,</span> <span class="pre">2]</span></code>.</p>
+<p><em>Hint</em>: Examine the docstring for <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="intro/numpy/array_object-solution-7">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#np-ao-creation-ex"> Exercise 12</a></p>
+<section id="solution-content">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">a</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">a</span>
+</pre></div>
+</div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.0, 0.0, 0.0, 0.0, 0.0],
- [2.0, 0.0, 0.0, 0.0, 0.0],
- [0.0, 3.0, 0.0, 0.0, 0.0],
- [0.0, 0.0, 4.0, 0.0, 0.0],
- [0.0, 0.0, 0.0, 5.0, 0.0],
- [0.0, 0.0, 0.0, 0.0, 6.0]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1, 1, 1, 1],
+       [1, 1, 1, 1],
+       [1, 1, 1, 2],
+       [1, 6, 1, 1]])
 </pre></div>
 </div>
 </div>
 </div>
-<p>Par on course: 3 statements for each</p>
-<p><em>Hint</em>: Individual array elements can be accessed similarly to a list,
-e.g. <code class="docutils literal notranslate"><span class="pre">a[1]</span></code> or <code class="docutils literal notranslate"><span class="pre">a[1,</span> <span class="pre">2]</span></code>.</p>
-<p><em>Hint</em>: Examine the docstring for <code class="docutils literal notranslate"><span class="pre">diag</span></code>.</p>
-<div class="docutils">
-<div class="green admonition">
-<p class="admonition-title">Exercise: Tiling for array creation</p>
-<p>Skim through the documentation for <code class="docutils literal notranslate"><span class="pre">np.tile</span></code>, and use this function
-to construct the array:</p>
-</div>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">diag</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">7</span><span class="p">))</span>
+<span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0., 0.],
+       [2., 0., 0., 0., 0.],
+       [0., 3., 0., 0., 0.],
+       [0., 0., 4., 0., 0.],
+       [0., 0., 0., 5., 0.],
+       [0., 0., 0., 0., 6.]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="exercise dropdown admonition" id="np-ao-tiling-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 13 </span></p>
+<section id="exercise-content">
+<p>Exercise on tiling for array creation.</p>
+<p>Skim through the documentation for <code class="docutils literal notranslate"><span class="pre">np.tile</span></code>, and use this function
+to construct the array:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span>
  <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
 </pre></div>
 </div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="intro/numpy/array_object-solution-9">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#np-ao-tiling-ex"> Exercise 13</a></p>
+<section id="solution-content">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">block</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tile</span><span class="p">(</span><span class="n">block</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="n">a</span>
+</pre></div>
+</div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[4, 3, 4, 3, 4, 3],
- [2, 1, 2, 1, 2, 1],
- [4, 3, 4, 3, 4, 3],
- [2, 1, 2, 1, 2, 1]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[4, 3, 4, 3, 4, 3],
+       [2, 1, 2, 1, 2, 1],
+       [4, 3, 4, 3, 4, 3],
+       [2, 1, 2, 1, 2, 1]])
 </pre></div>
 </div>
 </div>
 </div>
-<div class="docutils">
-<h2 class="rubric" id="copies-and-views">Copies and views</h2>
+</section>
+</div>
+</section>
+<section id="copies-and-views">
+<h2>Copies and views<a class="headerlink" href="#copies-and-views" title="Link to this heading">#</a></h2>
 <p>A slicing operation creates a <strong>view</strong> on the original array, which is
 just a way of accessing array data. Thus the original array is not
 copied in memory. You can use <code class="docutils literal notranslate"><span class="pre">np.may_share_memory()</span></code> to check if two arrays
 share the same memory block. Note however, that this uses heuristics and may
 give you false positives.</p>
 <p><strong>When modifying the view, the original array is modified as well</strong>:</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
@@ -1963,14 +2058,17 @@ new array has the same shape as the array of integers:</p>
 <hr class="docutils" />
 <p>The image below illustrates various fancy indexing applications</p>
 <p><img alt="" src="../../_images/numpy_fancy_indexing.png" /></p>
-<div class="green admonition">
-<p class="admonition-title">Exercise: Fancy indexing</p>
+<div class="exercise dropdown admonition" id="np-ao-fancy-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 14 </span></p>
+<section id="exercise-content">
 <ul class="simple">
 <li><p>Again, reproduce the fancy indexing shown in the diagram above.</p></li>
 <li><p>Use fancy indexing on the left and array creation on the right to assign
 values into an array, for instance by setting parts of the array in
 the diagram above to zero.</p></li>
 </ul>
+</section>
 </div>
 <p>We can even use fancy indexing and :ref:<code class="docutils literal notranslate"><span class="pre">broadcasting</span> <span class="pre">&lt;broadcasting&gt;</span></code> at
 the same time:</p>
@@ -2090,7 +2188,8 @@ the same time:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#strings">Strings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#much-more">Much more:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-visualization">Basic visualization</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing-and-slicing">Indexing and slicing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#copies-and-views">Copies and views</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#worked-example-prime-number-sieve">Worked example: Prime number sieve</a></li>
 </ul>
 </li>

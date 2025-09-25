@@ -450,7 +450,13 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else">if/elif/else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-range">for/range</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-break-continue">while/break/continue</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-expressions">Conditional Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-expressions">Conditional Expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-object"><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;OBJECT&gt;:</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b"><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b:</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-is-b"><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is</span> <span class="pre">b</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-in-b"><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">in</span> <span class="pre">b</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-iteration">Advanced iteration</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-track-of-enumeration-number">Keeping track of enumeration number</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-a-dictionary">Looping over a dictionary</a></li>
@@ -490,10 +496,10 @@ document.write(`
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <p>Type the following lines in your Python interpreter, and be careful
-to <strong>respect the indentation depth</strong>. The Ipython shell automatically
-increases the indentation depth after a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> sign; to
-decrease the indentation depth, go four spaces to the left with the
-Backspace key. Press the Enter key twice to leave the logical block.</p>
+to <strong>respect the indentation depth</strong>. The Jupyter / IPython shell automatically
+increases the indentation depth after a colon <code class="docutils literal notranslate"><span class="pre">:</span></code> sign; to decrease the
+indentation depth, go four spaces to the left with the Backspace key. Press the
+Enter key twice to leave the logical block.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,7 +527,7 @@ Backspace key. Press the Enter key twice to leave the logical block.</p>
 </div>
 <p>Indentation is compulsory in scripts as well. As an exercise, re-type the
 previous lines with the same indentation in a script <code class="docutils literal notranslate"><span class="pre">condition.py</span></code>, and
-execute the script with <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">condition.py</span></code> in Ipython.</p>
+execute the script with <code class="docutils literal notranslate"><span class="pre">run</span> <span class="pre">condition.py</span></code> in IPython.</p>
 </section>
 <section id="for-range">
 <h2>for/range<a class="headerlink" href="#for-range" title="Link to this heading">#</a></h2>
@@ -618,53 +624,175 @@ Python is readable
 </section>
 <section id="conditional-expressions">
 <h2>Conditional Expressions<a class="headerlink" href="#conditional-expressions" title="Link to this heading">#</a></h2>
-<p>:<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b</span></code>:</p>
+<section id="if-object">
+<h3><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;OBJECT&gt;:</span></code><a class="headerlink" href="#if-object" title="Link to this heading">#</a></h3>
+<p>Evaluates to <code class="docutils literal notranslate"><span class="pre">False</span></code> for:</p>
+<ul class="simple">
+<li><p>any number equal to zero (0, 0.0, 0+0j)</p></li>
+<li><p>an empty container (list, tuple, set, dictionary, …)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">False</span></code>, <code class="docutils literal notranslate"><span class="pre">None</span></code></p></li>
+</ul>
+<p>Evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code> for:</p>
+<ul class="simple">
+<li><p>everything else</p></li>
+</ul>
+<p>Examples:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluated to `True`&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Evaluated to `False&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evaluated to `True`
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">if</span> <span class="n">a</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Evaluated to `True`&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Evaluated to `False&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Evaluated to `False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-b">
+<h3><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b:</span></code><a class="headerlink" href="#a-b" title="Link to this heading">#</a></h3>
 <p>Tests equality, with logics::</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; 1 == 1.
-True
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">==</span> <span class="mf">1.</span>
 </pre></div>
 </div>
-<p>:<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is</span> <span class="pre">b</span></code>:</p>
-<p>Tests identity: both sides are the same object::</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; a = 1
-&gt;&gt;&gt; b = 1.
-&gt;&gt;&gt; a == b
-True
-&gt;&gt;&gt; a is b
-False
-
-&gt;&gt;&gt; a = 1
-&gt;&gt;&gt; b = 1
-&gt;&gt;&gt; a is b
-True
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
-<p>:<code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">in</span> <span class="pre">b</span></code>:</p>
-<p>For any collection <code class="docutils literal notranslate"><span class="pre">b</span></code>: <code class="docutils literal notranslate"><span class="pre">b</span></code> contains <code class="docutils literal notranslate"><span class="pre">a</span></code> ::</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; b = [1, 2, 3]
-&gt;&gt;&gt; 2 in b
-True
-&gt;&gt;&gt; 5 in b
-False
+</div>
+</div>
+</section>
+<section id="a-is-b">
+<h3><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is</span> <span class="pre">b</span></code><a class="headerlink" href="#a-is-b" title="Link to this heading">#</a></h3>
+<p>Tests identity: both sides <strong>are the same object</strong>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">a</span> <span class="o">==</span> <span class="n">b</span>
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="s1">&#39;A string&#39;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="a-in-b">
+<h3><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">in</span> <span class="pre">b</span></code><a class="headerlink" href="#a-in-b" title="Link to this heading">#</a></h3>
+<p>For any collection <code class="docutils literal notranslate"><span class="pre">b</span></code>: <code class="docutils literal notranslate"><span class="pre">b</span></code> contains <code class="docutils literal notranslate"><span class="pre">a</span></code> :</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="mi">2</span> <span class="ow">in</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="ow">in</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <p>If <code class="docutils literal notranslate"><span class="pre">b</span></code> is a dictionary, this tests that <code class="docutils literal notranslate"><span class="pre">a</span></code> is a key of <code class="docutils literal notranslate"><span class="pre">b</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;first&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+<span class="c1"># Tests for key.</span>
+<span class="s1">&#39;first&#39;</span> <span class="ow">in</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Does not test for value.</span>
+<span class="mi">0</span> <span class="ow">in</span> <span class="n">b</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="advanced-iteration">
 <h2>Advanced iteration<a class="headerlink" href="#advanced-iteration" title="Link to this heading">#</a></h2>
-<p>Iterate over any <em>sequence</em></p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>
-You can iterate over any sequence (string, list, keys in a dictionary, lines in
-a file, ...)::
-
-## Advanced iteration
-
-### Iterate over any *sequence*
-
-You can iterate over any sequence (string, list, keys in a dictionary, lines in
-a file, ...):
-</pre></div>
-</div>
+<p><strong>Iterate over any sequence</strong>:</p>
+<p>You can iterate over any sequence (string, list, keys in a dictionary, lines in
+a file, …):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">vowels</span> <span class="o">=</span> <span class="s1">&#39;aeiouy&#39;</span>
@@ -727,15 +855,13 @@ code more readable.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Not safe to modify the sequence you are iterating over.</p>
+<p>It is not safe to modify the sequence you are iterating over.</p>
 </div>
 <section id="keeping-track-of-enumeration-number">
 <h3>Keeping track of enumeration number<a class="headerlink" href="#keeping-track-of-enumeration-number" title="Link to this heading">#</a></h3>
 <p>Common task is to iterate over a sequence while keeping track of the
 item number.</p>
-<ul class="simple">
-<li><p>Could use while loop with a counter as above. Or a for loop:</p></li>
-</ul>
+<p>We could use while loop with a counter as above. Or a for loop:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">words</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;cool&#39;</span><span class="p">,</span> <span class="s1">&#39;powerful&#39;</span><span class="p">,</span> <span class="s1">&#39;readable&#39;</span><span class="p">)</span>
@@ -752,9 +878,7 @@ item number.</p>
 </div>
 </div>
 </div>
-<ul class="simple">
-<li><p>But, Python provides a built-in function - <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> - for this:</p></li>
-</ul>
+<p>But, Python provides a built-in function - <code class="docutils literal notranslate"><span class="pre">enumerate</span></code> - for this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">words</span><span class="p">):</span>
@@ -783,7 +907,7 @@ item number.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">()):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">d</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Key: </span><span class="si">%s</span><span class="s1"> has value: </span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">val</span><span class="p">))</span>
 </pre></div>
 </div>
@@ -795,11 +919,6 @@ Key: c has value: 1j
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>The ordering of a dictionary is random, thus we use <code class="xref py py-func docutils literal notranslate"><span class="pre">sorted()</span></code>
-which will sort on the keys.</p>
 </div>
 </section>
 </section>
@@ -819,14 +938,96 @@ of a list comprehension with a rather self-explaining syntax.</p>
 </div>
 </div>
 </div>
-<hr class="docutils" />
-<div class="green admonition">
-<p class="admonition-title">Exercise</p>
+<div class="exercise dropdown admonition" id="pi-wallis-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 1 </span></p>
+<section id="exercise-content">
 <p>Compute the decimals of Pi using the Wallis formula:</p>
 <div class="math notranslate nohighlight">
 \[
 \pi = 2 \prod_{i=1}^{\infty} \frac{4i^2}{4i^2 - 1}
 \]</div>
+</section>
+</div>
+<div class="solution dropdown admonition" id="intro/language/control_flow-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#pi-wallis-ex"> Exercise 1</a></p>
+<section id="solution-content">
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">reduce</span>
+
+<span class="n">pi</span> <span class="o">=</span> <span class="mf">3.14159265358979312</span>
+
+<span class="n">my_pi</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">):</span>
+    <span class="n">my_pi</span> <span class="o">*=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="n">i</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">1.0</span><span class="p">)</span>
+
+<span class="n">my_pi</span> <span class="o">*=</span> <span class="mi">2</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">pi</span> <span class="o">-</span> <span class="n">my_pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+3.141584799578707
+7.854011085939305e-06
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">den</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">):</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>
+    <span class="n">num</span> <span class="o">*=</span> <span class="n">tmp</span>
+    <span class="n">den</span> <span class="o">*=</span> <span class="n">tmp</span> <span class="o">-</span> <span class="mi">1</span>
+
+<span class="n">better_pi</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">num</span> <span class="o">/</span> <span class="n">den</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">better_pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">pi</span> <span class="o">-</span> <span class="n">better_pi</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">my_pi</span> <span class="o">-</span> <span class="n">better_pi</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141592653589793
+3.1415847995787067
+7.854011086383395e-06
+4.440892098500626e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>Solution in a single line using more advanced constructs (reduce, lambda,
+list comprehensions):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span>
+    <span class="mi">2</span>
+    <span class="o">*</span> <span class="n">reduce</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span><span class="p">,</span>
+        <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">/</span> <span class="p">((</span><span class="mi">4</span> <span class="o">*</span> <span class="p">(</span><span class="n">i</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)],</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.141584799578707
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </div>
 </section>
 </section>
@@ -898,7 +1099,13 @@ of a list comprehension with a rather self-explaining syntax.</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if-elif-else">if/elif/else</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#for-range">for/range</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-break-continue">while/break/continue</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-expressions">Conditional Expressions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-expressions">Conditional Expressions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#if-object"><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">&lt;OBJECT&gt;:</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-b"><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">==</span> <span class="pre">b:</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-is-b"><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">is</span> <span class="pre">b</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-in-b"><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">in</span> <span class="pre">b</span></code></a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-iteration">Advanced iteration</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#keeping-track-of-enumeration-number">Keeping track of enumeration number</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#looping-over-a-dictionary">Looping over a dictionary</a></li>

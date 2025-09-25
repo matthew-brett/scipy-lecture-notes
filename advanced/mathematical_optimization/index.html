@@ -482,10 +482,7 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-guide-to-optimization-with-scipy">Practical guide to optimization with SciPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-method">Choosing a method</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-optimizer-faster">Making your optimizer faster</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Making your optimizer faster</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-optimizer-faster">Making your optimizer faster</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-gradients">Computing gradients</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthetic-exercises">Synthetic exercises</a></li>
 </ul>
@@ -503,7 +500,7 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Full code examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Full code examples</a></li>
 </ul>
             </nav>
         </div>
@@ -729,7 +726,6 @@ function that we are optimizing. Note that this expression can often be
 used for more efficient, non black-box, optimization.</p>
 <div class="admonition-prerequisites admonition">
 <p class="admonition-title">Prerequisites</p>
-<p>.. rst-class:: horizontal</p>
 <ul class="simple">
 <li><p>:ref:<code class="docutils literal notranslate"><span class="pre">NumPy</span> <span class="pre">&lt;numpy&gt;</span></code></p></li>
 <li><p>:ref:<code class="docutils literal notranslate"><span class="pre">SciPy</span> <span class="pre">&lt;scipy&gt;</span></code></p></li>
@@ -924,13 +920,12 @@ piece-wise linear functions).</p>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="n">ymin</span><span class="o">=-</span><span class="mf">1.3</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s2">&quot;off&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f2e19d49eeda8b7bce3fe62f6d23e8916147c3310e1cf214ce55217de0e914bb.png" src="../../_images/f2e19d49eeda8b7bce3fe62f6d23e8916147c3310e1cf214ce55217de0e914bb.png" />
+<img alt="../../_images/5c4fe7a3f9ccf2d5c4cc6b6270b1be5ecd42b6a4a93934c72ea681d472be0fff.png" src="../../_images/5c4fe7a3f9ccf2d5c4cc6b6270b1be5ecd42b6a4a93934c72ea681d472be0fff.png" />
 </div>
 </div>
 <div class="admonition-noisy-gradients admonition">
@@ -1453,7 +1448,7 @@ is done in gradient descent code using a
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/scipy/optimize/_linesearch.py:312: LineSearchWarning: The line search algorithm did not converge
   alpha_star, phi_star, old_fval, derphi_star = scalar_search_wolfe2(
-/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_45274/3226637923.py:79: LineSearchWarning: The line search algorithm did not converge
+/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_10941/3226637923.py:79: LineSearchWarning: The line search algorithm did not converge
   step = sp.optimize.line_search(
 </pre></div>
 </div>
@@ -1846,6 +1841,7 @@ to the algorithm:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hessian</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="c1"># Computed with sympy</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(((</span><span class="mi">1</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">12</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">2</span><span class="p">)))</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Newton-CG&quot;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">jacobian</span><span class="p">,</span> <span class="n">hess</span><span class="o">=</span><span class="n">hessian</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2055,8 +2051,10 @@ are also supported by L-BFGS-B:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># The rosenbrock function</span>
     <span class="k">return</span> <span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+
 <span class="k">def</span><span class="w"> </span><span class="nf">jacobian</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="mf">.5</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">),</span> <span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)))</span>
+
 <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">jacobian</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2360,7 +2358,7 @@ methods on smooth, non-noisy functions.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_45274/3226637923.py:186: OptimizeWarning: Unknown solver options: ftol
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_10941/3226637923.py:186: OptimizeWarning: Unknown solver options: ftol
   sp.optimize.minimize(
 </pre></div>
 </div>
@@ -2542,7 +2540,6 @@ value. The parameters are specified with ranges given to
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(())</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -2551,7 +2548,7 @@ value. The parameters are specified with ranges given to
 <img alt="../../_images/d3d1abcb60437f054460d4d94af87c2a0ad45e4e8d41fc9ab61577f7d6c8eeea.png" src="../../_images/d3d1abcb60437f054460d4d94af87c2a0ad45e4e8d41fc9ab61577f7d6c8eeea.png" />
 </div>
 </div>
-<p>:With knowledge of the gradient:</p>
+<p><strong>With knowledge of the gradient</strong></p>
 <ul class="simple">
 <li><p><strong>BFGS</strong> or <strong>L-BFGS</strong>.</p></li>
 <li><p>Computational overhead of BFGS is larger than that L-BFGS, itself
@@ -2559,27 +2556,18 @@ larger than that of conjugate gradient. On the other side, BFGS usually
 needs less function evaluations than CG. Thus conjugate gradient method
 is better than BFGS at optimizing computationally cheap functions.</p></li>
 </ul>
-<p>:With the Hessian:</p>
+<p><strong>With the Hessian</strong></p>
 <ul class="simple">
 <li><p>If you can compute the Hessian, prefer the Newton method
 (<strong>Newton-CG</strong> or <strong>TCG</strong>).</p></li>
 </ul>
-<p>:If you have noisy measurements:</p>
+<p><strong>If you have noisy measurements</strong></p>
 <ul class="simple">
 <li><p>Use <strong>Nelder-Mead</strong> or <strong>Powell</strong>.</p></li>
 </ul>
 </section>
-</section>
 <section id="making-your-optimizer-faster">
-<h2>Making your optimizer faster<a class="headerlink" href="#making-your-optimizer-faster" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Choose the right method (see above), do compute analytically the
-gradient and Hessian, if you can.</p></li>
-<li><p>Use <code class="docutils literal notranslate"><span class="pre">preconditionning</span> <span class="pre">&lt;https://en.wikipedia.org/wiki/Preconditioner&gt;</span></code>_
-when possible.</p></li>
-</ul>
-<section id="id1">
-<h3>Making your optimizer faster<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<h3>Making your optimizer faster<a class="headerlink" href="#making-your-optimizer-faster" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Choose the right method (see above), do compute analytically the
 gradient and Hessian, if you can.</p></li>
@@ -2618,17 +2606,12 @@ given, and a gradient computed numerically:</p>
 </section>
 <section id="synthetic-exercises">
 <h3>Synthetic exercises<a class="headerlink" href="#synthetic-exercises" title="Link to this heading">#</a></h3>
-<!---
-![](auto_examples/images/sphx_glr_plot_exercise_ill_conditioned_001.png)
-# For parsing.
-:align: right
-:scale: 35%
-:target: auto_examples/plot_exercise_ill_conditioned.html
--->
-<div class="green admonition">
-<p class="admonition-title">Exercise: A simple (?) quadratic function</p>
+<p><strong>A simple (?) quadratic function</strong></p>
+<div class="exercise dropdown admonition" id="mo-simple-quad-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 55 </span></p>
+<section id="exercise-content">
 <p>Optimize the following function, using K[0] as a starting point:</p>
-</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">27446968</span><span class="p">)</span>
@@ -2642,14 +2625,239 @@ given, and a gradient computed numerically:</p>
 </div>
 <p>Time your approach. Find the fastest approach. Why is BFGS not
 working well?</p>
-<div class="docutils">
-<div class="green admonition">
-<p class="admonition-title">Exercise: A locally flat minimum</p>
+</section>
+</div>
+<div class="solution dropdown admonition" id="advanced/mathematical_optimization/index-solution-1">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#mo-simple-quad-ex"> Exercise 55</a></p>
+<section id="solution-content">
+<p><strong>Alternating optimization</strong></p>
+<p>The challenge here is that Hessian of the problem is a very ill-conditioned
+matrix. This can easily be seen, as the Hessian of the first term in simply
+<code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">K.T</span> <span class="pre">&#64;</span> <span class="pre">K</span></code>. Thus the conditioning of the problem can be judged from looking
+at the conditioning of <code class="docutils literal notranslate"><span class="pre">K</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+
+<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">27446968</span><span class="p">)</span>
+
+<span class="n">K</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">K</span> <span class="o">@</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">f_prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">K</span> <span class="o">@</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">hessian</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">H</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">K</span><span class="o">.</span><span class="n">T</span> <span class="o">@</span> <span class="n">K</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">*</span> <span class="n">x</span><span class="p">[:,</span> <span class="n">np</span><span class="o">.</span><span class="n">newaxis</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">H</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">eye</span><span class="p">(</span><span class="n">H</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some pretty plotting</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">:</span><span class="mf">1.5</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">:</span><span class="mf">1.1</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># type: ignore[misc]</span>
+<span class="c1"># Complete in the additional dimensions with zeros</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">Z</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span> <span class="n">Z</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">apply_along_axis</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="n">Z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">Z</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">Z</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray_r&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">Z</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gnuplot&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x10bb76c00&gt;
+</pre></div>
+</div>
+<img alt="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" src="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" />
+</div>
+</div>
+<p>A reference but slow solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x_ref</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Powell&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;     Powell: time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s&quot;</span><span class="p">)</span>
+<span class="n">f_ref</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x_ref</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Powell: time 0.16s
+</pre></div>
+</div>
+</div>
+</div>
+<p>Compare different approaches</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x_bfgs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;       BFGS: time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s, x error </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x_bfgs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_ref</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f error </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x_bfgs</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f_ref</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x_l_bfgs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;     L-BFGS: time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s, x error </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x_l_bfgs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_ref</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f error </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x_l_bfgs</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f_ref</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.77s, x error 0.02, f error -0.03
+     L-BFGS: time 0.06s, x error 0.02, f error -0.03
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x_bfgs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">jac</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;  BFGS w f&#39;: time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s, x error </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x_bfgs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_ref</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f error </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x_bfgs</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f_ref</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+
+<span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x_l_bfgs</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">jac</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;L-BFGS-B&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;L-BFGS w f&#39;: time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s, x error </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x_l_bfgs</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_ref</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f error </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x_l_bfgs</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f_ref</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.10s, x error 0.02, f error -0.03
+L-BFGS w f&#39;: time 0.00s, x error 0.02, f error -0.03
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
+<span class="n">x_newton</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
+    <span class="n">f</span><span class="p">,</span> <span class="n">K</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">jac</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span> <span class="n">hess</span><span class="o">=</span><span class="n">hessian</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Newton-CG&quot;</span>
+<span class="p">)</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span>
+    <span class="sa">f</span><span class="s2">&quot;     Newton: time </span><span class="si">{</span><span class="n">time</span><span class="o">.</span><span class="n">time</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">t0</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">s, x error </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">x_newton</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">x_ref</span><span class="p">)</span><span class="w"> </span><span class="o">**</span><span class="w"> </span><span class="mi">2</span><span class="p">))</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, f error </span><span class="si">{</span><span class="n">f</span><span class="p">(</span><span class="n">x_newton</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">f_ref</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Newton: time 0.00s, x error 0.02, f error -0.03
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<p><strong>A locally flat minimum</strong></p>
+<div class="exercise dropdown admonition" id="mo-flat-min-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 56 </span></p>
+<section id="exercise-content">
 <p>Consider the function <code class="docutils literal notranslate"><span class="pre">exp(-1/(.1*x**2</span> <span class="pre">+</span> <span class="pre">y**2)</span></code>. This function admits
 a minimum in (0, 0). Starting from an initialization at (1, 1), try
 to get within 1e-8 of this minimum point.</p>
-<p>.. centered:: |flat_min_0| |flat_min_1|</p>
+<p>This exercise is hard because the function is very flat around the minimum
+(all its derivatives are zero). Thus gradient information is unreliable.</p>
+</section>
 </div>
+<div class="solution dropdown admonition" id="advanced/mathematical_optimization/index-solution-3">
+
+<p class="admonition-title">Solution to<a class="reference internal" href="#mo-flat-min-ex"> Exercise 56</a></p>
+<section id="solution-content">
+<p><strong>Finding a minimum in a flat neighborhood</strong></p>
+<p>The function admits a minimum in [0, 0]. The challenge is to get within
+1e-7 of this minimum, starting at x0 = [1, 1].</p>
+<p>The solution that we adopt here is to give up on using gradient or
+information based on local differences, and to rely on the Powell
+algorithm. With 162 function evaluations, we get to 1e-8 of the
+solution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span> <span class="o">/</span> <span class="p">(</span><span class="mf">0.01</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>A well-conditioned version of f:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">g</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">f</span><span class="p">([</span><span class="mi">10</span> <span class="o">*</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The gradient of g. We won’t use it here for the optimization.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">g_prime</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">r</span><span class="o">**</span><span class="mi">3</span> <span class="o">*</span> <span class="n">g</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">*</span> <span class="n">x</span> <span class="o">/</span> <span class="n">r</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Powell&quot;</span><span class="p">,</span> <span class="n">tol</span><span class="o">=</span><span class="mf">1e-10</span><span class="p">)</span>
+<span class="n">x_min</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">x</span>
+<span class="n">x_min</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 1.00165881e-08, -9.59695391e-09])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Some pretty plotting:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">t</span><span class="p">]));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/ed70b1c4409b4ee2a7964e48f38457c8f45a264b9635064b8205baa7a31290eb.png" src="../../_images/ed70b1c4409b4ee2a7964e48f38457c8f45a264b9635064b8205baa7a31290eb.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mgrid</span><span class="p">[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">:</span><span class="mf">1.5</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">:</span><span class="mf">1.1</span><span class="p">:</span><span class="mi">100</span><span class="n">j</span><span class="p">]</span>  <span class="c1"># type: ignore[misc]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">f</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">])</span><span class="o">.</span><span class="n">T</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gray_r&quot;</span><span class="p">,</span> <span class="n">extent</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.1</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span> <span class="n">origin</span><span class="o">=</span><span class="s2">&quot;lower&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">f</span><span class="p">([</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">]),</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;gnuplot&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot the gradient</span>
+<span class="n">dX</span><span class="p">,</span> <span class="n">dY</span> <span class="o">=</span> <span class="n">g_prime</span><span class="p">([</span><span class="mf">0.1</span> <span class="o">*</span> <span class="n">X</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="p">::</span><span class="mi">5</span><span class="p">],</span> <span class="n">Y</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="p">::</span><span class="mi">5</span><span class="p">]])</span>
+<span class="c1"># Adjust for our preconditioning</span>
+<span class="n">dX</span> <span class="o">*=</span> <span class="mf">0.1</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">quiver</span><span class="p">(</span><span class="n">X</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="p">::</span><span class="mi">5</span><span class="p">],</span> <span class="n">Y</span><span class="p">[::</span><span class="mi">5</span><span class="p">,</span> <span class="p">::</span><span class="mi">5</span><span class="p">],</span> <span class="n">dX</span><span class="p">,</span> <span class="n">dY</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s2">&quot;.5&quot;</span><span class="p">)</span>
+
+<span class="c1"># Plot our solution</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x_min</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">x_min</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot;r+&quot;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/99f2968bec2e5ff7dda0d00eb85c37fb68d088ad1f63cc8a87de01ee626d90bd.png" src="../../_images/99f2968bec2e5ff7dda0d00eb85c37fb68d088ad1f63cc8a87de01ee626d90bd.png" />
+</div>
+</div>
+</section>
 </div>
 </section>
 </section>
@@ -2716,14 +2924,6 @@ should be solved with <code class="xref py py-func docutils literal notranslate"
 </section>
 <section id="curve-fitting">
 <h3>Curve fitting<a class="headerlink" href="#curve-fitting" title="Link to this heading">#</a></h3>
-<!---
-![](auto_examples/images/sphx_glr_plot_curve_fitting_001.png)
-# These applied to image above; but {image} directive broke
-# parsing of Python block below.
-:align: right
-:scale: 48%
-:target: auto_examples/plot_curve_fitting.html
--->
 <p>Least square problems occur often when fitting a non-linear to data.
 While it is possible to construct our optimization problem ourselves,
 SciPy provides a helper function for this purpose:
@@ -2766,11 +2966,7 @@ SciPy provides a helper function for this purpose:
 <p class="expanded admonition-title">Hide code cell source</p>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-
-<span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">27446968</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">default_rng</span><span class="p">(</span><span class="mi">27446968</span><span class="p">)</span>
 
 
 <span class="c1"># Our test function</span>
@@ -2789,22 +2985,22 @@ SciPy provides a helper function for this purpose:
 <span class="c1"># plot the data and the fitted curve</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 
-<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">clf</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s2">&quot;bx&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">),</span> <span class="s2">&quot;r-&quot;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">),</span> <span class="s2">&quot;r-&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/d3d7b756e33fb3c5107ea098ab86a184573a399ebcb7d481b759040dbf3dda98.png" src="../../_images/d3d7b756e33fb3c5107ea098ab86a184573a399ebcb7d481b759040dbf3dda98.png" />
+<img alt="../../_images/6dfc7b936d5389e49ceff0312e02a4256e8ca64a9d05985aea2067c89cf9b852.png" src="../../_images/6dfc7b936d5389e49ceff0312e02a4256e8ca64a9d05985aea2067c89cf9b852.png" />
 </div>
 </div>
-<div class="green admonition">
-<p class="admonition-title">Exercise</p>
+<div class="exercise dropdown admonition" id="mo-omega3-ex">
+
+<p class="admonition-title"><span class="caption-number">Exercise 57 </span></p>
+<section id="exercise-content">
 <p>Do the same with omega = 3. What is the difficulty?</p>
+</section>
 </div>
 </section>
 </section>
@@ -2900,9 +3096,7 @@ support bound constraints with the parameter <code class="docutils literal notra
 <span class="p">)</span>
 
 <span class="n">accumulated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">accumulator</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
@@ -3023,9 +3217,7 @@ and <span class="math notranslate nohighlight">\(g(x) &lt; 0\)</span>.</p>
 <span class="p">)</span>
 
 <span class="n">accumulated</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">accumulator</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">accumulated</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
@@ -3050,8 +3242,8 @@ using a mathematical trick known as <a class="reference external" href="https://
 </section>
 </section>
 </section>
-<section id="id2">
-<h2>Full code examples<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<section id="id1">
+<h2>Full code examples<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <!---
 include the gallery. Skip the first line to avoid the "orphan"
 declaration
@@ -3166,10 +3358,7 @@ please also see <a class="reference external" href="https://github.com/xuy/pyipo
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#practical-guide-to-optimization-with-scipy">Practical guide to optimization with SciPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#choosing-a-method">Choosing a method</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-optimizer-faster">Making your optimizer faster</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Making your optimizer faster</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#making-your-optimizer-faster">Making your optimizer faster</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#computing-gradients">Computing gradients</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#synthetic-exercises">Synthetic exercises</a></li>
 </ul>
@@ -3187,7 +3376,7 @@ please also see <a class="reference external" href="https://github.com/xuy/pyipo
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Full code examples</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Full code examples</a></li>
 </ul>
   </nav></div>
 

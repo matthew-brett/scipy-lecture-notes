@@ -536,7 +536,7 @@ operations:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>847 ns ± 3.91 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>924 ns ± 74.5 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -548,7 +548,7 @@ operations:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20.9 μs ± 492 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>23.9 μs ± 1.43 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -560,7 +560,7 @@ operations:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.01 μs ± 17.7 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.23 μs ± 274 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -792,12 +792,10 @@ on your data.</p>
 <section id="writing-faster-numerical-code">
 <h2>Writing faster numerical code<a class="headerlink" href="#writing-faster-numerical-code" title="Link to this heading">#</a></h2>
 <p>A complete discussion on advanced use of NumPy is found in chapter
-<a class="reference internal" href="../advanced_numpy/index.html#advanced-numpy"><span class="std std-ref">Advanced NumPy</span></a>, or in the article [The NumPy array: a structure
-.. note::</p>
-<p>The code of this example can be found :ref:<code class="docutils literal notranslate"><span class="pre">here</span> <span class="pre">&lt;sphx_glr_intro_scipy_auto_examples_plot_fftpack.py&gt;</span></code>
-for efficient numerical computation](<a class="reference external" href="https://hal.inria.fr/inria-00564007/en">https://hal.inria.fr/inria-00564007/en</a>)
-by van der Walt et al. Here we
-discuss only some commonly encountered tricks to make code faster.</p>
+<a class="reference internal" href="../advanced_numpy/index.html#advanced-numpy"><span class="std std-ref">Advanced NumPy</span></a>, or in the article <a class="reference external" href="https://hal.inria.fr/inria-00564007/en">The NumPy array: a structure for
+efficient numerical computation</a>.
+by van der Walt <em>et al.</em> Here we discuss only some commonly encountered tricks
+to make code faster.</p>
 <section id="vectorizing-for-loops">
 <h3>Vectorizing for loops<a class="headerlink" href="#vectorizing-for-loops" title="Link to this heading">#</a></h3>
 <p>Find tricks to avoid for loops using NumPy arrays. For this, masks and
@@ -823,7 +821,7 @@ the 3D grid
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.3 ms ± 98.1 μs per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>28.7 ms ± 6.39 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -835,7 +833,7 @@ the 3D grid
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.8 ms ± 283 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.82 ms ± 463 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -856,7 +854,7 @@ on them:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.4 ms ± 571 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.6 ms ± 449 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -868,7 +866,7 @@ on them:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.7 ms ± 438 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>18.9 ms ± 661 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -890,7 +888,7 @@ other things that <strong>smaller strides are faster</strong> (see
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>454 ms ± 10.5 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>468 ms ± 29.6 ms per loop (mean ± std. dev. of 7 runs, 1 loop each)
 </pre></div>
 </div>
 </div>
@@ -903,7 +901,7 @@ other things that <strong>smaller strides are faster</strong> (see
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>107 ms ± 1.55 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>132 ms ± 25 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -935,7 +933,7 @@ difference on speed of operations:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.1 ms ± 77.2 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.9 ms ± 1.45 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -949,7 +947,7 @@ difference on speed of operations:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.6 ms ± 101 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.1 ms ± 179 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>
@@ -962,7 +960,7 @@ difference on speed of operations:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11.6 ms ± 237 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.6 ms ± 524 μs per loop (mean ± std. dev. of 7 runs, 100 loops each)
 </pre></div>
 </div>
 </div>

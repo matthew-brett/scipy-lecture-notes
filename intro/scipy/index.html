@@ -515,23 +515,61 @@ be very boring, we concentrate instead on a few examples to give a
 general idea of how to use <code class="docutils literal notranslate"><span class="pre">scipy</span></code> for scientific computing.</p>
 </div>
 <p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code> is composed of task-specific sub-modules:</p>
-<p>=========================== ==========================================
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code>         Vector quantization / Kmeans
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code>       Physical and mathematical constants
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.fft</span></code>             Fourier transform
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code>       Integration routines
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.interpolate</span></code>     Interpolation
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.io</span></code>              Data input and output
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code>          Linear algebra routines
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.ndimage</span></code>         n-dimensional image package
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.odr</span></code>             Orthogonal distance regression
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code>        Optimization
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code>          Signal processing
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code>          Sparse matrices
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.spatial</span></code>         Spatial data structures and algorithms
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.special</span></code>         Any special mathematical functions
-:mod:<code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code>           Statistics
-=========================== ==========================================</p>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Module</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.cluster</span></code></p></td>
+<td><p>Vector quantization / Kmeans</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.constants</span></code></p></td>
+<td><p>Physical and mathematical constants</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.fft</span></code></p></td>
+<td><p>Fourier transform</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></td>
+<td><p>Integration routines</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></p></td>
+<td><p>Interpolation</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.io</span></code></p></td>
+<td><p>Data input and output</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code></p></td>
+<td><p>Linear algebra routines</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></p></td>
+<td><p>n-dimensional image package</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.odr</span></code></p></td>
+<td><p>Orthogonal distance regression</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.optimize</span></code></p></td>
+<td><p>Optimization</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.signal</span></code></p></td>
+<td><p>Signal processing</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.sparse</span></code></p></td>
+<td><p>Sparse matrices</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.spatial</span></code></p></td>
+<td><p>Spatial data structures and algorithms</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.special</span></code></p></td>
+<td><p>Any special mathematical functions</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">scipy.stats</span></code></p></td>
+<td><p>Statistics</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>Scipy modules all depend on <code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy</span></code>, but are mostly independent of each
 other. The standard way of importing NumPy and these SciPy modules is:</p>
 <div class="cell docutils container">
@@ -1337,7 +1375,7 @@ argument and all parameters to fit as separate arguments:</p>
 </div>
 <div class="exercise dropdown admonition" id="scipy-curve-fit-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 24 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 39 </span></p>
 <section id="exercise-content">
 <p>The temperature extremes in Alaska for each month, starting in January, are
 given by (in degrees Celsius):</p>
@@ -1359,7 +1397,7 @@ accuracy?</p></li>
 </div>
 <div class="solution dropdown admonition" id="intro/scipy/index-solution-1">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#scipy-curve-fit-ex"> Exercise 24</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#scipy-curve-fit-ex"> Exercise 39</a></p>
 <section id="solution-content">
 <p>Curve fitting: temperature as a function of month of the year</p>
 <p>We have the min and max temperatures in Alaska for each months of the
@@ -1431,7 +1469,7 @@ variable <span class="math notranslate nohighlight">\(f(x) = x^2  + 10 \sin(x)\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x114cb2180&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1148261e0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" src="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" />
@@ -1490,17 +1528,17 @@ we could use one of SciPy’s global minimizers, such as
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: -7.945823375615284
+                 fun: -7.945823375614484
                    x: [-1.306e+00]
                  nit: 5
-                nfev: 98
-          population: [[-1.304e+00]
-                       [-1.223e+00]
+                nfev: 96
+          population: [[-1.305e+00]
+                       [-1.323e+00]
                        ...
-                       [-1.288e+00]
-                       [-1.241e+00]]
- population_energies: [-7.946e+00 -7.905e+00 ... -7.944e+00 -7.921e+00]
-                 jac: [ 2.665e-07]
+                       [-1.270e+00]
+                       [-1.314e+00]]
+ population_energies: [-7.946e+00 -7.944e+00 ... -7.938e+00 -7.946e+00]
+                 jac: [ 4.352e-06]
 </pre></div>
 </div>
 </div>
@@ -1544,12 +1582,12 @@ label <span class="math notranslate nohighlight">\(x_0\)</span>.)</p>
 </div>
 </div>
 </div>
-<div class="admonition-maximization admonition">
-<p class="admonition-title"><strong>Maximization?</strong></p>
+<aside class="sidebar">
+<p class="sidebar-title">Maximization?</p>
 <p>Is <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code> restricted to the solution of
 minimization problems? Nope! To solve a maximization problem,
 simply minimize the <em>negative</em> of the original objective function.</p>
-</div>
+</aside>
 <p>This barely scratches the surface of SciPy’s optimization features, which
 include mixed integer linear programming, constrained nonlinear programming,
 and the solution of assignment problems. For much more information, see the
@@ -1557,7 +1595,7 @@ documentation of <code class="xref py py-mod docutils literal notranslate"><span
 <a class="reference internal" href="../../advanced/mathematical_optimization/index.html#mathematical-optimization"><span class="std std-ref">Mathematical optimization: finding minima of functions</span></a>.</p>
 <div class="exercise dropdown admonition" id="scipy-2d-minimization-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 25 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 40 </span></p>
 <section id="exercise-content">
 <p>This is an exercise on 2-D minimization.</p>
 <p>The six-hump camelback function</p>
@@ -1579,7 +1617,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 <div class="solution dropdown admonition" id="intro/scipy/index-solution-3">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#scipy-2d-minimization-ex"> Exercise 25</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#scipy-2d-minimization-ex"> Exercise 40</a></p>
 <section id="solution-content">
 <p>Optimization of a two-parameter function:</p>
 <div class="cell docutils container">
@@ -1676,7 +1714,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/54b963ddbf5b0f4385a1836e7311d92ff2acdb6f0c5bc10db8fe51cf53719388.png" src="../../_images/54b963ddbf5b0f4385a1836e7311d92ff2acdb6f0c5bc10db8fe51cf53719388.png" />
+<img alt="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" src="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" />
 </div>
 </div>
 </section>
@@ -1706,21 +1744,21 @@ variable’s probability density function (PDF):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x11600a330&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x115868a10&gt;
 </pre></div>
 </div>
-<img alt="../../_images/3f30e819388e0d6ee4739638d34e4149569498cb771dcac18c2deaf328780f75.png" src="../../_images/3f30e819388e0d6ee4739638d34e4149569498cb771dcac18c2deaf328780f75.png" />
+<img alt="../../_images/fd964e93153b63b4dba77f5cffc046b8ec605bf4fad1c7fc6e7e8ce9a30a0965.png" src="../../_images/fd964e93153b63b4dba77f5cffc046b8ec605bf4fad1c7fc6e7e8ce9a30a0965.png" />
 </div>
 </div>
-<div class="admonition-distribution-objects-and-frozen-distributions admonition">
-<p class="admonition-title">Distribution objects and frozen distributions</p>
+<aside class="sidebar">
+<p class="sidebar-title">Distribution objects and frozen distributions</p>
 <p>Each of the 100+ <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code> distribution families is represented by an
 <em>object</em> with a <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method. Here, we call the <code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.stats.norm</span></code>
 object to specify its location and scale, and it returns a <em>frozen</em>
 distribution: a particular element of a distribution family with all
 parameters fixed. The frozen distribution object has methods to compute
 essential functions of the particular distribution.</p>
-</div>
+</aside>
 <p>Suppose we knew that the sample had been drawn from a distribution belonging to
 the family of normal distributions, but we did not know the particular
 distribution’s location (mean) and scale (standard deviation). We perform
@@ -1734,7 +1772,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.0023229771003391787)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.0033376801093603302)
 </pre></div>
 </div>
 </div>
@@ -1746,7 +1784,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9932576991228301)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9994163527641046)
 </pre></div>
 </div>
 </div>
@@ -1755,7 +1793,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 sample was drawn, we are not surprised that these estimates are similar.</p>
 <div class="exercise dropdown admonition" id="scipy-prob-dist-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 26 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 41 </span></p>
 <section id="exercise-content">
 <p>Generate 1000 random variates from a gamma distribution with a shape
 parameter of 1. <em>Hint: the shape parameter is passed as the first
@@ -1779,7 +1817,7 @@ the sample was drawn:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.0023229771003391787)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.0033376801093603302)
 </pre></div>
 </div>
 </div>
@@ -1796,7 +1834,7 @@ distributed over many orders of magnitude.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9983911305926219)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9976891705293737)
 </pre></div>
 </div>
 </div>
@@ -1813,7 +1851,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(7.254489696951339)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.59158845610806)
 </pre></div>
 </div>
 </div>
@@ -1825,7 +1863,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.026589341247598673)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.45122271882775933)
 </pre></div>
 </div>
 </div>
@@ -2093,7 +2131,7 @@ one should be preferred, as it uses more efficient underlying implementations.</
 </div>
 <div class="exercise dropdown admonition" id="scipy-image-denoise-ex">
 
-<p class="admonition-title"><span class="caption-number">Exercise 27 </span></p>
+<p class="admonition-title"><span class="caption-number">Exercise 42 </span></p>
 <section id="exercise-content">
 <p><img alt="" src="../../_images/moonlanding.png" /></p>
 <ol class="arabic simple">
@@ -2113,7 +2151,7 @@ those components to zero (use array slicing).</p></li>
 </div>
 <div class="solution dropdown admonition" id="intro/scipy/index-solution-6">
 
-<p class="admonition-title">Solution to<a class="reference internal" href="#scipy-image-denoise-ex"> Exercise 27</a></p>
+<p class="admonition-title">Solution to<a class="reference internal" href="#scipy-image-denoise-ex"> Exercise 42</a></p>
 <section id="solution-content">
 <p>Implementing image denoising with FFT.</p>
 <p>Denoise an image (:download:<code class="docutils literal notranslate"><span class="pre">data/moonlanding.png</span></code>) by implementing a blur
@@ -2313,7 +2351,7 @@ only applies to regularly sampled data.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/88f339345daebb7a22a23db64380d7e5562b128666f2aacbf7a2873bed7176e9.png" src="../../_images/88f339345daebb7a22a23db64380d7e5562b128666f2aacbf7a2873bed7176e9.png" />
+<img alt="../../_images/4418d21c1ea792ea8e849045f69f1c8dccc269fd87bc99836218e98eed27f2ca.png" src="../../_images/4418d21c1ea792ea8e849045f69f1c8dccc269fd87bc99836218e98eed27f2ca.png" />
 </div>
 </div>
 <p><strong>Filtering</strong>:</p>
