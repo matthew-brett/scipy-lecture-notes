@@ -16,6 +16,8 @@ jupyter:
   orphan: true
 ---
 
+(optimization-examples)=
+
 # Examples for mathematical optimization page
 
 ```{python}

@@ -528,6 +528,7 @@ document.write(`
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-plots-on-this-page">Code for plots on this page</a></li>
 </ul>
             </nav>
         </div>
@@ -551,192 +552,6 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sp</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">optimize</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">collections</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s2">&quot;helper&quot;</span><span class="p">))</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">cost_functions</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
-    <span class="n">mk_quad</span><span class="p">,</span>
-    <span class="n">mk_gauss</span><span class="p">,</span>
-    <span class="n">rosenbrock</span><span class="p">,</span>
-    <span class="n">rosenbrock_prime</span><span class="p">,</span>
-    <span class="n">rosenbrock_hessian</span><span class="p">,</span>
-    <span class="n">LoggingFunction</span><span class="p">,</span>
-    <span class="n">CountingFunction</span><span class="p">,</span>
-<span class="p">)</span>
-
-<span class="c1"># A custom function for plotting.</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">get_subplot_n</span><span class="p">(</span><span class="n">index</span><span class="p">):</span>
-    <span class="n">row</span> <span class="o">=</span> <span class="n">index</span><span class="o">+</span><span class="mi">1</span>
-    <span class="k">if</span> <span class="n">row</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="n">subplot_n0</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">subplot_n1</span> <span class="o">=</span> <span class="mi">2</span>
-        <span class="n">subplot_n2</span> <span class="o">=</span> <span class="mi">3</span>
-    <span class="k">elif</span> <span class="n">row</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-        <span class="n">subplot_n0</span> <span class="o">=</span> <span class="mi">4</span>
-        <span class="n">subplot_n1</span> <span class="o">=</span> <span class="mi">5</span>
-        <span class="n">subplot_n2</span> <span class="o">=</span> <span class="mi">6</span>
-    <span class="k">elif</span> <span class="n">row</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
-        <span class="n">subplot_n0</span> <span class="o">=</span> <span class="mi">7</span>
-        <span class="n">subplot_n1</span> <span class="o">=</span> <span class="mi">8</span>
-        <span class="n">subplot_n2</span> <span class="o">=</span> <span class="mi">9</span>
-    <span class="k">elif</span> <span class="n">row</span> <span class="o">==</span> <span class="mi">4</span><span class="p">:</span>
-        <span class="n">subplot_n0</span> <span class="o">=</span> <span class="mi">10</span>
-        <span class="n">subplot_n1</span> <span class="o">=</span> <span class="mi">11</span>
-        <span class="n">subplot_n2</span> <span class="o">=</span> <span class="mi">12</span>
-    <span class="k">return</span> <span class="n">subplot_n0</span><span class="p">,</span> <span class="n">subplot_n1</span><span class="p">,</span> <span class="n">subplot_n2</span>
-
-<span class="c1"># Functions for gradient descent</span>
-
-<span class="c1">###############################################################################</span>
-<span class="c1"># A formatter to print values on contours</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">super_fmt</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">-</span> <span class="n">value</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">0.1</span><span class="p">:</span>
-            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$10^</span><span class="se">{{</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">value</span><span class="p">)</span><span class="si">:</span><span class="s2">d</span><span class="se">}}</span><span class="si">}</span><span class="s2">$&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;$10^</span><span class="se">{{</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.1f</span><span class="se">}}</span><span class="si">}</span><span class="s2">$&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">value</span> <span class="o">-</span> <span class="mf">0.01</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mf">0.1</span><span class="p">:</span>
-            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">1.1f</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">elif</span> <span class="n">value</span> <span class="o">&gt;</span> <span class="mf">0.01</span><span class="p">:</span>
-            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">.2e</span><span class="si">}</span><span class="s2">&quot;</span>
-    <span class="k">return</span> <span class="n">out</span>
-
-
-<span class="c1">###############################################################################</span>
-<span class="c1"># A gradient descent algorithm</span>
-<span class="c1"># do not use: its a toy, use scipy&#39;s optimize.fmin_cg</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">gradient_descent</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">adaptative</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="n">x_i</span><span class="p">,</span> <span class="n">y_i</span> <span class="o">=</span> <span class="n">x0</span>
-    <span class="n">all_x_i</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">all_y_i</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">all_f_i</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
-        <span class="n">all_x_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x_i</span><span class="p">)</span>
-        <span class="n">all_y_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y_i</span><span class="p">)</span>
-        <span class="n">all_f_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">([</span><span class="n">x_i</span><span class="p">,</span> <span class="n">y_i</span><span class="p">]))</span>
-        <span class="n">dx_i</span><span class="p">,</span> <span class="n">dy_i</span> <span class="o">=</span> <span class="n">f_prime</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">([</span><span class="n">x_i</span><span class="p">,</span> <span class="n">y_i</span><span class="p">]))</span>
-        <span class="k">if</span> <span class="n">adaptative</span><span class="p">:</span>
-            <span class="c1"># Compute a step size using a line_search to satisfy the Wolf</span>
-            <span class="c1"># conditions</span>
-            <span class="n">step</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">line_search</span><span class="p">(</span>
-                <span class="n">f</span><span class="p">,</span>
-                <span class="n">f_prime</span><span class="p">,</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">x_i</span><span class="p">,</span> <span class="n">y_i</span><span class="p">],</span>
-                <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">dx_i</span><span class="p">,</span> <span class="n">dy_i</span><span class="p">],</span>
-                <span class="n">np</span><span class="o">.</span><span class="n">r_</span><span class="p">[</span><span class="n">dx_i</span><span class="p">,</span> <span class="n">dy_i</span><span class="p">],</span>
-                <span class="n">c2</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span>
-            <span class="p">)</span>
-            <span class="n">step</span> <span class="o">=</span> <span class="n">step</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">if</span> <span class="n">step</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">step</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">step</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">x_i</span> <span class="o">+=</span> <span class="o">-</span><span class="n">step</span> <span class="o">*</span> <span class="n">dx_i</span>
-        <span class="n">y_i</span> <span class="o">+=</span> <span class="o">-</span><span class="n">step</span> <span class="o">*</span> <span class="n">dy_i</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">all_f_i</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-16</span><span class="p">:</span>
-            <span class="k">break</span>
-    <span class="k">return</span> <span class="n">all_x_i</span><span class="p">,</span> <span class="n">all_y_i</span><span class="p">,</span> <span class="n">all_f_i</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">gradient_descent_adaptative</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">gradient_descent</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">adaptative</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="k">def</span><span class="w"> </span><span class="nf">conjugate_gradient</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">all_x_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">all_y_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">all_f_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)]</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">store</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
-        <span class="n">all_x_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">all_y_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">all_f_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-
-    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
-        <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;CG&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">store</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;gtol&quot;</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">}</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_x_i</span><span class="p">,</span> <span class="n">all_y_i</span><span class="p">,</span> <span class="n">all_f_i</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">newton_cg</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="p">):</span>
-    <span class="n">all_x_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">all_y_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">all_f_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)]</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">store</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
-        <span class="n">all_x_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">all_y_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">all_f_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-
-    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
-        <span class="n">f</span><span class="p">,</span>
-        <span class="n">x0</span><span class="p">,</span>
-        <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Newton-CG&quot;</span><span class="p">,</span>
-        <span class="n">jac</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span>
-        <span class="n">hess</span><span class="o">=</span><span class="n">hessian</span><span class="p">,</span>
-        <span class="n">callback</span><span class="o">=</span><span class="n">store</span><span class="p">,</span>
-        <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;xtol&quot;</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">},</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_x_i</span><span class="p">,</span> <span class="n">all_y_i</span><span class="p">,</span> <span class="n">all_f_i</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">bfgs</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">all_x_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">all_y_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">all_f_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)]</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">store</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
-        <span class="n">all_x_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">all_y_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">all_f_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-
-    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
-        <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;BFGS&quot;</span><span class="p">,</span> <span class="n">jac</span><span class="o">=</span><span class="n">f_prime</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">store</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;gtol&quot;</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">}</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_x_i</span><span class="p">,</span> <span class="n">all_y_i</span><span class="p">,</span> <span class="n">all_f_i</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">powell</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">all_x_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">all_y_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">all_f_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)]</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">store</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
-        <span class="n">all_x_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">all_y_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">all_f_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-
-    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
-        <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Powell&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">store</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ftol&quot;</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">}</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_x_i</span><span class="p">,</span> <span class="n">all_y_i</span><span class="p">,</span> <span class="n">all_f_i</span>
-
-
-<span class="k">def</span><span class="w"> </span><span class="nf">nelder_mead</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">f_prime</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-    <span class="n">all_x_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">0</span><span class="p">]]</span>
-    <span class="n">all_y_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">[</span><span class="mi">1</span><span class="p">]]</span>
-    <span class="n">all_f_i</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">x0</span><span class="p">)]</span>
-
-    <span class="k">def</span><span class="w"> </span><span class="nf">store</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
-        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">X</span>
-        <span class="n">all_x_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-        <span class="n">all_y_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-        <span class="n">all_f_i</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
-
-    <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span>
-        <span class="n">f</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="s2">&quot;Nelder-Mead&quot;</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="n">store</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;ftol&quot;</span><span class="p">:</span> <span class="mf">1e-12</span><span class="p">}</span>
-    <span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_x_i</span><span class="p">,</span> <span class="n">all_y_i</span><span class="p">,</span> <span class="n">all_f_i</span>
 </pre></div>
 </div>
 </div>
@@ -777,8 +592,7 @@ by Fletcher. Good at hand-waving explanations.</p></li>
 </div>
 <!---
 XXX: should I discuss root finding?
--->
-<section id="knowing-your-problem">
+--><section id="knowing-your-problem">
 <h2>Knowing your problem<a class="headerlink" href="#knowing-your-problem" title="Link to this heading">#</a></h2>
 <p>Not all optimization problems are equal. Knowing your problem enables you
 to choose the right tool.</p>
@@ -1585,7 +1399,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x116484290&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1107eb710&gt;
 </pre></div>
 </div>
 <img alt="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" src="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" />
@@ -1602,7 +1416,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Powell: time 0.18s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Powell: time 0.17s
 </pre></div>
 </div>
 </div>
@@ -1625,7 +1439,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.82s, x error 0.02, f error -0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.78s, x error 0.02, f error -0.03
      L-BFGS: time 0.06s, x error 0.02, f error -0.03
 </pre></div>
 </div>
@@ -1648,7 +1462,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.08s, x error 0.02, f error -0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.10s, x error 0.02, f error -0.03
 L-BFGS w f&#39;: time 0.00s, x error 0.02, f error -0.03
 </pre></div>
 </div>
@@ -1902,7 +1716,7 @@ SciPy provides a helper function for this purpose:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/a4140023b61110eba2c218b283dc6569e4ebcc20146960430e0de8eda7308cce.png" src="../../_images/a4140023b61110eba2c218b283dc6569e4ebcc20146960430e0de8eda7308cce.png" />
+<img alt="../../_images/8fe073613466dc17657944952f4a75b2096da6444d1e94090e8acba1299e6f56.png" src="../../_images/8fe073613466dc17657944952f4a75b2096da6444d1e94090e8acba1299e6f56.png" />
 </div>
 </div>
 <div class="exercise dropdown admonition" id="mo-omega3-ex">
@@ -2017,6 +1831,11 @@ please also see <a class="reference external" href="https://github.com/xuy/pyipo
 </div>
 </section>
 </section>
+</section>
+<section id="code-for-plots-on-this-page">
+<h2>Code for plots on this page<a class="headerlink" href="#code-for-plots-on-this-page" title="Link to this heading">#</a></h2>
+<p>See the solutions, and the <a class="reference internal" href="optimization_examples.html#optimization-examples"><span class="std std-ref">optimization examples</span></a>
+page.</p>
 </section>
 </section>
 
@@ -2134,6 +1953,7 @@ please also see <a class="reference external" href="https://github.com/xuy/pyipo
 </li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-plots-on-this-page">Code for plots on this page</a></li>
 </ul>
   </nav></div>
 

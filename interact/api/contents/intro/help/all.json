@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-25T17:54:31.787425Z",
+      "created": "2025-09-25T18:08:40.440936Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-25T17:54:19.626726Z",
+      "last_modified": "2025-09-25T18:08:31.008654Z",
       "mimetype": null,
       "name": "help.ipynb",
       "path": "intro/help/help.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-25T17:54:31.786618Z",
+  "created": "2025-09-25T18:08:40.440655Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-25T17:54:31.786618Z",
+  "last_modified": "2025-09-25T18:08:40.440655Z",
   "mimetype": null,
   "name": "help",
   "path": "intro/help",
