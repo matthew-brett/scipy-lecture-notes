@@ -520,10 +520,10 @@ need to create a fork of the project). Edit the source and choose
 <p>First create a new issue on GitHub to explain the topic which you would
 like to cover, in order to discuss with editors and contributors about
 the scope of the future tutorial.</p>
-<p>Then create a new directory inside one of the chapters directories
-(<code class="docutils literal notranslate"><span class="pre">intro</span></code>, <code class="docutils literal notranslate"><span class="pre">advanced</span></code>, or <code class="docutils literal notranslate"><span class="pre">packages</span></code>) and create a file <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>
-for the new tutorial. Add the new file in the table of contents of the
-corresponding chapter (in its <code class="docutils literal notranslate"><span class="pre">index.rst</span></code>).</p>
+<p>Then create a new directory inside one of the chapters directories (<code class="docutils literal notranslate"><span class="pre">intro</span></code>,
+<code class="docutils literal notranslate"><span class="pre">advanced</span></code>, or <code class="docutils literal notranslate"><span class="pre">packages</span></code>) and create a new notebook named <code class="docutils literal notranslate"><span class="pre">index</span></code> for the
+new tutorial. Add the new file in the table of contents of the corresponding
+chapter (in the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>).</p>
 </li>
 </ul>
 <p>Keep in mind that tutorials are to be taught at different places and
@@ -612,20 +612,15 @@ create a link like <a class="reference external" href="https://numpy.org/doc/sta
 <h2>Chapter, section, subsection, paragraph<a class="headerlink" href="#chapter-section-subsection-paragraph" title="Link to this heading">#</a></h2>
 <p>Try to avoid to go below paragraph granularity or your document might become
 difficult to read:</p>
-<div class="highlight-rst notranslate"><div class="highlight"><pre><span></span><span class="gh">=============</span>
-<span class="gh">Chapter title</span>
-<span class="gh">=============</span>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gh"># Chapter title</span>
 
 Sample content.
 
-<span class="gh">Section</span>
-<span class="gh">=======</span>
+<span class="gu">## Section</span>
 
-<span class="gh">Subsection</span>
-<span class="gh">----------</span>
+<span class="gu">### Subsection</span>
 
-<span class="gh">Paragraph</span>
-<span class="gh">.........</span>
+<span class="gu">#### Paragraph</span>
 
 And some text.
 </pre></div>
