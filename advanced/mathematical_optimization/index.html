@@ -528,7 +528,6 @@ document.write(`
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-plots-on-this-page">Code for plots on this page</a></li>
 </ul>
             </nav>
         </div>
@@ -623,6 +622,10 @@ on which the search is performed.</p>
 </tbody>
 </table>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#convex-function-eg"><span class="std std-ref">convex, non-convex function plots</span></a>.</p>
+</div>
 <p><strong>Optimizing convex functions is easy. Optimizing non-convex functions can
 be very hard.</strong></p>
 <div class="admonition note">
@@ -648,6 +651,10 @@ also a global minimum. Then, in some sense, the minimum is unique.</p>
 </tbody>
 </table>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#smooth-function-eg"><span class="std std-ref">smooth, non-smooth function plots</span></a>.</p>
+</div>
 <p><strong>Optimizing smooth functions is easier</strong>
 (true in the context of <em>black-box</em> optimization, otherwise
 <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_programming">Linear Programming</a>
@@ -664,6 +671,10 @@ piece-wise linear functions).</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#noisy-non-noisy-eg"><span class="std std-ref">noisy, non-noisy function plots</span></a>.</p>
 </div>
 <div class="admonition-noisy-gradients admonition">
 <p class="admonition-title">Noisy gradients</p>
@@ -688,6 +699,10 @@ optimization.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#constraints-eg"><span class="std std-ref">constraint plots</span></a>.</p>
 </div>
 </section>
 </section>
@@ -761,6 +776,10 @@ Brent’s method to find the minimum of a function:</p>
 </tbody>
 </table>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#brents-method-eg"><span class="std std-ref">Brent’s method figures</span></a>.</p>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>You can use different solvers using the parameter <code class="docutils literal notranslate"><span class="pre">method</span></code>.</p>
@@ -800,6 +819,10 @@ minimum.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
 </div>
 <p>We can see that very anisotropic (<a class="reference external" href="https://en.wikipedia.org/wiki/Condition_number">ill-conditioned</a>) functions are harder
 to optimize.</p>
@@ -841,6 +864,10 @@ is done in gradient descent code using a
 </tbody>
 </table>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
+</div>
 <p>The more a function looks like a quadratic function (elliptic
 iso-curves), the easier it is to optimize.</p>
 </section>
@@ -871,6 +898,10 @@ gradient and sharp turns are reduced.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
 </div>
 <p>SciPy provides <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a> to find the minimum of scalar
 functions of one or more variables. The simple conjugate gradient method can
@@ -965,6 +996,10 @@ and leads to oscillations.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
 </div>
 <p>In SciPy, you can use the Newton method by setting <code class="docutils literal notranslate"><span class="pre">method</span></code> to Newton-CG in
 <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a>. Here, CG refers to the fact that an internal
@@ -1068,6 +1103,10 @@ curvature is better than that given by the Hessian.</p>
 </tbody>
 </table>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>   <span class="c1"># The rosenbrock function</span>
@@ -1154,6 +1193,10 @@ low dimensions</p>
 </tbody>
 </table>
 </div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
+</div>
 </section>
 <section id="simplex-method-the-nelder-mead">
 <h4>Simplex method: the Nelder-Mead<a class="headerlink" href="#simplex-method-the-nelder-mead" title="Link to this heading">#</a></h4>
@@ -1182,6 +1225,10 @@ methods on smooth, non-noisy functions.</p>
 </tr>
 </tbody>
 </table>
+</div>
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#gradient-descent-eg"><span class="std std-ref">gradient descent plots</span></a>.</p>
 </div>
 <p>Using the Nelder-Mead solver in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a>:</p>
 <div class="cell docutils container">
@@ -1247,6 +1294,10 @@ value. The parameters are specified with ranges given to
 <p>All methods are exposed as the <code class="docutils literal notranslate"><span class="pre">method</span></code> argument of
 <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a>.</p>
 <img alt="../../_images/d3d1abcb60437f054460d4d94af87c2a0ad45e4e8d41fc9ab61577f7d6c8eeea.png" src="../../_images/d3d1abcb60437f054460d4d94af87c2a0ad45e4e8d41fc9ab61577f7d6c8eeea.png" />
+<div class="dropdown admonition">
+<p class="admonition-title">Code for plot above</p>
+<p>See <a class="reference internal" href="optimization_examples.html#compare-optimizers-eg"><span class="std std-ref">compare optimizers</span></a>.</p>
+</div>
 <div class="pst-scrollable-table-container"><table class="table" id="id6">
 <caption><span class="caption-number">Table 12 </span><span class="caption-text">Rules of thumb for choosing a method</span><a class="headerlink" href="#id6" title="Link to this table">#</a></caption>
 <tbody>
@@ -1399,7 +1450,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1107eb710&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x111a5fe60&gt;
 </pre></div>
 </div>
 <img alt="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" src="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" />
@@ -1416,7 +1467,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Powell: time 0.17s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>     Powell: time 0.16s
 </pre></div>
 </div>
 </div>
@@ -1439,7 +1490,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.78s, x error 0.02, f error -0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.79s, x error 0.02, f error -0.03
      L-BFGS: time 0.06s, x error 0.02, f error -0.03
 </pre></div>
 </div>
@@ -1462,7 +1513,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.10s, x error 0.02, f error -0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.09s, x error 0.02, f error -0.03
 L-BFGS w f&#39;: time 0.00s, x error 0.02, f error -0.03
 </pre></div>
 </div>
@@ -1716,7 +1767,7 @@ SciPy provides a helper function for this purpose:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/8fe073613466dc17657944952f4a75b2096da6444d1e94090e8acba1299e6f56.png" src="../../_images/8fe073613466dc17657944952f4a75b2096da6444d1e94090e8acba1299e6f56.png" />
+<img alt="../../_images/73c9120c9dcc4443f6fa12274cf1000acfcd1000af5171a6013a251d123654f9.png" src="../../_images/73c9120c9dcc4443f6fa12274cf1000acfcd1000af5171a6013a251d123654f9.png" />
 </div>
 </div>
 <div class="exercise dropdown admonition" id="mo-omega3-ex">
@@ -1762,6 +1813,10 @@ support bound constraints with the parameter <code class="docutils literal notra
 </div>
 </div>
 <img alt="../../_images/c681c4f9fe1a67c579fe3484f9ffbcd3a83c45b22b2887594129afb695e3bf45.png" src="../../_images/c681c4f9fe1a67c579fe3484f9ffbcd3a83c45b22b2887594129afb695e3bf45.png" />
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#constraints-eg"><span class="std std-ref">constraint plots</span></a>.</p>
+</div>
 </section>
 <section id="general-constraints">
 <h3>General constraints<a class="headerlink" href="#general-constraints" title="Link to this heading">#</a></h3>
@@ -1770,7 +1825,11 @@ and <span class="math notranslate nohighlight">\(g(x) &lt; 0\)</span>.</p>
 <section id="scipy-optimize-fmin-slsqp-sequential-least-square-programming">
 <h4><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html#scipy.optimize.fmin_slsqp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code></a> Sequential least square programming:<a class="headerlink" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming" title="Link to this heading">#</a></h4>
 <p>equality and inequality constraints:</p>
-<img alt="../../_images/c681c4f9fe1a67c579fe3484f9ffbcd3a83c45b22b2887594129afb695e3bf45.png" src="../../_images/c681c4f9fe1a67c579fe3484f9ffbcd3a83c45b22b2887594129afb695e3bf45.png" />
+<img alt="../../_images/5d16237db2767222f2e4609573cdd358272f75968c23ad230cadb5afa2b2d306.png" src="../../_images/5d16237db2767222f2e4609573cdd358272f75968c23ad230cadb5afa2b2d306.png" />
+<div class="dropdown admonition">
+<p class="admonition-title">Plot code</p>
+<p>See <a class="reference internal" href="optimization_examples.html#constraints-eg"><span class="std std-ref">constraint plots</span></a>.</p>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1831,11 +1890,6 @@ please also see <a class="reference external" href="https://github.com/xuy/pyipo
 </div>
 </section>
 </section>
-</section>
-<section id="code-for-plots-on-this-page">
-<h2>Code for plots on this page<a class="headerlink" href="#code-for-plots-on-this-page" title="Link to this heading">#</a></h2>
-<p>See the solutions, and the <a class="reference internal" href="optimization_examples.html#optimization-examples"><span class="std std-ref">optimization examples</span></a>
-page.</p>
 </section>
 </section>
 
@@ -1953,7 +2007,6 @@ page.</p>
 </li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#code-for-plots-on-this-page">Code for plots on this page</a></li>
 </ul>
   </nav></div>
 
