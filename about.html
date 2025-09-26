@@ -906,14 +906,14 @@ preference for array operations, PEP8 coding conventions.</p></li>
 <section id="building-instructions">
 <h2>Building instructions<a class="headerlink" href="#building-instructions" title="Link to this heading">#</a></h2>
 <p>To generate the html output for on-screen display, Type:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make html
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">html</span>
 </pre></div>
 </div>
 <p>the generated html files can be found in <code class="docutils literal notranslate"><span class="pre">build/html</span></code></p>
 <p>The first build takes a long time, but information is cached and
 subsequent builds will be faster.</p>
 <p>To generate the pdf file for printing:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>make pdf
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">pdf</span>
 </pre></div>
 </div>
 <p>The pdf builder is a bit difficult and you might have some TeX errors.
@@ -935,7 +935,6 @@ problems.</p>
 <span class="n">seaborn</span><span class="o">==</span><span class="mf">0.13.2</span>
 <span class="n">pytest</span><span class="o">&gt;=</span><span class="mf">8.3</span>
 <span class="n">sphinx</span><span class="o">&gt;=</span><span class="mf">8.2</span>
-<span class="n">sphinx</span><span class="o">-</span><span class="n">gallery</span><span class="o">&gt;=</span><span class="mf">0.19</span>
 <span class="n">sphinx</span><span class="o">-</span><span class="n">copybutton</span>
 <span class="n">coverage</span><span class="o">&gt;=</span><span class="mf">7.6</span>
 <span class="n">Pillow</span>
@@ -952,7 +951,7 @@ problems.</p>
 </div>
 <p>Ensure that you have a <a class="reference external" href="https://docs.python.org/3/library/venv.html">virtual environment</a> or conda environment
 set up, then install requirements with:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install -r requirements.txt
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
 <p>Note that you will also need the following system packages:</p>
@@ -971,7 +970,7 @@ on Debian/Ubuntu),</p></li>
 <section id="updating-the-cover">
 <h3>Updating the cover<a class="headerlink" href="#updating-the-cover" title="Link to this heading">#</a></h3>
 <p>Use inkscape to modify the cover in <code class="docutils literal notranslate"><span class="pre">images/</span></code>, then export to PDF:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>inkscape --export-filename=cover-2025.pdf cover-2025.svg
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inkscape</span> <span class="o">--</span><span class="n">export</span><span class="o">-</span><span class="n">filename</span><span class="o">=</span><span class="n">cover</span><span class="o">-</span><span class="mf">2025.</span><span class="n">pdf</span> <span class="n">cover</span><span class="o">-</span><span class="mf">2025.</span><span class="n">svg</span>
 </pre></div>
 </div>
 <p>Ensure that the <code class="docutils literal notranslate"><span class="pre">images/cover.pdf</span></code> symlink points to the correct
@@ -998,15 +997,15 @@ converting to Jupyter <code class="docutils literal notranslate"><span class="pr
 <code class="docutils literal notranslate"><span class="pre">&lt;div&gt;</span></code> blocks (<a class="reference external" href="https://jupyterbook.org/en/stable/content/content-blocks.html#markdown-friendly-directives-with">JupyterBook allows
 this</a>):
 So, for example, prefer:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>::: {note}
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::</span> <span class="p">{</span><span class="n">note</span><span class="p">}</span>
 
-My note
+<span class="n">My</span> <span class="n">note</span>
 
-:::
+<span class="p">:::</span>
 </pre></div>
 </div>
 <p>to the more standard Myst markup of:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;!-- #region --&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;!-- #region --&gt;
 ``` {note}
 
 My note
@@ -1021,11 +1020,11 @@ advantages of the <code class="docutils literal notranslate"><span class="pre">:
 demarcations.</p>
 <p>For the same reason, prefer the <code class="docutils literal notranslate"><span class="pre">:::</span></code> form for other content blocks, such as
 warnings and admonitions. For example, prefer:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>::: {admonition} A custom title
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::</span> <span class="p">{</span><span class="n">admonition</span><span class="p">}</span> <span class="n">A</span> <span class="n">custom</span> <span class="n">title</span>
 
-My admonition
+<span class="n">My</span> <span class="n">admonition</span>
 
-:::
+<span class="p">:::</span>
 </pre></div>
 </div>
 </section>
@@ -1035,24 +1034,24 @@ My admonition
 <p>Mark <em>all</em> exercises and solutions with <a class="reference external" href="https://ebp-sphinx-exercise.readthedocs.io/en/latest/syntax.html#alternative-gated-syntax">gated
 markers</a>,
 like this:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>::: {exercise-start}
-:label: my-exercise-label
-:class: dropdown
-:::
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:::</span> <span class="p">{</span><span class="n">exercise</span><span class="o">-</span><span class="n">start</span><span class="p">}</span>
+<span class="p">:</span><span class="n">label</span><span class="p">:</span> <span class="n">my</span><span class="o">-</span><span class="n">exercise</span><span class="o">-</span><span class="n">label</span>
+<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">dropdown</span>
+<span class="p">:::</span>
 
-My exercise.
+<span class="n">My</span> <span class="n">exercise</span><span class="o">.</span>
 
-::: {exercise-end}
-:::
+<span class="p">:::</span> <span class="p">{</span><span class="n">exercise</span><span class="o">-</span><span class="n">end</span><span class="p">}</span>
+<span class="p">:::</span>
 
-::: {solution-start} my-exercise-label
-:class: dropdown
-:::
+<span class="p">:::</span> <span class="p">{</span><span class="n">solution</span><span class="o">-</span><span class="n">start</span><span class="p">}</span> <span class="n">my</span><span class="o">-</span><span class="n">exercise</span><span class="o">-</span><span class="n">label</span>
+<span class="p">:</span><span class="n">class</span><span class="p">:</span> <span class="n">dropdown</span>
+<span class="p">:::</span>
 
-My solution.
+<span class="n">My</span> <span class="n">solution</span><span class="o">.</span>
 
-::: {solution-end}
-:::
+<span class="p">:::</span> <span class="p">{</span><span class="n">solution</span><span class="o">-</span><span class="n">end</span><span class="p">}</span>
+<span class="p">:::</span>
 </pre></div>
 </div>
 <p>The gated markers (of form <code class="docutils literal notranslate"><span class="pre">solution-start</span></code> and <code class="docutils literal notranslate"><span class="pre">solution-end</span></code> etc) allow you
@@ -1064,12 +1063,12 @@ script to recognize exercise and solutions blocks, to parse them correctly.</p>
 <section id="development">
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h2>
 <p>Run this once, in the repository directory:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pip install pre_commit
-pre-commit install
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">pre_commit</span>
+<span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">install</span>
 </pre></div>
 </div>
 <p>Before each commit that you will push:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pre-commit run --all
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pre</span><span class="o">-</span><span class="n">commit</span> <span class="n">run</span> <span class="o">--</span><span class="nb">all</span>
 </pre></div>
 </div>
 <p>Among other things, this runs the <code class="docutils literal notranslate"><span class="pre">codespell</span></code> check, also run by CI.</p>

@@ -523,7 +523,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-constraints">Optimization with constraints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-bounds">Box bounds</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-constraints">General constraints</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code> Sequential least square programming:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming-equality-and-inequality-constraints"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code> Sequential least square programming: equality and inequality constraints</a></li>
 </ul>
 </li>
 </ul>
@@ -1293,7 +1293,7 @@ value. The parameters are specified with ranges given to
 <h3>Choosing a method<a class="headerlink" href="#choosing-a-method" title="Link to this heading">#</a></h3>
 <p>All methods are exposed as the <code class="docutils literal notranslate"><span class="pre">method</span></code> argument of
 <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a>.</p>
-<img alt="../../_images/d3d1abcb60437f054460d4d94af87c2a0ad45e4e8d41fc9ab61577f7d6c8eeea.png" src="../../_images/d3d1abcb60437f054460d4d94af87c2a0ad45e4e8d41fc9ab61577f7d6c8eeea.png" />
+<img alt="../../_images/674f09f6af5118743671c26a6660d4b4a48448deda2cb439e2b5170848fb374b.png" src="../../_images/674f09f6af5118743671c26a6660d4b4a48448deda2cb439e2b5170848fb374b.png" />
 <div class="dropdown admonition">
 <p class="admonition-title">Code for plot above</p>
 <p>See <a class="reference internal" href="optimization_examples.html#compare-optimizers-eg"><span class="std std-ref">compare optimizers</span></a>.</p>
@@ -1450,7 +1450,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x108ae17f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x1153dbdd0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" src="../../_images/95d33d873481457f57a545ccfc008041d126600b97d8315694c2ba8f8b002c5e.png" />
@@ -1490,8 +1490,8 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.67s, x error 0.02, f error -0.03
-     L-BFGS: time 0.05s, x error 0.02, f error -0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       BFGS: time 0.80s, x error 0.02, f error -0.03
+     L-BFGS: time 0.06s, x error 0.02, f error -0.03
 </pre></div>
 </div>
 </div>
@@ -1513,7 +1513,7 @@ at the conditioning of <code class="docutils literal notranslate"><span class="p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.10s, x error 0.02, f error -0.03
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  BFGS w f&#39;: time 0.09s, x error 0.02, f error -0.03
 L-BFGS w f&#39;: time 0.00s, x error 0.02, f error -0.03
 </pre></div>
 </div>
@@ -1679,7 +1679,7 @@ if we compute the norm ourselves and use a good generic optimizer (BFGS):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2.694080970246647e-11)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(2.694080801091856e-11)
 </pre></div>
 </div>
 </div>
@@ -1767,7 +1767,7 @@ SciPy provides a helper function for this purpose:
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/fe935fb28dd783e08ce6aff127f6bc92c7187eb45287b4a5e52ecae1724e0d53.png" src="../../_images/fe935fb28dd783e08ce6aff127f6bc92c7187eb45287b4a5e52ecae1724e0d53.png" />
+<img alt="../../_images/ceb55f9aea930a2dc7321d98f4e137c167a69a8390b3447f06d2c16748f7bc17.png" src="../../_images/ceb55f9aea930a2dc7321d98f4e137c167a69a8390b3447f06d2c16748f7bc17.png" />
 </div>
 </div>
 <div class="exercise dropdown admonition" id="mo-omega3-ex">
@@ -1822,13 +1822,12 @@ support bound constraints with the parameter <code class="docutils literal notra
 <h3>General constraints<a class="headerlink" href="#general-constraints" title="Link to this heading">#</a></h3>
 <p>Equality and inequality constraints specified as functions: <span class="math notranslate nohighlight">\(f(x) = 0\)</span>
 and <span class="math notranslate nohighlight">\(g(x) &lt; 0\)</span>.</p>
-<section id="scipy-optimize-fmin-slsqp-sequential-least-square-programming">
-<h4><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html#scipy.optimize.fmin_slsqp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code></a> Sequential least square programming:<a class="headerlink" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming" title="Link to this heading">#</a></h4>
-<p>equality and inequality constraints:</p>
+<section id="scipy-optimize-fmin-slsqp-sequential-least-square-programming-equality-and-inequality-constraints">
+<h4><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html#scipy.optimize.fmin_slsqp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code></a> Sequential least square programming: equality and inequality constraints<a class="headerlink" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming-equality-and-inequality-constraints" title="Link to this heading">#</a></h4>
 <img alt="../../_images/5d16237db2767222f2e4609573cdd358272f75968c23ad230cadb5afa2b2d306.png" src="../../_images/5d16237db2767222f2e4609573cdd358272f75968c23ad230cadb5afa2b2d306.png" />
 <div class="dropdown admonition">
 <p class="admonition-title">Plot code</p>
-<p>See <a class="reference internal" href="optimization_examples.html#constraints-eg"><span class="std std-ref">constraint plots</span></a>.</p>
+<p>See <a class="reference internal" href="optimization_examples.html#constraints-non-bounds-eg"><span class="std std-ref">constraint non-bounds</span></a>.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2002,7 +2001,7 @@ please also see <a class="reference external" href="https://github.com/xuy/pyipo
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#optimization-with-constraints">Optimization with constraints</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#box-bounds">Box bounds</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-constraints">General constraints</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code> Sequential least square programming:</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#scipy-optimize-fmin-slsqp-sequential-least-square-programming-equality-and-inequality-constraints"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code> Sequential least square programming: equality and inequality constraints</a></li>
 </ul>
 </li>
 </ul>

@@ -645,7 +645,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x105f113c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x10d11d3c0&gt;
 </pre></div>
 </div>
 </div>
@@ -670,7 +670,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553162624720
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553125065440
 </pre></div>
 </div>
 </div>
@@ -683,7 +683,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553162624720, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553125065440, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i4&#39;)],
  &#39;typestr&#39;: &#39;&lt;i4&#39;,
@@ -727,7 +727,7 @@ array of ints:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x105f11600&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x10d11d600&gt;
 </pre></div>
 </div>
 </div>
@@ -1474,7 +1474,7 @@ by <code class="docutils literal notranslate"><span class="pre">x</span></code>:
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">\x</span></code> stands for heXadecimal, so what we are seeing is:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0x01 0x03 0x02 0x04
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mh">0x01</span> <span class="mh">0x03</span> <span class="mh">0x02</span> <span class="mh">0x04</span>
 </pre></div>
 </div>
 <p>We ask NumPy to interpret these bytes as elements of dtype
@@ -2138,7 +2138,7 @@ of <code class="docutils literal notranslate"><span class="pre">[1,</span> <span
 </div>
 </div>
 <p>Your task is to work out the correct strides for to get the diagonal of the array, as in:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>x_diag = as_strided(x, shape=(3,), strides=(...,))
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x_diag</span> <span class="o">=</span> <span class="n">as_strided</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,),</span> <span class="n">strides</span><span class="o">=</span><span class="p">(</span><span class="o">...</span><span class="p">,))</span>
 </pre></div>
 </div>
 <p>Next:</p>
@@ -2320,7 +2320,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>74.4 μs ± 156 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>79.9 μs ± 3.23 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2332,7 +2332,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>123 μs ± 670 ns per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>141 μs ± 7.7 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2544,10 +2544,10 @@ Use it to determine which <code class="docutils literal notranslate"><span class
 </table>
 </div>
 <p>Type codes:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>NPY_BOOL, NPY_BYTE, NPY_UBYTE, NPY_SHORT, NPY_USHORT, NPY_INT, NPY_UINT,
-NPY_LONG, NPY_ULONG, NPY_LONGLONG, NPY_ULONGLONG, NPY_FLOAT, NPY_DOUBLE,
-NPY_LONGDOUBLE, NPY_CFLOAT, NPY_CDOUBLE, NPY_CLONGDOUBLE, NPY_DATETIME,
-NPY_TIMEDELTA, NPY_OBJECT, NPY_STRING, NPY_UNICODE, NPY_VOID
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NPY_BOOL</span><span class="p">,</span> <span class="n">NPY_BYTE</span><span class="p">,</span> <span class="n">NPY_UBYTE</span><span class="p">,</span> <span class="n">NPY_SHORT</span><span class="p">,</span> <span class="n">NPY_USHORT</span><span class="p">,</span> <span class="n">NPY_INT</span><span class="p">,</span> <span class="n">NPY_UINT</span><span class="p">,</span>
+<span class="n">NPY_LONG</span><span class="p">,</span> <span class="n">NPY_ULONG</span><span class="p">,</span> <span class="n">NPY_LONGLONG</span><span class="p">,</span> <span class="n">NPY_ULONGLONG</span><span class="p">,</span> <span class="n">NPY_FLOAT</span><span class="p">,</span> <span class="n">NPY_DOUBLE</span><span class="p">,</span>
+<span class="n">NPY_LONGDOUBLE</span><span class="p">,</span> <span class="n">NPY_CFLOAT</span><span class="p">,</span> <span class="n">NPY_CDOUBLE</span><span class="p">,</span> <span class="n">NPY_CLONGDOUBLE</span><span class="p">,</span> <span class="n">NPY_DATETIME</span><span class="p">,</span>
+<span class="n">NPY_TIMEDELTA</span><span class="p">,</span> <span class="n">NPY_OBJECT</span><span class="p">,</span> <span class="n">NPY_STRING</span><span class="p">,</span> <span class="n">NPY_UNICODE</span><span class="p">,</span> <span class="n">NPY_VOID</span>
 </pre></div>
 </div>
 </section>
@@ -2939,7 +2939,7 @@ the buffer interface:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553164501728, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553127016736, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i8&#39;)],
  &#39;typestr&#39;: &#39;&lt;i8&#39;,
@@ -3268,9 +3268,9 @@ time, ignoring the invalid numbers.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x106177950&gt;,
- &lt;matplotlib.lines.Line2D at 0x1060dbd10&gt;,
- &lt;matplotlib.lines.Line2D at 0x106177ad0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10d2cbd10&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d377320&gt;,
+ &lt;matplotlib.lines.Line2D at 0x10d377440&gt;]
 </pre></div>
 </div>
 </div>

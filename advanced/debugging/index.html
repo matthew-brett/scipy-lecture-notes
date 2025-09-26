@@ -586,7 +586,7 @@ Menu: ‘settings -&gt; configure kate</p>
 <ul>
 <li><p>In plugins enable ‘external tools’</p></li>
 <li><p>In external Tools’, add <code class="docutils literal notranslate"><span class="pre">pyflakes</span></code>:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>kdialog --title &quot;pyflakes %filename&quot; --msgbox &quot;$(pyflakes %filename)&quot;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">kdialog</span> <span class="o">--</span><span class="n">title</span> <span class="s2">&quot;pyflakes </span><span class="si">%f</span><span class="s2">ilename&quot;</span> <span class="o">--</span><span class="n">msgbox</span> <span class="s2">&quot;$(pyflakes </span><span class="si">%f</span><span class="s2">ilename)&quot;</span>
 </pre></div>
 </div>
 </li>
