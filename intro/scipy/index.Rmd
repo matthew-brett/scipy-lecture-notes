@@ -728,6 +728,8 @@ has multiple local minima. Find a global minimum (there is more than one,
 each with the same value of the objective function) and at least one other
 local minimum.
 
+![](images/camel.png)
+
 Hints:
 
 - Variables can be restricted to $-2 < x < 2$ and $-1 < y < 1$.
