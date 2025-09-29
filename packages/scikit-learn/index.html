@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -56,6 +56,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'packages/scikit-learn/index';</script>
     <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/packages/scikit-learn/index.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
@@ -604,7 +606,7 @@ document.write(`
 <ul class="simple">
 <li><p><a class="reference internal" href="../../intro/numpy/index.html#numpy"><span class="std std-ref">numpy</span></a></p></li>
 <li><p><a class="reference internal" href="../../intro/scipy/index.html#scipy"><span class="std std-ref">scipy</span></a></p></li>
-<li><p><a class="reference internal" href="../../tmp/intro/matplotlib/index.html#matplotlib"><span class="std std-ref">matplotlib (optional)</span></a></p></li>
+<li><p><a class="reference internal" href="../../intro/matplotlib/index.html#matplotlib"><span class="std std-ref">matplotlib (optional)</span></a></p></li>
 <li><p><a class="reference internal" href="../../intro/intro.html#interactive-work"><span class="std std-ref">ipython (the enhancements come in handy)</span></a></p></li>
 </ul>
 </div>
@@ -680,7 +682,7 @@ like a database system would do.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ac302e583c51a9e41e1e771986b3e46ac99e205711c1972358b1f812504b6f3e.png" src="../../_images/ac302e583c51a9e41e1e771986b3e46ac99e205711c1972358b1f812504b6f3e.png" />
+<img alt="../../_images/c6399a4f73f9d3e3cf2b161dcac83410b1a3c9b4ac374b20bf16686da2a43203.png" src="../../_images/c6399a4f73f9d3e3cf2b161dcac83410b1a3c9b4ac374b20bf16686da2a43203.png" />
 </div>
 </div>
 <p>We’ll take a look at two very simple machine learning tasks here. The
@@ -729,7 +731,7 @@ it’s a blue or a red point.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/73c531efcfc222f1abb086b5e79902c63bc1b550be49e14c0cecadf55c3d51e9.png" src="../../_images/73c531efcfc222f1abb086b5e79902c63bc1b550be49e14c0cecadf55c3d51e9.png" />
+<img alt="../../_images/3b82cefc4518290ba699a84a5e86b003e31fa0048f1b9c27f988af7499fdaed0.png" src="../../_images/3b82cefc4518290ba699a84a5e86b003e31fa0048f1b9c27f988af7499fdaed0.png" />
 </div>
 </div>
 <p>The next simple task we’ll look at is a <strong>regression</strong> task: a simple
@@ -971,7 +973,7 @@ dimensions at a time using a scatter plot:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/cb5e2ac8488f5c0f24f35903acaa7d56612946fe4bcb7dac64395c5f4c14cf79.png" src="../../_images/cb5e2ac8488f5c0f24f35903acaa7d56612946fe4bcb7dac64395c5f4c14cf79.png" />
+<img alt="../../_images/10a8bf21fccc7bc97585b114fff9cf009ae0d7527c1b01956b621ae7b863af30.png" src="../../_images/10a8bf21fccc7bc97585b114fff9cf009ae0d7527c1b01956b621ae7b863af30.png" />
 </div>
 </div>
 <div class="exercise dropdown admonition" id="chose-two-features">
@@ -1994,7 +1996,7 @@ predominant class. Let’s try it out on our iris classification problem:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/39d48cea9e2dc6c4015990e623f0cfbd75240d2add8f98747bbf725242a144d8.png" src="../../_images/39d48cea9e2dc6c4015990e623f0cfbd75240d2add8f98747bbf725242a144d8.png" />
+<img alt="../../_images/b4e2a6c0adf9b7abf6ce98f44501fe6bca1804be2a8586f729a4b66d02689ba0.png" src="../../_images/b4e2a6c0adf9b7abf6ce98f44501fe6bca1804be2a8586f729a4b66d02689ba0.png" />
 </div>
 </div>
 <p><strong>Regression</strong>: The simplest possible regression setting is the linear
@@ -2463,7 +2465,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/0621e4f7a06497de1746bcd853289c05dd781d03b65f2fd9687a4e03fa720ba8.png" src="../../_images/0621e4f7a06497de1746bcd853289c05dd781d03b65f2fd9687a4e03fa720ba8.png" />
+<img alt="../../_images/8c3ea042a1b6fe348845402a0a4ed25d4b8e0c93c267cc654f4e661e631bb518.png" src="../../_images/8c3ea042a1b6fe348845402a0a4ed25d4b8e0c93c267cc654f4e661e631bb518.png" />
 </div>
 </div>
 </section>
@@ -2554,7 +2556,7 @@ we are going to prefer models that are simpler, for a certain definition of
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/a49f3ab6e29ce513372d9deac24db75c831231990f1661843117dfe54d4925cc.png" src="../../_images/a49f3ab6e29ce513372d9deac24db75c831231990f1661843117dfe54d4925cc.png" />
+<img alt="../../_images/3ac24ca990ef0002d8c18edd657614f5b95bfa971805af7ddd6b11e20c95b4a2.png" src="../../_images/3ac24ca990ef0002d8c18edd657614f5b95bfa971805af7ddd6b11e20c95b4a2.png" />
 </div>
 </div>
 <p>And now, let’s fit a 4th order and a 9th order polynomial to the data.</p>
@@ -2591,7 +2593,7 @@ we are going to prefer models that are simpler, for a certain definition of
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/928a126bc6c1c4dd10d0f884d22f061e7ef72aa8af877ad33de05fe64d4b8c79.png" src="../../_images/928a126bc6c1c4dd10d0f884d22f061e7ef72aa8af877ad33de05fe64d4b8c79.png" />
+<img alt="../../_images/e2d794edc75c566a6d9724aa0547d807a5283f3f70145911c2bd40a4a2a56bdd.png" src="../../_images/e2d794edc75c566a6d9724aa0547d807a5283f3f70145911c2bd40a4a2a56bdd.png" />
 </div>
 </div>
 <p>With your naked eye, which model do you prefer, the 4th order one, or the 9th
@@ -2615,7 +2617,7 @@ order one?</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/ed83cfbac7228a53644cc1350890ec78f0d0a78ad067410b8ba204d4bcc5edd1.png" src="../../_images/ed83cfbac7228a53644cc1350890ec78f0d0a78ad067410b8ba204d4bcc5edd1.png" />
+<img alt="../../_images/88b65457aa8496b1df33f4cc98ac941f60986cd9c5384f10f8063a82021710cb.png" src="../../_images/88b65457aa8496b1df33f4cc98ac941f60986cd9c5384f10f8063a82021710cb.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -2740,7 +2742,7 @@ boundaries in the feature space.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/93e04bbeadab41e22bd5fc16355b503f7c57d4df3c2bcb73034e3e970760b022.png" src="../../_images/93e04bbeadab41e22bd5fc16355b503f7c57d4df3c2bcb73034e3e970760b022.png" />
+<img alt="../../_images/13d12e8fa3e0dea4624f8fa55b831945bc6732d25cb4e7eebf70b32cea3c4f5d.png" src="../../_images/13d12e8fa3e0dea4624f8fa55b831945bc6732d25cb4e7eebf70b32cea3c4f5d.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -2789,7 +2791,7 @@ evaluating the effectiveness of a classification model.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/bf27c0f0061fe5a99c15f4617993819fa572024a42160656c9f9a796987378fa.png" src="../../_images/bf27c0f0061fe5a99c15f4617993819fa572024a42160656c9f9a796987378fa.png" />
+<img alt="../../_images/410b9fc90ed17481184339ec6adb3a5f5b09c4b63e4c48729ed377e300746032.png" src="../../_images/410b9fc90ed17481184339ec6adb3a5f5b09c4b63e4c48729ed377e300746032.png" />
 </div>
 </div>
 </section>
@@ -2812,7 +2814,7 @@ structure of the data set.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/66e42eeb1413fe521c28d3e575dbb701266f624fa367ea00921bdff61bff4071.png" src="../../_images/66e42eeb1413fe521c28d3e575dbb701266f624fa367ea00921bdff61bff4071.png" />
+<img alt="../../_images/a417d1e155eb6685880f12cf999974e36c7922ad8e6227bfb4e331752235e239.png" src="../../_images/a417d1e155eb6685880f12cf999974e36c7922ad8e6227bfb4e331752235e239.png" />
 </div>
 </div>
 <div class="admonition-question admonition">
@@ -3378,7 +3380,7 @@ how well the classification is working.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/d934c5a8c5c06a575d58657d07a2866683f649004e8869ec71d6d85ae605b84c.png" src="../../_images/d934c5a8c5c06a575d58657d07a2866683f649004e8869ec71d6d85ae605b84c.png" />
+<img alt="../../_images/d701cbe8686bb16e1906a3c991264020f74cc720e7c953b974e7a06a4e29815d.png" src="../../_images/d701cbe8686bb16e1906a3c991264020f74cc720e7c953b974e7a06a4e29815d.png" />
 </div>
 </div>
 <div class="admonition-question admonition">
@@ -3610,7 +3612,7 @@ histogram of the target values: the median price in each neighborhood:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/6c8086885e96ab1e39b16ff2af60391638226fe4e859d92ee62fb2a16ab1b79b.png" src="../../_images/6c8086885e96ab1e39b16ff2af60391638226fe4e859d92ee62fb2a16ab1b79b.png" />
+<img alt="../../_images/a21e2d29fd1b17d36d3a334f62b0b1eec95596b5c52dd20f216d387b85e0c59f.png" src="../../_images/a21e2d29fd1b17d36d3a334f62b0b1eec95596b5c52dd20f216d387b85e0c59f.png" />
 </div>
 </div>
 <p>Let’s have a quick look to see if some features are more relevant than
@@ -3630,7 +3632,7 @@ others for our problem:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/5e4f6e33c6a917eb4485f289dc8b02bfb64a505428a92524c4f79f9561ed91b2.png" src="../../_images/5e4f6e33c6a917eb4485f289dc8b02bfb64a505428a92524c4f79f9561ed91b2.png" />
+<img alt="../../_images/e7d9b0568d4f958c6a986ab1348faa530383cec0ae043e664d77d99491bd8374.png" src="../../_images/e7d9b0568d4f958c6a986ab1348faa530383cec0ae043e664d77d99491bd8374.png" />
 </div>
 </div>
 <p>This is a manual version of a technique called <strong>feature selection</strong>.</p>
@@ -4085,7 +4087,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: 0.7156352158607436
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: 0.7134629568639151
 </pre></div>
 </div>
 </div>
@@ -4110,7 +4112,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/46ba7c5abe7ed06fece8977a0945b92eaa59aa0b3a7a5e9168d93c8738007842.png" src="../../_images/46ba7c5abe7ed06fece8977a0945b92eaa59aa0b3a7a5e9168d93c8738007842.png" />
+<img alt="../../_images/a633e1b54592695d8c4e4782a94816f335ff95a1950ed194fb64b9a55fd82aaa.png" src="../../_images/a633e1b54592695d8c4e4782a94816f335ff95a1950ed194fb64b9a55fd82aaa.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -4591,7 +4593,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4e98bd1c8f5dfb1f4d3763b039d49359d437215640d59ea912ec26aeeafca597.png" src="../../_images/4e98bd1c8f5dfb1f4d3763b039d49359d437215640d59ea912ec26aeeafca597.png" />
+<img alt="../../_images/f7be03a2faed10b7f32b478f7177c696257ae27579098f7f23e4cd4c704e44d1.png" src="../../_images/f7be03a2faed10b7f32b478f7177c696257ae27579098f7f23e4cd4c704e44d1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4602,7 +4604,7 @@ div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: np.float64(0.5186060575592075) 
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RMS: np.float64(0.5247740332961185) 
 </pre></div>
 </div>
 </div>
@@ -5124,7 +5126,7 @@ Housing price dataset we introduced previously:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/fae50164d1447c6457f4768f77ab188d6e1a1fd30c3092ea3141c163286d9d9b.png" src="../../_images/fae50164d1447c6457f4768f77ab188d6e1a1fd30c3092ea3141c163286d9d9b.png" />
+<img alt="../../_images/c338f81413b94cf1097ad298a878409e2a3ade8c5bda904ff6b9141d8ee15a0b.png" src="../../_images/c338f81413b94cf1097ad298a878409e2a3ade8c5bda904ff6b9141d8ee15a0b.png" />
 </div>
 </div>
 <p>Here again the predictions are seemingly perfect as the model was able to
@@ -5317,7 +5319,7 @@ parameters set when you instantiate the classifier: for example, the
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianNB: 0.8332741681010102
 KNeighborsClassifier: 0.9804562804949924
-LinearSVC: 0.9344514479109784
+LinearSVC: 0.9365582188220227
 </pre></div>
 </div>
 </div>
@@ -5374,10 +5376,10 @@ KNeighbors(n_neighbors=10): 0.9755550897728812
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;hinge&#39;): 0.9337433216981619
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;hinge&#39;): 0.9323729075300953
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;squared_hinge&#39;): 0.9323387371152745
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LinearSVC(loss=&#39;squared_hinge&#39;): 0.9365582188220227
 -------------------
 KNeighbors(n_neighbors=1): 0.9913675218842191
 KNeighbors(n_neighbors=2): 0.9848442068835102
@@ -5391,7 +5393,7 @@ KNeighbors(n_neighbors=9): 0.9780645792142071
 KNeighbors(n_neighbors=10): 0.9755550897728812
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/sklearn/svm/_base.py:1249: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/sklearn/svm/_base.py:1249: ConvergenceWarning: Liblinear failed to converge, increase the number of iterations.
   warnings.warn(
 </pre></div>
 </div>
@@ -5432,7 +5434,7 @@ to automatically compute score on all these folds. Here we do
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.98888889, 0.99444444, 0.99444444, 0.98888889, 0.97777778])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.99444444, 1.        , 0.98333333, 0.98333333, 0.98888889])
 </pre></div>
 </div>
 </div>
@@ -5482,7 +5484,7 @@ of disease progression after one year:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ridge: 0.410174971340889
-Lasso: 0.3375593674654275
+Lasso: 0.3375593674654274
 </pre></div>
 </div>
 </div>
@@ -5515,7 +5517,7 @@ between 0.0001 and 1:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3138f409349cc37586be38c563d0b279d42bb70db07d3aae97b8120cebea86d7.png" src="../../_images/3138f409349cc37586be38c563d0b279d42bb70db07d3aae97b8120cebea86d7.png" />
+<img alt="../../_images/89f820b5278c39f96151544930ec74c061d8a5ef8c81e7b06d0d8696c3d52624.png" src="../../_images/89f820b5278c39f96151544930ec74c061d8a5ef8c81e7b06d0d8696c3d52624.png" />
 </div>
 </div>
 <div class="admonition-question admonition">
@@ -5567,7 +5569,9 @@ on these estimators can be performed as follows:</p>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RidgeCV: 0.06210169418915616
-LassoCV: 0.01268961003167922
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LassoCV: 0.01268961003167922
 </pre></div>
 </div>
 </div>
@@ -5590,7 +5594,10 @@ is called <em>‘nested cross validation’</em>:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RidgeCV 0.48916033973224776
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RidgeCV
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> 0.4891603397322479
 LassoCV 0.48549086705564237
 </pre></div>
 </div>
@@ -6112,7 +6119,7 @@ means that the data is now centered on both components with unit variance:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.82964754e-15, -1.54172971e-15])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-1.54321000e-15, -1.75859327e-15])
 </pre></div>
 </div>
 </div>
@@ -6138,8 +6145,8 @@ correlation:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.00000000e+00, 1.95756908e-14],
-       [1.95756908e-14, 1.00000000e+00]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.00000000e+00, 1.85027236e-14],
+       [1.85027236e-14, 1.00000000e+00]])
 </pre></div>
 </div>
 </div>
@@ -6158,7 +6165,7 @@ the dataset:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/99f1ef47f3c9f82299a2fefa92e7c688fb7bad8f1a56fce75ec18bc48468bd18.png" src="../../_images/99f1ef47f3c9f82299a2fefa92e7c688fb7bad8f1a56fce75ec18bc48468bd18.png" />
+<img alt="../../_images/2062001e4a700d3cce06352077bec9dd48915d831128871f88dddc026b224a9d.png" src="../../_images/2062001e4a700d3cce06352077bec9dd48915d831128871f88dddc026b224a9d.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -6211,7 +6218,7 @@ in 2D enables visualization:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/dbf3afaaf020ff443334466f20e051f8d88265f45c38501a4f9f1d13b72b1f89.png" src="../../_images/dbf3afaaf020ff443334466f20e051f8d88265f45c38501a4f9f1d13b72b1f89.png" />
+<img alt="../../_images/9e0542cb866d2e0f6791f3fc0fafd186fb28ccec1e2d2a8387592184cb20a8fc.png" src="../../_images/9e0542cb866d2e0f6791f3fc0fafd186fb28ccec1e2d2a8387592184cb20a8fc.png" />
 </div>
 </div>
 <div class="admonition-fit-transform admonition">
@@ -6301,10 +6308,10 @@ generalize easily to higher-dimensional datasets. We’ll explore a simple
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11b28cef0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x117556750&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/44a703184001475eb14a5ea369aefe5031f3838466c918dea78e425d00e637c6.png" src="../../_images/44a703184001475eb14a5ea369aefe5031f3838466c918dea78e425d00e637c6.png" />
+<img alt="../../_images/a7c996771ee29cef8524af6f5e3645cc4469fff45834e95843b9111731c09b8b.png" src="../../_images/a7c996771ee29cef8524af6f5e3645cc4469fff45834e95843b9111731c09b8b.png" />
 </div>
 </div>
 <p>In real life situation, we have noise (e.g. measurement noise) in our data:</p>
@@ -6320,7 +6327,7 @@ generalize easily to higher-dimensional datasets. We’ll explore a simple
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/eb9f38f7b7b80b4f60f2b34fffba021b12eaf516a585abca72ece7bd6f7f6889.png" src="../../_images/eb9f38f7b7b80b4f60f2b34fffba021b12eaf516a585abca72ece7bd6f7f6889.png" />
+<img alt="../../_images/18314b1bf1fbde52ffc88fa2be3f14624fffce53cd80668ae003fd0d2842b008.png" src="../../_images/18314b1bf1fbde52ffc88fa2be3f14624fffce53cd80668ae003fd0d2842b008.png" />
 </div>
 </div>
 <p>As we can see, our linear model captures and amplifies the noise in the
@@ -6342,7 +6349,7 @@ shrinkage used.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/bfd9f5fc5009df1d37ace6dc5bb53d9008a768955c262e7fa4906171459ad6ae.png" src="../../_images/bfd9f5fc5009df1d37ace6dc5bb53d9008a768955c262e7fa4906171459ad6ae.png" />
+<img alt="../../_images/e3714069779577b85de59350707f164e42a8e68e1d9ecc012f719363bb54804b.png" src="../../_images/e3714069779577b85de59350707f164e42a8e68e1d9ecc012f719363bb54804b.png" />
 </div>
 </div>
 <p>As we can see, the estimator displays much less variance. However it
@@ -6419,7 +6426,7 @@ varying degrees:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/21da9cd118a0065152d48111e7b03f991726b2722074fff6bde085cdf2adaa72.png" src="../../_images/21da9cd118a0065152d48111e7b03f991726b2722074fff6bde085cdf2adaa72.png" />
+<img alt="../../_images/82eae4645648d7ed38add803bb2d2ae18dd38f6360d463430c50d82372d663cb.png" src="../../_images/82eae4645648d7ed38add803bb2d2ae18dd38f6360d463430c50d82372d663cb.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
@@ -6502,10 +6509,10 @@ capture independent noise:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x119a981a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x118a81460&gt;
 </pre></div>
 </div>
-<img alt="../../_images/6e42a77b14bf1642b80fe672616c6b505e07f88b9f1bedd3bb2f52292bc427a2.png" src="../../_images/6e42a77b14bf1642b80fe672616c6b505e07f88b9f1bedd3bb2f52292bc427a2.png" />
+<img alt="../../_images/9cf54b4a45a4faf664cb195db0450352cc636e4bc67d79c4c161fe93ea5bb282.png" src="../../_images/9cf54b4a45a4faf664cb195db0450352cc636e4bc67d79c4c161fe93ea5bb282.png" />
 </div>
 </div>
 <p><strong>Validation curve</strong> A validation curve consists in varying a model parameter
@@ -6556,7 +6563,7 @@ and test error, and plot it:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2483b8a6d7e4681559a6165b9c015b0c649886869718b9d7b58a5907ae8040a0.png" src="../../_images/2483b8a6d7e4681559a6165b9c015b0c649886869718b9d7b58a5907ae8040a0.png" />
+<img alt="../../_images/419ccde92007ac05222aae156e9a3a6dec369ba70fdface47aa35c0bf2a4bfd7.png" src="../../_images/419ccde92007ac05222aae156e9a3a6dec369ba70fdface47aa35c0bf2a4bfd7.png" />
 </div>
 </div>
 <p>This figure shows why validation is important. On the left side of the
@@ -6639,7 +6646,7 @@ validation score? Would you ever expect this to change?</p></li>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/9a7ead21995c9051656a1b1059c15470caa0519939a4e8e4f6a12107c4b54fa3.png" src="../../_images/9a7ead21995c9051656a1b1059c15470caa0519939a4e8e4f6a12107c4b54fa3.png" />
+<img alt="../../_images/fa03be8ee2c979368a68cd98d7eb1638a67fd80a6e21e265aad25c31b491e132.png" src="../../_images/fa03be8ee2c979368a68cd98d7eb1638a67fd80a6e21e265aad25c31b491e132.png" />
 </div>
 </div>
 <!--- Check the plot above -->
@@ -6677,7 +6684,7 @@ model.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/bda4dc4356960e479d263775574b78a33c7152e896514a0e616f08815b1dff13.png" src="../../_images/bda4dc4356960e479d263775574b78a33c7152e896514a0e616f08815b1dff13.png" />
+<img alt="../../_images/f8dded568d1b622512848e289cb1172f27d0c2a8e7a2fbfacd0302a2e50f2c8b.png" src="../../_images/f8dded568d1b622512848e289cb1172f27d0c2a8e7a2fbfacd0302a2e50f2c8b.png" />
 </div>
 </div>
 <p>Here we show the learning curve for <code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">15</span></code>. From the above

@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -43,7 +43,7 @@
   <script src="../../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../../_static/copybutton.js?v=f281be69"></script>
@@ -56,6 +56,8 @@
     <script src="../../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro/scipy/summary-exercises/optimize-fit';</script>
@@ -583,7 +585,7 @@ a sum of Gaussian functions.</p>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Amplitude [bins]&#39;)
 </pre></div>
 </div>
-<img alt="../../../_images/7784e6ed42c41a584fb257634d68fefb9bb7835b03de964620d10abc09d59270.png" src="../../../_images/7784e6ed42c41a584fb257634d68fefb9bb7835b03de964620d10abc09d59270.png" />
+<img alt="../../../_images/84eccbbc75fd6250cc5b7d29ec0e97d0b4f49736a241fda3314fe9eb5fda6de5.png" src="../../../_images/84eccbbc75fd6250cc5b7d29ec0e97d0b4f49736a241fda3314fe9eb5fda6de5.png" />
 </div>
 </div>
 <p>As shown above, this waveform is a 80-bin-length signal with a single peak
@@ -665,7 +667,7 @@ following arguments:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2.70363341, 27.82020743, 15.47924562,  3.05636228])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 2.70363341, 27.82020742, 15.47924562,  3.05636228])
 </pre></div>
 </div>
 </div>
@@ -688,7 +690,7 @@ following arguments:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../../_images/b64e0c73b1abdd89756e805323aa68686c2abc7f0d869ce4ff18099c7032b44c.png" src="../../../_images/b64e0c73b1abdd89756e805323aa68686c2abc7f0d869ce4ff18099c7032b44c.png" />
+<img alt="../../../_images/371fcf66a20747d75e06f45c614adabde5cec3ea9b801443b7f88db9f557a7f1.png" src="../../../_images/371fcf66a20747d75e06f45c614adabde5cec3ea9b801443b7f88db9f557a7f1.png" />
 </div>
 </div>
 <p><em>Remark:</em> in fact, you should rather use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></a>
@@ -719,7 +721,7 @@ Gaussian functions instead of only one Gaussian peak.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/2557689a732935df1f76340bf1ecfb84f7983500a528640050b417c2d756acf7.png" src="../../../_images/2557689a732935df1f76340bf1ecfb84f7983500a528640050b417c2d756acf7.png" />
+<img alt="../../../_images/0ca4545a505d9af7f0aa519e477254940af32042978fca57ab537e9ae663257a.png" src="../../../_images/0ca4545a505d9af7f0aa519e477254940af32042978fca57ab537e9ae663257a.png" />
 </div>
 </div>
 <p>In some cases, writing an explicit function to compute the Jacobian is faster
@@ -785,7 +787,7 @@ add is the sign of our variables (which are all positive).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../../_images/81f8316ef0ace5fbb7d7da3ae107c827e93839f6e7ab1e9636369aac9146c63a.png" src="../../../_images/81f8316ef0ace5fbb7d7da3ae107c827e93839f6e7ab1e9636369aac9146c63a.png" />
+<img alt="../../../_images/bf77be0c07dd36f8badaae935587bf8c1599c2e61db11693a533cc71a7cfc271.png" src="../../../_images/bf77be0c07dd36f8badaae935587bf8c1599c2e61db11693a533cc71a7cfc271.png" />
 </div>
 </div>
 </section>
@@ -793,8 +795,6 @@ add is the sign of our variables (which are all positive).</p>
 <p>Further exercise: compare the result of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html#scipy.optimize.leastsq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code></a> and
 what you can get with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html#scipy.optimize.fmin_slsqp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code></a> when adding boundary
 constraints.</p>
-</section>
-</section>
 <hr class="footnotes docutils" />
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="mallet" role="doc-footnote">
@@ -812,6 +812,8 @@ software</a> and were kindly provided by
 the GIS DRAIX.</p>
 </aside>
 </aside>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
