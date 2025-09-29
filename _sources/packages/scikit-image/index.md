@@ -148,7 +148,7 @@ It contains the following submodules:
 - - {mod}`skimage.transform`
   - Geometric and other transforms, e.g., rotation or the Radon transform.
 - - {mod}`skimage.util`
-   - Generic utilities.
+  - Generic utilities.
 
 :::
 
