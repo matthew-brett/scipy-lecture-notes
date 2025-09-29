@@ -1645,11 +1645,12 @@ Here is a set of tables that show main properties and styles.
     :::
 
 - - markersize (ms)
-    - size of the marker in points
-    - ::: {glue} plot_ms
-      :doc: quick_reference_figures.md
-      :::
-      :::
+  - size of the marker in points
+  - ::: {glue} plot_ms
+    :doc: quick_reference_figures.md
+    :::
+
+:::
 
 See the [Line property figures](mpl-line-property-figures) for code to
 generate graphics for the table above.
