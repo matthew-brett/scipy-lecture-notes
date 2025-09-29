@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://matthew-brett.github.io/scipy-lecture-notes/interact/lab/index.html?path=advanced/image_processing/index.ipynb" target="_blank"
+      <li><a href="/interact/lab/index.html?path=scipy-lecture-notes/advanced/image_processing/index.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch via JupyterLite"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/advanced/image_processing/index.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/scipy-lecture-notes/advanced/image_processing/index.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,24 @@
       
       
       
-      <li><a href="../../_sources/advanced/image_processing/index.Rmd" target="_blank"
+      <li><a href="../../_sources/advanced/image_processing/index.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/advanced/image_processing/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +409,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.Rmd</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -594,7 +611,7 @@ tutorial <a class="reference internal" href="../../packages/scikit-image/index.h
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x1135e6150&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10f79cc50&gt;
 </pre></div>
 </div>
 <img alt="../../_images/a51d6487a3897f09f98f16fe206a0a21fa19973161a5ceb948f229915c71a495.png" src="../../_images/a51d6487a3897f09f98f16fe206a0a21fa19973161a5ceb948f229915c71a495.png" />
@@ -689,7 +706,7 @@ bytes).</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11386e9f0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10fb09d00&gt;
 </pre></div>
 </div>
 <img alt="../../_images/92dd923c201c78f4214d9908f7405f98cf2800dbb24c035a96cfb31518605e1b.png" src="../../_images/92dd923c201c78f4214d9908f7405f98cf2800dbb24c035a96cfb31518605e1b.png" />
@@ -1059,7 +1076,7 @@ Laplacian:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f2d0172aee58b62a6cfbf4dec5d13b3f30fb49786457b4d4a2818c074f0b294a.png" src="../../_images/f2d0172aee58b62a6cfbf4dec5d13b3f30fb49786457b4d4a2818c074f0b294a.png" />
+<img alt="../../_images/a20126948cc528dbe423b265d502846f65d63b6cf21650b8af96e0871c1bd045.png" src="../../_images/a20126948cc528dbe423b265d502846f65d63b6cf21650b8af96e0871c1bd045.png" />
 </div>
 </div>
 <p>Median filter: better result for straight boundaries (<strong>low curvature</strong>):</p>
@@ -1100,7 +1117,7 @@ Laplacian:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/747fc59e8f20c8dfdf210368b5575edecd786fef03be9bb8dfe81615b8680b34.png" src="../../_images/747fc59e8f20c8dfdf210368b5575edecd786fef03be9bb8dfe81615b8680b34.png" />
+<img alt="../../_images/7ed15a8fe67fd164b624852ed1f44ddc61fcd74ae6a374028bbe21d52f2eaf2e.png" src="../../_images/7ed15a8fe67fd164b624852ed1f44ddc61fcd74ae6a374028bbe21d52f2eaf2e.png" />
 </div>
 </div>
 <p>Other rank filter: <code class="docutils literal notranslate"><span class="pre">scipy.ndimage.maximum_filter</span></code>,
@@ -1596,7 +1613,7 @@ etc.</p>
 <p class="admonition-title"><span class="caption-number">Exercise 53 </span></p>
 <section id="exercise-content">
 <p>Check that reconstruction operations (erosion + propagation) produce a
-better result than opening/closing.  Start with:</p>
+better result than opening/closing. Start with:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eroded_img</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">binary_erosion</span><span class="p">(</span><span class="n">binary_img</span><span class="p">)</span>
@@ -2009,7 +2026,7 @@ tricks (<a class="reference internal" href="../advanced_numpy/index.html#stride-
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x122fcf1a0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x11f41dd90&gt;
 </pre></div>
 </div>
 <img alt="../../_images/42ed94c322e976ad737fd413c3bc7e677e74b942bf0453f485fd0936a39100c9.png" src="../../_images/42ed94c322e976ad737fd413c3bc7e677e74b942bf0453f485fd0936a39100c9.png" />
@@ -2041,7 +2058,7 @@ tricks (<a class="reference internal" href="../advanced_numpy/index.html#stride-
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1230876e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11f4caba0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/f8ad81c35e01d5cfccbdeea30582e2e98ef6088b4fae8680e2e79e68748456e3.png" src="../../_images/f8ad81c35e01d5cfccbdeea30582e2e98ef6088b4fae8680e2e79e68748456e3.png" />

@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://matthew-brett.github.io/scipy-lecture-notes/interact/lab/index.html?path=intro/scipy/scipy_examples.ipynb" target="_blank"
+      <li><a href="/interact/lab/index.html?path=scipy-lecture-notes/intro/scipy/scipy_examples.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch via JupyterLite"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/intro/scipy/scipy_examples.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/scipy-lecture-notes/intro/scipy/scipy_examples.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,24 @@
       
       
       
-      <li><a href="../../_sources/intro/scipy/scipy_examples.Rmd" target="_blank"
+      <li><a href="../../_sources/intro/scipy/scipy_examples.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/intro/scipy/scipy_examples.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +409,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.Rmd</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -509,7 +526,7 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="examples-for-scipy-introduction">
 <h1>Examples for Scipy introduction<a class="headerlink" href="#examples-for-scipy-introduction" title="Link to this heading">#</a></h1>
-<p>This is a collection of examples for introductory Scipy.  See the <a class="reference internal" href="index.html#scipy"><span class="std std-ref">Scipy page</span></a> for the main introduction.</p>
+<p>This is a collection of examples for introductory Scipy. See the <a class="reference internal" href="index.html#scipy"><span class="std std-ref">Scipy page</span></a> for the main introduction.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -707,7 +724,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/41462d35472e2c39b1c5661a83edd4561a7e105768ba1ba1714971347339d5ec.png" src="../../_images/41462d35472e2c39b1c5661a83edd4561a7e105768ba1ba1714971347339d5ec.png" />
+<img alt="../../_images/f42c76eb3ffc4fbbe021bd2f194e6b18cda856e2d85151b2254ca35ad2c9b803.png" src="../../_images/f42c76eb3ffc4fbbe021bd2f194e6b18cda856e2d85151b2254ca35ad2c9b803.png" />
 </div>
 </div>
 </section>
@@ -1265,7 +1282,7 @@ down to multiplying their FFTs (and performing an inverse FFT).</p>
 <p>A “wrapped border” appears in the upper left and top edges of the
 image. This is because the padding is not done correctly, and does
 not take the kernel size into account (so the convolution “flows out
-of bounds of the image”).  Try to remove this artifact.</p>
+of bounds of the image”). Try to remove this artifact.</p>
 <p>A function to do it: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.fftconvolve.html#scipy.signal.fftconvolve" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.fftconvolve()</span></code></a></p>
 <p>The above exercise was only for didactic reasons: there exists a
 function in Scipy that will do this for us, and probably do a better
@@ -1331,7 +1348,7 @@ artifact.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_31973/2995045604.py:4: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/hd/rfxyn9gx4bl39bvwzrgn3rtr0000gn/T/ipykernel_78240/2995045604.py:4: RuntimeWarning: divide by zero encountered in divide
   periods = 1 / frequencies
 </pre></div>
 </div>

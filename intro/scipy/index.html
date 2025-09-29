@@ -289,7 +289,7 @@
       
       
       
-      <li><a href="https://matthew-brett.github.io/scipy-lecture-notes/interact/lab/index.html?path=intro/scipy/index.ipynb" target="_blank"
+      <li><a href="/interact/lab/index.html?path=scipy-lecture-notes/intro/scipy/index.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch via JupyterLite"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -337,7 +337,7 @@
       
       
       
-      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/intro/scipy/index.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/scipy-lecture-notes/intro/scipy/index.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -384,7 +384,24 @@
       
       
       
-      <li><a href="../../_sources/intro/scipy/index.Rmd" target="_blank"
+      <li><a href="../../_sources/intro/scipy/index.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/intro/scipy/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -394,7 +411,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.Rmd</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -1500,7 +1517,7 @@ variable <span class="math notranslate nohighlight">\(f(x) = x^2  + 10 \sin(x)\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11791ad50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11210ca10&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" src="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" />
@@ -1559,17 +1576,17 @@ we could use one of SciPy’s global minimizers, such as
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: -7.945823375615282
+                 fun: -7.945823375615284
                    x: [-1.306e+00]
-                 nit: 6
-                nfev: 111
-          population: [[-1.308e+00]
-                       [-1.262e+00]
+                 nit: 5
+                nfev: 98
+          population: [[-1.315e+00]
+                       [-1.533e+00]
                        ...
-                       [-1.312e+00]
-                       [-1.299e+00]]
- population_energies: [-7.946e+00 -7.934e+00 ... -7.946e+00 -7.945e+00]
-                 jac: [-1.776e-07]
+                       [-1.338e+00]
+                       [-1.269e+00]]
+ population_energies: [-7.946e+00 -7.642e+00 ... -7.940e+00 -7.938e+00]
+                 jac: [ 0.000e+00]
 </pre></div>
 </div>
 </div>
@@ -1745,7 +1762,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" src="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" />
+<img alt="../../_images/54b963ddbf5b0f4385a1836e7311d92ff2acdb6f0c5bc10db8fe51cf53719388.png" src="../../_images/54b963ddbf5b0f4385a1836e7311d92ff2acdb6f0c5bc10db8fe51cf53719388.png" />
 </div>
 </div>
 </section>
@@ -1775,10 +1792,10 @@ variable’s probability density function (PDF):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x117abc350&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x112670260&gt;
 </pre></div>
 </div>
-<img alt="../../_images/4379f15a9dfe0ca6eddfa67ed968b9677986481d04fd592c39903112663d3c9f.png" src="../../_images/4379f15a9dfe0ca6eddfa67ed968b9677986481d04fd592c39903112663d3c9f.png" />
+<img alt="../../_images/35504163b883d19a2407f8c0f96bc73397a42784115ac7fb6bcc0f756a645c70.png" src="../../_images/35504163b883d19a2407f8c0f96bc73397a42784115ac7fb6bcc0f756a645c70.png" />
 </div>
 </div>
 <aside class="sidebar">
@@ -1803,7 +1820,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.004052736730142442)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0057851834765901364)
 </pre></div>
 </div>
 </div>
@@ -1815,7 +1832,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9959214891930049)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9979178087778912)
 </pre></div>
 </div>
 </div>
@@ -1848,7 +1865,7 @@ the sample was drawn:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.004052736730142442)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.0057851834765901364)
 </pre></div>
 </div>
 </div>
@@ -1865,7 +1882,7 @@ distributed over many orders of magnitude.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9971947989122228)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0040180343576373)
 </pre></div>
 </div>
 </div>
@@ -1882,7 +1899,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.2293719577820261)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.5790910383490988)
 </pre></div>
 </div>
 </div>
@@ -1894,7 +1911,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.5408106946217142)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.7486037163120967)
 </pre></div>
 </div>
 </div>
@@ -2382,7 +2399,7 @@ only applies to regularly sampled data.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/f0925055b9dcb549456ea2d97aa547b72eb13cf0c3df6d97c1ec5257d2fee77c.png" src="../../_images/f0925055b9dcb549456ea2d97aa547b72eb13cf0c3df6d97c1ec5257d2fee77c.png" />
+<img alt="../../_images/4bca6c2f1a41188f334cf610587a06220aa367620a631f0df81c916dc94c503a.png" src="../../_images/4bca6c2f1a41188f334cf610587a06220aa367620a631f0df81c916dc94c503a.png" />
 </div>
 </div>
 <p><strong>Filtering</strong>:</p>

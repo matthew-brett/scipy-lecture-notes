@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="https://matthew-brett.github.io/scipy-lecture-notes/interact/lab/index.html?path=packages/scikit-image/index.ipynb" target="_blank"
+      <li><a href="/interact/lab/index.html?path=scipy-lecture-notes/packages/scikit-image/index.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch via JupyterLite"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/packages/scikit-image/index.Rmd" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/scipy-lecture-notes/packages/scikit-image/index.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -382,7 +382,24 @@
       
       
       
-      <li><a href="../../_sources/packages/scikit-image/index.Rmd" target="_blank"
+      <li><a href="../../_sources/packages/scikit-image/index.ipynb" target="_blank"
+   class="btn btn-sm btn-download-notebook-button dropdown-item"
+   title="Download notebook file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="../../_sources/packages/scikit-image/index.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +409,7 @@
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.Rmd</span>
+<span class="btn__text-container">.md</span>
 </a>
 </li>
       
@@ -551,19 +568,27 @@ masking and labeling are a prerequisite.</p>
 <section id="introduction-and-concepts">
 <h2>Introduction and concepts<a class="headerlink" href="#introduction-and-concepts" title="Link to this heading">#</a></h2>
 <p>Images are NumPy’s arrays <code class="docutils literal notranslate"><span class="pre">np.ndarray</span></code></p>
-<dl class="simple glossary">
-<dt id="term-Pixels">Pixels<a class="headerlink" href="#term-Pixels" title="Link to this term">#</a></dt><dd><p>array values: <code class="docutils literal notranslate"><span class="pre">a[2,</span> <span class="pre">3]</span></code></p>
-</dd>
-<dt id="term-Channels">Channels<a class="headerlink" href="#term-Channels" title="Link to this term">#</a></dt><dd><p>array dimensions</p>
-</dd>
-<dt id="term-Image-encoding">Image encoding<a class="headerlink" href="#term-Image-encoding" title="Link to this term">#</a></dt><dd><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code> (<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">np.uint16</span></code>, <code class="docutils literal notranslate"><span class="pre">np.float</span></code>)</p>
-</dd>
-<dt id="term-Filters">Filters<a class="headerlink" href="#term-Filters" title="Link to this term">#</a></dt><dd><p>functions (<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">skimage</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>)</p>
-</dd>
-</dl>
+<div class="pst-scrollable-table-container"><table class="table" id="id1">
+<caption><span class="caption-number">Table 13 </span><span class="caption-text">Terms</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<tbody>
+<tr class="row-odd"><td><p>Pixels</p></td>
+<td><p>array values: <code class="docutils literal notranslate"><span class="pre">a[2,</span> <span class="pre">3]</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>Channels</p></td>
+<td><p>array dimensions</p></td>
+</tr>
+<tr class="row-odd"><td><p>Image encoding</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">dtype</span></code> (<code class="docutils literal notranslate"><span class="pre">np.uint8</span></code>, <code class="docutils literal notranslate"><span class="pre">np.uint16</span></code>, <code class="docutils literal notranslate"><span class="pre">np.float</span></code>)</p></td>
+</tr>
+<tr class="row-even"><td><p>Filters</p></td>
+<td><p>functions (<code class="docutils literal notranslate"><span class="pre">numpy</span></code>, <code class="docutils literal notranslate"><span class="pre">skimage</span></code>, <code class="docutils literal notranslate"><span class="pre">scipy</span></code>)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This example show how to create a simple checkerboard.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This example shows how to create a simple checkerboard.</span>
 <span class="n">check</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">8</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
 <span class="n">check</span><span class="p">[::</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">check</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
@@ -581,8 +606,8 @@ masking and labeling are a prerequisite.</p>
 Python installations, as well as in most Linux distributions. Other
 Python packages for image processing &amp; visualization that operate on
 NumPy arrays include:</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id1">
-<caption><span class="caption-number">Table 13 </span><span class="caption-text">Other packages for working with images</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id2">
+<caption><span class="caption-number">Table 14 </span><span class="caption-text">Other packages for working with images</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a></p></td>
 <td><p>For N-dimensional arrays. Basic filtering, mathematical morphology,
@@ -598,8 +623,8 @@ regions properties</p></td>
 </table>
 </div>
 <p>Some powerful C++ image processing libraries also have Python bindings:</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id2">
-<caption><span class="caption-number">Table 14 </span><span class="caption-text">C++ libraries with Python bindings</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id3">
+<caption><span class="caption-number">Table 15 </span><span class="caption-text">C++ libraries with Python bindings</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html">OpenCV</a></p></td>
 <td><p>A highly optimized computer vision library with a focus on real-time
@@ -625,8 +650,8 @@ NumPy-friendly.</p>
 <p>The library contains predominantly image processing algorithms, but
 also utility functions to ease data handling and processing.
 It contains the following submodules:</p>
-<div class="pst-scrollable-table-container"><table class="table" id="id3">
-<caption><span class="caption-number">Table 15 </span><span class="caption-text">Scikit-image submodules</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<div class="pst-scrollable-table-container"><table class="table" id="id4">
+<caption><span class="caption-number">Table 16 </span><span class="caption-text">Scikit-image submodules</span><a class="headerlink" href="#id4" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference external" href="https://scikit-image.org/docs/stable/api/skimage.color.html#module-skimage.color" title="(in skimage v0.25.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">skimage.color</span></code></a></p></td>
 <td><p>Color space conversion.</p></td>
@@ -1399,7 +1424,7 @@ each one.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/1dff84afac32f96c1db71edd8e42db30ee496380c4e70990247732f0571ccd74.png" src="../../_images/1dff84afac32f96c1db71edd8e42db30ee496380c4e70990247732f0571ccd74.png" />
+<img alt="../../_images/f8cbdcd1d818f4f32285358e5cce08607087e8bb814fc29ea566f51bf791b010.png" src="../../_images/f8cbdcd1d818f4f32285358e5cce08607087e8bb814fc29ea566f51bf791b010.png" />
 </div>
 </div>
 <div class="admonition-see-also admonition">
@@ -1590,7 +1615,7 @@ pipeline.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x111844bc0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x10d558aa0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/33011bec8aae292d03bd8a118eec6a57626da166cb718238dafd734f8b245949.png" src="../../_images/33011bec8aae292d03bd8a118eec6a57626da166cb718238dafd734f8b245949.png" />
@@ -1606,7 +1631,7 @@ pipeline.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x111b46b70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.contour.QuadContourSet at 0x10da9d820&gt;
 </pre></div>
 </div>
 <img alt="../../_images/0af2ffdc22d2cbc5f128f7e882ffb9fa74cd751c5fdac0e5e5f886780363c076.png" src="../../_images/0af2ffdc22d2cbc5f128f7e882ffb9fa74cd751c5fdac0e5e5f886780363c076.png" />
