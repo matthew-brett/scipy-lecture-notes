@@ -46,24 +46,24 @@ Images are NumPy's arrays `np.ndarray`
 
 +++
 
-::: {glossary}
+::: {list-table} Terms
 
-Pixels
-array values: `a[2, 3]`
+- - Pixels
+  - array values: `a[2, 3]`
 
-Channels
-array dimensions
+- - Channels
+  - array dimensions
 
-Image encoding
-`dtype` (`np.uint8`, `np.uint16`, `np.float`)
+- - Image encoding
+  - `dtype` (`np.uint8`, `np.uint16`, `np.float`)
 
-Filters
-functions (`numpy`, `skimage`, `scipy`)
+- - Filters
+  - functions (`numpy`, `skimage`, `scipy`)
 
 :::
 
 ```{code-cell}
-# This example show how to create a simple checkerboard.
+# This example shows how to create a simple checkerboard.
 check = np.zeros((8, 8))
 check[::2, 1::2] = 1
 check[1::2, ::2] = 1
@@ -148,8 +148,9 @@ It contains the following submodules:
 - - {mod}`skimage.transform`
   - Geometric and other transforms, e.g., rotation or the Radon transform.
 - - {mod}`skimage.util`
-    - Generic utilities.
-      :::
+  - Generic utilities.
+
+:::
 
 <!---
 TODO Edit this section with a more refined discussion of the various
