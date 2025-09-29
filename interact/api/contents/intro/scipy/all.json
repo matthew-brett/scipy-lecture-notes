@@ -1,0 +1,71 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.625706Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:52.426337Z",
+      "mimetype": null,
+      "name": "scipy_examples.ipynb",
+      "path": "intro/scipy/scipy_examples.ipynb",
+      "size": 27633,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.630034Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:56.630034Z",
+      "mimetype": null,
+      "name": "summary-exercises",
+      "path": "intro/scipy/summary-exercises",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.624534Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:52.356445Z",
+      "mimetype": null,
+      "name": "index.ipynb",
+      "path": "intro/scipy/index.ipynb",
+      "size": 58124,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.623001Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:56.623001Z",
+      "mimetype": null,
+      "name": "image_processing",
+      "path": "intro/scipy/image_processing",
+      "size": null,
+      "type": "directory",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-29T12:10:56.626309Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-29T12:10:56.626309Z",
+  "mimetype": null,
+  "name": "scipy",
+  "path": "intro/scipy",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

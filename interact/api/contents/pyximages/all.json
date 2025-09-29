@@ -1,0 +1,29 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.637570Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:53.474056Z",
+      "mimetype": null,
+      "name": "README.ipynb",
+      "path": "pyximages/README.ipynb",
+      "size": 1161,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-29T12:10:56.637281Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-29T12:10:56.637281Z",
+  "mimetype": null,
+  "name": "pyximages",
+  "path": "pyximages",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

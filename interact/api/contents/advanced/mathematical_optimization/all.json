@@ -1,0 +1,43 @@
+{
+  "content": [
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.582413Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:50.161181Z",
+      "mimetype": null,
+      "name": "optimization_examples.ipynb",
+      "path": "advanced/mathematical_optimization/optimization_examples.ipynb",
+      "size": 27561,
+      "type": "notebook",
+      "writable": true
+    },
+    {
+      "content": null,
+      "created": "2025-09-29T12:10:56.581283Z",
+      "format": null,
+      "hash": null,
+      "hash_algorithm": null,
+      "last_modified": "2025-09-29T12:10:50.123302Z",
+      "mimetype": null,
+      "name": "index.ipynb",
+      "path": "advanced/mathematical_optimization/index.ipynb",
+      "size": 42883,
+      "type": "notebook",
+      "writable": true
+    }
+  ],
+  "created": "2025-09-29T12:10:56.582068Z",
+  "format": "json",
+  "hash": null,
+  "hash_algorithm": null,
+  "last_modified": "2025-09-29T12:10:56.582068Z",
+  "mimetype": null,
+  "name": "mathematical_optimization",
+  "path": "advanced/mathematical_optimization",
+  "size": null,
+  "type": "directory",
+  "writable": true
+}

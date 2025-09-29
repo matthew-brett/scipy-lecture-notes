@@ -287,7 +287,7 @@
       
       
       
-      <li><a href="/scipy-lecture-notes/interact/lab/index.html?path=scipy-lecture-notes/intro/matplotlib/quick_reference_figures.ipynb" target="_blank"
+      <li><a href="/scipy-lecture-notes/interact/lab/index.html?path=intro/matplotlib/quick_reference_figures.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch via JupyterLite"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -335,7 +335,7 @@
       
       
       
-      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/scipy-lecture-notes/intro/matplotlib/quick_reference_figures.md" target="_blank"
+      <li><a href="https://github.com/matthew-brett/scipy-lecture-notes/edit/main/intro/matplotlib/quick_reference_figures.md" target="_blank"
    class="btn btn-sm btn-source-edit-button dropdown-item"
    title="Suggest edit"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -511,7 +511,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="generate-figures-for-quick-reference-tables">
 <span id="mpl-reference-figures"></span><h1>Generate figures for quick reference tables<a class="headerlink" href="#generate-figures-for-quick-reference-tables" title="Link to this heading">#</a></h1>
 <p>This final section contains the code for figures used in the <a class="reference internal" href="index.html#mpl-line-properties"><span class="std std-ref">line
-properties</span></a> table in the <a class="reference internal" href="index.html#matplotlib"><span class="std std-ref">Matplotlib</span></a> page.</p>
+properties</span></a> table in the <a class="reference internal" href="../../tmp/intro/matplotlib/index.html#matplotlib"><span class="std std-ref">Matplotlib</span></a> page.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -558,6 +558,7 @@ properties</span></a> table in the <a class="reference internal" href="index.htm
 </div>
 </div>
 <p>This example demonstrates aliased versus anti-aliased text.</p>
+<p>First, aliased text (<code class="docutils literal notranslate"><span class="pre">antialiased=False</span></code>):</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">16</span>
@@ -588,13 +589,10 @@ properties</span></a> table in the <a class="reference internal" href="index.htm
 <img alt="../../_images/40b7e1488dfc10e46df5677798f269a5e929c36840bacde7cf71426b31da5b2f.png" src="../../_images/40b7e1488dfc10e46df5677798f269a5e929c36840bacde7cf71426b31da5b2f.png" />
 </div>
 </div>
-<p>The example shows aliased versus anti-aliased text.</p>
+<p>Next, <code class="docutils literal notranslate"><span class="pre">antialiased=True</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">size</span> <span class="o">=</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">16</span>
-<span class="n">dpi</span> <span class="o">=</span> <span class="mf">72.0</span>
-<span class="n">figsize</span> <span class="o">=</span> <span class="n">size</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">dpi</span><span class="p">),</span> <span class="n">size</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">dpi</span><span class="p">)</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="n">figsize</span><span class="p">,</span> <span class="n">dpi</span><span class="o">=</span><span class="n">dpi</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">set_alpha</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">frameon</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
@@ -914,7 +912,7 @@ properties</span></a> table in the <a class="reference internal" href="index.htm
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8c8a1639361e43ffb54b3a747e8076f90dc188a015908c47e35ba4b59d9f7c0b.png" src="../../_images/8c8a1639361e43ffb54b3a747e8076f90dc188a015908c47e35ba4b59d9f7c0b.png" />
+<img alt="../../_images/a6da3468a820ab3c4031268f03a615f2eae7d286c20671dbeb518114aded5bc6.png" src="../../_images/a6da3468a820ab3c4031268f03a615f2eae7d286c20671dbeb518114aded5bc6.png" />
 </div>
 </div>
 <p>Demo the marker face color of Matplotlib’s markers.</p>
@@ -954,7 +952,7 @@ properties</span></a> table in the <a class="reference internal" href="index.htm
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e751a266767f935f1eb44998e07048719f1e5adda8357cb4439e04529716184b.png" src="../../_images/e751a266767f935f1eb44998e07048719f1e5adda8357cb4439e04529716184b.png" />
+<img alt="../../_images/26cf48f7d8b0ea8894d22491b1b787561be0f4180d02a3fb88ad1aa3e73826d3.png" src="../../_images/26cf48f7d8b0ea8894d22491b1b787561be0f4180d02a3fb88ad1aa3e73826d3.png" />
 </div>
 </div>
 <p>Demo the marker size control in Matplotlib.</p>
