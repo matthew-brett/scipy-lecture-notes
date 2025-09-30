@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-30T10:37:59.043359Z",
+      "created": "2025-09-30T12:06:07.015084Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-30T10:37:54.906950Z",
+      "last_modified": "2025-09-30T12:06:03.275416Z",
       "mimetype": null,
       "name": "quick_reference_figures.ipynb",
       "path": "intro/matplotlib/quick_reference_figures.ipynb",
@@ -16,11 +16,11 @@
     },
     {
       "content": null,
-      "created": "2025-09-30T10:37:59.042805Z",
+      "created": "2025-09-30T12:06:07.014533Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-30T10:37:54.892098Z",
+      "last_modified": "2025-09-30T12:06:03.260360Z",
       "mimetype": null,
       "name": "index.ipynb",
       "path": "intro/matplotlib/index.ipynb",
@@ -29,11 +29,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-30T10:37:59.043187Z",
+  "created": "2025-09-30T12:06:07.014921Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-30T10:37:59.043187Z",
+  "last_modified": "2025-09-30T12:06:07.014921Z",
   "mimetype": null,
   "name": "matplotlib",
   "path": "intro/matplotlib",
