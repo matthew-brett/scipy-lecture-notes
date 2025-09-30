@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-30T16:30:22.436848Z",
+      "created": "2025-09-30T16:47:03.042442Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-30T16:30:16.145575Z",
+      "last_modified": "2025-09-30T16:46:56.092645Z",
       "mimetype": null,
       "name": "interfacing_with_c.ipynb",
       "path": "advanced/interfacing_with_c/interfacing_with_c.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-30T16:30:22.436443Z",
+  "created": "2025-09-30T16:47:03.041998Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-30T16:30:22.436443Z",
+  "last_modified": "2025-09-30T16:47:03.041998Z",
   "mimetype": null,
   "name": "interfacing_with_c",
   "path": "advanced/interfacing_with_c",

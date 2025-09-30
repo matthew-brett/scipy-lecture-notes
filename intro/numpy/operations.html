@@ -175,7 +175,7 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Getting started with Python for science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction to getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../intro.html">Python scientific computing ecosystem</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../language/python_language.html">The Python language</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../language/first_steps.html">First steps</a></li>
@@ -203,12 +203,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../advanced/index.html">Introduction to advanced topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced/advanced_python/index.html">Advanced Python Constructs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced/advanced_numpy/index.html">Advanced NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced/debugging/index.html">Debugging code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../advanced/optimizing/index.html">Optimizing code</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../advanced/scipy_sparse/introduction.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../advanced/scipy_sparse/introduction.html">Scipy sparse arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../advanced/scipy_sparse/storage_schemes.html">Storage Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../advanced/scipy_sparse/solvers.html">Linear System Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../advanced/scipy_sparse/other_packages.html">Other Interesting Packages</a></li>
@@ -220,13 +220,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Packages and applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Introduction to packages and applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/statistics/index.html">Statistics in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html">Sympy : Symbolic Mathematics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-learn/index.html">scikit-learn: machine learning in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-learn/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>: machine learning in Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About the Scientific Python Lectures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About the Scientific Python Lecture notes</a></li>
 
@@ -636,7 +636,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.56 μs ± 169 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5 μs ± 138 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -649,7 +649,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>600 μs ± 11.5 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>598 μs ± 9.92 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -924,7 +924,7 @@ with odd elements</p></li>
 <p>The sub-module <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.linalg.html#module-numpy.linalg" title="(in NumPy v2.3)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.linalg</span></code></a> implements basic linear algebra, such as
 solving linear systems, singular value decomposition, etc. However, it is
 not guaranteed to be compiled using efficient routines, and thus we
-recommend the use of <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code>, as detailed in section
+recommend the use of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a>, as detailed in section
 <a class="reference internal" href="../scipy/index.html#scipy-linalg"><span class="std std-ref">Linear algebra operations: scipy.linalg</span></a></p>
 <div class="exercise dropdown admonition" id="other-operations-exercise">
 
@@ -1308,7 +1308,7 @@ time in the other:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/45c934d526ef0f47180fc7e2d55dbcdee8b0e386ccac75e0c186a1c1d809701c.png" src="../../_images/45c934d526ef0f47180fc7e2d55dbcdee8b0e386ccac75e0c186a1c1d809701c.png" />
+<img alt="../../_images/b70545187db542afab79cf8e7c84081ad933688b0d99ca498ab7eb02c7802766.png" src="../../_images/b70545187db542afab79cf8e7c84081ad933688b0d99ca498ab7eb02c7802766.png" />
 </div>
 </div>
 <p>We find a well-known result in physics: the Root Mean Square (RMS) distance
@@ -1651,7 +1651,7 @@ the origin of points on a 5x5 grid, we can do</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x10cfe0c20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x11247e420&gt;
 </pre></div>
 </div>
 <img alt="../../_images/292a777ef6206e42729a890444cd0701998aefc52b70e56058c0f7574a8d66ec.png" src="../../_images/292a777ef6206e42729a890444cd0701998aefc52b70e56058c0f7574a8d66ec.png" />

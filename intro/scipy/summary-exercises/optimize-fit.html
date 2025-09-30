@@ -177,7 +177,7 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../index.html">Getting started with Python for science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Introduction to getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro.html">Python scientific computing ecosystem</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../language/python_language.html">The Python language</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../language/first_steps.html">First steps</a></li>
@@ -205,12 +205,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../advanced/index.html">Introduction to advanced topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced/advanced_python/index.html">Advanced Python Constructs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced/advanced_numpy/index.html">Advanced NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced/debugging/index.html">Debugging code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../advanced/optimizing/index.html">Optimizing code</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../advanced/scipy_sparse/introduction.html">Introduction</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../advanced/scipy_sparse/introduction.html">Scipy sparse arrays</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../advanced/scipy_sparse/storage_schemes.html">Storage Schemes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../advanced/scipy_sparse/solvers.html">Linear System Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../advanced/scipy_sparse/other_packages.html">Other Interesting Packages</a></li>
@@ -222,13 +222,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../../packages/index.html">Packages and applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/index.html">Introduction to packages and applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../packages/statistics/index.html">Statistics in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../packages/sympy.html">Sympy : Symbolic Mathematics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../packages/scikit-learn/index.html">scikit-learn: machine learning in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../packages/scikit-learn/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>: machine learning in Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About the Scientific Python Lectures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../../about.html">About the Scientific Python Lecture notes</a></li>
 
@@ -538,7 +538,7 @@ peaks, each one containing information about one target.</p>
 <p>One state of the art method to extract information from these data is to
 decompose them in a sum of Gaussian functions where each function represents
 the contribution of a target hit by the laser beam.</p>
-<p>Therefore, we use the <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code> module to fit a waveform to one or
+<p>Therefore, we use the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a> module to fit a waveform to one or
 a sum of Gaussian functions.</p>
 </section>
 <section id="loading-and-visualization">
@@ -649,7 +649,7 @@ difference between the data and the model):</p>
 </div>
 </div>
 </div>
-<p>So let’s get our solution by calling <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code> with the
+<p>So let’s get our solution by calling <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html#scipy.optimize.leastsq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code></a> with the
 following arguments:</p>
 <ul class="simple">
 <li><p>the function to minimize</p></li>
@@ -691,7 +691,7 @@ following arguments:</p>
 <img alt="../../../_images/b64e0c73b1abdd89756e805323aa68686c2abc7f0d869ce4ff18099c7032b44c.png" src="../../../_images/b64e0c73b1abdd89756e805323aa68686c2abc7f0d869ce4ff18099c7032b44c.png" />
 </div>
 </div>
-<p><em>Remark:</em> in fact, you should rather use <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>
+<p><em>Remark:</em> in fact, you should rather use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></a>
 which takes the model and the data as arguments, so you don’t need to define
 the residuals any more.</p>
 </section>
@@ -790,8 +790,8 @@ add is the sign of our variables (which are all positive).</p>
 </div>
 </section>
 </div>
-<p>Further exercise: compare the result of <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code> and
-what you can get with <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code> when adding boundary
+<p>Further exercise: compare the result of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.leastsq.html#scipy.optimize.leastsq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.leastsq()</span></code></a> and
+what you can get with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.fmin_slsqp.html#scipy.optimize.fmin_slsqp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.fmin_slsqp()</span></code></a> when adding boundary
 constraints.</p>
 </section>
 </section>

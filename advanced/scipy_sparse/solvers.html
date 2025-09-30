@@ -175,7 +175,7 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Getting started with Python for science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Introduction to getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/intro.html">Python scientific computing ecosystem</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../intro/language/python_language.html">The Python language</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../intro/language/first_steps.html">First steps</a></li>
@@ -203,12 +203,12 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction to advanced topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_python/index.html">Advanced Python Constructs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_numpy/index.html">Advanced NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../debugging/index.html">Debugging code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../optimizing/index.html">Optimizing code</a></li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction.html">Introduction</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="introduction.html">Scipy sparse arrays</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="storage_schemes.html">Storage Schemes</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Linear System Solvers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="other_packages.html">Other Interesting Packages</a></li>
@@ -220,13 +220,13 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Packages and applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Introduction to packages and applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/statistics/index.html">Statistics in Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html">Sympy : Symbolic Mathematics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-learn/index.html">scikit-learn: machine learning in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-learn/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>: machine learning in Python</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">About the Scientific Python Lectures</span></p>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../../about.html">About the Scientific Python Lecture notes</a></li>
 
@@ -521,7 +521,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="linear-system-solvers">
 <h1>Linear System Solvers<a class="headerlink" href="#linear-system-solvers" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p>sparse matrix/eigenvalue problem solvers live in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></p></li>
+<li><p>sparse matrix/eigenvalue problem solvers live in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#module-scipy.sparse.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a></p></li>
 <li><p>the submodules:</p>
 <ul>
 <li><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">dsolve</span></code>: direct factorization methods for solving linear systems</p></li>
@@ -946,7 +946,7 @@ the solvers, as well as <em>matrix-free</em> solutions</p></li>
 <li><p>often hard to develop</p></li>
 <li><p>if not sure, try ILU</p>
 <ul>
-<li><p>available in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code> as <code class="xref py py-func docutils literal notranslate"><span class="pre">spilu()</span></code></p></li>
+<li><p>available in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.linalg.html#module-scipy.sparse.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse.linalg</span></code></a> as <code class="xref py py-func docutils literal notranslate"><span class="pre">spilu()</span></code></p></li>
 </ul>
 </li>
 </ul>
