@@ -446,7 +446,9 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-document-to-learn-numerics-science-and-data-with-python">One document to learn numerics, science, and data with Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-document-to-learn-numerics-science-and-data-with-python">One document to learn numerics, science, and data with Python</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -462,28 +464,58 @@ document.write(`
 <h1>Scientific Python Lectures<a class="headerlink" href="#scientific-python-lectures" title="Link to this heading">#</a></h1>
 <section id="one-document-to-learn-numerics-science-and-data-with-python">
 <h2>One document to learn numerics, science, and data with Python<a class="headerlink" href="#one-document-to-learn-numerics-science-and-data-with-python" title="Link to this heading">#</a></h2>
-<!---
-:::{sidebar} Download
-{{ pdf-icon }} [PDF, 2 pages per side](./_downloads/ScientificPythonLectures.pdf)
-
-{{ pdf-icon }} [PDF, 1 page per side](./_downloads/ScientificPythonLectures-simple.pdf)
-
-{{ github-icon }} [Source code (github)](https://github.com/scipy-lectures/scientific-python-lectures)
--->
 <p>Tutorials on the scientific Python ecosystem: a quick introduction to
 central tools and techniques. The different chapters each correspond
 to a 1 to 2 hours course with increasing level of expertise, from
 beginner to expert.</p>
 <p>Release: 2025.2rc0.dev0</p>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction to getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/intro.html">Python scientific computing ecosystem</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/language/python_language.html">The Python language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/numpy/index.html">NumPy: creating and manipulating numerical data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/matplotlib/index.html">Matplotlib: plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/scipy/index.html">SciPy : high-level scientific computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro/help/help.html">Getting help and finding documentation</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="advanced/index.html">Introduction to advanced topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/advanced_python/index.html">Advanced Python Constructs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/advanced_numpy/index.html">Advanced NumPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/debugging/index.html">Debugging code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/optimizing/index.html">Optimizing code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/scipy_sparse/introduction.html">Scipy sparse arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/image_processing/index.html">Image manipulation and processing using NumPy and SciPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/mathematical_optimization/index.html">Mathematical optimization: finding minima of functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="advanced/interfacing_with_c/interfacing_with_c.html">Interfacing with C</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="packages/index.html">Introduction to packages and applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/statistics/index.html">Statistics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="packages/scikit-learn/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code>: machine learning in Python</a></li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">About</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About the Scientific Python Lecture notes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#authors">Authors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#what-s-new">What’s new</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#license">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html#contributing">Contributing</a></li>
+</ul>
+</div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
-<div class="toctree-wrapper compound">
-</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -541,7 +573,9 @@ beginner to expert.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-document-to-learn-numerics-science-and-data-with-python">One document to learn numerics, science, and data with Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#one-document-to-learn-numerics-science-and-data-with-python">One document to learn numerics, science, and data with Python</a><ul class="nav section-nav flex-column">
+</ul>
+</li>
 </ul>
   </nav></div>
 

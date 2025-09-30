@@ -536,14 +536,14 @@ document.write(`
 <p><strong>Authors</strong>: <em>Gaël Varoquaux, Adrien Chauve, Andre Espaze, Emmanuelle Gouillart, Ralf Gommers</em></p>
 <div class="admonition-scipy admonition">
 <p class="admonition-title">Scipy</p>
-<p>The <a class="reference external" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code></a> package contains various toolboxes dedicated to common
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code> package contains various toolboxes dedicated to common
 issues in scientific computing. Its different submodules correspond
 to different applications, such as interpolation, integration,
 optimization, image processing, statistics, special functions, etc.</p>
 </div>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code></a> can be compared to other standard scientific-computing
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code> can be compared to other standard scientific-computing
 libraries, such as the GSL (GNU Scientific Library for C and C++),
 or Matlab’s toolboxes. <code class="docutils literal notranslate"><span class="pre">scipy</span></code> is the core package for scientific
 routines in Python; it is meant to operate efficiently on <code class="docutils literal notranslate"><span class="pre">numpy</span></code>
@@ -562,7 +562,7 @@ As enumerating the different submodules and functions in SciPy would
 be very boring, we concentrate instead on a few examples to give a
 general idea of how to use <code class="docutils literal notranslate"><span class="pre">scipy</span></code> for scientific computing.</p>
 </div>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/index.html#module-scipy" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code></a> is composed of task-specific sub-modules:</p>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy</span></code> is composed of task-specific sub-modules:</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p></p></th>
@@ -570,49 +570,49 @@ general idea of how to use <code class="docutils literal notranslate"><span clas
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/cluster.html#module-scipy.cluster" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.cluster</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.cluster</span></code></p></td>
 <td><p>Vector quantization / Kmeans</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/constants.html#module-scipy.constants" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.constants</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.constants</span></code></p></td>
 <td><p>Physical and mathematical constants</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html#module-scipy.fft" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code></p></td>
 <td><p>Fourier transform</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html#module-scipy.integrate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code></p></td>
 <td><p>Integration routines</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></p></td>
 <td><p>Interpolation</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/io.html#module-scipy.io" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code></p></td>
 <td><p>Data input and output</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></p></td>
 <td><p>Linear algebra routines</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></p></td>
 <td><p>n-dimensional image package</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/odr.html#module-scipy.odr" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.odr</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.odr</span></code></p></td>
 <td><p>Orthogonal distance regression</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></p></td>
 <td><p>Optimization</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></p></td>
 <td><p>Signal processing</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/sparse.html#module-scipy.sparse" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.sparse</span></code></p></td>
 <td><p>Sparse matrices</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/spatial.html#module-scipy.spatial" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.spatial</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.spatial</span></code></p></td>
 <td><p>Spatial data structures and algorithms</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/special.html#module-scipy.special" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.special</span></code></a></p></td>
+<tr class="row-odd"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.special</span></code></p></td>
 <td><p>Any special mathematical functions</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a></p></td>
+<tr class="row-even"><td><p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></p></td>
 <td><p>Statistics</p></td>
 </tr>
 </tbody>
@@ -637,8 +637,8 @@ other. The standard way of importing NumPy and these SciPy modules is:</p>
 </div>
 </div>
 <section id="file-input-output-scipy-io">
-<h2>File input/output: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/io.html#module-scipy.io" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code></a><a class="headerlink" href="#file-input-output-scipy-io" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/io.html#module-scipy.io" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code></a> contains functions for loading and saving data in
+<h2>File input/output: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code><a class="headerlink" href="#file-input-output-scipy-io" title="Link to this heading">#</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code> contains functions for loading and saving data in
 several common formats including Matlab, IDL, Matrix Market, and
 Harwell-Boeing.</p>
 <p><strong>Matlab files</strong>: Loading and saving:</p>
@@ -714,7 +714,7 @@ Harwell-Boeing.</p>
 </div>
 <p>Notice that the original array was a one-dimensional array, whereas the
 saved and reloaded array is a two-dimensional array with a single row.</p>
-<p>For other formats, see the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/io.html#module-scipy.io" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code></a> documentation.</p>
+<p>For other formats, see the <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.io</span></code> documentation.</p>
 <p><strong>End of warning</strong></p>
 <div class="admonition-see-also admonition">
 <p class="admonition-title">See also</p>
@@ -731,7 +731,7 @@ saved and reloaded array is a two-dimensional array with a single row.</p>
 </div>
 </section>
 <section id="special-functions-scipy-special">
-<h2>Special functions: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/special.html#module-scipy.special" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.special</span></code></a><a class="headerlink" href="#special-functions-scipy-special" title="Link to this heading">#</a></h2>
+<h2>Special functions: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.special</span></code><a class="headerlink" href="#special-functions-scipy-special" title="Link to this heading">#</a></h2>
 <p>“Special” functions are functions commonly used in science and mathematics that
 are not considered to be “elementary” functions. Examples include</p>
 <ul class="simple">
@@ -905,7 +905,7 @@ we get:</p>
 </div>
 <p>Similarly, suppose we wish to compute the difference
 <span class="math notranslate nohighlight">\(\log(\Gamma(500) - \Gamma(499))\)</span>. For this, we use
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.logsumexp.html#scipy.special.logsumexp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.special.logsumexp()</span></code></a>, which computes
+<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.special.logsumexp()</span></code>, which computes
 <span class="math notranslate nohighlight">\(\log(\exp(x) + \exp(y))\)</span> using a numerical trick that avoids overflow.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -922,14 +922,14 @@ we get:</p>
 </div>
 </div>
 <p>For more information about these and many other special functions, see
-the documentation of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/special.html#module-scipy.special" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.special</span></code></a>.</p>
+the documentation of <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.special</span></code>.</p>
 </section>
 <section id="linear-algebra-operations-scipy-linalg">
-<span id="scipy-linalg"></span><h2>Linear algebra operations: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a><a class="headerlink" href="#linear-algebra-operations-scipy-linalg" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a> provides a Python interface to efficient, compiled
+<span id="scipy-linalg"></span><h2>Linear algebra operations: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code><a class="headerlink" href="#linear-algebra-operations-scipy-linalg" title="Link to this heading">#</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code> provides a Python interface to efficient, compiled
 implementations of standard linear algebra operations: the BLAS (Basic
 Linear Algebra Subroutines) and LAPACK (Linear Algebra PACKage) libraries.</p>
-<p>For example, the <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.det.html#scipy.linalg.det" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.det()</span></code></a> function computes the determinant
+<p>For example, the <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.det()</span></code> function computes the determinant
 of a square matrix:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,7 +947,7 @@ of a square matrix:</p>
 </div>
 <p>Mathematically, the solution of a linear system <span class="math notranslate nohighlight">\(Ax = b\)</span> is <span class="math notranslate nohighlight">\(x = A^{-1}b\)</span>,
 but explicit inversion of a matrix is numerically unstable and should be avoided.
-Instead, use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve.html#scipy.linalg.solve" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.solve()</span></code></a>:</p>
+Instead, use <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.solve()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
@@ -978,7 +978,7 @@ Instead, use <a class="reference external" href="https://docs.scipy.org/doc/scip
 </div>
 <p>Linear systems with special structure can often be solved more efficiently
 than more general systems. For example, systems with triangular matrices
-can be solved using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.linalg.solve_triangular.html#scipy.linalg.solve_triangular" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.solve_triangular()</span></code></a>:</p>
+can be solved using <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.linalg.solve_triangular()</span></code>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">A_upper</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">triu</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
@@ -1006,7 +1006,7 @@ can be solved using <a class="reference external" href="https://docs.scipy.org/d
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a> also features matrix factorizations/decompositions
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code> also features matrix factorizations/decompositions
 such as the singular value decomposition.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1055,11 +1055,11 @@ factors:</p>
 <p>Many other decompositions (e.g. LU, Cholesky, QR), solvers for structured
 linear systems (e.g. triangular, circulant), eigenvalue problem algorithms,
 matrix functions (e.g. matrix exponential), and routines for special matrix
-creation (e.g. block diagonal, toeplitz) are available in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/linalg.html#module-scipy.linalg" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code></a>.</p>
+creation (e.g. block diagonal, toeplitz) are available in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.linalg</span></code>.</p>
 </section>
 <section id="interpolation-scipy-interpolate">
-<span id="intro-scipy-interpolate"></span><h2>Interpolation: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></a><a class="headerlink" href="#interpolation-scipy-interpolate" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></a> is used for fitting a function – an “interpolant” –
+<span id="intro-scipy-interpolate"></span><h2>Interpolation: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code><a class="headerlink" href="#interpolation-scipy-interpolate" title="Link to this heading">#</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code> is used for fitting a function – an “interpolant” –
 to experimental or computed data. Once fit, the interpolant can be used to
 approximate the underlying function at intermediate points; it can also be used
 to compute the integral, derivative, or inverse of the function.</p>
@@ -1078,7 +1078,7 @@ the following data:</p>
 </div>
 </div>
 </div>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.interpolate.make_smoothing_spline.html#scipy.interpolate.make_smoothing_spline" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.interpolate.make_smoothing_spline()</span></code></a> can be used to form a curve
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.interpolate.make_smoothing_spline()</span></code> can be used to form a curve
 similar to the underlying sine function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1106,7 +1106,7 @@ similar to the underlying sine function.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/3380d76852b2d2274830552067baf187397f50cc18a623981fe8e32dc1c54ede.png" src="../../_images/3380d76852b2d2274830552067baf187397f50cc18a623981fe8e32dc1c54ede.png" />
+<img alt="../../_images/fad9115d1bcbae3bb37243cc0972e76f349d5245e86633f2c0684de06b4626d6.png" src="../../_images/fad9115d1bcbae3bb37243cc0972e76f349d5245e86633f2c0684de06b4626d6.png" />
 </div>
 </div>
 <p>On the other hand, if the data are not noisy, it may be desirable to pass
@@ -1137,7 +1137,7 @@ exactly through each point.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/aa4c6d781ef54c9f5166425c12894edcf7aff0d4d682ff68a26d0eace787a718.png" src="../../_images/aa4c6d781ef54c9f5166425c12894edcf7aff0d4d682ff68a26d0eace787a718.png" />
+<img alt="../../_images/fd32853627e2fb06f87e46c40babe80b421a43095f8ed1a6fe3077f4d2e249b1.png" src="../../_images/fd32853627e2fb06f87e46c40babe80b421a43095f8ed1a6fe3077f4d2e249b1.png" />
 </div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">derivative</span></code> and <code class="docutils literal notranslate"><span class="pre">antiderivative</span></code> methods of the result object can be used
@@ -1173,7 +1173,7 @@ constant of integration.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/fe3b6a33bdd629f34adb42c10bb46ec30027d92d7d559b4c84aae44878b8f77c.png" src="../../_images/fe3b6a33bdd629f34adb42c10bb46ec30027d92d7d559b4c84aae44878b8f77c.png" />
+<img alt="../../_images/35136f8476b75443ee52883423a4cf02db76670801cb20cfc1bcc0137dc51a5e.png" src="../../_images/35136f8476b75443ee52883423a4cf02db76670801cb20cfc1bcc0137dc51a5e.png" />
 </div>
 </div>
 <p>For functions that are monotonic on an interval (e.g. <span class="math notranslate nohighlight">\(\sin\)</span> from <span class="math notranslate nohighlight">\(\pi/2\)</span>
@@ -1199,17 +1199,17 @@ with <a class="reference external" href="https://numpy.org/doc/stable/reference/
 <p>See the summary exercise on <a class="reference internal" href="summary-exercises/stats-interpolate.html#summary-exercise-stat-interp"><span class="std std-ref">Maximum wind speed prediction at the Sprogø station</span></a> for a more
 advanced spline interpolation example, and read the <a class="reference external" href="https://scipy.github.io/devdocs/tutorial/interpolate.html">SciPy interpolation
 tutorial</a> and the
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></a> documentation for much more information.</p>
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code> documentation for much more information.</p>
 </section>
 <section id="optimization-and-fit-scipy-optimize">
-<h2>Optimization and fit: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a><a class="headerlink" href="#optimization-and-fit-scipy-optimize" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a> provides algorithms for root finding, curve fitting,
+<h2>Optimization and fit: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code><a class="headerlink" href="#optimization-and-fit-scipy-optimize" title="Link to this heading">#</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code> provides algorithms for root finding, curve fitting,
 and more general optimization.</p>
 <section id="root-finding">
 <h3>Root Finding<a class="headerlink" href="#root-finding" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html#scipy.optimize.root_scalar" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar()</span></code></a> attempts to find a root of a specified
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar()</span></code> attempts to find a root of a specified
 scalar-valued function (i.e., an argument at which the function value is zero).
-Like many <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a> functions, the function needs an initial
+Like many <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code> functions, the function needs an initial
 guess of the solution, which the algorithm will refine until it converges or
 recognizes failure. We also provide the derivative to improve the rate of
 convergence.</p>
@@ -1240,7 +1240,7 @@ convergence.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>None of the functions in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a> that accept a guess are
+<p>None of the functions in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code> that accept a guess are
 guaranteed to converge for all possible guesses! (For example, try
 <code class="docutils literal notranslate"><span class="pre">x0=1.5</span></code> in the example above, where the derivative of the function is
 exactly zero.) If this occurs, try a different guess, adjust the options
@@ -1264,7 +1264,7 @@ only the root we seek.</p>
 </div>
 </div>
 </div>
-<p>For multivariate problems, use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root.html#scipy.optimize.root" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code></a>.</p>
+<p>For multivariate problems, use <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1296,7 +1296,7 @@ only the root we seek.</p>
 </div>
 </div>
 <p>Over-constrained problems can be solved in the least-squares sense using
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root.html#scipy.optimize.root" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code></a> with <code class="docutils literal notranslate"><span class="pre">method='lm'</span></code> (Levenberg-Marquardt).</p>
+<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code> with <code class="docutils literal notranslate"><span class="pre">method='lm'</span></code> (Levenberg-Marquardt).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -1328,8 +1328,8 @@ only the root we seek.</p>
 </div>
 </div>
 </div>
-<p>See the documentation of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root_scalar.html#scipy.optimize.root_scalar" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar()</span></code></a> and
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root.html#scipy.optimize.root" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code></a> for a variety of other solution algorithms and
+<p>See the documentation of <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root_scalar()</span></code> and
+<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code> for a variety of other solution algorithms and
 options.</p>
 </section>
 <section id="curve-fitting">
@@ -1359,7 +1359,7 @@ options.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/b888a1624e84e778c37b7e1296a36cab7de2d1b6ede7bcbfc13ded391c5e2117.png" src="../../_images/b888a1624e84e778c37b7e1296a36cab7de2d1b6ede7bcbfc13ded391c5e2117.png" />
+<img alt="../../_images/190be32473a381f5f0f16c6a70b1454d022b4d8e884748ae15f2c62a156ddb81.png" src="../../_images/190be32473a381f5f0f16c6a70b1454d022b4d8e884748ae15f2c62a156ddb81.png" />
 </div>
 </div>
 <p>We can approximate the underlying amplitude, frequency, and phase
@@ -1374,7 +1374,7 @@ argument and all parameters to fit as separate arguments:</p>
 </div>
 </div>
 </div>
-<p>We then use <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></a> to find <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>:</p>
+<p>We then use <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code> to find <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">params</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">curve_fit</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x_data</span><span class="p">,</span> <span class="n">y_data</span><span class="p">,</span> <span class="n">p0</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
@@ -1418,7 +1418,7 @@ argument and all parameters to fit as separate arguments:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/bb23a4130f478699040bbb61b7e2a17aecd60a5ba64695dd804ad457e5baf9ab.png" src="../../_images/bb23a4130f478699040bbb61b7e2a17aecd60a5ba64695dd804ad457e5baf9ab.png" />
+<img alt="../../_images/13bd3844afedf0dfe362b5a1a40b74bd59dde0b613d62b5dbdc323109e18641a.png" src="../../_images/13bd3844afedf0dfe362b5a1a40b74bd59dde0b613d62b5dbdc323109e18641a.png" />
 </div>
 </div>
 <div class="exercise dropdown admonition" id="scipy-curve-fit-ex">
@@ -1436,7 +1436,7 @@ min: -62, -59, -56, -46, -32, -18, -9, -13, -25, -46, -52, -58
 <li><p>Define a function that can describe min and max temperatures.
 Hint: this function has to have a period of 1 year.
 Hint: include a time offset.</p></li>
-<li><p>Fit this function to the data with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.curve_fit.html#scipy.optimize.curve_fit" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code></a>.</p></li>
+<li><p>Fit this function to the data with <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.curve_fit()</span></code>.</p></li>
 <li><p>Plot the result. Is the fit reasonable? If not, why?</p></li>
 <li><p>Is the time offset for min and max temperatures the same within the fit
 accuracy?</p></li>
@@ -1466,7 +1466,7 @@ year. We would like to find a function to describe this yearly evolution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/129a39a4cd71d5f38859b19e9a4db2a550a5b62459f84cd49f5e088218df36bf.png" src="../../_images/129a39a4cd71d5f38859b19e9a4db2a550a5b62459f84cd49f5e088218df36bf.png" />
+<img alt="../../_images/40858eb6521a2ce04eadd5d07af67124e74382470c3cf5efb2f8f47047d9206f.png" src="../../_images/40858eb6521a2ce04eadd5d07af67124e74382470c3cf5efb2f8f47047d9206f.png" />
 </div>
 </div>
 <p>Fitting it to a periodic function:</p>
@@ -1496,7 +1496,7 @@ year. We would like to find a function to describe this yearly evolution.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/673fc9573a29c68bd4de7131a1d4a588cf067b7f0c1018ee596e8e1a617565fb.png" src="../../_images/673fc9573a29c68bd4de7131a1d4a588cf067b7f0c1018ee596e8e1a617565fb.png" />
+<img alt="../../_images/30782da05f8ca1f12d4a924e87755f255948fef3d80563204ce49c350bd0aa2c.png" src="../../_images/30782da05f8ca1f12d4a924e87755f255948fef3d80563204ce49c350bd0aa2c.png" />
 </div>
 </div>
 </section>
@@ -1517,17 +1517,17 @@ variable <span class="math notranslate nohighlight">\(f(x) = x^2  + 10 \sin(x)\)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x10ed95c70&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x11888c7d0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/6b23c26e1e2b54dbb7dcf0c9f99653b2567c39edccdf03096bd443691bb26bc0.png" src="../../_images/6b23c26e1e2b54dbb7dcf0c9f99653b2567c39edccdf03096bd443691bb26bc0.png" />
+<img alt="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" src="../../_images/75d2b66f146fb2b40ad0a16f2e0abb6cd286aba84c7950dda9ba40c1e7a7f757.png" />
 </div>
 </div>
 <p>We can see that the function has a local minimizer near <span class="math notranslate nohighlight">\(x = 3.8\)</span> and a global
 minimizer near <span class="math notranslate nohighlight">\(x = -1.3\)</span>, but the precise values cannot be determined from the
 plot.</p>
 <p>The most appropriate function for this purpose is
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize_scalar.html#scipy.optimize.minimize_scalar" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize_scalar()</span></code></a>.
+<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize_scalar()</span></code>.
 Since we know the approximate locations of the minima, we will provide
 bounds that restrict the search to the vicinity of the global minimum.</p>
 <div class="cell docutils container">
@@ -1563,7 +1563,7 @@ bounds that restrict the search to the vicinity of the global minimum.</p>
 </div>
 <p>If we did not already know the approximate location of the global minimum,
 we could use one of SciPy’s global minimizers, such as
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html#scipy.optimize.differential_evolution" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.differential_evolution()</span></code></a>. We are required to pass
+<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.differential_evolution()</span></code>. We are required to pass
 <code class="docutils literal notranslate"><span class="pre">bounds</span></code>, but they do not need to be tight.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1576,23 +1576,23 @@ we could use one of SciPy’s global minimizers, such as
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>             message: Optimization terminated successfully.
              success: True
-                 fun: -7.945823375615284
+                 fun: -7.945823375615274
                    x: [-1.306e+00]
-                 nit: 8
-                nfev: 143
-          population: [[-1.303e+00]
-                       [-1.405e+00]
+                 nit: 5
+                nfev: 98
+          population: [[-1.321e+00]
+                       [-1.372e+00]
                        ...
-                       [-1.292e+00]
-                       [-1.333e+00]]
- population_energies: [-7.946e+00 -7.888e+00 ... -7.945e+00 -7.942e+00]
-                 jac: [ 8.882e-08]
+                       [-1.457e+00]
+                       [-1.246e+00]]
+ population_energies: [-7.946e+00 -7.921e+00 ... -7.812e+00 -7.924e+00]
+                 jac: [-4.441e-07]
 </pre></div>
 </div>
 </div>
 </div>
 <p>For multivariate optimization, a good choice for many problems is
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a>.
+<code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code>.
 Suppose we wish to find the minimum of a quadratic function of two
 variables, <span class="math notranslate nohighlight">\(f(x_0, x_1) = (x_0-1)^2 + (x_1-2)^2\)</span>.</p>
 <div class="cell docutils container">
@@ -1603,7 +1603,7 @@ variables, <span class="math notranslate nohighlight">\(f(x_0, x_1) = (x_0-1)^2 
 </div>
 </div>
 </div>
-<p>Like <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root.html#scipy.optimize.root" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code></a>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a>
+<p>Like <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code>
 requires a guess <code class="docutils literal notranslate"><span class="pre">x0</span></code>. (Note that this is the initial value of
 <em>both</em> variables rather than the value of the variable we happened to
 label <span class="math notranslate nohighlight">\(x_0\)</span>.)</p>
@@ -1632,14 +1632,14 @@ label <span class="math notranslate nohighlight">\(x_0\)</span>.)</p>
 </div>
 <aside class="sidebar">
 <p class="sidebar-title">Maximization?</p>
-<p>Is <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a> restricted to the solution of
+<p>Is <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code> restricted to the solution of
 minimization problems? Nope! To solve a maximization problem,
 simply minimize the <em>negative</em> of the original objective function.</p>
 </aside>
 <p>This barely scratches the surface of SciPy’s optimization features, which
 include mixed integer linear programming, constrained nonlinear programming,
 and the solution of assignment problems. For much more information, see the
-documentation of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/optimize.html#module-scipy.optimize" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code></a> and the advanced chapter
+documentation of <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.optimize</span></code> and the advanced chapter
 <a class="reference internal" href="../../advanced/mathematical_optimization/index.html#mathematical-optimization"><span class="std std-ref">Mathematical optimization: finding minima of functions</span></a>.</p>
 <div class="exercise dropdown admonition" id="scipy-2d-minimization-ex">
 
@@ -1656,10 +1656,10 @@ local minimum.</p>
 <li><p>Variables can be restricted to <span class="math notranslate nohighlight">\(-2 &lt; x &lt; 2\)</span> and <span class="math notranslate nohighlight">\(-1 &lt; y &lt; 1\)</span>.</p></li>
 <li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html#numpy.meshgrid" title="(in NumPy v2.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.meshgrid()</span></code></a> and <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imshow.html#matplotlib.pyplot.imshow" title="(in Matplotlib v3.10.6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.imshow()</span></code></a> can help
 with visualization.</p></li>
-<li><p>Try minimizing with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html#scipy.optimize.minimize" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code></a> with an initial
+<li><p>Try minimizing with <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.minimize()</span></code> with an initial
 guess of <span class="math notranslate nohighlight">\((x, y) = (0, 0)\)</span>. Does it find the global minimum, or
 converge to a local minimum? What about other initial guesses?</p></li>
-<li><p>Try minimizing with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html#scipy.optimize.differential_evolution" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.differential_evolution()</span></code></a>.</p></li>
+<li><p>Try minimizing with <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.differential_evolution()</span></code>.</p></li>
 </ul>
 </section>
 </div>
@@ -1699,7 +1699,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/685ca5338e4ef4fa838082283b74cc9b5c0a37ca70ef4c622425203660ebc35c.png" src="../../_images/685ca5338e4ef4fa838082283b74cc9b5c0a37ca70ef4c622425203660ebc35c.png" />
+<img alt="../../_images/7441977f97401e1e7fcf4953de0f39f10bda4e6360f380e0237549c6d0715f1f.png" src="../../_images/7441977f97401e1e7fcf4953de0f39f10bda4e6360f380e0237549c6d0715f1f.png" />
 </div>
 </div>
 <p>A 3D surface plot of the function:</p>
@@ -1728,7 +1728,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/54c6a807d8f97920297b86a8dbfc418c05d5c88739b114ddcd1c221abda30d28.png" src="../../_images/54c6a807d8f97920297b86a8dbfc418c05d5c88739b114ddcd1c221abda30d28.png" />
+<img alt="../../_images/735731c5125cf71ca9aa1865fe1254713fedd177a27621d0c8000e08324a93b2.png" src="../../_images/735731c5125cf71ca9aa1865fe1254713fedd177a27621d0c8000e08324a93b2.png" />
 </div>
 </div>
 <p>Find minima:</p>
@@ -1762,7 +1762,7 @@ converge to a local minimum? What about other initial guesses?</p></li>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/fae6c93e8efb5dc6218e13714f29a7ee9c46bc61677d0d00e6bc8d42ada6fee8.png" src="../../_images/fae6c93e8efb5dc6218e13714f29a7ee9c46bc61677d0d00e6bc8d42ada6fee8.png" />
+<img alt="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" src="../../_images/f7a6e8ce2fcbf2c5a58984e6dd8ea5335585079167b1707903eafce6588f6755.png" />
 </div>
 </div>
 </section>
@@ -1772,8 +1772,8 @@ advanced example.</p>
 </section>
 </section>
 <section id="statistics-and-random-numbers-scipy-stats">
-<h2>Statistics and random numbers: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a><a class="headerlink" href="#statistics-and-random-numbers-scipy-stats" title="Link to this heading">#</a></h2>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> contains fundamental tools for statistics in Python.</p>
+<h2>Statistics and random numbers: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code><a class="headerlink" href="#statistics-and-random-numbers-scipy-stats" title="Link to this heading">#</a></h2>
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code> contains fundamental tools for statistics in Python.</p>
 <section id="statistical-distributions">
 <h3>Statistical Distributions<a class="headerlink" href="#statistical-distributions" title="Link to this heading">#</a></h3>
 <p>Consider a random variable distributed according to the standard normal.
@@ -1792,15 +1792,15 @@ variable’s probability density function (PDF):</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x10fcb3320&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x118b9f1a0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/bb35dd80b3dcaff15038eb7cf50d054cbb88cba9884104b04be781402fb9b451.png" src="../../_images/bb35dd80b3dcaff15038eb7cf50d054cbb88cba9884104b04be781402fb9b451.png" />
+<img alt="../../_images/4df2f1c7871c5554b1910a547513245984975be7d58e5d426899984ae48eb811.png" src="../../_images/4df2f1c7871c5554b1910a547513245984975be7d58e5d426899984ae48eb811.png" />
 </div>
 </div>
 <aside class="sidebar">
 <p class="sidebar-title">Distribution objects and frozen distributions</p>
-<p>Each of the 100+ <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> distribution families is represented by an
+<p>Each of the 100+ <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code> distribution families is represented by an
 <em>object</em> with a <code class="docutils literal notranslate"><span class="pre">__call__</span></code> method. Here, we call the <code class="xref py py-class docutils literal notranslate"><span class="pre">scipy.stats.norm</span></code>
 object to specify its location and scale, and it returns a <em>frozen</em>
 distribution: a particular element of a distribution family with all
@@ -1820,7 +1820,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.000891305081054762)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.002961134062049704)
 </pre></div>
 </div>
 </div>
@@ -1832,7 +1832,7 @@ family’s <code class="docutils literal notranslate"><span class="pre">fit</spa
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9999359333595378)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.003719521664161)
 </pre></div>
 </div>
 </div>
@@ -1865,14 +1865,14 @@ the sample was drawn:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(-0.000891305081054762)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.002961134062049704)
 </pre></div>
 </div>
 </div>
 </div>
 <p>NumPy includes some of the most fundamental sample statistics (e.g.
 <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.mean.html#numpy.mean" title="(in NumPy v2.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.mean()</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.var.html#numpy.var" title="(in NumPy v2.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.var()</span></code></a>, <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.percentile.html#numpy.percentile" title="(in NumPy v2.3)"><code class="xref py py-func docutils literal notranslate"><span class="pre">numpy.percentile()</span></code></a>);
-<a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a> includes many more. For instance, the geometric mean
+<code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code> includes many more. For instance, the geometric mean
 is a common measure of central tendency for data that tends to be
 distributed over many orders of magnitude.</p>
 <div class="cell docutils container">
@@ -1882,7 +1882,7 @@ distributed over many orders of magnitude.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9993823851986353)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(1.0020546095498952)
 </pre></div>
 </div>
 </div>
@@ -1899,7 +1899,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.7492857304801424)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.20524256873092087)
 </pre></div>
 </div>
 </div>
@@ -1911,7 +1911,7 @@ distribution:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.68753477751801)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(0.9024686877729019)
 </pre></div>
 </div>
 </div>
@@ -1923,18 +1923,18 @@ a sample that <em>has</em> been drawn from a normal distribution. If the
 p-value is unusually small, this may be taken as evidence that
 <code class="docutils literal notranslate"><span class="pre">sample</span></code> was <em>not</em> drawn from the normal distribution. Our statistic
 and p-value are moderate, so the test is inconclusive.</p>
-<p>There are many other features of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a>, including circular
+<p>There are many other features of <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code>, including circular
 statistics, quasi-Monte Carlo methods, and resampling methods.
-For much more information, see the documentation of <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/stats.html#module-scipy.stats" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code></a>
+For much more information, see the documentation of <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.stats</span></code>
 and the advanced chapter <a class="reference internal" href="../../packages/statistics/index.html#statistics"><span class="std std-ref">statistics</span></a>.</p>
 </section>
 </section>
 <section id="numerical-integration-scipy-integrate">
-<h2>Numerical integration: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html#module-scipy.integrate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a><a class="headerlink" href="#numerical-integration-scipy-integrate" title="Link to this heading">#</a></h2>
+<h2>Numerical integration: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code><a class="headerlink" href="#numerical-integration-scipy-integrate" title="Link to this heading">#</a></h2>
 <section id="quadrature">
 <h3>Quadrature<a class="headerlink" href="#quadrature" title="Link to this heading">#</a></h3>
 <p>Suppose we wish to compute the definite integral
-<span class="math notranslate nohighlight">\(\int_0^{\pi / 2} \sin(t) dt\)</span> numerically. <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.quad.html#scipy.integrate.quad" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.quad()</span></code></a>
+<span class="math notranslate nohighlight">\(\int_0^{\pi / 2} \sin(t) dt\)</span> numerically. <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.quad()</span></code>
 chooses one of several adaptive techniques depending on the parameters, and
 is therefore the recommended first choice for integration of function of a single variable:</p>
 <div class="cell docutils container">
@@ -1964,14 +1964,14 @@ is therefore the recommended first choice for integration of function of a singl
 </div>
 <p>Other functions for <em>numerical quadrature</em>, including integration of
 multivariate functions and approximating integrals from samples, are available
-in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html#module-scipy.integrate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a>.</p>
+in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code>.</p>
 </section>
 <section id="initial-value-problems">
 <h3>Initial Value Problems<a class="headerlink" href="#initial-value-problems" title="Link to this heading">#</a></h3>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/integrate.html#module-scipy.integrate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code></a> also features routines for integrating <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">Ordinary
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.integrate</span></code> also features routines for integrating <a class="reference external" href="https://en.wikipedia.org/wiki/Ordinary_differential_equation">Ordinary
 Differential Equations
 (ODE)</a>. For
-example, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code></a> integrates ODEs of the form:</p>
+example, <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code> integrates ODEs of the form:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{dy}{dt} = f(t, y(t))
@@ -2014,7 +2014,7 @@ computes <span class="math notranslate nohighlight">\(f(t, y(t))\)</span> given 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7823da5abf35e3f02869f974644423c31247462724101c4c49c2e7c60f6c469b.png" src="../../_images/7823da5abf35e3f02869f974644423c31247462724101c4c49c2e7c60f6c469b.png" />
+<img alt="../../_images/9b615145d6c0bd16f8c5f482ea6ce7cabe26ea6d1134200397977f3c4106ebcf.png" src="../../_images/9b615145d6c0bd16f8c5f482ea6ce7cabe26ea6d1134200397977f3c4106ebcf.png" />
 </div>
 </div>
 <p>Let us integrate a more complex ODE: a <a class="reference external" href="https://en.wikipedia.org/wiki/Harmonic_oscillator#Damped_harmonic_oscillator">damped
@@ -2023,7 +2023,7 @@ The position of a mass attached to a spring obeys the 2nd order ODE
 <span class="math notranslate nohighlight">\(\ddot{y} + 2 \zeta \omega_0  \dot{y} + \omega_0^2 y = 0\)</span> with natural frequency
 <span class="math notranslate nohighlight">\(\omega_0 = \sqrt{k/m}\)</span>, damping ratio <span class="math notranslate nohighlight">\(\zeta = c/(2 m \omega_0)\)</span>,
 spring constant <span class="math notranslate nohighlight">\(k\)</span>, mass <span class="math notranslate nohighlight">\(m\)</span>, and damping coefficient <span class="math notranslate nohighlight">\(c\)</span>.</p>
-<p>Before using <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code></a>, the 2nd order ODE needs to be
+<p>Before using <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code>, the 2nd order ODE needs to be
 transformed into a system of first-order ODEs. Note that</p>
 <div class="math notranslate nohighlight">
 \[
@@ -2094,12 +2094,12 @@ first order equation:</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/50d85e3fc9747b9436f9c3e50e8ac02e235acb86e94054f60f999ac6193ecf3b.png" src="../../_images/50d85e3fc9747b9436f9c3e50e8ac02e235acb86e94054f60f999ac6193ecf3b.png" />
+<img alt="../../_images/c03dcb61db02791c0962eddbcb1f7734a166f1902e1cf48ad969f941e1e42c9a.png" src="../../_images/c03dcb61db02791c0962eddbcb1f7734a166f1902e1cf48ad969f941e1e42c9a.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
-<p>With the option <code class="docutils literal notranslate"><span class="pre">method='LSODA'</span></code>, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html#scipy.integrate.solve_ivp" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code></a> uses the LSODA
+<p>With the option <code class="docutils literal notranslate"><span class="pre">method='LSODA'</span></code>, <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp()</span></code> uses the LSODA
 (Livermore Solver for Ordinary Differential equations with Automatic method switching
 for stiff and non-stiff problems). See the [ODEPACK Fortran library] for more details.</p>
 </div>
@@ -2113,13 +2113,13 @@ or [SfePy].</p>
 </section>
 </section>
 <section id="fast-fourier-transforms-scipy-fft">
-<h2>Fast Fourier transforms: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html#module-scipy.fft" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code></a><a class="headerlink" href="#fast-fourier-transforms-scipy-fft" title="Link to this heading">#</a></h2>
-<p>The <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html#module-scipy.fft" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code></a> module computes fast Fourier transforms (FFTs)
+<h2>Fast Fourier transforms: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code><a class="headerlink" href="#fast-fourier-transforms-scipy-fft" title="Link to this heading">#</a></h2>
+<p>The <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code> module computes fast Fourier transforms (FFTs)
 and offers utilities to handle them. Some important functions are:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fft.html#scipy.fft.fft" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fft()</span></code></a> to compute the FFT</p></li>
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.fftfreq.html#scipy.fft.fftfreq" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftfreq()</span></code></a> to generate the sampling frequencies</p></li>
-<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.ifft.html#scipy.fft.ifft" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.ifft()</span></code></a> to compute the inverse FFT, from frequency
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fft()</span></code> to compute the FFT</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.fftfreq()</span></code> to generate the sampling frequencies</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.ifft()</span></code> to compute the inverse FFT, from frequency
 space to signal space</p></li>
 </ul>
 <p>As an illustration, a example (noisy) input signal (<code class="docutils literal notranslate"><span class="pre">sig</span></code>), and its FFT:</p>
@@ -2143,9 +2143,9 @@ space to signal space</p></li>
 <tr class="row-odd"><td><p>Signal</p></td>
 <td><p>FFT</p></td>
 </tr>
-<tr class="row-even"><td><img alt="../../_images/1ed48fb71a2c5132672ac7f20ac6d2853ddf9cf69ab150661a4442028c87b320.png" src="../../_images/1ed48fb71a2c5132672ac7f20ac6d2853ddf9cf69ab150661a4442028c87b320.png" />
+<tr class="row-even"><td><img alt="../../_images/23a942dd040a823695d0cebd8dc5329962d9c72d544e8f0c232386f1d7e59c6b.png" src="../../_images/23a942dd040a823695d0cebd8dc5329962d9c72d544e8f0c232386f1d7e59c6b.png" />
 </td>
-<td><img alt="../../_images/90d2504f299e60f7997dcefef9e11ea593c056ca52280033ff17781b0356cf72.png" src="../../_images/90d2504f299e60f7997dcefef9e11ea593c056ca52280033ff17781b0356cf72.png" />
+<td><img alt="../../_images/5063628aeaf1ce8d26a6db537e8c05e2a7866c8ba4f904d87c08c0580ce41b21.png" src="../../_images/5063628aeaf1ce8d26a6db537e8c05e2a7866c8ba4f904d87c08c0580ce41b21.png" />
 </td>
 </tr>
 </tbody>
@@ -2155,9 +2155,9 @@ space to signal space</p></li>
 <p>The code of this example and the figures above can be found in the <a class="reference internal" href="scipy_examples.html#scipy-fft-example"><span class="std std-ref">Scipy FFT
 example</span></a>.</p>
 <p>Setting the Fourier component above this frequency to zero and inverting the
-FFT with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.fft.ifft.html#scipy.fft.ifft" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.ifft()</span></code></a>, gives a filtered signal (see the
+FFT with <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.fft.ifft()</span></code>, gives a filtered signal (see the
 <a class="reference internal" href="scipy_examples.html#scipy-fft-example"><span class="std std-ref">example</span></a> for detail).</p>
-<img alt="../../_images/c87677b915f3bafda131de515f83a0ca202b27783c693cf15292ef1854fe9ab9.png" src="../../_images/c87677b915f3bafda131de515f83a0ca202b27783c693cf15292ef1854fe9ab9.png" />
+<img alt="../../_images/e5e5592611fe772f69dc3deb3ac52346b4935f67b3a282b26a5f6e431e041823.png" src="../../_images/e5e5592611fe772f69dc3deb3ac52346b4935f67b3a282b26a5f6e431e041823.png" />
 <div class="admonition-numpy-fft admonition">
 <p class="admonition-title"><code class="docutils literal notranslate"><span class="pre">numpy.fft</span></code></p>
 <p>NumPy also has an implementation of FFT (<a class="reference external" href="https://numpy.org/doc/stable/reference/routines.fft.html#module-numpy.fft" title="(in NumPy v2.3)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">numpy.fft</span></code></a>). However, the SciPy
@@ -2169,9 +2169,9 @@ one should be preferred, as it uses more efficient underlying implementations.</
 <tr class="row-odd"><td><p><a class="reference internal" href="scipy_examples.html#eg-periodicity-finder"><span class="std std-ref">Crude periodicity finding</span></a></p></td>
 <td><p><a class="reference internal" href="scipy_examples.html#eg-image-blur"><span class="std std-ref">Image blur with FFT</span></a></p></td>
 </tr>
-<tr class="row-even"><td><img alt="../../_images/5bc2e6434a62809f3ac4d9657d6b9ea48dbcde6c6afb92d6a1a6421468f3e79d.png" src="../../_images/5bc2e6434a62809f3ac4d9657d6b9ea48dbcde6c6afb92d6a1a6421468f3e79d.png" />
+<tr class="row-even"><td><img alt="../../_images/244fe511e848013f43432e8e31fe845b3d51149ec0338e4dcad2275eb6e332d7.png" src="../../_images/244fe511e848013f43432e8e31fe845b3d51149ec0338e4dcad2275eb6e332d7.png" />
 </td>
-<td><img alt="../../_images/efe7805785e61ac3b97f49af74034fcb9a30c1befb21841ecde4a6a42f8247bf.png" src="../../_images/efe7805785e61ac3b97f49af74034fcb9a30c1befb21841ecde4a6a42f8247bf.png" />
+<td><img alt="../../_images/424ea78c5c2e6ca1d4c212b250b1af2086a88a43121f9c55fbe288861117928f.png" src="../../_images/424ea78c5c2e6ca1d4c212b250b1af2086a88a43121f9c55fbe288861117928f.png" />
 </td>
 </tr>
 </tbody>
@@ -2187,7 +2187,7 @@ one should be preferred, as it uses more efficient underlying implementations.</
 noise. In this exercise, we aim to clean up the noise using the
 Fast Fourier Transform.</p></li>
 <li><p>Load the image using <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.imread.html#matplotlib.pyplot.imread" title="(in Matplotlib v3.10.6)"><code class="xref py py-func docutils literal notranslate"><span class="pre">matplotlib.pyplot.imread()</span></code></a>.</p></li>
-<li><p>Find and use the 2-D FFT function in <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/fft.html#module-scipy.fft" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code></a>, and plot the
+<li><p>Find and use the 2-D FFT function in <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.fft</span></code>, and plot the
 spectrum (Fourier transform of) the image. Do you have any trouble
 visualising the spectrum? If so, why?</p></li>
 <li><p>The spectrum consists of high and low frequency components. The noise is
@@ -2224,7 +2224,7 @@ f_1(t) = \int dt'\, K(t-t') f_0(t') \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/2abbe4f2c9b7b2af2cb4af3351d1d52f0f2fcd4b07b56c3e4985b3a23cc59d69.png" src="../../_images/2abbe4f2c9b7b2af2cb4af3351d1d52f0f2fcd4b07b56c3e4985b3a23cc59d69.png" />
+<img alt="../../_images/342ba2a5e54494ac75b60dafd9a74b802ca71d487d177724dbde0e15692e1d47.png" src="../../_images/342ba2a5e54494ac75b60dafd9a74b802ca71d487d177724dbde0e15692e1d47.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2247,7 +2247,7 @@ f_1(t) = \int dt'\, K(t-t') f_0(t') \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/79290e652aec60f291d9f451d44b73361fa4e8b3261e51bff213069157c40163.png" src="../../_images/79290e652aec60f291d9f451d44b73361fa4e8b3261e51bff213069157c40163.png" />
+<img alt="../../_images/c09c79635c9fa0cbcd71195101e24eb73a2900a20ce73d3cecf14da6fbdc3707.png" src="../../_images/c09c79635c9fa0cbcd71195101e24eb73a2900a20ce73d3cecf14da6fbdc3707.png" />
 </div>
 </div>
 <p>Filter in FFT:</p>
@@ -2284,7 +2284,7 @@ truncate coefficients.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/210b2c91eeb76a202b2fd0e315dc99023a00a4deedd41d4ee294a2cc93d00df7.png" src="../../_images/210b2c91eeb76a202b2fd0e315dc99023a00a4deedd41d4ee294a2cc93d00df7.png" />
+<img alt="../../_images/eb1dcde12aac4bb6d80d2901622932fe9a5e8ac33a0637c828bd5030f8acf2c5.png" src="../../_images/eb1dcde12aac4bb6d80d2901622932fe9a5e8ac33a0637c828bd5030f8acf2c5.png" />
 </div>
 </div>
 <p>Reconstruct the final image</p>
@@ -2301,12 +2301,12 @@ truncate coefficients.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/fd4121dae3016847fc73c26d13e87cfa4110193b836ae5b067a05e3399dcf26a.png" src="../../_images/fd4121dae3016847fc73c26d13e87cfa4110193b836ae5b067a05e3399dcf26a.png" />
+<img alt="../../_images/7d4530cadf97edca6454d7c21a9084af0f30069e283b67ee0339d4af78a67482.png" src="../../_images/7d4530cadf97edca6454d7c21a9084af0f30069e283b67ee0339d4af78a67482.png" />
 </div>
 </div>
-<p>Easier and better: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.ndimage.gaussian_filter.html#scipy.ndimage.gaussian_filter" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter()</span></code></a></p>
+<p>Easier and better: <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.ndimage.gaussian_filter()</span></code></p>
 <p>Implementing filtering directly with FFTs is tricky and time consuming.
-We can use the Gaussian filter from <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a></p>
+We can use the Gaussian filter from <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im_blur</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">ndimage</span><span class="o">.</span><span class="n">gaussian_filter</span><span class="p">(</span><span class="n">im</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -2318,20 +2318,20 @@ We can use the Gaussian filter from <a class="reference external" href="https://
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1af58faa281de8f343da007b524b2db4a87e52362fa641120a9e030c9f71f5b7.png" src="../../_images/1af58faa281de8f343da007b524b2db4a87e52362fa641120a9e030c9f71f5b7.png" />
+<img alt="../../_images/6424499d6283345c2d4d39d8b86c2359c641243abfe87e92cb4c8b36e2519051.png" src="../../_images/6424499d6283345c2d4d39d8b86c2359c641243abfe87e92cb4c8b36e2519051.png" />
 </div>
 </div>
 </section>
 </div>
 </section>
 <section id="signal-processing-scipy-signal">
-<h2>Signal processing: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></a><a class="headerlink" href="#signal-processing-scipy-signal" title="Link to this heading">#</a></h2>
+<h2>Signal processing: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code><a class="headerlink" href="#signal-processing-scipy-signal" title="Link to this heading">#</a></h2>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></a> is for typical signal processing: 1D,
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code> is for typical signal processing: 1D,
 regularly-sampled signals.</p>
 </div>
-<p><strong>Resampling</strong> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.resample.html#scipy.signal.resample" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code></a>: resample a signal to <code class="docutils literal notranslate"><span class="pre">n</span></code>
+<p><strong>Resampling</strong> <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.resample()</span></code>: resample a signal to <code class="docutils literal notranslate"><span class="pre">n</span></code>
 points using FFT.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2360,17 +2360,17 @@ points using FFT.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/e6e568ebda6aea8c68d59b62484eb3f7bd574b21de73900ac80b18f0c11dffb1.png" src="../../_images/e6e568ebda6aea8c68d59b62484eb3f7bd574b21de73900ac80b18f0c11dffb1.png" />
+<img alt="../../_images/138448eb84c7e6b913e9188e229b790e2da99a888c2fa8430a5b9104febdd81f.png" src="../../_images/138448eb84c7e6b913e9188e229b790e2da99a888c2fa8430a5b9104febdd81f.png" />
 </div>
 </div>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
 <p>Notice how on the side of the window the resampling is less accurate
 and has a rippling effect.</p>
-<p>This resampling is different from the <a class="reference internal" href="#intro-scipy-interpolate"><span class="std std-ref">interpolation</span></a> provided by <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/interpolate.html#module-scipy.interpolate" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code></a> as it
+<p>This resampling is different from the <a class="reference internal" href="#intro-scipy-interpolate"><span class="std std-ref">interpolation</span></a> provided by <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.interpolate</span></code> as it
 only applies to regularly sampled data.</p>
 </div>
-<p><strong>Detrending</strong> <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.detrend.html#scipy.signal.detrend" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.detrend()</span></code></a>: remove linear trend from signal:</p>
+<p><strong>Detrending</strong> <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.detrend()</span></code>: remove linear trend from signal:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -2399,22 +2399,22 @@ only applies to regularly sampled data.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<img alt="../../_images/a5030801d950064ec4e72d205a9b0e84cd75bce76192d7b5136ed937746a75cc.png" src="../../_images/a5030801d950064ec4e72d205a9b0e84cd75bce76192d7b5136ed937746a75cc.png" />
+<img alt="../../_images/7dbc12bc61f06f4e2ddce4e8df41253a373266a1ced5aecd84eb25d6226ccbd4.png" src="../../_images/7dbc12bc61f06f4e2ddce4e8df41253a373266a1ced5aecd84eb25d6226ccbd4.png" />
 </div>
 </div>
 <p><strong>Filtering</strong>:</p>
-<p>For non-linear filtering, <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></a> has filtering (median
-filter <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.medfilt.html#scipy.signal.medfilt" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.medfilt()</span></code></a>, Wiener <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.wiener.html#scipy.signal.wiener" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.wiener()</span></code></a>),
+<p>For non-linear filtering, <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code> has filtering (median
+filter <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.medfilt()</span></code>, Wiener <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.wiener()</span></code>),
 but we will discuss this in the image section.</p>
 <div class="dropdown admonition note">
 <p class="admonition-title">Note</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/signal.html#module-scipy.signal" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code></a> also has a full-blown set of tools for the design
+<p><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.signal</span></code> also has a full-blown set of tools for the design
 of linear filter (finite and infinite response filters), but this is
 out of the scope of this tutorial.</p>
 </div>
 <p><strong>Spectral analysis</strong>:</p>
-<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.spectrogram.html#scipy.signal.spectrogram" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.spectrogram()</span></code></a> computes a spectrogram — frequency spectra
-over consecutive time windows — while <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.welch.html#scipy.signal.welch" title="(in SciPy v1.16.2)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.welch()</span></code></a> computes
+<p><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.spectrogram()</span></code> computes a spectrogram — frequency spectra
+over consecutive time windows — while <code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.signal.welch()</span></code> computes
 a power spectrum density (PSD).</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -2424,11 +2424,11 @@ a power spectrum density (PSD).</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><img alt="../../_images/0c875cc11f87ad451ad38c6288902abbf925abae329abef0599b3df191ea6b82.png" src="../../_images/0c875cc11f87ad451ad38c6288902abbf925abae329abef0599b3df191ea6b82.png" />
+<tr class="row-even"><td><img alt="../../_images/e0f11cd6448eb2a4d247e055c899e7902c337f308036a73eebaaf4f6983a13e0.png" src="../../_images/e0f11cd6448eb2a4d247e055c899e7902c337f308036a73eebaaf4f6983a13e0.png" />
 </td>
-<td><img alt="../../_images/bc107f53f3cef169e71d2b17efd9a7359287e5883d664b49e0f3d25255c3202a.png" src="../../_images/bc107f53f3cef169e71d2b17efd9a7359287e5883d664b49e0f3d25255c3202a.png" />
+<td><img alt="../../_images/4a92ed925f256a3784009adb4d32c3e7b5e5c0e90ed4c90c51166c7be81a2650.png" src="../../_images/4a92ed925f256a3784009adb4d32c3e7b5e5c0e90ed4c90c51166c7be81a2650.png" />
 </td>
-<td><img alt="../../_images/36dc11f3e77b330f4a3a5ded4c73560354c2da05c33af55888f12e7a61135d97.png" src="../../_images/36dc11f3e77b330f4a3a5ded4c73560354c2da05c33af55888f12e7a61135d97.png" />
+<td><img alt="../../_images/f10a69eddd2dd582f7c7e4bbf12a8200a0047465c7dda7059591deccc0c8c4b5.png" src="../../_images/f10a69eddd2dd582f7c7e4bbf12a8200a0047465c7dda7059591deccc0c8c4b5.png" />
 </td>
 </tr>
 </tbody>
@@ -2437,7 +2437,7 @@ a power spectrum density (PSD).</p>
 <p>See the <a class="reference internal" href="scipy_examples.html#scipy-spectrogram-example"><span class="std std-ref">Spectrogram example</span></a>.</p>
 </section>
 <section id="image-manipulation-scipy-ndimage">
-<h2>Image manipulation: <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/ndimage.html#module-scipy.ndimage" title="(in SciPy v1.16.2)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code></a><a class="headerlink" href="#image-manipulation-scipy-ndimage" title="Link to this heading">#</a></h2>
+<h2>Image manipulation: <code class="xref py py-mod docutils literal notranslate"><span class="pre">scipy.ndimage</span></code><a class="headerlink" href="#image-manipulation-scipy-ndimage" title="Link to this heading">#</a></h2>
 <p>See <a class="reference internal" href="image_processing/image_processing.html#scipy-image-processing"><span class="std std-ref">Scipy image processing</span></a></p>
 </section>
 <section id="summary-exercises-on-scientific-computing">

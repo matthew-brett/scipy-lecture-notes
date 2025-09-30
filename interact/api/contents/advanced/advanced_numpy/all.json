@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-30T12:06:06.980626Z",
+      "created": "2025-09-30T16:30:22.431510Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-30T12:06:02.788283Z",
+      "last_modified": "2025-09-30T16:30:15.961624Z",
       "mimetype": null,
       "name": "index.ipynb",
       "path": "advanced/advanced_numpy/index.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-30T12:06:06.980438Z",
+  "created": "2025-09-30T16:30:22.431098Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-30T12:06:06.980438Z",
+  "last_modified": "2025-09-30T16:30:22.431098Z",
   "mimetype": null,
   "name": "advanced_numpy",
   "path": "advanced/advanced_numpy",

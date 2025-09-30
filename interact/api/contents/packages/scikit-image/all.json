@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-09-30T12:06:07.022660Z",
+      "created": "2025-09-30T16:30:22.505413Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-09-30T12:06:03.604919Z",
+      "last_modified": "2025-09-30T16:30:17.372836Z",
       "mimetype": null,
       "name": "index.ipynb",
       "path": "packages/scikit-image/index.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2025-09-30T12:06:07.022500Z",
+  "created": "2025-09-30T16:30:22.505020Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-09-30T12:06:07.022500Z",
+  "last_modified": "2025-09-30T16:30:22.505020Z",
   "mimetype": null,
   "name": "scikit-image",
   "path": "packages/scikit-image",
