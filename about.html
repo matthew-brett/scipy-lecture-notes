@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -482,9 +482,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-cover">Updating the cover</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-processing">A note on processing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-and-admonitions">Notes and admonitions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-and-solutions">Exercises and solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-processing">A note on processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
 </ul>
 </li>
@@ -912,13 +913,6 @@ preference for array operations, PEP8 coding conventions.</p></li>
 <p>the generated html files can be found in <code class="docutils literal notranslate"><span class="pre">build/html</span></code></p>
 <p>The first build takes a long time, but information is cached and
 subsequent builds will be faster.</p>
-<p>To generate the pdf file for printing:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">pdf</span>
-</pre></div>
-</div>
-<p>The pdf builder is a bit difficult and you might have some TeX errors.
-Tweaking the layout in the source files is usually enough to work around these
-problems.</p>
 <section id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h3>
 <p>Build requirements are listed in the
@@ -945,6 +939,8 @@ problems.</p>
 <span class="n">xlrd</span>
 <span class="n">openpyxl</span>
 <span class="n">jupytext</span>
+<span class="c1"># For pretty rendering in local JupyterLab or JupyterLite.</span>
+<span class="n">jupyterlab_myst</span>
 <span class="c1"># For glue markup in notebooks.</span>
 <span class="n">myst_nb</span>
 </pre></div>
@@ -969,27 +965,13 @@ on Debian/Ubuntu),</p></li>
 </section>
 <section id="updating-the-cover">
 <h3>Updating the cover<a class="headerlink" href="#updating-the-cover" title="Link to this heading">#</a></h3>
-<p>Use inkscape to modify the cover in <code class="docutils literal notranslate"><span class="pre">images/</span></code>, then export to PDF:</p>
+<p>Use Inkscape to modify the cover in <code class="docutils literal notranslate"><span class="pre">images/</span></code>, then export to PDF:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">inkscape</span> <span class="o">--</span><span class="n">export</span><span class="o">-</span><span class="n">filename</span><span class="o">=</span><span class="n">cover</span><span class="o">-</span><span class="mf">2025.</span><span class="n">pdf</span> <span class="n">cover</span><span class="o">-</span><span class="mf">2025.</span><span class="n">svg</span>
 </pre></div>
 </div>
 <p>Ensure that the <code class="docutils literal notranslate"><span class="pre">images/cover.pdf</span></code> symlink points to the correct
 file.</p>
 </section>
-</section>
-<section id="a-note-on-processing">
-<h2>A note on processing<a class="headerlink" href="#a-note-on-processing" title="Link to this heading">#</a></h2>
-<p>The pages are designed both as pages for pretty HTML output, and to be used as
-interactive notebooks in e.g. JupyterLite.</p>
-<p>There is some markup that we need for the pretty HTML output that looks ugly in
-a Jupyter interface such as <a class="reference external" href="https://jupyterlite.readthedocs.io">JupyterLite</a>.
-Accordingly, we post-process the pages with a script
-<code class="docutils literal notranslate"><span class="pre">_scripts/process_notebooks.py</span></code> to load the pages as text notebooks, and write
-out <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files with modified markup that looks better in a Jupyter
-interface. Some of the authoring advice here is to allow that process to work
-smoothly, because the <code class="docutils literal notranslate"><span class="pre">process_notebooks.py</span></code> file reads the input Myst-MD
-format notebooks using <a class="reference external" href="https://jupytext.readthedocs.io">Jupytext</a> before
-converting to Jupyter <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
 </section>
 <section id="notes-and-admonitions">
 <h2>Notes and admonitions<a class="headerlink" href="#notes-and-admonitions" title="Link to this heading">#</a></h2>
@@ -1059,6 +1041,78 @@ to embed code cells in the exercise or solution, because this allows code cells
 to be at the top level of the notebook, where Jupyter needs them to be.</p>
 <p>The gated markers also make it possible to for the <code class="docutils literal notranslate"><span class="pre">process_notebooks.py</span></code>
 script to recognize exercise and solutions blocks, to parse them correctly.</p>
+</section>
+<section id="a-note-on-processing">
+<span id="notebook-processing"></span><h2>A note on processing<a class="headerlink" href="#a-note-on-processing" title="Link to this heading">#</a></h2>
+<p>The pages are designed both as pages for pretty HTML output, and to be used as
+interactive notebooks in e.g. JupyterLite.</p>
+<p>There is some markup that we need for the pretty HTML output that looks ugly in
+a Jupyter interface such as <a class="reference external" href="https://jupyterlite.readthedocs.io">JupyterLite</a>.
+To deal with this in part, we install the
+<a class="reference external" href="https://github.com/jupyter-book/jupyterlab-myst">jupyterlab_myst</a> extension by
+default, so that Myst markup (mostly) appears as it should inside JupyterLab
+when opened as a notebook.  Another difference we want to see between the HTML
+and the notebook version is that we want to avoid putting the solutions in the
+notebook version, to allow more space for thought about the exercise. Both to
+modify any ugly formatting, and to remove the exercise solutions, we
+post-process the pages with a script <code class="docutils literal notranslate"><span class="pre">_scripts/process_notebooks.py</span></code> to load
+the pages as text notebooks, and write out <code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files with modified markup
+that looks better in a Jupyter interface. Some of the authoring advice here is
+to allow that process to work smoothly, because the <code class="docutils literal notranslate"><span class="pre">process_notebooks.py</span></code> file
+reads the input Myst-MD format notebooks using
+<a class="reference external" href="https://jupytext.readthedocs.io">Jupytext</a> before converting to Jupyter
+<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code> files.</p>
+</section>
+<section id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Link to this heading">#</a></h2>
+<p>There may well be cases where you will want to put cells in the rendered
+notebook that test values, as part of the exposition.  For example, from the
+<code class="docutils literal notranslate"><span class="pre">intro/scipy/index.md</span></code> notebook / page:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{code-cell}
+A_upper = np.triu(A)
+A_upper
+```
+
+```{code-cell}
+np.allclose(sp.linalg.solve_triangular(A_upper, b, lower=False),
+            sp.linalg.solve(A_upper, b))
+```
+</pre></div>
+</div>
+<p>Notice that, in this case, we do want the reader to see that test, as part of
+the exposition.</p>
+<p>However, there are cases where the test would be useful, to, for example,
+detect changes in the output over versions of the packages being used.  We want
+to avoid the situation where the text says one thing, but the values contradict
+it.  But we may not want the reader to have to read such tests as part of the
+exposition.  Here, for example, is a test from the <code class="docutils literal notranslate"><span class="pre">intro/scipy/index.md</span></code>
+notebook:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+```{code-cell}
+log_a = sp.special.gammaln(500)
+log_b = sp.special.gammaln(499)
+log_res = log_a - log_b
+res = np.exp(log_res)
+res
+```
+
+```{code-cell}
+:tags: [remove-cell, test]
+assert np.allclose(res, 499)
+```
+
+</pre></div>
+</div>
+<p>Note that the test confirms that Scipy is still giving the output implied in
+the text.  Note too that we have given the testing code cell the tag
+<code class="docutils literal notranslate"><span class="pre">remove-cell</span></code>.  This drops the cell from the HTML output, and our
+<a class="reference internal" href="#notebook-processing"><span class="std std-ref">post-processing of the notebooks</span></a> also drops these cells,
+so someone opening the notebook in e.g. JupyterLite will not see them.
+Accordingly, please make sure you are not defining anything in these test cells
+that the notebook will need in later cells.</p>
+<p>Be judicious — testing the output of <code class="docutils literal notranslate"><span class="pre">np.ones(3)</span></code> is probably not useful
+— Numpy would have to break in order for that test to fail.</p>
 </section>
 <section id="development">
 <h2>Development<a class="headerlink" href="#development" title="Link to this heading">#</a></h2>
@@ -1168,9 +1222,10 @@ script to recognize exercise and solutions blocks, to parse them correctly.</p>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-the-cover">Updating the cover</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-processing">A note on processing</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#notes-and-admonitions">Notes and admonitions</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercises-and-solutions">Exercises and solutions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-processing">A note on processing</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tests">Tests</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#development">Development</a></li>
 </ul>
 </li>
