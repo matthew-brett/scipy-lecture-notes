@@ -1,0 +1,88 @@
+version: 1
+project:
+  title: Scientific Python Lectures
+  authors:
+    - name: Scientific Python developers
+  copyright: '2025'
+  jupyter:
+    server:
+      url: https://matthew-brett.github.io/scipy-lecture-notes/interact
+      token: ""
+  exclude:
+    - README.md
+    - CHANGES.md
+    - LICENSE.md
+    - CONTRIBUTING.md
+    - todo.md
+    - _scripts/*
+    - _notes/*
+    - _to_ignore.md
+    - data/LICENSE.txt
+    - .pytest_cache/*
+    - .ipynb_checkpoints/*
+    - todo.md
+  github: matthew-brett/scipy-lecture-notes
+  bibliography:
+    - sp_lectures.bib
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/scientific_python_lectures.pdf
+  toc:
+    - file: index.md
+    - title: Getting started with Python for Science
+      children:
+        - file: intro/index.md
+        - file: intro/intro.md
+        - file: intro/language/python_language.md
+          children:
+            - file: intro/language/first_steps.md
+            - file: intro/language/basic_types.md
+            - file: intro/language/control_flow.md
+            - file: intro/language/functions.md
+            - file: intro/language/reusing_code.md
+            - file: intro/language/io.md
+            - file: intro/language/standard_library.md
+            - file: intro/language/exceptions.md
+            - file: intro/language/oop.md
+        - file: intro/numpy/index.md
+          children:
+            - file: intro/numpy/array_object.md
+            - file: intro/numpy/operations.md
+            - file: intro/numpy/elaborate_arrays.md
+            - file: intro/numpy/advanced_operations.md
+            - file: intro/numpy/exercises.md
+        - file: intro/matplotlib/index.md
+        - file: intro/scipy/index.md
+        - file: intro/help/help.md
+    - title: Advanced topics
+      children:
+        - file: advanced/index.md
+        - file: advanced/advanced_python/index.md
+        - file: advanced/advanced_numpy/index.md
+        - file: advanced/debugging/index.md
+        - file: advanced/optimizing/index.md
+        - file: advanced/scipy_sparse/introduction.md
+          children:
+            - file: advanced/scipy_sparse/storage_schemes.md
+            - file: advanced/scipy_sparse/solvers.md
+            - file: advanced/scipy_sparse/other_packages.md
+        - file: advanced/image_processing/index.md
+        - file: advanced/mathematical_optimization/index.md
+        - file: advanced/interfacing_with_c/interfacing_with_c.md
+    - title: Packages and applications
+      children:
+        - file: packages/index.md
+        - file: packages/statistics/index.md
+        - file: packages/sympy.md
+        - file: packages/scikit-image/index.md
+        - file: packages/scikit-learn/index.md
+    - title: About
+      children:
+        - file: about.md
+site:
+  options:
+    logo: images/sp_lectures.png
+    favicon: images/sp_lectures.png
+    folders: true
+  template: book-theme
