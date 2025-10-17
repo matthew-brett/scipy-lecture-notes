@@ -502,7 +502,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-work">Interactive work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elaboration-of-the-work-in-an-editor">Elaboration of the work in an editor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipython-and-jupyter-tips-and-tricks">IPython and Jupyter Tips and Tricks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-history">Command history</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-completion">Tab completion</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-functions">Magic functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aliases">Aliases</a></li>
 </ul>
 </li>
 </ul>
@@ -861,9 +864,10 @@ blocks.</p></li>
 <p>The user manuals contain a wealth of information. Here we give a quick
 introduction to four useful features: <em>history</em>, <em>tab completion</em>, <em>magic
 functions</em>, and <em>aliases</em>.</p>
-<p><strong>Command history</strong> Like a UNIX shell, the IPython console supports
-command history. Type the <em>up</em> and <em>down</em> cursor keys to navigate previously typed
-commands:</p>
+<section id="command-history">
+<h4>Command history<a class="headerlink" href="#command-history" title="Link to this heading">#</a></h4>
+<p>Like a UNIX shell, the IPython console supports command history. Type the <em>up</em>
+and <em>down</em> cursor keys to navigate previously typed commands:</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [3]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="gp">In [4]: </span><span class="o">&lt;</span><span class="n">UP</span><span class="o">&gt;</span>
@@ -871,10 +875,13 @@ commands:</p>
 <span class="gp">In [4]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 </pre></div>
 </div>
-<p><strong>Tab completion</strong> Tab completion, is a convenient way to explore the
-structure of any object you’re dealing with. Simply type object_name.&lt;TAB&gt; to
-view the object’s attributes. Besides Python objects and keywords, tab
-completion also works on file and directory names.*</p>
+</section>
+<section id="tab-completion">
+<h4>Tab completion<a class="headerlink" href="#tab-completion" title="Link to this heading">#</a></h4>
+<p>Tab completion is a convenient way to explore the structure of any object
+you’re dealing with. Simply type <code class="docutils literal notranslate"><span class="pre">object_name.</span></code>&lt;TAB&gt; to view the object’s
+attributes. Besides Python objects and keywords, tab completion also works on
+file and directory names.*</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [5]: </span><span class="n">x</span> <span class="o">=</span> <span class="mi">10</span>
 
 <span class="gp">In [6]: </span><span class="n">x</span><span class="o">.&lt;</span><span class="n">TAB</span><span class="o">&gt;</span>
@@ -883,6 +890,7 @@ completion also works on file and directory names.*</p>
 <span class="go">          bit_length()       from_bytes()       real</span>
 </pre></div>
 </div>
+</section>
 <section id="magic-functions">
 <h4>Magic functions<a class="headerlink" href="#magic-functions" title="Link to this heading">#</a></h4>
 <p>The console and the notebooks support so-called <em>magic</em> functions by prefixing
@@ -980,8 +988,10 @@ a look at what the values of <code class="docutils literal notranslate"><span cl
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="../advanced/debugging/index.html#debugging-chapter"><span class="std std-ref">Chapter on debugging</span></a></p>
 </div>
-<p><strong>Aliases</strong></p>
-<p>Furthermore IPython ships with various <em>aliases</em> which emulate common UNIX
+</section>
+<section id="aliases">
+<h4>Aliases<a class="headerlink" href="#aliases" title="Link to this heading">#</a></h4>
+<p>IPython and Jupyter ship with various <em>aliases</em> which emulate common UNIX
 command line tools such as <code class="docutils literal notranslate"><span class="pre">ls</span></code> to list files, <code class="docutils literal notranslate"><span class="pre">cp</span></code> to copy files and <code class="docutils literal notranslate"><span class="pre">rm</span></code> to
 remove files (a full list of aliases is shown when typing <code class="docutils literal notranslate"><span class="pre">alias</span></code>).</p>
 <div class="admonition-getting-help admonition">
@@ -1073,7 +1083,10 @@ function.</p></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#interactive-work">Interactive work</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#elaboration-of-the-work-in-an-editor">Elaboration of the work in an editor</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ipython-and-jupyter-tips-and-tricks">IPython and Jupyter Tips and Tricks</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#command-history">Command history</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#tab-completion">Tab completion</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#magic-functions">Magic functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#aliases">Aliases</a></li>
 </ul>
 </li>
 </ul>
