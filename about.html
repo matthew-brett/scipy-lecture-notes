@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -174,7 +174,6 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction to getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="intro/intro.html">Python scientific computing ecosystem</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="intro/language/python_language.html">The Python language</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="intro/language/first_steps.html">First steps</a></li>
@@ -202,7 +201,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="advanced/index.html">Introduction to advanced topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced/advanced_python/index.html">Advanced Python Constructs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced/advanced_numpy/index.html">Advanced NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="advanced/debugging/index.html">Debugging code</a></li>
@@ -219,7 +217,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="packages/index.html">Introduction to packages and applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/statistics/index.html">Statistics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
@@ -1051,7 +1048,7 @@ a Jupyter interface such as <a class="reference external" href="https://jupyterl
 To deal with this in part, we install the
 <a class="reference external" href="https://github.com/jupyter-book/jupyterlab-myst">jupyterlab_myst</a> extension by
 default, so that Myst markup (mostly) appears as it should inside JupyterLab
-when opened as a notebook.  Another difference we want to see between the HTML
+when opened as a notebook. Another difference we want to see between the HTML
 and the notebook version is that we want to avoid putting the solutions in the
 notebook version, to allow more space for thought about the exercise. Both to
 modify any ugly formatting, and to remove the exercise solutions, we
@@ -1066,7 +1063,7 @@ reads the input Myst-MD format notebooks using
 <section id="tests">
 <h2>Tests<a class="headerlink" href="#tests" title="Link to this heading">#</a></h2>
 <p>There may well be cases where you will want to put cells in the rendered
-notebook that test values, as part of the exposition.  For example, from the
+notebook that test values, as part of the exposition. For example, from the
 <code class="docutils literal notranslate"><span class="pre">intro/scipy/index.md</span></code> notebook / page:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```{code-cell}
@@ -1083,10 +1080,10 @@ np.allclose(sp.linalg.solve_triangular(A_upper, b, lower=False),
 <p>Notice that, in this case, we do want the reader to see that test, as part of
 the exposition.</p>
 <p>However, there are cases where the test would be useful, to, for example,
-detect changes in the output over versions of the packages being used.  We want
+detect changes in the output over versions of the packages being used. We want
 to avoid the situation where the text says one thing, but the values contradict
-it.  But we may not want the reader to have to read such tests as part of the
-exposition.  Here, for example, is a test from the <code class="docutils literal notranslate"><span class="pre">intro/scipy/index.md</span></code>
+it. But we may not want the reader to have to read such tests as part of the
+exposition. Here, for example, is a test from the <code class="docutils literal notranslate"><span class="pre">intro/scipy/index.md</span></code>
 notebook:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
 ```{code-cell}
@@ -1105,8 +1102,8 @@ assert np.allclose(res, 499)
 </pre></div>
 </div>
 <p>Note that the test confirms that Scipy is still giving the output implied in
-the text.  Note too that we have given the testing code cell the tag
-<code class="docutils literal notranslate"><span class="pre">remove-cell</span></code>.  This drops the cell from the HTML output, and our
+the text. Note too that we have given the testing code cell the tag
+<code class="docutils literal notranslate"><span class="pre">remove-cell</span></code>. This drops the cell from the HTML output, and our
 <a class="reference internal" href="#notebook-processing"><span class="std std-ref">post-processing of the notebooks</span></a> also drops these cells,
 so someone opening the notebook in e.g. JupyterLite will not see them.
 Accordingly, please make sure you are not defining anything in these test cells

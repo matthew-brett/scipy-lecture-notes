@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -177,7 +177,6 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Introduction to getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/intro.html">Python scientific computing ecosystem</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../intro/language/python_language.html">The Python language</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../intro/language/first_steps.html">First steps</a></li>
@@ -205,7 +204,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction to advanced topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_python/index.html">Advanced Python Constructs</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Advanced NumPy</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../debugging/index.html">Debugging code</a></li>
@@ -222,7 +220,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Introduction to packages and applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/statistics/index.html">Statistics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
@@ -662,7 +659,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x107c88e80&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x11391d3c0&gt;
 </pre></div>
 </div>
 </div>
@@ -687,7 +684,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40427506688
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105553143800288
 </pre></div>
 </div>
 </div>
@@ -700,7 +697,7 @@ wrap any data in an ndarray, without unnecessary copies.</p></li>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (40427506688, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553143800288, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i4&#39;)],
  &#39;typestr&#39;: &#39;&lt;i4&#39;,
@@ -744,7 +741,7 @@ array of ints:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x1097f7940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;memory at 0x11391d600&gt;
 </pre></div>
 </div>
 </div>
@@ -791,7 +788,7 @@ block.</p>
 <h4>The descriptor<a class="headerlink" href="#the-descriptor" title="Link to this heading">#</a></h4>
 <p><code class="xref py py-class docutils literal notranslate"><span class="pre">dtype</span></code> describes a single item in the array:</p>
 <div class="pst-scrollable-table-container"><table class="table" id="id3">
-<caption><span class="caption-number">Table 6 </span><span class="caption-text">Dtypes</span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
+<caption><span class="caption-number">Table 6 </span><span class="caption-text"><strong>Dtypes</strong></span><a class="headerlink" href="#id3" title="Link to this table">#</a></caption>
 <tbody>
 <tr class="row-odd"><td><p>type</p></td>
 <td><p><strong>scalar type</strong> of the data, one of:</p>
@@ -1589,7 +1586,7 @@ shape of the resulting array?</p>
 <h5>C and Fortran order<a class="headerlink" href="#c-and-fortran-order" title="Link to this heading">#</a></h5>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The Python built-in <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> returns bytes in C-order by default
+<p>The Python built-in <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#bytes" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> returns bytes in C-order by default
 which can cause confusion when trying to inspect memory layout. We use
 <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.tobytes.html#numpy.ndarray.tobytes" title="(in NumPy v2.3)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">numpy.ndarray.tobytes()</span></code></a> with <code class="docutils literal notranslate"><span class="pre">order=A</span></code> instead, which preserves
 the C or F ordering of the bytes in memory.</p>
@@ -2275,7 +2272,7 @@ from.</p>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">s2</span> <span class="o">=</span> <span class="o">...</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">assert</span> <span class="n">s</span> <span class="o">==</span> <span class="n">s2</span>
 
-<span class="nn">File ~/.virtualenvs/sp-lectures/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py:101,</span> in <span class="ni">as_strided</span><span class="nt">(x, shape, strides, subok, writeable)</span>
+<span class="nn">File /Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/numpy/lib/_stride_tricks_impl.py:101,</span> in <span class="ni">as_strided</span><span class="nt">(x, shape, strides, subok, writeable)</span>
 <span class="g g-Whitespace">     </span><span class="mi">98</span> <span class="k">if</span> <span class="n">strides</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
 <span class="g g-Whitespace">     </span><span class="mi">99</span>     <span class="n">interface</span><span class="p">[</span><span class="s1">&#39;strides&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">strides</span><span class="p">)</span>
 <span class="ne">--&gt; </span><span class="mi">101</span> <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">DummyArray</span><span class="p">(</span><span class="n">interface</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="n">x</span><span class="p">))</span>
@@ -2337,7 +2334,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>66.5 μs ± 3.32 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>87.2 μs ± 6.22 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2349,7 +2346,7 @@ from.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85 μs ± 2 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>146 μs ± 5.81 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -2956,7 +2953,7 @@ the buffer interface:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (40399903232, False),
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;data&#39;: (105553141891808, False),
  &#39;strides&#39;: None,
  &#39;descr&#39;: [(&#39;&#39;, &#39;&lt;i8&#39;)],
  &#39;typestr&#39;: &#39;&lt;i8&#39;,
@@ -3285,9 +3282,9 @@ time, ignoring the invalid numbers.</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x109b22390&gt;,
- &lt;matplotlib.lines.Line2D at 0x109b23020&gt;,
- &lt;matplotlib.lines.Line2D at 0x109b23140&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x113af5a30&gt;,
+ &lt;matplotlib.lines.Line2D at 0x113b776b0&gt;,
+ &lt;matplotlib.lines.Line2D at 0x113b77740&gt;]
 </pre></div>
 </div>
 </div>
@@ -3422,7 +3419,7 @@ I&#39;m using NumPy 1.4.1, built from the official tarball, on Windows
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/numpy/__init__.py
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Volumes/zorg/mb312/.virtualenvs/sp-lectures/lib/python3.12/site-packages/numpy/__init__.py
 </pre></div>
 </div>
 </div>

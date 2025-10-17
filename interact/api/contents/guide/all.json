@@ -2,11 +2,11 @@
   "content": [
     {
       "content": null,
-      "created": "2025-10-03T11:00:45.311592Z",
+      "created": "2025-10-17T10:57:55.584171Z",
       "format": null,
       "hash": null,
       "hash_algorithm": null,
-      "last_modified": "2025-10-03T11:00:41.457593Z",
+      "last_modified": "2025-10-17T10:57:50.336041Z",
       "mimetype": null,
       "name": "index.ipynb",
       "path": "guide/index.ipynb",
@@ -15,11 +15,11 @@
       "writable": true
     }
   ],
-  "created": "2025-10-03T11:00:45.311434Z",
+  "created": "2025-10-17T10:57:55.583770Z",
   "format": "json",
   "hash": null,
   "hash_algorithm": null,
-  "last_modified": "2025-10-03T11:00:45.311434Z",
+  "last_modified": "2025-10-17T10:57:55.583770Z",
   "mimetype": null,
   "name": "guide",
   "path": "guide",

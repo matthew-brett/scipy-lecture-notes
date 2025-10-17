@@ -32,9 +32,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/exercise.css?v=982b99e0" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
@@ -175,7 +175,6 @@
     <div class="bd-toc-item navbar-nav active">
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Getting started with Python for Science</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../intro/index.html">Introduction to getting started</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../intro/intro.html">Python scientific computing ecosystem</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../intro/language/python_language.html">The Python language</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../intro/language/first_steps.html">First steps</a></li>
@@ -203,7 +202,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Advanced topics</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Introduction to advanced topics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_python/index.html">Advanced Python Constructs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_numpy/index.html">Advanced NumPy</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Debugging code</a></li>
@@ -220,7 +218,6 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Packages and applications</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../packages/index.html">Introduction to packages and applications</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/statistics/index.html">Statistics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/sympy.html"><code class="docutils literal notranslate"><span class="pre">sympy</span></code> : Symbolic Mathematics in Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../packages/scikit-image/index.html"><code class="docutils literal notranslate"><span class="pre">scikit-image</span></code>: image processing</a></li>
@@ -744,7 +741,7 @@ inspect runtime, it is often more efficient to use the debugger.</p>
 <h4>Postmortem<a class="headerlink" href="#postmortem" title="Link to this heading">#</a></h4>
 <p><strong>Situation</strong>: You’re working in IPython and you get a traceback.</p>
 <p>Here we debug the file <a class="reference download internal" download="" href="../../_downloads/82d41d3015024d0ccb97d78fee2a5a89/index_error.py"><code class="xref download docutils literal notranslate"><span class="pre">index_error.py</span></code></a>. When running it, an
-<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.13)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexError</span></code></a> is raised. Type <code class="docutils literal notranslate"><span class="pre">%debug</span></code> and drop into the debugger.</p>
+<a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IndexError" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">IndexError</span></code></a> is raised. Type <code class="docutils literal notranslate"><span class="pre">%debug</span></code> and drop into the debugger.</p>
 <div class="highlight-ipython notranslate"><div class="highlight"><pre><span></span><span class="gp">In [1]: </span><span class="o">%</span><span class="k">run</span> index_error.py
 <span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
