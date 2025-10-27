@@ -43,7 +43,7 @@
   <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
@@ -56,6 +56,8 @@
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro/scipy/scipy_examples';</script>
     <link rel="canonical" href="https://matthew-brett.github.io/scipy-lecture-notes/intro/scipy/scipy_examples.html" />
     <link rel="icon" href="../../_static/sp_lectures.png"/>
@@ -1208,7 +1210,7 @@ cut-off in frequency space does not control distortion on the signal.</p>
 </section>
 <section id="simple-image-blur-by-convolution-with-a-gaussian-kernel">
 <span id="eg-image-blur"></span><h3>Simple image blur by convolution with a Gaussian kernel<a class="headerlink" href="#simple-image-blur-by-convolution-with-a-gaussian-kernel" title="Link to this heading">#</a></h3>
-<!--- plot_image_blur --><p>Blur an image (<a class="reference download internal" download="" href="../../_downloads/5e5f820328df6aafbaf0c667db5d3af0/elephant.png"><code class="xref download docutils literal notranslate"><span class="pre">data/elephant.png</span></code></a>) using a
+<!--- plot_image_blur --><p>Blur an image (<a class="reference download internal" download="" href="../../_downloads/2ef081a6387b1e9a08dc714d041b1c4b/elephant.png"><code class="xref download docutils literal notranslate"><span class="pre">data/elephant.png</span></code></a>) using a
 Gaussian kernel.</p>
 <p>Convolution is easy to perform with FFT: convolving two signals boils
 down to multiplying their FFTs (and performing an inverse FFT).</p>
@@ -1306,7 +1308,7 @@ artifact.</p>
 <span id="eg-periodicity-finder"></span><h3>Crude periodicity finding<a class="headerlink" href="#crude-periodicity-finding" title="Link to this heading">#</a></h3>
 <!--- plot_periodicity_finder -->
 <p>Discover the periods in evolution of animal populations
-(<a class="reference download internal" download="" href="../../_downloads/087d8fe936fcb7a4762b9850b932cf9e/populations.txt"><code class="xref download docutils literal notranslate"><span class="pre">data/populations.txt</span></code></a>)</p>
+(<a class="reference download internal" download="" href="../../_downloads/14228726fe60cc8aa576401adb0fa247/populations.txt"><code class="xref download docutils literal notranslate"><span class="pre">data/populations.txt</span></code></a>)</p>
 <p>Load the data:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
